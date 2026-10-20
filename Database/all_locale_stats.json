@@ -1,0 +1,51 @@
+{
+  "koKR": {
+    "item": 1713,
+    "npc": 7419,
+    "object": 7551,
+    "quest": 4116,
+    "subname": 2031
+  },
+  "deDE": {
+    "item": 1707,
+    "npc": 7419,
+    "object": 7547,
+    "quest": 4140,
+    "subname": 2033
+  },
+  "frFR": {
+    "item": 1707,
+    "npc": 7419,
+    "object": 7507,
+    "quest": 4140,
+    "subname": 2031
+  },
+  "esES": {
+    "item": 1707,
+    "npc": 7419,
+    "object": 7546,
+    "quest": 4140,
+    "subname": 2031
+  },
+  "ruRU": {
+    "item": 1707,
+    "npc": 7419,
+    "object": 7547,
+    "quest": 4140,
+    "subname": 2031
+  },
+  "zhCN": {
+    "item": 1707,
+    "npc": 7419,
+    "object": 7519,
+    "quest": 4140,
+    "subname": 2031
+  },
+  "zhTW": {
+    "item": 1713,
+    "npc": 7421,
+    "object": 7566,
+    "quest": 4115,
+    "subname": 2029
+  }
+}

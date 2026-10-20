@@ -1,0 +1,547 @@
+--===========================================================================
+-- EzWoW - Map Finder
+-- Modules/MapEnhancements.lua : Fog-of-War Reveal, Cursor Coords, Zoom Extender & Transit Pins
+--===========================================================================
+local _, ns = ...
+local type, pairs, ipairs, tonumber, tostring, select, pcall = type, pairs, ipairs, tonumber, tostring, select, pcall
+
+local WorldMapCanvasEnhancer = ns.WorldMapCanvasEnhancer or {}
+ns.WorldMapCanvasEnhancer = WorldMapCanvasEnhancer
+
+local Theme = ns.Theme
+local L = ns.L
+local ZONE_LEVEL_DATA = ns.ZONE_LEVEL_DATA
+local TRANSIT_DATA = ns.TRANSIT_DATA
+local FACTION_COLORS = ns.FACTION_COLORS
+
+function WorldMapCanvasEnhancer.revealUnexploredMapTiles(pin)
+    if not (ns.DB and ns.DB.revealMap ~= false) then return end
+    if not (EzWoWMapFinderRevealData and pin and pin.overlayTexturePool) then return end
+    local mapFrame = pin.GetMap and pin:GetMap()
+    local uiMapID = mapFrame and mapFrame.GetMapID and mapFrame:GetMapID()
+    if not uiMapID then return end
+    local artID = C_Map and C_Map.GetMapArtID and C_Map.GetMapArtID(uiMapID)
+    local artData = artID and EzWoWMapFinderRevealData[artID]
+    if not artData then return end
+
+    local mapInfo = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(uiMapID)
+    local mapType = mapInfo and mapInfo.mapType or 0
+    local useTint = (ns.DB.revealTint ~= false) and (mapType == 3)
+
+    local explored = {}
+    if C_MapExplorationInfo and C_MapExplorationInfo.GetExploredMapTextures then
+        local exList = C_MapExplorationInfo.GetExploredMapTextures(uiMapID)
+        if exList then
+            for index = 1, #exList do
+                local apiInfo = exList[index]
+                if apiInfo and apiInfo.textureWidth and apiInfo.textureHeight and apiInfo.offsetX and apiInfo.offsetY then
+                    local entryKey = string.format("%d:%d:%d:%d", apiInfo.textureWidth, apiInfo.textureHeight, apiInfo.offsetX, apiInfo.offsetY)
+                    explored[entryKey] = true
+                end
+            end
+        end
+    end
+
+    local TILE_SIZE = 256
+    for lookupKey, filesStr in pairs(artData) do
+        if not explored[lookupKey] then
+            local boxWidth, headerBar, oxVal, oyVal = lookupKey:match("^(%d+):(%d+):(%d+):(%d+)$")
+            boxWidth, headerBar, oxVal, oyVal = tonumber(boxWidth), tonumber(headerBar), tonumber(oxVal), tonumber(oyVal)
+            if boxWidth and headerBar and oxVal and oyVal then
+                local files = { strsplit(",", filesStr) }
+                local numX = math.ceil(boxWidth / TILE_SIZE)
+                local numY = math.ceil(headerBar / TILE_SIZE)
+                local entryIndex = 1
+                for rowEntry = 1, numY do
+                    local texH, pixH
+                    if rowEntry < numY then
+                        texH = TILE_SIZE
+                        pixH = TILE_SIZE
+                    else
+                        pixH = headerBar % TILE_SIZE
+                        if pixH == 0 then pixH = TILE_SIZE end
+                        texH = 16
+                        while texH < pixH do texH = texH * 2 end
+                    end
+                    for themeColor = 1, numX do
+                        local texW, pixW
+                        if themeColor < numX then
+                            texW = TILE_SIZE
+                            pixW = TILE_SIZE
+                        else
+                            pixW = boxWidth % TILE_SIZE
+                            if pixW == 0 then pixW = TILE_SIZE end
+                            texW = 16
+                            while texW < pixW do texW = texW * 2 end
+                        end
+                        local fileDataID = tonumber(files[entryIndex])
+                        entryIndex = entryIndex + 1
+                        if fileDataID and fileDataID > 0 then
+                            local textureRegion = pin.overlayTexturePool:Acquire()
+                            if textureRegion then
+                                textureRegion:SetWidth(pixW)
+                                textureRegion:SetHeight(pixH)
+                                textureRegion:SetTexCoord(0, pixW / texW, 0, pixH / texH)
+                                textureRegion:SetPoint("TOPLEFT", oxVal + (TILE_SIZE * (themeColor - 1)), -(oyVal + (TILE_SIZE * (rowEntry - 1))))
+                                textureRegion:SetTexture(fileDataID, nil, nil, "TRILINEAR")
+                                textureRegion:SetDrawLayer("ARTWORK", -1)
+                                if useTint then
+                                    textureRegion:SetVertexColor(0.62, 0.76, 0.92, 1.0)
+                                else
+                                    textureRegion:SetVertexColor(1, 1, 1, 1)
+                                end
+                                textureRegion:Show()
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+function WorldMapCanvasEnhancer.bindMapExplorationPins(mapFrame)
+    if not (mapFrame and mapFrame.dataProviders) then return end
+    if mapFrame.EnumeratePinsByTemplate then
+        for pin in mapFrame:EnumeratePinsByTemplate("MapExplorationPinTemplate") do
+            if not pin._ezmfRevealHooked and pin.RefreshOverlays then
+                pin._ezmfRevealHooked = true
+                hooksecurefunc(pin, "RefreshOverlays", WorldMapCanvasEnhancer.revealUnexploredMapTiles)
+                if pin.OnCanvasScaleChanged then
+                    hooksecurefunc(pin, "OnCanvasScaleChanged", function(self)
+                        if self.RefreshOverlays then self:RefreshOverlays(true) end
+                    end)
+                end
+                pcall(pin.RefreshOverlays, pin, true)
+            end
+        end
+    end
+end
+
+function WorldMapCanvasEnhancer.syncMapExplorations()
+    if WorldMapFrame and WorldMapFrame.EnumeratePinsByTemplate then
+        WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame)
+        for pin in WorldMapFrame:EnumeratePinsByTemplate("MapExplorationPinTemplate") do
+            if pin.RefreshOverlays then
+                pcall(pin.RefreshOverlays, pin, true)
+            end
+        end
+    end
+    if BattlefieldMapFrame and BattlefieldMapFrame.EnumeratePinsByTemplate then
+        WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame)
+        for pin in BattlefieldMapFrame:EnumeratePinsByTemplate("MapExplorationPinTemplate") do
+            if pin.RefreshOverlays then
+                pcall(pin.RefreshOverlays, pin, true)
+            end
+        end
+    end
+end
+
+function WorldMapCanvasEnhancer.installMapFogRevealHooks()
+    if WorldMapFrame then
+        WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame)
+        WorldMapFrame:HookScript("OnShow", function() WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame) end)
+        if WorldMapFrame.OnMapChanged then
+            hooksecurefunc(WorldMapFrame, "OnMapChanged", function() WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame) end)
+        end
+    end
+    local bfWatcher = CreateFrame("Frame")
+    bfWatcher:RegisterEvent("ADDON_LOADED")
+    bfWatcher:SetScript("OnEvent", function(_, _, addonName)
+        if addonName == "Blizzard_BattlefieldMap" and BattlefieldMapFrame then
+            WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame)
+            BattlefieldMapFrame:HookScript("OnShow", function() WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame) end)
+        end
+    end)
+    if BattlefieldMapFrame then
+        WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame)
+    end
+end
+
+local mapCoordsFrame
+function WorldMapCanvasEnhancer.refreshMapCoordsVisibility()
+    if not mapCoordsFrame then return end
+    if ns.DB and ns.DB.showCoords ~= false then
+        mapCoordsFrame:Show()
+    else
+        mapCoordsFrame:Hide()
+    end
+end
+
+function WorldMapCanvasEnhancer.initializeMapCoordOverlay()
+    if mapCoordsFrame or not WorldMapFrame then return end
+    local parentFrame = WorldMapFrame.BorderFrame or WorldMapFrame
+    local windowFrame = CreateFrame("Frame", "EzWoWMapFinderCoordsFrame", parentFrame, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    windowFrame:SetSize(250, 20)
+    local scrollFrame = WorldMapFrame.ScrollContainer or WorldMapFrame
+    windowFrame:SetPoint("BOTTOM", scrollFrame, "BOTTOM", 0, 8)
+    windowFrame:SetFrameStrata("HIGH")
+    windowFrame:SetFrameLevel((parentFrame:GetFrameLevel() or 10) + 50)
+    if windowFrame.SetBackdrop then
+        ns.UIKit:ApplyBackdrop(windowFrame)
+        windowFrame:SetBackdropColor(0.071, 0.094, 0.122, 0.82)
+        windowFrame:SetBackdropBorderColor(0.204, 0.298, 0.357, 0.90)
+    end
+    local displayText = windowFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    displayText:SetPoint("CENTER", 0, 0)
+    windowFrame.txt = displayText
+
+    local elapsedAcc = 0
+    windowFrame:SetScript("OnUpdate", function(self, elapsed)
+        elapsedAcc = elapsedAcc + (elapsed or 0)
+        if elapsedAcc < 0.05 then return end
+        elapsedAcc = 0
+        if not WorldMapFrame:IsShown() then return end
+
+        local uiMapID = WorldMapFrame.GetMapID and WorldMapFrame:GetMapID()
+        local pStr = "--, --"
+        if uiMapID and C_Map and C_Map.GetPlayerMapPosition then
+            local coordPos = C_Map.GetPlayerMapPosition(uiMapID, "player")
+            if coordPos then
+                local pxVal, pyVal = coordPos:GetXY()
+                if pxVal and pyVal and (pxVal > 0 or pyVal > 0) then
+                    pStr = string.format("%.1f, %.1f", pxVal * 100, pyVal * 100)
+                end
+            end
+        end
+
+        local cStr = "--, --"
+        local scVal = WorldMapFrame.ScrollContainer
+        if scVal and scVal.IsMouseOver and scVal:IsMouseOver() then
+            local cxVal, cyVal
+            if scVal.GetNormalizedCursorPosition then
+                cxVal, cyVal = scVal:GetNormalizedCursorPosition()
+            end
+            if cxVal and cyVal and cxVal >= 0 and cxVal <= 1 and cyVal >= 0 and cyVal <= 1 then
+                cStr = string.format("%.1f, %.1f", cxVal * 100, cyVal * 100)
+            end
+        end
+
+        self.txt:SetText(string.format("|cff4bc8e8%s:|r |cffedf4f7%s|r   |cff4bc8e8%s:|r |cffedf4f7%s|r",
+            L.playerCoord or "Player", pStr, L.cursorCoord or "Cursor", cStr))
+    end)
+
+    mapCoordsFrame = windowFrame
+    WorldMapCanvasEnhancer.refreshMapCoordsVisibility()
+end
+
+local function StripZoneLabelDecorations(rawText)
+    if type(rawText) ~= "string" or rawText == "" then return "" end
+    local s = rawText
+    -- Strip our own colored suffixes
+    s = s:gsub("%s*|cff%x%x%x%x%x%x%(%d+[^)]*%)|r.*$", "")
+    s = s:gsub("%s*|cff%x%x%x%x%x%x%[[^%]]*%]|r.*$", "")
+    -- Strip any native/second-line level suffix like "\n(20-30)" or " (20-30)"
+    s = s:gsub("%s*[\r\n]+%s*|?c?f?f?%x*%s*%(%d+%s*%-?%s*%d*%).*$", "")
+    s = s:gsub("%s*%(%d+%s*%-?%s*%d*%)$", "")
+    return s
+end
+
+local function ApplyZoneLevelToMapLabel(labelFrame)
+    if not labelFrame or labelFrame._ezmfUpdating then return end
+    local nameFS = labelFrame.Name
+    if not nameFS then return end
+    local descFS = labelFrame.Description
+    local rawName = nameFS:GetText()
+    if not rawName or rawName == "" then return end
+
+    if not (ns.DB and ns.DB.showZoneLevels ~= false) then
+        local stripped = StripZoneLabelDecorations(rawName)
+        if stripped ~= rawName and stripped ~= "" then
+            labelFrame._ezmfUpdating = true
+            nameFS:SetText(stripped)
+            labelFrame._ezmfUpdating = false
+        end
+        return
+    end
+
+    -- Clear duplicate plain level range on Description if present so it never flickers on a 2nd line
+    if descFS and descFS.GetText then
+        local dTxt = descFS:GetText()
+        if dTxt and dTxt ~= "" then
+            local cleanDesc = dTxt:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+            if cleanDesc:match("^%s*%(?%d+%s*%-?%s*%d*%)?%s*$") then
+                descFS:SetText("")
+            end
+        end
+    end
+
+    if rawName == labelFrame._ezmfLastName then return end
+
+    local baseName = StripZoneLabelDecorations(rawName)
+    if baseName == "" then return end
+
+    local uiMapID = WorldMapFrame and WorldMapFrame.GetMapID and WorldMapFrame:GetMapID()
+    if not uiMapID then return end
+    local targetMapID = uiMapID
+    local scVal = WorldMapFrame.ScrollContainer
+    if scVal and scVal.GetNormalizedCursorPosition and C_Map and C_Map.GetMapInfoAtPosition then
+        local cxVal, cyVal = scVal:GetNormalizedCursorPosition()
+        if cxVal and cyVal and cxVal >= 0 and cxVal <= 1 and cyVal >= 0 and cyVal <= 1 then
+            local qx = math.floor(cxVal * 500 + 0.5)
+            local qy = math.floor(cyVal * 500 + 0.5)
+            if labelFrame._ezmfLastMapID == uiMapID and labelFrame._ezmfLastQX == qx and labelFrame._ezmfLastQY == qy and labelFrame._ezmfCachedTargetMapID then
+                targetMapID = labelFrame._ezmfCachedTargetMapID
+            else
+                local childInfo = C_Map.GetMapInfoAtPosition(uiMapID, cxVal, cyVal)
+                if childInfo and childInfo.mapID then
+                    targetMapID = childInfo.mapID
+                end
+                labelFrame._ezmfLastMapID = uiMapID
+                labelFrame._ezmfLastQX = qx
+                labelFrame._ezmfLastQY = qy
+                labelFrame._ezmfCachedTargetMapID = targetMapID
+            end
+        end
+    end
+
+    local zInfo = ZONE_LEVEL_DATA[targetMapID]
+    if not zInfo then
+        labelFrame._ezmfLastName = rawName
+        return
+    end
+
+    local minL, maxL, fishReq = zInfo[1], zInfo[2], zInfo[3]
+    local pLvl = UnitLevel("player") or 1
+    local fishLabel = L.fishingSkill or "Fishing"
+    local cacheKey = string.format("%s:%d:%d:%s", baseName, targetMapID, pLvl, fishLabel)
+    local finalHeader = (labelFrame._ezmfCacheKey == cacheKey) and labelFrame._ezmfCacheHeader or nil
+
+    if not finalHeader then
+        local columnIndex = "|cffffffff"
+        if pLvl < minL - 3 then
+            columnIndex = "|cffff5050"
+        elseif pLvl < minL then
+            columnIndex = "|cffff9933"
+        elseif pLvl <= maxL + 2 then
+            columnIndex = "|cff55e673"
+        else
+            columnIndex = "|cff99aabb"
+        end
+        local lvlText = (minL == maxL) and string.format("%s(%d)|r", columnIndex, minL) or string.format("%s(%d-%d)|r", columnIndex, minL, maxL)
+        local fishText = (fishReq and fishReq > 0) and string.format(" |cff7ecbe0[%s %d]|r", fishLabel, fishReq) or ""
+        finalHeader = baseName .. " " .. lvlText .. fishText
+        labelFrame._ezmfCacheKey = cacheKey
+        labelFrame._ezmfCacheHeader = finalHeader
+    end
+
+    labelFrame._ezmfLastName = finalHeader
+    if rawName ~= finalHeader then
+        labelFrame._ezmfUpdating = true
+        nameFS:SetText(finalHeader)
+        labelFrame._ezmfUpdating = false
+    end
+end
+
+function WorldMapCanvasEnhancer.installZoneLevelHeaderHook()
+    if not (WorldMapFrame and WorldMapFrame.dataProviders) then return end
+    for WorldMapDataProvider in pairs(WorldMapFrame.dataProviders) do
+        if WorldMapDataProvider and WorldMapDataProvider.Label and WorldMapDataProvider.Label.Name and not WorldMapDataProvider.Label._ezmfZoneLevelHooked then
+            local labelFrame = WorldMapDataProvider.Label
+            labelFrame._ezmfZoneLevelHooked = true
+            labelFrame:HookScript("OnUpdate", function(self)
+                ApplyZoneLevelToMapLabel(self)
+            end)
+            if type(WorldMapDataProvider.EvaluateLabels) == "function" then
+                hooksecurefunc(WorldMapDataProvider, "EvaluateLabels", function()
+                    ApplyZoneLevelToMapLabel(labelFrame)
+                end)
+            end
+            if labelFrame.Name and type(labelFrame.Name.SetText) == "function" then
+                hooksecurefunc(labelFrame.Name, "SetText", function()
+                    ApplyZoneLevelToMapLabel(labelFrame)
+                end)
+            end
+            if labelFrame.Description and type(labelFrame.Description.SetText) == "function" then
+                hooksecurefunc(labelFrame.Description, "SetText", function()
+                    ApplyZoneLevelToMapLabel(labelFrame)
+                end)
+            end
+        end
+    end
+end
+
+function WorldMapCanvasEnhancer.commitMapFade()
+    if SetCVar then
+        pcall(SetCVar, "mapFade", (ns.DB and ns.DB.noMapFade ~= false) and "0" or "1")
+    end
+end
+
+function WorldMapCanvasEnhancer.expandCanvasZoomRange(scVal)
+    if not (ns.DB and ns.DB.enableMapZoom ~= false) then return end
+    if not (scVal and scVal.zoomLevels and #scVal.zoomLevels > 0) then return end
+    local base = scVal.zoomLevels[1]
+    local top = scVal.zoomLevels[#scVal.zoomLevels]
+    if not (base and top and base.scale and top.width and top.height) then return end
+    local mults = { 1.35, 1.75, 2.20, 2.70, 3.20 }
+    for index = 1, #mults do
+        local nextScale = base.scale * mults[index]
+        if nextScale > (scVal.zoomLevels[#scVal.zoomLevels].scale + 0.05) then
+            scVal.zoomLevels[#scVal.zoomLevels + 1] = {
+                scale = nextScale,
+                width = top.width,
+                height = top.height,
+            }
+        end
+    end
+end
+
+function WorldMapCanvasEnhancer.commitMapZoom(resetZoom)
+    if not (WorldMapFrame and WorldMapFrame.ScrollContainer) then return end
+    local scVal = WorldMapFrame.ScrollContainer
+    if scVal.CreateZoomLevels then
+        pcall(scVal.CreateZoomLevels, scVal)
+    end
+    if resetZoom and scVal.ResetZoom then
+        pcall(scVal.ResetZoom, scVal)
+    end
+end
+
+function WorldMapCanvasEnhancer.installMapWheelZoomHooks()
+    if not (WorldMapFrame and WorldMapFrame.ScrollContainer) then return end
+    local scVal = WorldMapFrame.ScrollContainer
+    if not scVal._ezmfZoomHooked and scVal.CreateZoomLevels then
+        scVal._ezmfZoomHooked = true
+        hooksecurefunc(scVal, "CreateZoomLevels", WorldMapCanvasEnhancer.expandCanvasZoomRange)
+        WorldMapCanvasEnhancer.expandCanvasZoomRange(scVal)
+    end
+end
+
+local transitPins = {}
+local activeTransitCount = 0
+
+function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
+    local pin = transitPins[entryIndex]
+    if pin then return pin end
+    local canvasFrame = (WorldMapFrame and WorldMapFrame.GetCanvas and WorldMapFrame:GetCanvas())
+        or (_G.EzWoWWorldMapDock and _G.EzWoWWorldMapDock:GetCanvas())
+        or WorldMapFrame
+    pin = CreateFrame("Button", nil, canvasFrame, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    pin:SetSize(20, 20)
+    pin:SetFrameStrata("HIGH")
+    pin:SetFrameLevel((canvasFrame:GetFrameLevel() or 10) + 180)
+    if pin.SetBackdrop then
+        ns.UIKit:ApplyBackdrop(pin)
+        pin:SetBackdropColor(0.071, 0.094, 0.122, 0.92)
+    end
+    local iconTex = pin:CreateTexture(nil, "ARTWORK")
+    iconTex:SetPoint("TOPLEFT", 2, -2)
+    iconTex:SetPoint("BOTTOMRIGHT", -2, 2)
+    pin.icon = iconTex
+
+    local tag = pin:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    tag:SetPoint("CENTER", 0, 0)
+    pin.tag = tag
+
+    pin:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square", "ADD")
+    pin:SetScript("OnEnter", function(self)
+        local apiInfo = self.info
+        if not apiInfo then return end
+        local hasKo = (ns.activeLocale == "koKR")
+        local titleStr = hasKo and apiInfo.ko or apiInfo.en
+        local fcVal = FACTION_COLORS[apiInfo.fac] or FACTION_COLORS.N
+        local facText = (apiInfo.fac == "A" and (hasKo and "얼라이언스" or "Alliance"))
+            or (apiInfo.fac == "H" and (hasKo and "호드" or "Horde"))
+            or (hasKo and "중립" or "Neutral")
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText(titleStr, unpack(Theme.accent))
+        GameTooltip:AddLine(string.format("[%s] (%.1f, %.1f)", facText, apiInfo.x, apiInfo.y), fcVal[1], fcVal[2], fcVal[3])
+        if apiInfo.dest then
+            GameTooltip:AddLine(L.transitClick or "Click: Open destination map", unpack(Theme.muted))
+        end
+        GameTooltip:Show()
+    end)
+    pin:SetScript("OnLeave", function() GameTooltip:Hide() end)
+    pin:SetScript("OnClick", function(self)
+        local apiInfo = self.info
+        if apiInfo and apiInfo.dest and WorldMapFrame and WorldMapFrame.SetMapID then
+            if not (InCombatLockdown and InCombatLockdown()) then
+                pcall(WorldMapFrame.SetMapID, WorldMapFrame, apiInfo.dest)
+            end
+        end
+    end)
+    transitPins[entryIndex] = pin
+    return pin
+end
+
+function WorldMapCanvasEnhancer.renderWorldTransitMarkers()
+    for index = 1, #transitPins do
+        transitPins[index]:Hide()
+    end
+    activeTransitCount = 0
+    if not (ns.DB and ns.DB.showTransit ~= false) then return end
+    if not (WorldMapFrame and WorldMapFrame:IsShown()) then return end
+    local uiMapID = WorldMapFrame.GetMapID and WorldMapFrame:GetMapID()
+    local itemList = uiMapID and TRANSIT_DATA[uiMapID]
+    if not itemList or #itemList == 0 then return end
+
+    local canvasFrame = (WorldMapFrame.GetCanvas and WorldMapFrame:GetCanvas())
+        or (_G.EzWoWWorldMapDock and _G.EzWoWWorldMapDock:GetCanvas())
+        or WorldMapFrame
+    local cwVal, chVal = canvasFrame:GetWidth(), canvasFrame:GetHeight()
+    if not cwVal or not chVal or cwVal <= 0 or chVal <= 0 then return end
+    local cScale = (WorldMapFrame.GetCanvasScale and WorldMapFrame:GetCanvasScale()) or 1
+    if not cScale or cScale <= 0 then cScale = 1 end
+    local pinScale = 1 / cScale
+
+    local hasKo = (ns.activeLocale == "koKR")
+    for index = 1, #itemList do
+        local apiInfo = itemList[index]
+        local pin = WorldMapCanvasEnhancer.obtainTransitPin(index)
+        pin:SetParent(canvasFrame)
+        pin.info = apiInfo
+        local fcVal = FACTION_COLORS[apiInfo.fac] or FACTION_COLORS.N
+        if pin.SetBackdropBorderColor then
+            if apiInfo.kind == "portal" then
+                pin:SetBackdropBorderColor(0.788, 0.643, 0.937, 1.0)
+            else
+                pin:SetBackdropBorderColor(fcVal[1], fcVal[2], fcVal[3], 1.0)
+            end
+        end
+        pin.icon:SetTexture(nil)
+        pin.tag:SetText("")
+        local usedAtlas = false
+        if apiInfo.kind == "portal" and pin.icon.SetAtlas and C_Texture and C_Texture.GetAtlasInfo then
+            local atlasName = (apiInfo.fac == "H") and "MagePortalHorde" or "MagePortalAlliance"
+            if C_Texture.GetAtlasInfo(atlasName) then
+                pin.icon:SetAtlas(atlasName)
+                usedAtlas = true
+            end
+        elseif (apiInfo.kind == "boat" or apiInfo.kind == "zepp" or apiInfo.kind == "tram") and pin.icon.SetAtlas and C_Texture and C_Texture.GetAtlasInfo then
+            local atlasName = (apiInfo.fac == "A" and "TaxiNode_Continent_Alliance")
+                or (apiInfo.fac == "H" and "TaxiNode_Continent_Horde")
+                or "TaxiNode_Continent_Neutral"
+            if C_Texture.GetAtlasInfo(atlasName) then
+                pin.icon:SetAtlas(atlasName)
+                usedAtlas = true
+            end
+        end
+        if not usedAtlas then
+            local lbl = (apiInfo.kind == "portal" and (hasKo and "문" or "P"))
+                or (apiInfo.kind == "tram" and (hasKo and "철" or "T"))
+                or (apiInfo.kind == "zepp" and (hasKo and "비" or "Z"))
+                or (hasKo and "배" or "B")
+            pin.tag:SetText(lbl)
+            pin.tag:SetTextColor(fcVal[1], fcVal[2], fcVal[3])
+        end
+        pin:SetScale(pinScale)
+        pin:ClearAllPoints()
+        pin:SetPoint("CENTER", canvasFrame, "TOPLEFT", ((apiInfo.x / 100) * cwVal) / pinScale, -((apiInfo.y / 100) * chVal) / pinScale)
+        pin:Show()
+        activeTransitCount = index
+    end
+end
+
+ns.RevealPinOverlays = WorldMapCanvasEnhancer.revealUnexploredMapTiles
+ns.HookMapExplorationPins = WorldMapCanvasEnhancer.bindMapExplorationPins
+ns.RefreshMapExplorations = WorldMapCanvasEnhancer.syncMapExplorations
+ns.SetupMapReveal = WorldMapCanvasEnhancer.installMapFogRevealHooks
+ns.UpdateMapCoordsVisibility = WorldMapCanvasEnhancer.refreshMapCoordsVisibility
+ns.SetupMapCoords = WorldMapCanvasEnhancer.initializeMapCoordOverlay
+ns.SetupZoneLevels = WorldMapCanvasEnhancer.installZoneLevelHeaderHook
+ns.ApplyMapFade = WorldMapCanvasEnhancer.commitMapFade
+ns.ExtendMapZoomLevels = WorldMapCanvasEnhancer.expandCanvasZoomRange
+ns.ApplyMapZoom = WorldMapCanvasEnhancer.commitMapZoom
+ns.SetupMapZoom = WorldMapCanvasEnhancer.installMapWheelZoomHooks
+ns.AcquireTransitPin = WorldMapCanvasEnhancer.obtainTransitPin
+ns.RefreshTransitPins = WorldMapCanvasEnhancer.renderWorldTransitMarkers

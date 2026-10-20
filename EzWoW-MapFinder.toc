@@ -1,0 +1,81 @@
+## Interface: 16001
+## Title: EzWoW - Map Finder
+## Title-enUS: EzWoW - Map Finder
+## Title-koKR: EzWoW - Map Finder
+## Title-deDE: EzWoW - Map Finder
+## Title-frFR: EzWoW - Map Finder
+## Title-esES: EzWoW - Map Finder
+## Title-esMX: EzWoW - Map Finder
+## Title-ruRU: EzWoW - Map Finder
+## Title-zhCN: EzWoW - Map Finder
+## Title-zhTW: EzWoW - Map Finder
+## Notes: Offline monster, NPC, object, quest, and item location & waypoint finder on the world map (8 languages)
+## Notes-koKR: 월드맵에서 몬스터·NPC·오브젝트·퀘스트·아이템 위치를 검색하고 지도 핀 및 웨이포인트로 안내합니다. (8개 언어 지원)
+## Author: qqhrqqhr2
+## Version: 0.3.0
+## SavedVariables: EzWoW_MapFinderDB
+## IconTexture: Interface\AddOns\EzWoW-MapFinder\Media\Icon
+
+Core\Init.lua
+Core\UIKit.lua
+Core\Locales.lua
+Core\WorldMapDock.lua
+Database\Locations_001.lua
+Database\Locations_002.lua
+Database\Locations_003.lua
+Database\Locations_004.lua
+Database\Locations_005.lua
+Database\Locations_006.lua
+Database\Locations_007.lua
+Database\Locations_008.lua
+Database\Locations_009.lua
+Database\Locations_010.lua
+Database\Locations_011.lua
+Database\Locations_012.lua
+Database\Locations_013.lua
+Database\Locations_014.lua
+Database\Locations_015.lua
+Database\Locations_016.lua
+Database\Locations_017.lua
+Database\Locations_018.lua
+Database\Locations_019.lua
+Database\Locations_020.lua
+Database\Locations_021.lua
+Database\Locations_022.lua
+Database\Locations_023.lua
+Database\Locations_024.lua
+Database\Locations_025.lua
+Database\Locations_026.lua
+Database\Locations_027.lua
+Database\Locations_028.lua
+Database\Locations_029.lua
+Database\Locations_030.lua
+Database\Locations_031.lua
+Database\Locations_032.lua
+Database\Locations_033.lua
+Database\Locations_034.lua
+Database\Locations_035.lua
+Database\Locations_036.lua
+Database\Locations_037.lua
+Database\Locations_038.lua
+Database\Locations_039.lua
+Database\Locations_040.lua
+Database\Locations_041.lua
+Database\Locations_042.lua
+Database\ForeverOverrides.lua
+Database\NPCSubNames.lua
+Database\AllNames_koKR.lua
+Database\AllNames_deDE.lua
+Database\AllNames_frFR.lua
+Database\AllNames_esES.lua
+Database\AllNames_ruRU.lua
+Database\AllNames_zhCN.lua
+Database\AllNames_zhTW.lua
+Database\RareMonsters.lua
+Database\HunterPets.lua
+Database\MapRevealData.lua
+Data\ZoneAndGatherData.lua
+Modules\SearchEngine.lua
+Modules\MapEnhancements.lua
+UI\OptionsWindow.lua
+UI\SearchPanel.lua
