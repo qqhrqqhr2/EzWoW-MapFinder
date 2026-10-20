@@ -1,5 +1,10 @@
 # EzWoW - Map Finder (`EzWoW-MapFinder`)
 
+## CurseForge
+
+- **Project ID / 프로젝트 ID:** `1755566`
+- **Project page / 프로젝트 페이지:** [EzWoW-MapFinder](https://www.curseforge.com/wow/addons/ezwow-map-finder)
+
 **[한국어](#한국어) · [English](#english)**
 
 WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
