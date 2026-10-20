@@ -178,3 +178,13 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 
 - The game does not allow changing the map zone in combat; click the result again after combat.
 - Searches run in small steps to avoid frame drops; `[Searching...] (%)` is shown meanwhile.
+
+---
+
+## Support / 후원
+
+If you find this addon useful, you can support its development.
+
+애드온이 도움이 되셨다면 개발 후원으로 응원해 주세요.
+
+[Buy Me a Coffee ☕](https://buymeacoffee.com/qqhrqqhr2)
