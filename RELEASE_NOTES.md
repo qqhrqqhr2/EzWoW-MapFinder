@@ -1,3 +1,3 @@
-# v2.0.1
+# v2.0.2
 
-[2026-10-20 23:56] 최신 DB 적용 (Apply latest DB)
+레어 몬스터 알림 추가 (Rare monster alert)
