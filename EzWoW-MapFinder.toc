@@ -13,7 +13,7 @@
 ## Notes: Offline monster, NPC, object, quest, and item location & waypoint finder on the world map (8 languages)
 ## Notes-koKR: 월드맵에서 몬스터·NPC·오브젝트·퀘스트·아이템 위치를 검색하고 지도 핀 및 웨이포인트로 안내합니다. (8개 언어 지원)
 ## Author: qqhrqqhr2
-## Version: 2.0.0
+## Version: 2.0.1
 ## Category: EzWoW
 ## SavedVariables: EzWoW_MapFinderDB
 ## IconTexture: Interface\AddOns\EzWoW-MapFinder\Media\Icon
