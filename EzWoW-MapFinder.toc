@@ -1,4 +1,5 @@
 ## Interface: 16001
+## X-Curse-Project-ID: 1755566
 ## Title: EzWoW - Map Finder
 ## Title-enUS: EzWoW - Map Finder
 ## Title-koKR: EzWoW - Map Finder
