@@ -14,84 +14,83 @@ local ZONE_LEVEL_DATA = ns.ZONE_LEVEL_DATA
 local TRANSIT_DATA = ns.TRANSIT_DATA
 local FACTION_COLORS = ns.FACTION_COLORS
 
-function WorldMapCanvasEnhancer.revealUnexploredMapTiles(pin)
-    if not (ns.DB and ns.DB.revealMap ~= false) then return end
-    if not (EzWoWMapFinderRevealData and pin and pin.overlayTexturePool) then return end
-    local mapFrame = pin.GetMap and pin:GetMap()
-    local uiMapID = mapFrame and mapFrame.GetMapID and mapFrame:GetMapID()
-    if not uiMapID then return end
-    local artID = C_Map and C_Map.GetMapArtID and C_Map.GetMapArtID(uiMapID)
+-- Each map frame (World Map, Battlefield Map) gets a data provider and a texture layer of our own
+-- under its canvas. Nothing of the game's exploration pin is hooked, so the reveal does not depend on
+-- how a client builds that pin.
+local revealStates = {}
+
+function WorldMapCanvasEnhancer.resolvePartialTileFileSize(pixels)
+    local size = 16
+    while size < pixels do size = size * 2 end
+    return size
+end
+
+function WorldMapCanvasEnhancer.revealUnexploredMapTiles(state)
+    if not state then return end
+    for index = 1, state.used do state.textures[index]:Hide() end
+    state.used = 0
+    if not (ns.DB and ns.DB.revealMap ~= false) or not EzWoWMapFinderRevealData then return end
+    local mapFrame = state.mapFrame
+    if not mapFrame:IsShown() then return end
+    local uiMapID = mapFrame.GetMapID and mapFrame:GetMapID()
+    local artID = uiMapID and C_Map and C_Map.GetMapArtID and C_Map.GetMapArtID(uiMapID)
     local artData = artID and EzWoWMapFinderRevealData[artID]
     if not artData then return end
 
-    local mapInfo = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(uiMapID)
-    local mapType = mapInfo and mapInfo.mapType or 0
-    local useTint = (ns.DB.revealTint ~= false) and (mapType == 3)
+    local tileW, tileH = 256, 256
+    local artLayers = C_Map.GetMapArtLayers and C_Map.GetMapArtLayers(uiMapID)
+    if artLayers and artLayers[1] and artLayers[1].tileWidth and artLayers[1].tileHeight then
+        tileW, tileH = artLayers[1].tileWidth, artLayers[1].tileHeight
+    end
 
-    local explored = {}
-    if C_MapExplorationInfo and C_MapExplorationInfo.GetExploredMapTextures then
-        local exList = C_MapExplorationInfo.GetExploredMapTextures(uiMapID)
-        if exList then
-            for index = 1, #exList do
-                local apiInfo = exList[index]
-                if apiInfo and apiInfo.textureWidth and apiInfo.textureHeight and apiInfo.offsetX and apiInfo.offsetY then
-                    local entryKey = string.format("%d:%d:%d:%d", apiInfo.textureWidth, apiInfo.textureHeight, apiInfo.offsetX, apiInfo.offsetY)
-                    explored[entryKey] = true
-                end
-            end
+    local mapInfo = C_Map.GetMapInfo and C_Map.GetMapInfo(uiMapID)
+    local useTint = (ns.DB.revealTint ~= false) and mapInfo and mapInfo.mapType == 3
+
+    local exploredKeys, exploredFiles = {}, {}
+    local exList = C_MapExplorationInfo and C_MapExplorationInfo.GetExploredMapTextures and C_MapExplorationInfo.GetExploredMapTextures(uiMapID)
+    for _, apiInfo in ipairs(exList or {}) do
+        if apiInfo.textureWidth and apiInfo.textureHeight and apiInfo.offsetX and apiInfo.offsetY then
+            exploredKeys[string.format("%d:%d:%d:%d", apiInfo.textureWidth, apiInfo.textureHeight, apiInfo.offsetX, apiInfo.offsetY)] = true
+        end
+        if apiInfo.fileDataIDs and apiInfo.fileDataIDs[1] then
+            exploredFiles[apiInfo.fileDataIDs[1]] = true
         end
     end
 
-    local TILE_SIZE = 256
     for lookupKey, filesStr in pairs(artData) do
-        if not explored[lookupKey] then
-            local boxWidth, headerBar, oxVal, oyVal = lookupKey:match("^(%d+):(%d+):(%d+):(%d+)$")
-            boxWidth, headerBar, oxVal, oyVal = tonumber(boxWidth), tonumber(headerBar), tonumber(oxVal), tonumber(oyVal)
-            if boxWidth and headerBar and oxVal and oyVal then
-                local files = { strsplit(",", filesStr) }
-                local numX = math.ceil(boxWidth / TILE_SIZE)
-                local numY = math.ceil(headerBar / TILE_SIZE)
-                local entryIndex = 1
-                for rowEntry = 1, numY do
-                    local texH, pixH
-                    if rowEntry < numY then
-                        texH = TILE_SIZE
-                        pixH = TILE_SIZE
-                    else
-                        pixH = headerBar % TILE_SIZE
-                        if pixH == 0 then pixH = TILE_SIZE end
-                        texH = 16
-                        while texH < pixH do texH = texH * 2 end
-                    end
-                    for themeColor = 1, numX do
-                        local texW, pixW
-                        if themeColor < numX then
-                            texW = TILE_SIZE
-                            pixW = TILE_SIZE
-                        else
-                            pixW = boxWidth % TILE_SIZE
-                            if pixW == 0 then pixW = TILE_SIZE end
-                            texW = 16
-                            while texW < pixW do texW = texW * 2 end
-                        end
-                        local fileDataID = tonumber(files[entryIndex])
-                        entryIndex = entryIndex + 1
+        local files = { strsplit(",", filesStr) }
+        local firstFile = tonumber(files[1])
+        if not exploredKeys[lookupKey] and not (firstFile and exploredFiles[firstFile]) then
+            local boxWidth, boxHeight, oxVal, oyVal = lookupKey:match("^(%d+):(%d+):(%d+):(%d+)$")
+            boxWidth, boxHeight, oxVal, oyVal = tonumber(boxWidth), tonumber(boxHeight), tonumber(oxVal), tonumber(oyVal)
+            if boxWidth and boxHeight and oxVal and oyVal then
+                local numX = math.ceil(boxWidth / tileW)
+                local numY = math.ceil(boxHeight / tileH)
+                for rowIndex = 1, numY do
+                    local pixH = (rowIndex < numY) and tileH or (boxHeight - tileH * (numY - 1))
+                    local texH = (rowIndex < numY) and tileH or WorldMapCanvasEnhancer.resolvePartialTileFileSize(pixH)
+                    for colIndex = 1, numX do
+                        local pixW = (colIndex < numX) and tileW or (boxWidth - tileW * (numX - 1))
+                        local texW = (colIndex < numX) and tileW or WorldMapCanvasEnhancer.resolvePartialTileFileSize(pixW)
+                        local fileDataID = tonumber(files[(rowIndex - 1) * numX + colIndex])
                         if fileDataID and fileDataID > 0 then
-                            local textureRegion = pin.overlayTexturePool:Acquire()
-                            if textureRegion then
-                                textureRegion:SetWidth(pixW)
-                                textureRegion:SetHeight(pixH)
-                                textureRegion:SetTexCoord(0, pixW / texW, 0, pixH / texH)
-                                textureRegion:SetPoint("TOPLEFT", oxVal + (TILE_SIZE * (themeColor - 1)), -(oyVal + (TILE_SIZE * (rowEntry - 1))))
-                                textureRegion:SetTexture(fileDataID, nil, nil, "TRILINEAR")
-                                textureRegion:SetDrawLayer("ARTWORK", -1)
-                                if useTint then
-                                    textureRegion:SetVertexColor(0.62, 0.76, 0.92, 1.0)
-                                else
-                                    textureRegion:SetVertexColor(1, 1, 1, 1)
-                                end
-                                textureRegion:Show()
+                            state.used = state.used + 1
+                            local textureRegion = state.textures[state.used]
+                            if not textureRegion then
+                                textureRegion = state.layer:CreateTexture(nil, "ARTWORK")
+                                state.textures[state.used] = textureRegion
                             end
+                            textureRegion:SetSize(pixW, pixH)
+                            textureRegion:SetTexCoord(0, pixW / texW, 0, pixH / texH)
+                            textureRegion:ClearAllPoints()
+                            textureRegion:SetPoint("TOPLEFT", state.layer, "TOPLEFT", oxVal + tileW * (colIndex - 1), -(oyVal + tileH * (rowIndex - 1)))
+                            textureRegion:SetTexture(fileDataID, nil, nil, "TRILINEAR")
+                            if useTint then
+                                textureRegion:SetVertexColor(0.62, 0.76, 0.92, 1.0)
+                            else
+                                textureRegion:SetVertexColor(1, 1, 1, 1)
+                            end
+                            textureRegion:Show()
                         end
                     end
                 end
@@ -101,61 +100,61 @@ function WorldMapCanvasEnhancer.revealUnexploredMapTiles(pin)
 end
 
 function WorldMapCanvasEnhancer.bindMapExplorationPins(mapFrame)
-    if not (mapFrame and mapFrame.dataProviders) then return end
-    if mapFrame.EnumeratePinsByTemplate then
-        for pin in mapFrame:EnumeratePinsByTemplate("MapExplorationPinTemplate") do
-            if not pin._ezmfRevealHooked and pin.RefreshOverlays then
-                pin._ezmfRevealHooked = true
-                hooksecurefunc(pin, "RefreshOverlays", WorldMapCanvasEnhancer.revealUnexploredMapTiles)
-                if pin.OnCanvasScaleChanged then
-                    hooksecurefunc(pin, "OnCanvasScaleChanged", function(self)
-                        if self.RefreshOverlays then self:RefreshOverlays(true) end
-                    end)
-                end
-                pcall(pin.RefreshOverlays, pin, true)
-            end
-        end
+    if not (mapFrame and mapFrame.AddDataProvider and mapFrame.ScrollContainer and mapFrame.ScrollContainer.Child) then return end
+    if revealStates[mapFrame] then return revealStates[mapFrame] end
+    if not (MapCanvasDataProviderMixin and CreateFromMixins) then return end
+
+    local state = { mapFrame = mapFrame, textures = {}, used = 0 }
+    local layerFrame = CreateFrame("Frame", nil, mapFrame.ScrollContainer.Child)
+    layerFrame:SetAllPoints()
+    local levelsManager = mapFrame.GetPinFrameLevelsManager and mapFrame:GetPinFrameLevelsManager()
+    local isLevelOk, frameLevel = pcall(function() return levelsManager:GetValidFrameLevel("PIN_FRAME_LEVEL_MAP_EXPLORATION") end)
+    layerFrame:SetFrameLevel(isLevelOk and frameLevel or ((mapFrame.ScrollContainer.Child:GetFrameLevel() or 0) + 1))
+    layerFrame:SetScript("OnEvent", function() WorldMapCanvasEnhancer.revealUnexploredMapTiles(state) end)
+    state.layer = layerFrame
+
+    local provider = CreateFromMixins(MapCanvasDataProviderMixin)
+    provider.OnMapChanged = function() WorldMapCanvasEnhancer.revealUnexploredMapTiles(state) end
+    provider.RefreshAllData = provider.OnMapChanged
+    provider.RemoveAllData = function()
+        for index = 1, state.used do state.textures[index]:Hide() end
+        state.used = 0
     end
+    provider.OnShow = function() layerFrame:RegisterEvent("MAP_EXPLORATION_UPDATED") end
+    provider.OnHide = function() layerFrame:UnregisterEvent("MAP_EXPLORATION_UPDATED") end
+    provider.OnGlobalAlphaChanged = function(self)
+        local map = self:GetMap()
+        if map and map.GetGlobalAlpha then layerFrame:SetAlpha(map:GetGlobalAlpha()) end
+    end
+    mapFrame:AddDataProvider(provider)
+    provider:OnGlobalAlphaChanged()
+    if mapFrame:IsShown() then provider:OnShow() end
+    state.provider = provider
+    revealStates[mapFrame] = state
+    WorldMapCanvasEnhancer.revealUnexploredMapTiles(state)
+    return state
 end
 
 function WorldMapCanvasEnhancer.syncMapExplorations()
-    if WorldMapFrame and WorldMapFrame.EnumeratePinsByTemplate then
-        WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame)
-        for pin in WorldMapFrame:EnumeratePinsByTemplate("MapExplorationPinTemplate") do
-            if pin.RefreshOverlays then
-                pcall(pin.RefreshOverlays, pin, true)
-            end
-        end
-    end
-    if BattlefieldMapFrame and BattlefieldMapFrame.EnumeratePinsByTemplate then
-        WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame)
-        for pin in BattlefieldMapFrame:EnumeratePinsByTemplate("MapExplorationPinTemplate") do
-            if pin.RefreshOverlays then
-                pcall(pin.RefreshOverlays, pin, true)
-            end
-        end
+    WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame)
+    WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame)
+    for _, state in pairs(revealStates) do
+        WorldMapCanvasEnhancer.revealUnexploredMapTiles(state)
     end
 end
 
 function WorldMapCanvasEnhancer.installMapFogRevealHooks()
-    if WorldMapFrame then
-        WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame)
-        WorldMapFrame:HookScript("OnShow", function() WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame) end)
-        if WorldMapFrame.OnMapChanged then
-            hooksecurefunc(WorldMapFrame, "OnMapChanged", function() WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame) end)
-        end
-    end
-    local bfWatcher = CreateFrame("Frame")
-    bfWatcher:RegisterEvent("ADDON_LOADED")
-    bfWatcher:SetScript("OnEvent", function(_, _, addonName)
-        if addonName == "Blizzard_BattlefieldMap" and BattlefieldMapFrame then
+    WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame)
+    WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame)
+    local mapWatcher = CreateFrame("Frame")
+    mapWatcher:RegisterEvent("ADDON_LOADED")
+    mapWatcher:SetScript("OnEvent", function(_, _, addonName)
+        if addonName == "Blizzard_WorldMap" then
+            WorldMapCanvasEnhancer.bindMapExplorationPins(WorldMapFrame)
+        elseif addonName == "Blizzard_BattlefieldMap" then
             WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame)
-            BattlefieldMapFrame:HookScript("OnShow", function() WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame) end)
         end
     end)
-    if BattlefieldMapFrame then
-        WorldMapCanvasEnhancer.bindMapExplorationPins(BattlefieldMapFrame)
-    end
 end
 
 local mapCoordsFrame
