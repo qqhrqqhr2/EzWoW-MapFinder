@@ -97,7 +97,7 @@ local optionsCanvas
 function SettingsDialog.buildMapFinderSettingsFrame()
     if ns.settingsPanel then return ns.settingsPanel end
     local windowFrame = CreateFrame("Frame", "EzWoWMapFinderSettings", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    windowFrame:SetSize(440, 502)
+    windowFrame:SetSize(440, 556)
     windowFrame:SetPoint("CENTER")
     windowFrame:SetFrameStrata("FULLSCREEN_DIALOG")
     windowFrame:SetToplevel(true)
@@ -270,6 +270,10 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         renderWorldTransitMarkers()
     end)
 
+    windowFrame.rareAlertCheck = createCheckOptionRow(-426, "rareAlert", nil)
+
+    windowFrame.rareSoundCheck = createCheckOptionRow(-452, "rareAlertSound", nil)
+
     local resetBtn = createStyledActionBtn(194, 26, false, function()
         ns.DB.autoAlign = true
         ns.DB.buttonPos = { x = 0.04, y = 0.12 }
@@ -312,6 +316,10 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         self.zoomCheck:SetChecked(ns.DB.enableMapZoom ~= false)
         self.transitCheck.label:SetText(L.showTransit)
         self.transitCheck:SetChecked(ns.DB.showTransit ~= false)
+        self.rareAlertCheck.label:SetText(L.rareAlert)
+        self.rareAlertCheck:SetChecked(ns.DB.rareAlert ~= false)
+        self.rareSoundCheck.label:SetText(L.rareAlertSound)
+        self.rareSoundCheck:SetChecked(ns.DB.rareAlertSound ~= false)
         self.resetBtn.label:SetText(L.resetPos)
         self.donateBtn.label:SetText(L.donate)
         self.hintText:SetText("EzWoW - Map Finder v0.3.0  ·  " .. (L.help or "/ezmf"))

@@ -462,9 +462,12 @@ function EntityExplorerPanel.restartAsyncEntitySearch()
     end
 end
 
-function EntityExplorerPanel.handleSearchResultSelection(entry)
+function EntityExplorerPanel.handleSearchResultSelection(entry, forcedSpawnIdx)
     if not entry then return end
-    if ns.selectedEntity == entry and entry.spawns and #entry.spawns > 1 then
+    if forcedSpawnIdx then
+        ns.selectedEntity = entry
+        ns.selectedSpawnIdx = forcedSpawnIdx
+    elseif ns.selectedEntity == entry and entry.spawns and #entry.spawns > 1 then
         ns.selectedSpawnIdx = (ns.selectedSpawnIdx % #entry.spawns) + 1
     else
         ns.selectedEntity = entry
@@ -1093,3 +1096,4 @@ ns.RefreshMapPins = renderActiveEntityMapPins
 ns.PositionPanel = EntityExplorerPanel.positionPanel
 ns.RefreshUITexts = EntityExplorerPanel.syncUITexts
 ns.RunSearch = EntityExplorerPanel.restartAsyncEntitySearch
+ns.SelectEntityOnMap = EntityExplorerPanel.handleSearchResultSelection

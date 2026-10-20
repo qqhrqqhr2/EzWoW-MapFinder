@@ -81,3 +81,4 @@ Modules\SearchEngine.lua
 Modules\MapEnhancements.lua
 UI\OptionsWindow.lua
 UI\SearchPanel.lua
+Modules\RareAlert.lua

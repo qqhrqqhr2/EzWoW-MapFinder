@@ -64,6 +64,8 @@ function ns.InitializeDatabase()
     if CONST_DB.noMapFade == nil then CONST_DB.noMapFade = true end
     if CONST_DB.enableMapZoom == nil then CONST_DB.enableMapZoom = true end
     if CONST_DB.showTransit == nil then CONST_DB.showTransit = true end
+    if CONST_DB.rareAlert == nil then CONST_DB.rareAlert = true end
+    if CONST_DB.rareAlertSound == nil then CONST_DB.rareAlertSound = true end
     if type(CONST_DB.buttonPos) ~= "table" then
         CONST_DB.buttonPos = { x = 0.04, y = 0.12 }
     end

@@ -15,7 +15,7 @@ WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
 
 ### 개요
 
-월드맵에서 **몬스터 · 희귀 몬스터 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템** 위치를 바로 찾아 주는 오프라인 검색 애드온입니다. 내장 데이터는 **20,930개 항목**(NPC 7,421 · 오브젝트 7,656 · 퀘스트 4,140 · 아이템 1,713)이며 8개 언어 이름으로 검색할 수 있습니다. 미탐험 지역 안개 제거, 좌표, 지역 적정 레벨, 휠 확대, 배·비행선·지하철·차원문 표시 같은 월드맵 편의 기능도 들어 있습니다.
+월드맵에서 **몬스터 · 희귀 몬스터 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템** 위치를 바로 찾아 주는 오프라인 검색 애드온입니다. 내장 데이터는 **20,930개 항목**(NPC 7,421 · 오브젝트 7,656 · 퀘스트 4,140 · 아이템 1,713)이며 8개 언어 이름으로 검색할 수 있습니다. 미탐험 지역 안개 제거, 좌표, 지역 적정 레벨, 휠 확대, 배·비행선·지하철·차원문 표시 같은 월드맵 편의 기능과, 근처에 레어 몬스터가 나타나면 알려 주고 바로 지도에 위치를 찍어 주는 기능도 들어 있습니다.
 
 ### 화면 미리보기
 
@@ -73,6 +73,8 @@ WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
 | ⑤ | 캐릭터 이동 중 월드맵 반투명화 해제 | 켬 |
 | ⑤ | 월드맵 마우스 휠 확대/축소(최대 3.2배) 및 드래그 이동 | 켬 |
 | ⑤ | 월드맵 배 · 비행선 · 지하철 · 차원문 표시 | 켬 |
+| - | 근처에 레어 몬스터가 나타나면 알림 (이름표 · 마우스오버 · 대상, 같은 몬스터는 5분에 한 번, 던전 · 공격대 제외) | 켬 |
+| - | 레어 알림 소리 재생 | 켬 |
 | ⑥ | 위치 초기화 · 후원하기 | - |
 
 ### 명령어 (`/ezmf`, `/emf`, `/맵파인더`)
@@ -100,7 +102,7 @@ WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
 
 ### Overview
 
-Map Finder is an offline location search for the World Map: **monsters, rare elites, tameable beasts, NPCs, gathering nodes/objects, quests and items**. The built-in data has **20,930 entries** (7,421 NPCs · 7,656 objects · 4,140 quests · 1,713 items) searchable by name in 8 languages. It also adds World Map conveniences: reveal unexplored areas, coordinates, zone level ranges, wheel zoom and boat/zeppelin/tram/portal icons.
+Map Finder is an offline location search for the World Map: **monsters, rare elites, tameable beasts, NPCs, gathering nodes/objects, quests and items**. The built-in data has **20,930 entries** (7,421 NPCs · 7,656 objects · 4,140 quests · 1,713 items) searchable by name in 8 languages. It also adds World Map conveniences: reveal unexplored areas, coordinates, zone level ranges, wheel zoom and boat/zeppelin/tram/portal icons, plus an alert when a rare monster is nearby that can put its location straight on the map.
 
 ### Screenshots
 
@@ -158,6 +160,8 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ⑤ | Disable map fade while character is moving | On |
 | ⑤ | Enable World Map mouse wheel zoom (up to 3.2×) & pan | On |
 | ⑤ | Show boats, zeppelins, trams & portals on World Map | On |
+| - | Alert when a rare monster is nearby (nameplate · mouseover · target, once per 5 minutes per monster, not in dungeons or raids) | On |
+| - | Play a sound with rare alerts | On |
 | ⑥ | Reset Position · Support | - |
 
 ### Slash commands (`/ezmf`, `/emf`, `/맵파인더`)
