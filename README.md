@@ -71,7 +71,7 @@ WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
 | ④ | 월드맵 플레이어 · 마우스 좌표 표시 | 켬 |
 | ④ | 월드맵 지역 적정 레벨 · 낚시 숙련도 표시 | 켬 |
 | ⑤ | 캐릭터 이동 중 월드맵 반투명화 해제 | 켬 |
-| ⑤ | 월드맵 마우스 휠 확대/축소(최대 3.2배) 및 드래그 이동 | 켬 |
+| ⑤ | 월드맵 최대 확대 배율 늘리기 (최대 3.2배, 휠 확대·드래그는 게임 기본 기능) | 켬 |
 | ⑤ | 월드맵 배 · 비행선 · 지하철 · 차원문 표시 | 켬 |
 | - | 근처에 레어 몬스터가 나타나면 알림 (이름표 · 마우스오버 · 대상, 같은 몬스터는 5분에 한 번, 던전 · 공격대 제외) | 켬 |
 | - | 레어 알림 소리 재생 | 켬 |
@@ -158,7 +158,7 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ④ | Show player & cursor coordinates on World Map | On |
 | ④ | Show zone level & fishing skill on World Map | On |
 | ⑤ | Disable map fade while character is moving | On |
-| ⑤ | Enable World Map mouse wheel zoom (up to 3.2×) & pan | On |
+| ⑤ | Extend World Map maximum zoom (up to 3.2×; wheel zoom and drag are built into the game) | On |
 | ⑤ | Show boats, zeppelins, trams & portals on World Map | On |
 | - | Alert when a rare monster is nearby (nameplate · mouseover · target, once per 5 minutes per monster, not in dungeons or raids) | On |
 | - | Play a sound with rare alerts | On |
