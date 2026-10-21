@@ -97,7 +97,7 @@ local optionsCanvas
 function SettingsDialog.buildMapFinderSettingsFrame()
     if ns.settingsPanel then return ns.settingsPanel end
     local windowFrame = CreateFrame("Frame", "EzWoWMapFinderSettings", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    windowFrame:SetSize(440, 556)
+    windowFrame:SetSize(440, 506)
     windowFrame:SetPoint("CENTER")
     windowFrame:SetFrameStrata("FULLSCREEN_DIALOG")
     windowFrame:SetToplevel(true)
@@ -178,32 +178,32 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         return buttonWidget
     end
 
-    windowFrame.langBtns = {}
+    -- language: click the box, then pick a language from the list
+    local langBtn = createMapFinderButton(windowFrame, 220, 24, false, nil)
+    langBtn:SetPoint("TOPLEFT", 20, -110)
+    windowFrame.langBtn = langBtn
+    local langItems = {}
     for index, optionEntry in ipairs(LANG_OPTIONS) do
-        local buttonWidget = CreateFrame("Button", nil, windowFrame, BackdropTemplateMixin and "BackdropTemplate" or nil)
-        buttonWidget:SetSize(128, 22)
-        local columnIndex = (index - 1) % 3
-        local rowWidget = math.floor((index - 1) / 3)
-        buttonWidget:SetPoint("TOPLEFT", 20 + columnIndex * 136, -110 - rowWidget * 25)
-        if buttonWidget.SetBackdrop then
-            ns.UIKit:ApplyBackdrop(buttonWidget)
-        end
-        buttonWidget.label = buttonWidget:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-        buttonWidget.label:SetPoint("CENTER")
-        buttonWidget.code = optionEntry.code
-        buttonWidget.rawLabel = optionEntry.label
-        buttonWidget:SetScript("OnClick", function(self)
-            ns.DB.lang = self.code
+        langItems[index] = { value = optionEntry.code,
+            text = optionEntry.code == "auto" and function() return L.langAuto end or optionEntry.label }
+    end
+    ns.LanguageDropdown.Attach(langBtn, {
+        items = langItems,
+        colors = { bg = Theme.bg, border = Theme.border, accent = Theme.accent, text = Theme.text },
+        get = function() return ns.DB.lang or "auto" end,
+        set = function(code)
+            ns.DB.lang = code
             determineLocale()
             if ns.RefreshUITexts then ns.RefreshUITexts() end
-        end)
-        windowFrame.langBtns[index] = buttonWidget
-    end
+        end,
+    })
+    -- the single box takes 50px less than the old three rows of language buttons
+    local LANG_ROWS_SAVED = 50
 
     local function createCheckOptionRow(yOffset, dbKey, onToggle)
         local checkWidget = CreateFrame("CheckButton", nil, windowFrame, "UICheckButtonTemplate")
         checkWidget:SetSize(22, 22)
-        checkWidget:SetPoint("TOPLEFT", 18, yOffset)
+        checkWidget:SetPoint("TOPLEFT", 18, yOffset + LANG_ROWS_SAVED)
         checkWidget.label = checkWidget:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
         checkWidget.label:SetPoint("LEFT", checkWidget, "RIGHT", 4, 0)
         checkWidget.label:SetWidth(380)
@@ -334,22 +334,12 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         self.resetBtn:SetText(L.resetPos)
         self.donateBtn:SetText(L.donate)
         self.hintText:SetText("EzWoW - Map Finder v0.3.0  ·  " .. (L.help or "/ezmf"))
-        for _, lbVal in ipairs(self.langBtns) do
-            lbVal.label:SetText(lbVal.code == "auto" and L.langAuto or lbVal.rawLabel)
-            ns.UIKit:FitFontString(lbVal.label, 120, 1)
-            local active = (ns.DB.lang or "auto") == lbVal.code
-            if lbVal.SetBackdropColor then
-                if active then
-                    lbVal:SetBackdropColor(0.14, 0.24, 0.30, 0.96)
-                    lbVal:SetBackdropBorderColor(unpack(Theme.accent))
-                    lbVal.label:SetTextColor(unpack(Theme.accent))
-                else
-                    lbVal:SetBackdropColor(unpack(Theme.bgSub))
-                    lbVal:SetBackdropBorderColor(unpack(Theme.border))
-                    lbVal.label:SetTextColor(unpack(Theme.text))
-                end
-            end
+        local langName = L.langAuto
+        for _, optionEntry in ipairs(LANG_OPTIONS) do
+            if optionEntry.code ~= "auto" and optionEntry.code == (ns.DB.lang or "auto") then langName = optionEntry.label end
         end
+        self.langBtn:SetText(langName .. " ▼")
+        ns.LanguageDropdown.Refresh(self.langBtn)
         if optionsCanvas and optionsCanvas.RefreshTexts then
             optionsCanvas:RefreshTexts()
         end
