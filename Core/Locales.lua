@@ -547,3 +547,20 @@ ns.L = setmetatable({}, {
 -- Module Class Exports
 -----------------------------------------------------------------------------
 LocaleRegistry.SynchronizeActiveLocale = ns.SynchronizeActiveLocale
+
+L_EN.transitQueued = "The map will open after combat ends."
+L_EN.transitFailed = "Could not open map %d."
+LOCALES.koKR.transitQueued = "전투가 끝나면 선택한 지도를 엽니다."
+LOCALES.koKR.transitFailed = "지도를 열지 못했습니다. 지도 번호: %d"
+LOCALES.deDE.transitQueued = "Die Karte wird nach dem Kampf geöffnet."
+LOCALES.deDE.transitFailed = "Karte %d konnte nicht geöffnet werden."
+LOCALES.frFR.transitQueued = "La carte s'ouvrira après le combat."
+LOCALES.frFR.transitFailed = "Impossible d'ouvrir la carte %d."
+LOCALES.esES.transitQueued = "El mapa se abrirá al terminar el combate."
+LOCALES.esES.transitFailed = "No se pudo abrir el mapa %d."
+LOCALES.ruRU.transitQueued = "Карта откроется после завершения боя."
+LOCALES.ruRU.transitFailed = "Не удалось открыть карту %d."
+LOCALES.zhCN.transitQueued = "战斗结束后将打开所选地图。"
+LOCALES.zhCN.transitFailed = "无法打开地图%d。"
+LOCALES.zhTW.transitQueued = "戰鬥結束後將開啟所選地圖。"
+LOCALES.zhTW.transitFailed = "無法開啟地圖%d。"
