@@ -443,6 +443,18 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
             or (apiInfo.fac == "H" and (hasKo and "호드" or "Horde"))
             or (hasKo and "중립" or "Neutral")
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        if apiInfo.members then
+            -- continent / world map: every line at this stop, click opens the zone
+            local zoneInfo = C_Map.GetMapInfo and C_Map.GetMapInfo(apiInfo.zone)
+            GameTooltip:SetText(zoneInfo and zoneInfo.name or titleStr, unpack(Theme.accent))
+            for _, member in ipairs(apiInfo.members) do
+                local mc = FACTION_COLORS[member.fac] or FACTION_COLORS.N
+                GameTooltip:AddLine(hasKo and member.ko or member.en, mc[1], mc[2], mc[3], true)
+            end
+            GameTooltip:AddLine(L.transitClickZone or (hasKo and "클릭: 이 지역 지도 열기" or "Click: Open this zone's map"), unpack(Theme.muted))
+            GameTooltip:Show()
+            return
+        end
         GameTooltip:SetText(titleStr, unpack(Theme.accent))
         GameTooltip:AddLine(string.format("[%s] (%.1f, %.1f)", facText, apiInfo.x, apiInfo.y), fcVal[1], fcVal[2], fcVal[3])
         if apiInfo.dest then
@@ -453,14 +465,59 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
     pin:SetScript("OnLeave", function() GameTooltip:Hide() end)
     pin:SetScript("OnClick", function(self)
         local apiInfo = self.info
-        if apiInfo and apiInfo.dest and WorldMapFrame and WorldMapFrame.SetMapID then
+        local target = apiInfo and (apiInfo.members and apiInfo.zone or apiInfo.dest)
+        if target and WorldMapFrame and WorldMapFrame.SetMapID then
             if not (InCombatLockdown and InCombatLockdown()) then
-                pcall(WorldMapFrame.SetMapID, WorldMapFrame, apiInfo.dest)
+                pcall(WorldMapFrame.SetMapID, WorldMapFrame, target)
             end
         end
     end)
     transitPins[entryIndex] = pin
     return pin
+end
+
+-- Transit data is stored per zone map. On a continent or the world map the
+-- zone positions are projected with C_Map.GetMapRectOnMap; stops that land on
+-- the same spot (a zeppelin tower with two lines) share one pin.
+local TRANSIT_MERGE_DISTANCE = 1.2   -- percent of the map
+
+function WorldMapCanvasEnhancer.collectTransitForMap(uiMapID)
+    local direct = TRANSIT_DATA[uiMapID]
+    local mapInfo = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(uiMapID)
+    local mapType = mapInfo and mapInfo.mapType
+    local isOverview = Enum and Enum.UIMapType and (mapType == Enum.UIMapType.Continent or mapType == Enum.UIMapType.World
+        or mapType == Enum.UIMapType.Cosmic)
+    if not isOverview or not (C_Map and C_Map.GetMapRectOnMap) then
+        return direct
+    end
+    local groups = {}
+    for zoneID, stops in pairs(TRANSIT_DATA) do
+        local ok, minX, maxX, minY, maxY = pcall(C_Map.GetMapRectOnMap, zoneID, uiMapID)
+        if ok and minX and maxX and minY and maxY and maxX > minX and maxY > minY then
+            for _, stop in ipairs(stops) do
+                local x = (minX + (stop.x / 100) * (maxX - minX)) * 100
+                local y = (minY + (stop.y / 100) * (maxY - minY)) * 100
+                local group
+                for _, existing in ipairs(groups) do
+                    if math.abs(existing.x - x) < TRANSIT_MERGE_DISTANCE and math.abs(existing.y - y) < TRANSIT_MERGE_DISTANCE then
+                        group = existing
+                        break
+                    end
+                end
+                if group then
+                    local duplicate = false
+                    for _, member in ipairs(group.members) do
+                        if member.en == stop.en then duplicate = true break end
+                    end
+                    if not duplicate then group.members[#group.members + 1] = stop end
+                else
+                    groups[#groups + 1] = { kind = stop.kind, fac = stop.fac, x = x, y = y, ko = stop.ko, en = stop.en,
+                        zone = zoneID, members = { stop } }
+                end
+            end
+        end
+    end
+    return groups
 end
 
 function WorldMapCanvasEnhancer.renderWorldTransitMarkers()
@@ -471,7 +528,7 @@ function WorldMapCanvasEnhancer.renderWorldTransitMarkers()
     if not (ns.DB and ns.DB.showTransit ~= false) then return end
     if not (WorldMapFrame and WorldMapFrame:IsShown()) then return end
     local uiMapID = WorldMapFrame.GetMapID and WorldMapFrame:GetMapID()
-    local itemList = uiMapID and TRANSIT_DATA[uiMapID]
+    local itemList = uiMapID and WorldMapCanvasEnhancer.collectTransitForMap(uiMapID)
     if not itemList or #itemList == 0 then return end
 
     local canvasFrame = (WorldMapFrame.GetCanvas and WorldMapFrame:GetCanvas())
