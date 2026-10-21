@@ -555,6 +555,8 @@ function EntityExplorerPanel.syncUITexts(skipSearch)
     if uiPanel.sub then uiPanel.sub:SetText(L.subtitle) end
     if uiPanel.cfgBtn and uiPanel.cfgBtn.label then
         uiPanel.cfgBtn.label:SetText(L.settings or "설정")
+        -- header button follows its text (German / Russian are long) so the title keeps room
+        ns.UIKit:SizeButtonToText(uiPanel.cfgBtn, uiPanel.cfgBtn.label, 40, 90, 10)
     end
     uiPanel.clearBtn:SetText(L.clearPins)
     local catLabels = {
@@ -567,6 +569,7 @@ function EntityExplorerPanel.syncUITexts(skipSearch)
     }
     for _, checkWidget in ipairs(catButtons) do
         checkWidget.label:SetText(catLabels[checkWidget.cat] or checkWidget.cat)
+        ns.UIKit:FitFontString(checkWidget.label, 46, 1)
     end
     if ns.settingsPanel and ns.settingsPanel.RefreshTexts then
         ns.settingsPanel:RefreshTexts()
@@ -718,6 +721,7 @@ function EntityExplorerPanel.init()
     gearBtn.label:SetPoint("CENTER", 0, 0)
     gearBtn.label:SetText(L.settings or "설정")
     gearBtn.label:SetTextColor(unpack(Theme.text))
+    ns.UIKit:SizeButtonToText(gearBtn, gearBtn.label, 40, 90, 10)
     gearBtn:SetScript("OnEnter", function(self)
         if self.SetBackdropBorderColor then self:SetBackdropBorderColor(unpack(Theme.accent)) end
         self.label:SetTextColor(unpack(Theme.accent))
