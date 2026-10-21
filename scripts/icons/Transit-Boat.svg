@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="sail"><stop stop-color="#fff9df"/><stop offset=".55" stop-color="#e4d4ad"/><stop offset="1" stop-color="#947d55"/></linearGradient>
+    <linearGradient id="hull" x2="0" y2="1"><stop stop-color="#d8ac69"/><stop offset=".35" stop-color="#97633a"/><stop offset="1" stop-color="#412e27"/></linearGradient>
+    <linearGradient id="blue"><stop stop-color="#c9f6f5"/><stop offset="1" stop-color="#417c93"/></linearGradient>
+  </defs>
+  <g stroke="#292821" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 5v39" fill="none" stroke-width="3.4"/>
+    <path d="M28 9Q13 19 8 35h20Z" fill="url(#sail)"/>
+    <path d="M36 12q12 8 19 23H36Z" fill="url(#sail)"/>
+    <path d="M7 40q25 6 50-2L49 53q-14 8-30 0Z" fill="url(#hull)"/>
+    <path d="M10 41q23 5 44-1" fill="none" stroke="#ffe4a2" stroke-width="2.3"/>
+    <path d="m14 47 35 1" fill="none" stroke="#5a392a" stroke-width="1.5"/>
+    <path d="M24 14 14 31m26-13 8 13" fill="none" stroke="#fff8df" stroke-width="1.4" opacity=".8"/>
+    <path d="M10 58q8-4 15 0t14 0 15 0" fill="none" stroke="url(#blue)" stroke-width="3"/>
+  </g>
+</svg>

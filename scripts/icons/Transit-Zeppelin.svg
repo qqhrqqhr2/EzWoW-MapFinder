@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="envelope" cx=".4" cy=".25" r=".85"><stop stop-color="#ffe7b0"/><stop offset=".5" stop-color="#cda16a"/><stop offset="1" stop-color="#694429"/></radialGradient>
+    <linearGradient id="metal" x2="0" y2="1"><stop stop-color="#f1c576"/><stop offset=".45" stop-color="#a8703f"/><stop offset="1" stop-color="#3d302b"/></linearGradient>
+  </defs>
+  <g stroke="#292821" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m46 22 14-10v28L47 31" fill="#94633d"/>
+    <ellipse cx="29" cy="25" rx="25" ry="16" fill="url(#envelope)"/>
+    <path d="M5 26q24 8 48 0M28 10q-13 15 0 30M29 10q14 15 0 30" fill="none" stroke="#785536" stroke-width="1.5"/>
+    <path d="M13 17q13-7 29 0" fill="none" stroke="#fff1c7" stroke-width="2" opacity=".8"/>
+    <path d="m20 40 4 8m16-8-5 8" fill="none" stroke-width="1.8"/>
+    <path d="M19 47h24l-6 9H25Z" fill="url(#metal)"/>
+    <path d="M26 49h10" fill="none" stroke="#fff1b3" stroke-width="1.5"/>
+    <circle cx="17" cy="48" r="4" fill="#858f86" stroke-width="1.5"/>
+    <path d="m16 43 2 10m-6-6 10 2" fill="none" stroke="#bfc6ad" stroke-width="1.5"/>
+  </g>
+</svg>

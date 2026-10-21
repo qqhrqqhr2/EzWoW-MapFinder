@@ -408,6 +408,59 @@ end
 
 local transitPins = {}
 local activeTransitCount = 0
+local TRANSIT_ICONS = {
+    boat = "Interface\\AddOns\\EzWoW-MapFinder\\Media\\Transit-Boat",
+    zepp = "Interface\\AddOns\\EzWoW-MapFinder\\Media\\Transit-Zeppelin",
+    tram = "Interface\\AddOns\\EzWoW-MapFinder\\Media\\Transit-Tram",
+    portal = "Interface\\AddOns\\EzWoW-MapFinder\\Media\\Transit-Portal",
+}
+local pendingTransitMapID, transitNavigationFrame
+
+function WorldMapCanvasEnhancer.reportTransitNavigation(key, target)
+    local message = L[key]
+    if not message then return end
+    if target then message = message:format(target) end
+    if DEFAULT_CHAT_FRAME then DEFAULT_CHAT_FRAME:AddMessage("|cff4bc8e8EzWoW - Map Finder:|r " .. message) end
+end
+
+function WorldMapCanvasEnhancer.openTransitMap(target)
+    target = tonumber(target)
+    if not target or not WorldMapFrame or not WorldMapFrame.SetMapID then return end
+    if InCombatLockdown and InCombatLockdown() then
+        pendingTransitMapID = target
+        if not transitNavigationFrame then
+            transitNavigationFrame = CreateFrame("Frame")
+            transitNavigationFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+            transitNavigationFrame:SetScript("OnEvent", function()
+                local mapID = pendingTransitMapID
+                pendingTransitMapID = nil
+                if mapID then WorldMapCanvasEnhancer.openTransitMap(mapID) end
+            end)
+        end
+        WorldMapCanvasEnhancer.reportTransitNavigation("transitQueued")
+        return
+    end
+    local function navigate()
+        if InCombatLockdown and InCombatLockdown() then
+            WorldMapCanvasEnhancer.openTransitMap(target)
+            return
+        end
+        local ok, errorText = pcall(WorldMapFrame.SetMapID, WorldMapFrame, target)
+        if ok and WorldMapFrame.GetMapID then
+            local readable, current = pcall(WorldMapFrame.GetMapID, WorldMapFrame)
+            ok = readable and current == target
+        end
+        if not ok then
+            ns.lastTransitNavigationError = errorText or "Map did not change"
+            WorldMapCanvasEnhancer.reportTransitNavigation("transitFailed", target)
+        elseif GameTooltip then
+            GameTooltip:Hide()
+        end
+    end
+    -- Capture the destination before changing maps recycles the clicked pin.
+    -- Navigate after the current mouse event has finished.
+    if C_Timer and C_Timer.After then C_Timer.After(0, navigate) else navigate() end
+end
 
 function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
     local pin = transitPins[entryIndex]
@@ -415,24 +468,17 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
     local canvasFrame = (WorldMapFrame and WorldMapFrame.GetCanvas and WorldMapFrame:GetCanvas())
         or (_G.EzWoWWorldMapDock and _G.EzWoWWorldMapDock:GetCanvas())
         or WorldMapFrame
-    pin = CreateFrame("Button", nil, canvasFrame, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    pin = CreateFrame("Button", nil, canvasFrame)
+    pin:EnableMouse(true)
+    pin:RegisterForClicks("LeftButtonUp")
+    if pin.SetMouseClickEnabled then pin:SetMouseClickEnabled(true) end
+    if pin.SetPropagateMouseClicks then pin:SetPropagateMouseClicks(false) end
     pin:SetSize(20, 20)
     pin:SetFrameStrata("HIGH")
     pin:SetFrameLevel((canvasFrame:GetFrameLevel() or 10) + 180)
-    if pin.SetBackdrop then
-        ns.UIKit:ApplyBackdrop(pin)
-        pin:SetBackdropColor(0.071, 0.094, 0.122, 0.92)
-    end
     local iconTex = pin:CreateTexture(nil, "ARTWORK")
-    iconTex:SetPoint("TOPLEFT", 2, -2)
-    iconTex:SetPoint("BOTTOMRIGHT", -2, 2)
+    iconTex:SetAllPoints()
     pin.icon = iconTex
-
-    local tag = pin:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    tag:SetPoint("CENTER", 0, 0)
-    pin.tag = tag
-
-    pin:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square", "ADD")
     pin:SetScript("OnEnter", function(self)
         local apiInfo = self.info
         if not apiInfo then return end
@@ -452,6 +498,7 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
                 GameTooltip:AddLine(hasKo and member.ko or member.en, mc[1], mc[2], mc[3], true)
             end
             GameTooltip:AddLine(L.transitClickZone or (hasKo and "클릭: 이 지역 지도 열기" or "Click: Open this zone's map"), unpack(Theme.muted))
+            GameTooltip:AddLine("EzWoW - Map Finder", unpack(Theme.muted))
             GameTooltip:Show()
             return
         end
@@ -460,17 +507,15 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
         if apiInfo.dest then
             GameTooltip:AddLine(L.transitClick or "Click: Open destination map", unpack(Theme.muted))
         end
+        GameTooltip:AddLine("EzWoW - Map Finder", unpack(Theme.muted))
         GameTooltip:Show()
     end)
     pin:SetScript("OnLeave", function() GameTooltip:Hide() end)
-    pin:SetScript("OnClick", function(self)
+    pin:SetScript("OnMouseDown", function(self, button)
+        if button ~= "LeftButton" then return end
         local apiInfo = self.info
         local target = apiInfo and (apiInfo.members and apiInfo.zone or apiInfo.dest)
-        if target and WorldMapFrame and WorldMapFrame.SetMapID then
-            if not (InCombatLockdown and InCombatLockdown()) then
-                pcall(WorldMapFrame.SetMapID, WorldMapFrame, target)
-            end
-        end
+        if target then WorldMapCanvasEnhancer.openTransitMap(target) end
     end)
     transitPins[entryIndex] = pin
     return pin
@@ -481,8 +526,19 @@ end
 -- the same spot (a zeppelin tower with two lines) share one pin.
 local TRANSIT_MERGE_DISTANCE = 1.2   -- percent of the map
 
+function WorldMapCanvasEnhancer.filterTransitByFaction(stops, playerFaction)
+    local visible = {}
+    for _, stop in ipairs(stops or {}) do
+        local enemy = (playerFaction == "Horde" and stop.fac == "A")
+            or (playerFaction == "Alliance" and stop.fac == "H")
+        if not enemy then visible[#visible + 1] = stop end
+    end
+    return visible
+end
+
 function WorldMapCanvasEnhancer.collectTransitForMap(uiMapID)
-    local direct = TRANSIT_DATA[uiMapID]
+    local playerFaction = UnitFactionGroup and UnitFactionGroup("player")
+    local direct = WorldMapCanvasEnhancer.filterTransitByFaction(TRANSIT_DATA[uiMapID], playerFaction)
     local mapInfo = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(uiMapID)
     local mapType = mapInfo and mapInfo.mapType
     local isOverview = Enum and Enum.UIMapType and (mapType == Enum.UIMapType.Continent or mapType == Enum.UIMapType.World
@@ -494,12 +550,12 @@ function WorldMapCanvasEnhancer.collectTransitForMap(uiMapID)
     for zoneID, stops in pairs(TRANSIT_DATA) do
         local ok, minX, maxX, minY, maxY = pcall(C_Map.GetMapRectOnMap, zoneID, uiMapID)
         if ok and minX and maxX and minY and maxY and maxX > minX and maxY > minY then
-            for _, stop in ipairs(stops) do
+            for _, stop in ipairs(WorldMapCanvasEnhancer.filterTransitByFaction(stops, playerFaction)) do
                 local x = (minX + (stop.x / 100) * (maxX - minX)) * 100
                 local y = (minY + (stop.y / 100) * (maxY - minY)) * 100
                 local group
                 for _, existing in ipairs(groups) do
-                    if math.abs(existing.x - x) < TRANSIT_MERGE_DISTANCE and math.abs(existing.y - y) < TRANSIT_MERGE_DISTANCE then
+                    if existing.kind == stop.kind and math.abs(existing.x - x) < TRANSIT_MERGE_DISTANCE and math.abs(existing.y - y) < TRANSIT_MERGE_DISTANCE then
                         group = existing
                         break
                     end
@@ -540,46 +596,16 @@ function WorldMapCanvasEnhancer.renderWorldTransitMarkers()
     if not cScale or cScale <= 0 then cScale = 1 end
     local pinScale = 1 / cScale
 
-    local hasKo = (ns.activeLocale == "koKR")
     for index = 1, #itemList do
         local apiInfo = itemList[index]
         local pin = WorldMapCanvasEnhancer.obtainTransitPin(index)
         pin:SetParent(canvasFrame)
         pin.info = apiInfo
-        local fcVal = FACTION_COLORS[apiInfo.fac] or FACTION_COLORS.N
-        if pin.SetBackdropBorderColor then
-            if apiInfo.kind == "portal" then
-                pin:SetBackdropBorderColor(0.788, 0.643, 0.937, 1.0)
-            else
-                pin:SetBackdropBorderColor(fcVal[1], fcVal[2], fcVal[3], 1.0)
-            end
-        end
-        pin.icon:SetTexture(nil)
-        pin.tag:SetText("")
-        local usedAtlas = false
-        if apiInfo.kind == "portal" and pin.icon.SetAtlas and C_Texture and C_Texture.GetAtlasInfo then
-            local atlasName = (apiInfo.fac == "H") and "MagePortalHorde" or "MagePortalAlliance"
-            if C_Texture.GetAtlasInfo(atlasName) then
-                pin.icon:SetAtlas(atlasName)
-                usedAtlas = true
-            end
-        elseif (apiInfo.kind == "boat" or apiInfo.kind == "zepp" or apiInfo.kind == "tram") and pin.icon.SetAtlas and C_Texture and C_Texture.GetAtlasInfo then
-            local atlasName = (apiInfo.fac == "A" and "TaxiNode_Continent_Alliance")
-                or (apiInfo.fac == "H" and "TaxiNode_Continent_Horde")
-                or "TaxiNode_Continent_Neutral"
-            if C_Texture.GetAtlasInfo(atlasName) then
-                pin.icon:SetAtlas(atlasName)
-                usedAtlas = true
-            end
-        end
-        if not usedAtlas then
-            local lbl = (apiInfo.kind == "portal" and (hasKo and "문" or "P"))
-                or (apiInfo.kind == "tram" and (hasKo and "철" or "T"))
-                or (apiInfo.kind == "zepp" and (hasKo and "비" or "Z"))
-                or (hasKo and "배" or "B")
-            pin.tag:SetText(lbl)
-            pin.tag:SetTextColor(fcVal[1], fcVal[2], fcVal[3])
-        end
+        local texture = TRANSIT_ICONS[apiInfo.kind] or TRANSIT_ICONS.boat
+        pin.icon:SetTexture(texture)
+        pin:SetHighlightTexture(texture, "ADD")
+        local highlight = pin:GetHighlightTexture()
+        if highlight then highlight:SetAlpha(0.3) end
         pin:SetScale(pinScale)
         pin:ClearAllPoints()
         pin:SetPoint("CENTER", canvasFrame, "TOPLEFT", ((apiInfo.x / 100) * cwVal) / pinScale, -((apiInfo.y / 100) * chVal) / pinScale)
