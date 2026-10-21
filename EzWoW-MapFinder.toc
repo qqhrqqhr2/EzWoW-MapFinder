@@ -12,6 +12,14 @@
 ## Title-zhTW: EzWoW - Map Finder
 ## Notes: Offline monster, NPC, object, quest, and item location & waypoint finder on the world map (8 languages)
 ## Notes-koKR: 월드맵에서 몬스터·NPC·오브젝트·퀘스트·아이템 위치를 검색하고 지도 핀 및 웨이포인트로 안내합니다. (8개 언어 지원)
+## Notes-enUS: Offline monster, NPC, object, quest, and item location & waypoint finder on the world map (8 languages)
+## Notes-deDE: Offline-Suche nach Monstern, NSC, Objekten, Quests und Gegenständen auf der Weltkarte mit Wegpunkten (8 Sprachen)
+## Notes-frFR: Recherche hors ligne de monstres, PNJ, objets interactifs, quêtes et objets sur la carte du monde, avec points de passage (8 langues)
+## Notes-esES: Buscador sin conexión de monstruos, PNJ, objetos interactivos, misiones y objetos en el mapa del mundo con puntos de ruta (8 idiomas)
+## Notes-esMX: Buscador sin conexión de monstruos, PNJ, objetos interactivos, misiones y objetos en el mapa del mundo con puntos de ruta (8 idiomas)
+## Notes-ruRU: Офлайн-поиск монстров, НИП, объектов, заданий и предметов на карте мира с путевыми точками (8 языков)
+## Notes-zhCN: 离线在世界地图上搜索怪物、NPC、物体、任务和物品位置并设置路径点（8 种语言）
+## Notes-zhTW: 離線在世界地圖上搜尋怪物、NPC、物件、任務和物品位置並設定路徑點（8 種語言）
 ## Author: qqhrqqhr2
 ## Version: 2.0.4
 ## Category: EzWoW

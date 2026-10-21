@@ -521,6 +521,89 @@ ns.LANG_OPTIONS = LANG_OPTIONS
 ns.LANG_ALIASES = LANG_ALIASES
 ns.OPTION_TIPS_KO = OPTION_TIPS_KO
 ns.OPTION_TIPS_EN = OPTION_TIPS_EN
+-- Option tooltips for the other six languages
+local OPTION_TIPS_OTHER = {
+    deDE = {
+        autoAlign = "Richtet die Kartenknöpfe der EzWoW-Reihe automatisch untereinander unten links auf der Weltkarte aus. Deaktivieren, um sie frei zu ziehen.",
+        autoWaypoint = "Setzt beim Klick auf ein Suchergebnis zusätzlich zum Pfeil einen Kartenwegpunkt.",
+        revealMap = "Deckt unerforschte Gebiete auf der Welt- und der Schlachtfeldkarte auf.",
+        revealTint = "Färbt aufgedeckte, unerforschte Gebiete leicht blau, damit man sie von erkundeten unterscheiden kann.",
+        showCoords = "Zeigt unten auf der Weltkarte deine Koordinaten und die des Mauszeigers.",
+        showZoneLevels = "Zeigt neben dem Gebietsnamen auf der Weltkarte die empfohlene Stufe und die nötige Angelfertigkeit.",
+        noMapFade = "Verhindert, dass die Weltkarte beim Laufen halbtransparent wird.",
+        enableMapZoom = "Erhöht die maximale Vergrößerung der Weltkarte per Mausrad (bis 3,2-fach). Zoomen und Ziehen sind im Spiel eingebaut; ausgeschaltet bleibt das Standardmaximum.",
+        showTransit = "Zeigt Häfen, Zeppelintürme, Stationen der Tiefenbahn und Portale auf der Weltkarte. Ein Klick auf eine Markierung öffnet die Zielkarte.",
+        rareAlert = "Zeigt oben eine Karte, wenn ein seltenes Monster per Namensplakette, Mauszeiger oder Ziel erscheint. Höchstens alle 5 Minuten pro Monster; Dungeons, Schlachtzüge und tote Monster werden ignoriert.",
+        rareAlertSound = "Spielt einen kurzen Kartenton, wenn eine Warnung für ein seltenes Monster erscheint.",
+    },
+    frFR = {
+        autoAlign = "Aligne automatiquement les boutons de carte EzWoW en colonne en bas à gauche de la carte du monde. Décochez pour les déplacer librement.",
+        autoWaypoint = "Ajoute un point de passage sur la carte en plus de la flèche quand vous cliquez sur un résultat.",
+        revealMap = "Révèle les zones inexplorées sur la carte du monde et la carte de champ de bataille.",
+        revealTint = "Teinte en bleu clair les zones révélées pour les distinguer des zones explorées.",
+        showCoords = "Affiche vos coordonnées et celles du curseur en bas de la carte du monde.",
+        showZoneLevels = "Affiche à côté du nom de zone le niveau conseillé et la compétence de pêche requise.",
+        noMapFade = "Empêche la carte du monde de devenir semi-transparente quand vous vous déplacez.",
+        enableMapZoom = "Augmente le zoom maximal de la carte du monde à la molette (jusqu'à 3,2x). Le zoom et le glisser sont intégrés au jeu ; désactivé, le maximum par défaut est conservé.",
+        showTransit = "Affiche ports, tours de zeppelin, stations du tram des profondeurs et portails sur la carte du monde. Cliquez sur un repère pour ouvrir la carte de destination.",
+        rareAlert = "Affiche une carte en haut de l'écran quand un monstre rare apparaît (barre de nom, survol ou cible). Une alerte au plus toutes les 5 minutes par monstre ; donjons, raids et monstres morts ignorés.",
+        rareAlertSound = "Joue un court son de carte quand une alerte de monstre rare apparaît.",
+    },
+    esES = {
+        autoAlign = "Alinea automáticamente en columna los botones de mapa de EzWoW abajo a la izquierda del mapa del mundo. Desmárcalo para moverlos libremente.",
+        autoWaypoint = "Al pulsar un resultado, coloca un punto de ruta en el mapa además de la flecha.",
+        revealMap = "Revela las zonas sin explorar en el mapa del mundo y en el de campo de batalla.",
+        revealTint = "Tiñe de azul claro las zonas reveladas para distinguirlas de las exploradas.",
+        showCoords = "Muestra tus coordenadas y las del cursor en la parte inferior del mapa del mundo.",
+        showZoneLevels = "Muestra junto al nombre de la zona el nivel recomendado y la habilidad de pesca necesaria.",
+        noMapFade = "Evita que el mapa del mundo se vuelva semitransparente mientras te mueves.",
+        enableMapZoom = "Aumenta el zoom máximo del mapa del mundo con la rueda (hasta 3,2x). El zoom y el arrastre ya vienen en el juego; desactivado, se mantiene el máximo predeterminado.",
+        showTransit = "Muestra puertos, torres de zepelín, estaciones del Tranvía Subterráneo y portales en el mapa del mundo. Pulsa un marcador para abrir el mapa de destino.",
+        rareAlert = "Muestra una tarjeta arriba cuando aparece un monstruo raro (placa de nombre, ratón u objetivo). Como máximo un aviso cada 5 minutos por monstruo; se ignoran mazmorras, bandas y monstruos muertos.",
+        rareAlertSound = "Reproduce un breve sonido de mapa cuando aparece un aviso de monstruo raro.",
+    },
+    ruRU = {
+        autoAlign = "Автоматически выстраивает кнопки EzWoW столбиком в левом нижнем углу карты мира. Снимите флажок, чтобы перемещать их свободно.",
+        autoWaypoint = "При щелчке по результату ставит путевую точку на карте в дополнение к стрелке.",
+        revealMap = "Открывает неисследованные области на карте мира и карте поля боя.",
+        revealTint = "Подкрашивает открытые неисследованные области голубым, чтобы отличать их от исследованных.",
+        showCoords = "Показывает внизу карты мира ваши координаты и координаты курсора.",
+        showZoneLevels = "Показывает рядом с названием зоны рекомендуемые уровни и нужный навык рыбной ловли.",
+        noMapFade = "Не даёт карте мира становиться полупрозрачной во время движения.",
+        enableMapZoom = "Увеличивает максимальное приближение карты мира колесом мыши (до 3,2x). Масштаб и перетаскивание есть в игре; без этой опции остаётся стандартный предел.",
+        showTransit = "Показывает пристани, башни дирижаблей, станции Подземки и порталы на карте мира. Щелчок по метке открывает карту пункта назначения.",
+        rareAlert = "Показывает карточку вверху экрана, когда редкий монстр появляется на индикаторе, под курсором или в цели. Не чаще раза в 5 минут на монстра; подземелья, рейды и мёртвые монстры не учитываются.",
+        rareAlertSound = "Проигрывает короткий звук карты при появлении оповещения о редком монстре.",
+    },
+    zhCN = {
+        autoAlign = "自动将 EzWoW 系列地图按钮竖向排列在世界地图左下角。取消勾选可自由拖动。",
+        autoWaypoint = "点击搜索结果时，除箭头外还自动放置地图路径点。",
+        revealMap = "在世界地图和战场地图上显示未探索区域。",
+        revealTint = "将显示出的未探索区域染成浅蓝色，以便与已探索区域区分。",
+        showCoords = "在世界地图底部显示你的坐标和鼠标坐标。",
+        showZoneLevels = "在世界地图区域标题旁显示建议等级范围和所需钓鱼技能。",
+        noMapFade = "防止角色移动时世界地图变为半透明。",
+        enableMapZoom = "提高鼠标滚轮缩放世界地图的最大倍数（最高 3.2 倍）。滚轮缩放和拖动为游戏内置功能，关闭后保持默认上限。",
+        showTransit = "在世界地图上显示港口、飞艇塔、矿道地铁站和传送门。点击标记可打开目的地地图。",
+        rareAlert = "稀有怪物出现在姓名板、鼠标指向或目标中时，在屏幕上方显示提示卡。每个怪物最多每 5 分钟提醒一次，忽略地下城、团队副本和已死亡的怪物。",
+        rareAlertSound = "稀有提示卡出现时播放简短的地图提示音。",
+    },
+    zhTW = {
+        autoAlign = "自動將 EzWoW 系列地圖按鈕直向排列在世界地圖左下角。取消勾選可自由拖曳。",
+        autoWaypoint = "點擊搜尋結果時，除箭頭外還自動放置地圖路徑點。",
+        revealMap = "在世界地圖和戰場地圖上顯示未探索區域。",
+        revealTint = "將顯示出的未探索區域染成淺藍色，以便與已探索區域區分。",
+        showCoords = "在世界地圖底部顯示你的座標和滑鼠座標。",
+        showZoneLevels = "在世界地圖區域標題旁顯示建議等級範圍和所需釣魚技能。",
+        noMapFade = "防止角色移動時世界地圖變為半透明。",
+        enableMapZoom = "提高滑鼠滾輪縮放世界地圖的最大倍數（最高 3.2 倍）。滾輪縮放和拖曳為遊戲內建功能，關閉後維持預設上限。",
+        showTransit = "在世界地圖上顯示港口、飛艇塔、礦道地鐵站和傳送門。點擊標記可開啟目的地地圖。",
+        rareAlert = "稀有怪物出現在名條、滑鼠指向或目標中時，在畫面上方顯示提示卡。每隻怪物最多每 5 分鐘提醒一次，忽略地城、團隊副本和已死亡的怪物。",
+        rareAlertSound = "稀有提示卡出現時播放簡短的地圖提示音。",
+    },
+}
+OPTION_TIPS_OTHER.esMX = OPTION_TIPS_OTHER.esES
+ns.OPTION_TIPS_OTHER = OPTION_TIPS_OTHER
 
 function ns.SynchronizeActiveLocale()
     local clientLoc = (GetLocale and GetLocale()) or "enUS"

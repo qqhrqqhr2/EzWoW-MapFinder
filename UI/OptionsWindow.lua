@@ -217,7 +217,8 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         end)
         checkWidget:SetScript("OnEnter", function(self)
             local hasKo = (ns.activeLocale == "koKR")
-            local tipWidget = (hasKo and OPTION_TIPS_KO[dbKey]) or OPTION_TIPS_EN[dbKey]
+            local otherTips = ns.OPTION_TIPS_OTHER and ns.OPTION_TIPS_OTHER[ns.activeLocale]
+            local tipWidget = (hasKo and OPTION_TIPS_KO[dbKey]) or (otherTips and otherTips[dbKey]) or OPTION_TIPS_EN[dbKey]
             if tipWidget and GameTooltip then
                 GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
                 GameTooltip:SetText(self.label:GetText() or "", unpack(Theme.accent))

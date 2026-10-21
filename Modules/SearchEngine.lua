@@ -3,6 +3,13 @@
 -- Modules/SearchEngine.lua : Multilingual NPC/Object/Rare/Pet Search & Coordinate Projector
 --===========================================================================
 local _, ns = ...
+-- Text for the game's AddOns panel in the six languages without their own line: { deDE, frFR, esES, ruRU, zhCN, zhTW }
+local PANEL_LANG_INDEX = { deDE = 1, frFR = 2, esES = 3, esMX = 3, ruRU = 4, zhCN = 5, zhTW = 6, de = 1, fr = 2, es = 3, ru = 4 }
+local function panelText(code, ko, en, others)
+    if code == "koKR" or code == "ko" then return ko end
+    local index = PANEL_LANG_INDEX[code or ""]
+    return (index and others and others[index]) or en
+end
 
 local EntitySearchEngine = ns.EntitySearchEngine or {}
 ns.EntitySearchEngine = EntitySearchEngine
@@ -417,7 +424,7 @@ function EntitySearchEngine.composePetRowTag(e)
     local petInfo = e.petInfo
     local hasKo = (ns.activeLocale == "koKR")
     local familyInfo = petInfo.family and EzWoWMapFinderPetFamilies and EzWoWMapFinderPetFamilies[petInfo.family]
-    local famName = familyInfo and (hasKo and familyInfo.ko or familyInfo.en) or (hasKo and "야수" or "Beast")
+    local famName = familyInfo and (hasKo and familyInfo.ko or familyInfo.en) or panelText(ns.activeLocale, "야수", "Beast", { "Wildtier", "Bête", "Bestia", "Зверь", "野兽", "野獸" })
     local lvlStr
     if petInfo.minLvl and petInfo.minLvl > 0 then
         if petInfo.maxLvl and petInfo.maxLvl ~= petInfo.minLvl then
@@ -446,9 +453,9 @@ function EntitySearchEngine.addPetTooltipLines(e)
     local petInfo = e.petInfo
     local hasKo = (ns.activeLocale == "koKR")
     local familyInfo = petInfo.family and EzWoWMapFinderPetFamilies and EzWoWMapFinderPetFamilies[petInfo.family]
-    local famName = familyInfo and (hasKo and familyInfo.ko or familyInfo.en) or (hasKo and "야수" or "Beast")
+    local famName = familyInfo and (hasKo and familyInfo.ko or familyInfo.en) or panelText(ns.activeLocale, "야수", "Beast", { "Wildtier", "Bête", "Bestia", "Зверь", "野兽", "野獸" })
     if petInfo.elite then
-        famName = famName .. (hasKo and "·정예" or "·Elite")
+        famName = famName .. panelText(ns.activeLocale, "·정예", "·Elite", { "·Elite", "·Élite", "·Élite", "·Элита", "·精英", "·精英" })
     end
     local lvlStr = "?"
     if petInfo.minLvl and petInfo.minLvl > 0 then

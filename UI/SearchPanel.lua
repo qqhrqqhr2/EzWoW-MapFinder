@@ -3,6 +3,13 @@
 -- UI/SearchPanel.lua : WorldMap Docked Entity Search Panel & Animated Map Pins
 --===========================================================================
 local _, ns = ...
+-- Text for the game's AddOns panel in the six languages without their own line: { deDE, frFR, esES, ruRU, zhCN, zhTW }
+local PANEL_LANG_INDEX = { deDE = 1, frFR = 2, esES = 3, esMX = 3, ruRU = 4, zhCN = 5, zhTW = 6, de = 1, fr = 2, es = 3, ru = 4 }
+local function panelText(code, ko, en, others)
+    if code == "koKR" or code == "ko" then return ko end
+    local index = PANEL_LANG_INDEX[code or ""]
+    return (index and others and others[index]) or en
+end
 
 local EntityExplorerPanel = ns.EntityExplorerPanel or {}
 ns.EntityExplorerPanel = EntityExplorerPanel
@@ -1073,9 +1080,9 @@ function EntityExplorerPanel.init()
 
         function canvasFrame:RefreshTexts()
             local hasKo = (L.settings == "설정")
-            desc:SetText(hasKo and "세계지도에서 몬스터, NPC, 오브젝트, 퀘스트, 아이템 위치를 빠르게 검색하고 화살표 마커 및 지도 추적 핀(웨이포인트)으로 안내합니다." or "Quickly searches and marks monster, NPC, object, quest, and item locations on the world map with arrow pins and map waypoints.")
+            desc:SetText(panelText(ns.activeLocale, "세계지도에서 몬스터, NPC, 오브젝트, 퀘스트, 아이템 위치를 빠르게 검색하고 화살표 마커 및 지도 추적 핀(웨이포인트)으로 안내합니다.", "Quickly searches and marks monster, NPC, object, quest, and item locations on the world map with arrow pins and map waypoints.", { "Sucht Monster, NSC, Objekte, Quests und Gegenstände auf der Weltkarte und markiert sie mit Pfeilen und Wegpunkten.", "Recherche monstres, PNJ, objets interactifs, quêtes et objets sur la carte du monde et les marque avec des flèches et des points de passage.", "Busca monstruos, PNJ, objetos interactivos, misiones y objetos en el mapa del mundo y los marca con flechas y puntos de ruta.", "Быстро находит монстров, НИП, объекты, задания и предметы на карте мира и отмечает их стрелками и путевыми точками.", "在世界地图上快速搜索怪物、NPC、物体、任务和物品，并用箭头和路径点标记。", "在世界地圖上快速搜尋怪物、NPC、物件、任務和物品，並以箭頭和路徑點標記。" }))
             buttonWidget:SetText((L.settings or "설정") .. " (/ezmf)")
-            hint:SetText(hasKo and "채팅창에 /ezmf 또는 /ezmf config를 입력해도 설정창을 열 수 있습니다." or "Type /ezmf or /ezmf config in chat to open settings.")
+            hint:SetText(panelText(ns.activeLocale, "채팅창에 /ezmf 또는 /ezmf config를 입력해도 설정창을 열 수 있습니다.", "Type /ezmf or /ezmf config in chat to open settings.", { "Du kannst die Einstellungen auch mit /ezmf oder /ezmf config im Chat öffnen.", "Vous pouvez aussi ouvrir les options en tapant /ezmf ou /ezmf config dans le chat.", "También puedes abrir las opciones escribiendo /ezmf o /ezmf config en el chat.", "Настройки также открываются командой /ezmf или /ezmf config в чате.", "也可以在聊天框输入 /ezmf 或 /ezmf config 打开设置。", "也可以在聊天框輸入 /ezmf 或 /ezmf config 開啟設定。" }))
         end
         canvasFrame:SetScript("OnShow", function(self) self:RefreshTexts() end)
         canvasFrame:RefreshTexts()
