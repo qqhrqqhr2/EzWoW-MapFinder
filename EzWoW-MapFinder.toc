@@ -21,7 +21,7 @@
 ## Notes-zhCN: 离线在世界地图上搜索怪物、NPC、物体、任务和物品位置并设置路径点（8 种语言）
 ## Notes-zhTW: 離線在世界地圖上搜尋怪物、NPC、物件、任務和物品位置並設定路徑點（8 種語言）
 ## Author: qqhrqqhr2
-## Version: 2.0.4
+## Version: 2.0.5
 ## Category: EzWoW
 ## SavedVariables: EzWoW_MapFinderDB
 ## IconTexture: Interface\AddOns\EzWoW-MapFinder\Media\Icon
