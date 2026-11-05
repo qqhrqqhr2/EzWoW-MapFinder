@@ -61,7 +61,7 @@ function EntitySearchEngine.resolveLocalizedEntityName(e)
             if e._clientNpcName == nil then
                 local isCallOk, payloadData = pcall(C_TooltipInfo.GetHyperlink, "unit:Creature-0-0-0-0-" .. tostring(e.id) .. "-0")
                 local line1 = isCallOk and payloadData and payloadData.lines and payloadData.lines[1] and payloadData.lines[1].leftText
-                if line1 and line1 ~= "" and not (issecretvalue and issecretvalue(line1)) then
+                if line1 and not (issecretvalue and issecretvalue(line1)) and line1 ~= "" then
                     e._clientNpcName = line1
                 else
                     e._clientNpcName = false
@@ -437,8 +437,9 @@ function EntitySearchEngine.composePetRowTag(e)
     local skillName
     if petInfo.skills and petInfo.skills[1] and EzWoWMapFinderPetSkills then
         local skillInfo = EzWoWMapFinderPetSkills[petInfo.skills[1]]
-        if skillInfo then
-            skillName = (hasKo and skillInfo.ko or skillInfo.en) .. (skillInfo.rank and (" " .. tostring(skillInfo.rank)) or "")
+        local baseName = skillInfo and ((hasKo and skillInfo.ko) or skillInfo.en or skillInfo.ko)
+        if baseName and baseName ~= "" then
+            skillName = baseName .. (skillInfo.rank and (" " .. tostring(skillInfo.rank)) or "")
         end
     end
     local segs = { famName }
@@ -478,8 +479,8 @@ function EntitySearchEngine.addPetTooltipLines(e)
         local sList = {}
         for _, spellIDVal in ipairs(petInfo.skills) do
             local skillInfo = EzWoWMapFinderPetSkills[spellIDVal]
-            if skillInfo then
-                local snVal = hasKo and skillInfo.ko or skillInfo.en
+            local snVal = skillInfo and ((hasKo and skillInfo.ko) or skillInfo.en or skillInfo.ko)
+            if snVal and snVal ~= "" then
                 if skillInfo.rank then
                     snVal = snVal .. (hasKo and (" " .. skillInfo.rank .. "등급") or (" " .. skillInfo.rank))
                 end

@@ -334,7 +334,13 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         self.rareSoundCheck:SetChecked(ns.DB.rareAlertSound ~= false)
         self.resetBtn:SetText(L.resetPos)
         self.donateBtn:SetText(L.donate)
-        self.hintText:SetText("EzWoW - Map Finder v0.3.0  ·  " .. (L.help or "/ezmf"))
+        local getMeta = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata
+        local isMetaOk, addonVersion = false, nil
+        if type(getMeta) == "function" then
+            isMetaOk, addonVersion = pcall(getMeta, ns.ADDON_NAME or "EzWoW-MapFinder", "Version")
+        end
+        local versionStr = (isMetaOk and type(addonVersion) == "string" and addonVersion ~= "") and (" v" .. addonVersion) or ""
+        self.hintText:SetText("EzWoW - Map Finder" .. versionStr .. "  ·  " .. (L.help or "/ezmf"))
         local langName = L.langAuto
         for _, optionEntry in ipairs(LANG_OPTIONS) do
             if optionEntry.code ~= "auto" and optionEntry.code == (ns.DB.lang or "auto") then langName = optionEntry.label end

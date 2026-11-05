@@ -205,7 +205,8 @@ function WorldMapCanvasEnhancer.initializeMapCoordOverlay()
             local coordPos = C_Map.GetPlayerMapPosition(uiMapID, "player")
             if coordPos then
                 local pxVal, pyVal = coordPos:GetXY()
-                if pxVal and pyVal and (pxVal > 0 or pyVal > 0) then
+                local isSecret = issecretvalue and (issecretvalue(pxVal) or issecretvalue(pyVal))
+                if pxVal and pyVal and not isSecret and (pxVal > 0 or pyVal > 0) then
                     pStr = string.format("%.1f, %.1f", pxVal * 100, pyVal * 100)
                 end
             end
@@ -375,6 +376,8 @@ end
 
 function WorldMapCanvasEnhancer.expandCanvasZoomRange(scVal)
     if not (ns.DB and ns.DB.enableMapZoom ~= false) then return end
+    -- the zoom table belongs to the game's map; leave it alone during combat
+    if InCombatLockdown and InCombatLockdown() then return end
     if not (scVal and scVal.zoomLevels and #scVal.zoomLevels > 0) then return end
     local base = scVal.zoomLevels[1]
     local top = scVal.zoomLevels[#scVal.zoomLevels]
@@ -394,6 +397,7 @@ end
 
 function WorldMapCanvasEnhancer.commitMapZoom(resetZoom)
     if not (WorldMapFrame and WorldMapFrame.ScrollContainer) then return end
+    if InCombatLockdown and InCombatLockdown() then return end
     local scVal = WorldMapFrame.ScrollContainer
     if scVal.CreateZoomLevels then
         pcall(scVal.CreateZoomLevels, scVal)

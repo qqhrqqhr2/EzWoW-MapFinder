@@ -48,6 +48,7 @@ function RareAlertNotifier.resolvePlayerLocation()
     local pos = C_Map.GetPlayerMapPosition and C_Map.GetPlayerMapPosition(mapID, "player")
     local px, py
     if pos and pos.GetXY then px, py = pos:GetXY() end
+    if issecretvalue and (issecretvalue(px) or issecretvalue(py)) then px, py = nil, nil end
     local mapInfo = C_Map.GetMapInfo and C_Map.GetMapInfo(mapID)
     return mapID, px, py, mapInfo and mapInfo.name or ""
 end
@@ -57,9 +58,19 @@ function RareAlertNotifier.findNearestSpawnIndex(entity, mapID, px, py)
     local spawns = entity and entity.spawns
     if not spawns or #spawns == 0 then return nil end
     local bestIdx, bestDist = 1, nil
+    if not (mapID and px and py) then return bestIdx end
+    local project = ns.ProjectSpawnToWorldMapCoords
     for index, sp in ipairs(spawns) do
-        if sp[2] == mapID and px and py and sp[3] and sp[4] then
-            local dx, dy = sp[3] - px, sp[4] - py
+        -- handles both {-1, uiMapID, x, y} and world-coordinate {instanceID, wx, wy, wz} spawns
+        local sx, sy
+        if sp[1] == -1 then
+            if sp[2] == mapID then sx, sy = sp[3], sp[4] end
+        elseif project then
+            local okProj, projMap, mx, my = pcall(project, sp, mapID)
+            if okProj and projMap == mapID then sx, sy = mx, my end
+        end
+        if sx and sy then
+            local dx, dy = sx - px, sy - py
             local dist = dx * dx + dy * dy
             if not bestDist or dist < bestDist then
                 bestIdx, bestDist = index, dist

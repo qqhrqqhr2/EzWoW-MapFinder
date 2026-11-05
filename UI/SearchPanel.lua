@@ -566,6 +566,7 @@ function EntityExplorerPanel.syncUITexts(skipSearch)
         ns.UIKit:SizeButtonToText(uiPanel.cfgBtn, uiPanel.cfgBtn.label, 40, 90, 10)
     end
     uiPanel.clearBtn:SetText(L.clearPins)
+    if edit and edit.placeholder then edit.placeholder:SetText(L.searchHint or "") end
     local catLabels = {
         all     = L.catAll,
         monster = L.catMonster,
@@ -803,18 +804,33 @@ function EntityExplorerPanel.init()
     edit:SetTextColor(unpack(Theme.text))
     edit:SetTextInsets(6, 6, 0, 0)
     edit:SetAutoFocus(false)
+    -- grey hint text while the box is empty and not focused
+    edit.placeholder = edit:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    edit.placeholder:SetPoint("LEFT", edit, "LEFT", 7, 0)
+    edit.placeholder:SetPoint("RIGHT", edit, "RIGHT", -6, 0)
+    edit.placeholder:SetJustifyH("LEFT")
+    if edit.placeholder.SetWordWrap then edit.placeholder:SetWordWrap(false) end
+    edit.placeholder:SetTextColor(unpack(Theme.muted))
+    edit.placeholder:SetText(L.searchHint or "")
+    local function updatePlaceholder(self)
+        self.placeholder:SetShown((self:GetText() or "") == "" and not self:HasFocus())
+    end
     edit:SetScript("OnEditFocusGained", function(self)
         if self.SetBackdropBorderColor then self:SetBackdropBorderColor(unpack(Theme.accent)) end
+        updatePlaceholder(self)
     end)
     edit:SetScript("OnEditFocusLost", function(self)
         if self.SetBackdropBorderColor then self:SetBackdropBorderColor(unpack(Theme.border)) end
+        updatePlaceholder(self)
     end)
-    edit:SetScript("OnTextChanged", function()
+    edit:SetScript("OnTextChanged", function(self)
+        updatePlaceholder(self)
         if uiPanel and uiPanel:IsShown() then
             EntityExplorerPanel.restartAsyncEntitySearch()
         end
     end)
     edit:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
+    edit:SetScript("OnEnterPressed", function(self) self:ClearFocus() end)
 
     local resetPinsBtn = createMapFinderButton(uiPanel, 74, 22, false, function()
         ns.selectedEntity = nil
@@ -1034,7 +1050,9 @@ function EntityExplorerPanel.init()
             return
         end
         if WorldMapFrame and not WorldMapFrame:IsShown() and not (InCombatLockdown and InCombatLockdown()) then
-            WorldMapFrame:Show()
+            -- open through the UI panel manager so ESC / other panels close it normally
+            if ShowUIPanel then pcall(ShowUIPanel, WorldMapFrame) end
+            if not WorldMapFrame:IsShown() then WorldMapFrame:Show() end
         end
         uiPanel:Show()
         if raw ~= "" then
@@ -1098,7 +1116,34 @@ end
 
 local parentFrame = CreateFrame("Frame")
 parentFrame:RegisterEvent("PLAYER_LOGIN")
-parentFrame:SetScript("OnEvent", EntityExplorerPanel.init)
+parentFrame:SetScript("OnEvent", function(self, event, addonName)
+    if event == "PLAYER_LOGIN" then
+        if WorldMapFrame then
+            EntityExplorerPanel.init()
+            return
+        end
+        -- The world map UI is not loaded yet: load settings now (rare alerts use them)
+        -- and finish the map setup once Blizzard_WorldMap loads.
+        bootstrapDB()
+        self:RegisterEvent("ADDON_LOADED")
+        SLASH_EZWOWMAPFINDER1 = "/ezmf"
+        SLASH_EZWOWMAPFINDER2 = "/emf"
+        SLASH_EZWOWMAPFINDER3 = "/맵파인더"
+        local function pendingSlashHandler(msg)
+            if not uiPanel and ToggleWorldMap and not (InCombatLockdown and InCombatLockdown()) then
+                pcall(ToggleWorldMap)
+            end
+            local realHandler = SlashCmdList.EZWOWMAPFINDER
+            if uiPanel and realHandler and realHandler ~= pendingSlashHandler then
+                realHandler(msg)
+            end
+        end
+        SlashCmdList.EZWOWMAPFINDER = pendingSlashHandler
+    elseif event == "ADDON_LOADED" and addonName == "Blizzard_WorldMap" and WorldMapFrame then
+        self:UnregisterEvent("ADDON_LOADED")
+        EntityExplorerPanel.init()
+    end
+end)
 
 ns.ApplyWaypointForSpawn = EntityExplorerPanel.setMapWaypointForSpawn
 ns.ClearUserWaypointPin = EntityExplorerPanel.removeActiveUserWaypoint
