@@ -94,11 +94,32 @@ end
 
 local optionsCanvas
 
+-- Settings window position, kept like the rare alert card's (falls back to the screen centre).
+function SettingsDialog.saveSettingsPosition(windowFrame)
+    if not ns.DB then return end
+    local isCallOk, point, _, relPoint, x, y = pcall(windowFrame.GetPoint, windowFrame, 1)
+    if isCallOk and type(point) == "string" and type(x) == "number" and type(y) == "number" then
+        ns.DB.settingsPos = { point = point, relPoint = relPoint or point, x = x, y = y }
+    end
+end
+
+function SettingsDialog.restoreSettingsPosition(windowFrame)
+    windowFrame:ClearAllPoints()
+    local pos = ns.DB and ns.DB.settingsPos
+    if type(pos) == "table" and type(pos.point) == "string" and type(pos.x) == "number" and type(pos.y) == "number" then
+        local isPlaced = pcall(windowFrame.SetPoint, windowFrame, pos.point, UIParent, pos.relPoint or pos.point, pos.x, pos.y)
+        if isPlaced then return end
+        windowFrame:ClearAllPoints()
+        ns.DB.settingsPos = nil
+    end
+    windowFrame:SetPoint("CENTER")
+end
+
 function SettingsDialog.buildMapFinderSettingsFrame()
     if ns.settingsPanel then return ns.settingsPanel end
     local windowFrame = CreateFrame("Frame", "EzWoWMapFinderSettings", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
     windowFrame:SetSize(440, 506)
-    windowFrame:SetPoint("CENTER")
+    SettingsDialog.restoreSettingsPosition(windowFrame)
     windowFrame:SetFrameStrata("FULLSCREEN_DIALOG")
     windowFrame:SetToplevel(true)
     windowFrame:SetClampedToScreen(true)
@@ -122,7 +143,10 @@ function SettingsDialog.buildMapFinderSettingsFrame()
     top:EnableMouse(true)
     top:RegisterForDrag("LeftButton")
     top:SetScript("OnDragStart", function() windowFrame:StartMoving() end)
-    top:SetScript("OnDragStop", function() windowFrame:StopMovingOrSizing() end)
+    top:SetScript("OnDragStop", function()
+        windowFrame:StopMovingOrSizing()
+        SettingsDialog.saveSettingsPosition(windowFrame)
+    end)
 
     local accentLine = top:CreateTexture(nil, "ARTWORK")
     accentLine:SetColorTexture(unpack(Theme.accent))
