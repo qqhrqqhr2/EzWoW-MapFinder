@@ -118,7 +118,7 @@ end
 function SettingsDialog.buildMapFinderSettingsFrame()
     if ns.settingsPanel then return ns.settingsPanel end
     local windowFrame = CreateFrame("Frame", "EzWoWMapFinderSettings", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    windowFrame:SetSize(440, 506)
+    windowFrame:SetSize(440, 558)
     SettingsDialog.restoreSettingsPosition(windowFrame)
     windowFrame:SetFrameStrata("FULLSCREEN_DIALOG")
     windowFrame:SetToplevel(true)
@@ -299,6 +299,14 @@ function SettingsDialog.buildMapFinderSettingsFrame()
 
     windowFrame.rareSoundCheck = createCheckOptionRow(-452, "rareAlertSound", nil)
 
+    windowFrame.questPinsCheck = createCheckOptionRow(-478, "questLogPins", function()
+        if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
+    end)
+
+    windowFrame.questPinsAllCheck = createCheckOptionRow(-504, "questLogPinsAll", function()
+        if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
+    end)
+
     local resetBtn = createStyledActionBtn(194, 26, false, function()
         ns.DB.autoAlign = true
         ns.DB.buttonPos = { x = 0.04, y = 0.12 }
@@ -356,6 +364,12 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         self.rareSoundCheck.label:SetText(L.rareAlertSound)
         ns.UIKit:FitFontString(self.rareSoundCheck.label, 380, 1)
         self.rareSoundCheck:SetChecked(ns.DB.rareAlertSound ~= false)
+        self.questPinsCheck.label:SetText(L.questLogPins)
+        ns.UIKit:FitFontString(self.questPinsCheck.label, 380, 1)
+        self.questPinsCheck:SetChecked(ns.DB.questLogPins ~= false)
+        self.questPinsAllCheck.label:SetText(L.questLogPinsAll)
+        ns.UIKit:FitFontString(self.questPinsAllCheck.label, 380, 1)
+        self.questPinsAllCheck:SetChecked(ns.DB.questLogPinsAll == true)
         self.resetBtn:SetText(L.resetPos)
         self.donateBtn:SetText(L.donate)
         local getMeta = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata

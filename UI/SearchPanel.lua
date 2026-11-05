@@ -292,6 +292,101 @@ local searchCursor = 1
 local searchTotal = 0
 local activeMatchers = nil
 local matchedSpawnByEntity = {}
+-- nearest spawn of each result to the player (filled when results are sorted)
+local nearestSpawnByEntity = {}
+local resultsSorted = false
+local SORT_LIMIT = 1500        -- longer lists (whole categories) keep data order
+local SORT_SPAWN_SAMPLE = 240  -- spawns looked at per result at most
+
+local ZONE_BOUNDS_BY_ID = ns.ZONE_BOUNDS_BY_ID or {}
+local INSTANCE_ZONES = ns.INSTANCE_ZONES or {}
+
+local function isUsableNumber(v)
+    if v == nil then return false end
+    if issecretvalue and issecretvalue(v) then return false end
+    return type(v) == "number" and v == v
+end
+
+-- map position (0-1) on a zone with known bounds -> continent id, world x, world y
+local function boundsToWorld(b, mx, my)
+    if not (b and isUsableNumber(mx) and isUsableNumber(my)) then return nil end
+    return b.mapID, b.xMax - my * (b.xMax - b.xMin), b.yMax - mx * (b.yMax - b.yMin)
+end
+
+function EntityExplorerPanel.spawnWorldPosition(sp)
+    if type(sp) ~= "table" then return nil end
+    local instID = sp[1]
+    if instID == -1 then
+        return boundsToWorld(ZONE_BOUNDS_BY_ID[sp[2]], sp[3], sp[4])
+    end
+    local instInfo = INSTANCE_ZONES[instID]
+    if instInfo then
+        return boundsToWorld(ZONE_BOUNDS_BY_ID[instInfo.uiMapID], instInfo.mx, instInfo.my)
+    end
+    if isUsableNumber(sp[2]) and isUsableNumber(sp[3]) then return instID, sp[2], sp[3] end
+end
+
+-- The player's continent, world position and current zone bounds (nil inside instances)
+function EntityExplorerPanel.resolvePlayerWorldPosition()
+    if not (C_Map and C_Map.GetBestMapForUnit and C_Map.GetPlayerMapPosition) then return nil end
+    local okMap, mapID = pcall(C_Map.GetBestMapForUnit, "player")
+    if not okMap or not isUsableNumber(mapID) then return nil end
+    for _ = 1, 4 do
+        local b = ZONE_BOUNDS_BY_ID[mapID]
+        if b then
+            local okPos, pos = pcall(C_Map.GetPlayerMapPosition, mapID, "player")
+            if okPos and pos and pos.GetXY then
+                local inst, wx, wy = boundsToWorld(b, pos:GetXY())
+                if inst then return inst, wx, wy, (b.mtype == 3) and b or nil end
+            end
+            return nil
+        end
+        local info = C_Map.GetMapInfo and C_Map.GetMapInfo(mapID)
+        mapID = info and info.parentMapID
+        if not isUsableNumber(mapID) or mapID == 0 then return nil end
+    end
+end
+
+-- Current zone first, then the same continent by distance, then the rest (data order)
+function EntityExplorerPanel.sortResultsByProximity()
+    resultsSorted = true
+    nearestSpawnByEntity = {}
+    local count = #filteredResults
+    if count < 2 or count > SORT_LIMIT then return end
+    local pInst, pwx, pwy, zone = EntityExplorerPanel.resolvePlayerWorldPosition()
+    if not pInst then return end
+    local tierOf, distOf, orderOf = {}, {}, {}
+    for index, entry in ipairs(filteredResults) do
+        local tier, best, bestIdx = 2, math.huge, nil
+        local spawns = entry.spawns
+        local n = spawns and #spawns or 0
+        local step = (n > SORT_SPAWN_SAMPLE) and math.ceil(n / SORT_SPAWN_SAMPLE) or 1
+        for spIdx = 1, n, step do
+            local inst, wx, wy = EntityExplorerPanel.spawnWorldPosition(spawns[spIdx])
+            if inst == pInst and wx then
+                local dx, dy = wx - pwx, wy - pwy
+                local d = dx * dx + dy * dy
+                local inZone = zone and wx >= zone.xMin and wx <= zone.xMax and wy >= zone.yMin and wy <= zone.yMax
+                local spTier = inZone and 0 or 1
+                if spTier < tier or (spTier == tier and d < best) then
+                    tier, best, bestIdx = spTier, d, spIdx
+                end
+            end
+        end
+        tierOf[entry], distOf[entry], orderOf[entry] = tier, best, index
+        if bestIdx then nearestSpawnByEntity[entry] = bestIdx end
+    end
+    table.sort(filteredResults, function(a, b)
+        if tierOf[a] ~= tierOf[b] then return tierOf[a] < tierOf[b] end
+        if tierOf[a] < 2 and distOf[a] ~= distOf[b] then return distOf[a] < distOf[b] end
+        return orderOf[a] < orderOf[b]
+    end)
+end
+
+-- spawn shown first for a result: the one the zone word matched, else the nearest
+function EntityExplorerPanel.defaultSpawnIndex(entry)
+    return matchedSpawnByEntity[entry] or nearestSpawnByEntity[entry] or 1
+end
 
 refreshRows = function()
     if not uiPanel then return end
@@ -337,7 +432,7 @@ refreshRows = function()
                     local columnIndex = KIND_COLORS[entry.kind] or "|cffedf4f7"
                     badge = columnIndex .. "[" .. string.upper(string.sub(entry.kind, 1, 1)) .. "]|r "
                 end
-                local spIdx = (ns.selectedEntity == entry) and ns.selectedSpawnIdx or (matchedSpawnByEntity[entry] or 1)
+                local spIdx = (ns.selectedEntity == entry) and ns.selectedSpawnIdx or EntityExplorerPanel.defaultSpawnIndex(entry)
                 local zName = resolveEntityZoneName(entry, spIdx)
                 local zonePrefix = (zName and zName ~= "") and ("|cff7ecbe0" .. zName .. "|r |cffa7b9c5>|r ") or ""
                 local eName = resolveLocalizedEntityName(entry)
@@ -378,6 +473,7 @@ function EntityExplorerPanel.executeAsyncSearchBatch()
     if not hasSearching or not searchPool or searchCursor > searchTotal then
         hasSearching = false
         searchWorker:SetScript("OnUpdate", nil)
+        if not resultsSorted then EntityExplorerPanel.sortResultsByProximity() end
         refreshRows()
         return
     end
@@ -422,6 +518,7 @@ function EntityExplorerPanel.executeAsyncSearchBatch()
         hasSearching = false
         searchWorker:SetScript("OnUpdate", nil)
     end
+    if not hasSearching and not resultsSorted then EntityExplorerPanel.sortResultsByProximity() end
     refreshRows()
 end
 
@@ -446,6 +543,8 @@ function EntityExplorerPanel.restartAsyncEntitySearch()
     searchTotal = #searchPool
     filteredResults = {}
     matchedSpawnByEntity = {}
+    nearestSpawnByEntity = {}
+    resultsSorted = false
     scrollOffset = 0
     activeMatchers = parseSearchQueryTokens(priorityQueue)
 
@@ -455,6 +554,7 @@ function EntityExplorerPanel.restartAsyncEntitySearch()
         for index = 1, searchTotal do
             filteredResults[index] = searchPool[index]
         end
+        EntityExplorerPanel.sortResultsByProximity()
         refreshRows()
         return
     end
@@ -478,7 +578,7 @@ function EntityExplorerPanel.handleSearchResultSelection(entry, forcedSpawnIdx)
         ns.selectedSpawnIdx = (ns.selectedSpawnIdx % #entry.spawns) + 1
     else
         ns.selectedEntity = entry
-        ns.selectedSpawnIdx = matchedSpawnByEntity[entry] or 1
+        ns.selectedSpawnIdx = EntityExplorerPanel.defaultSpawnIndex(entry)
     end
     refreshRows()
     local spawns = entry.spawns
@@ -877,7 +977,7 @@ function EntityExplorerPanel.init()
             if sub and sub ~= "" then
                 GameTooltip:AddLine("<" .. sub .. ">", 0.655, 0.725, 0.773)
             end
-            local spIdx = (ns.selectedEntity == recordEntry) and ns.selectedSpawnIdx or (matchedSpawnByEntity[recordEntry] or 1)
+            local spIdx = (ns.selectedEntity == recordEntry) and ns.selectedSpawnIdx or EntityExplorerPanel.defaultSpawnIndex(recordEntry)
             local zName = resolveEntityZoneName(recordEntry, spIdx)
             local spCount = recordEntry.spawns and #recordEntry.spawns or 0
             if zName and zName ~= "" then
@@ -992,21 +1092,25 @@ function EntityExplorerPanel.init()
             hooksecurefunc(WorldMapFrame, "OnMapChanged", function()
                 renderActiveEntityMapPins()
                 renderWorldTransitMarkers()
+                if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
             end)
         end
         if WorldMapFrame.OnCanvasScaleChanged then
             hooksecurefunc(WorldMapFrame, "OnCanvasScaleChanged", function()
                 renderActiveEntityMapPins()
                 renderWorldTransitMarkers()
+                if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
             end)
         end
         WorldMapFrame:HookScript("OnShow", function()
             renderActiveEntityMapPins()
             renderWorldTransitMarkers()
+            if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
         end)
         WorldMapFrame:HookScript("OnSizeChanged", function()
             renderActiveEntityMapPins()
             renderWorldTransitMarkers()
+            if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
         end)
     end
 

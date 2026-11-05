@@ -90,4 +90,5 @@ Modules\MapEnhancements.lua
 UI\LanguageDropdown.lua
 UI\OptionsWindow.lua
 UI\SearchPanel.lua
+Modules\QuestLogPins.lua
 Modules\RareAlert.lua

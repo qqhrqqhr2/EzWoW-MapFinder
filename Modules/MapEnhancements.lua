@@ -368,9 +368,48 @@ function WorldMapCanvasEnhancer.installZoneLevelHeaderHook()
     end
 end
 
+-- The player's own mapFade value is saved the first time the option takes effect
+-- and put back when the option is turned off; with the option off nothing is touched.
+function WorldMapCanvasEnhancer.readCVar(name)
+    if C_CVar and C_CVar.GetCVar then
+        local ok, value = pcall(C_CVar.GetCVar, name)
+        if ok then return value end
+    end
+    if type(GetCVar) == "function" then
+        local ok, value = pcall(GetCVar, name)
+        if ok then return value end
+    end
+end
+
+function WorldMapCanvasEnhancer.writeCVar(name, value)
+    if C_CVar and C_CVar.SetCVar then
+        if pcall(C_CVar.SetCVar, name, value) then return end
+    end
+    if type(SetCVar) == "function" then pcall(SetCVar, name, value) end
+end
+
 function WorldMapCanvasEnhancer.commitMapFade()
-    if SetCVar then
-        pcall(SetCVar, "mapFade", (ns.DB and ns.DB.noMapFade ~= false) and "0" or "1")
+    if not ns.DB then return end
+    if ns.DB.noMapFade ~= false then
+        if ns.DB.mapFadeOriginal == nil then
+            local current = WorldMapCanvasEnhancer.readCVar("mapFade")
+            if type(current) ~= "string" or current == "" then current = nil end
+            -- earlier versions set 0 on every login without keeping the old value;
+            -- a 0 found then is most likely ours, so the game default is kept instead
+            if current == "0" and not ns.DB.mapFadeSaveV1 then
+                local ok, default
+                if C_CVar and C_CVar.GetCVarDefault then ok, default = pcall(C_CVar.GetCVarDefault, "mapFade") end
+                current = (ok and type(default) == "string" and default ~= "") and default or "1"
+            end
+            ns.DB.mapFadeOriginal = current or "1"
+        end
+        ns.DB.mapFadeSaveV1 = true
+        if WorldMapCanvasEnhancer.readCVar("mapFade") ~= "0" then
+            WorldMapCanvasEnhancer.writeCVar("mapFade", "0")
+        end
+    elseif ns.DB.mapFadeOriginal ~= nil then
+        WorldMapCanvasEnhancer.writeCVar("mapFade", tostring(ns.DB.mapFadeOriginal))
+        ns.DB.mapFadeOriginal = nil
     end
 end
 

@@ -7,7 +7,7 @@
 
 **[한국어](#한국어) · [English](#english)**
 
-WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
+WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ---
 
@@ -39,7 +39,7 @@ WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
 | ② | 분류 탭 | 전체 / 몬스터 / NPC / 오브젝트 / 퀘스트 / 아이템 |
 | ③ | 검색창 | 이름 일부를 입력합니다. **접두어 + 공백**으로 종류를 좁힐 수 있습니다(아래 표). “오그경매”, “스톰은행”, “아포은행”, “가젯여관”, “기공”, “마부”, “수리”, “날탈”처럼 붙여 쓴 약칭도 알아듣습니다. **핀 지우기**는 지도에 찍은 표시를 지웁니다. |
 | ④ | 야수 정보 | `P `로 찾으면 야수 과, 레벨, 공격 속도, 먹이, 공격/방어/생명력 배율, 배울 수 있는 기술(단계)이 결과와 툴팁에 나옵니다. |
-| ⑤ | 위치 표시 | 결과를 누르면 그 지역 지도로 이동해 **튀는 화살표(▼)**와 게임 기본 **웨이포인트 핀**을 찍습니다. 출현 지점이 여러 곳이면 누를 때마다 다음 위치로 넘어갑니다. |
+| ⑤ | 위치 표시 | 결과를 누르면 그 지역 지도로 이동해 **튀는 화살표(▼)**와 게임 기본 **웨이포인트 핀**을 찍습니다. 결과는 **지금 있는 지역 → 가까운 순 → 나머지** 순서로 정렬되고, 처음 누르면 가장 가까운 출현 지점으로 갑니다. 출현 지점이 여러 곳이면 누를 때마다 다음 위치로 넘어갑니다. |
 | ⑥ | 지역 정보 | 지역 이름 옆에 적정 레벨(내 레벨 대비 색)과 필요한 낚시 숙련도 |
 | ⑦ | 좌표 | 지도 아래에 플레이어 · 마우스 좌표 |
 | ⑧ | 이동 수단 | 배 · 비행선 · 깊은굴 지하철 · 차원문(제프라스 섬 · 강물숲 · 달라란 포함)을 진영 색 아이콘으로 표시하고, 누르면 도착지 지도로 이동합니다. |
@@ -75,6 +75,8 @@ WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
 | ⑤ | 월드맵 배 · 비행선 · 지하철 · 차원문 표시 | 켬 |
 | - | 근처에 레어 몬스터가 나타나면 알림 (이름표 · 마우스오버 · 대상, 같은 몬스터는 5분에 한 번, 던전 · 공격대 제외) | 켬 |
 | - | 레어 알림 소리 재생 | 켬 |
+| - | 완료한 퀘스트의 보고 위치를 지도에 표시 (퀘스트 목록에서 목표를 다 채운 퀘스트를 주거나 받는 곳에 노란 `?`, 누르면 웨이포인트) | 켬 |
+| - | 진행 중인 퀘스트 위치도 표시 (회색 `?`) | 끔 |
 | ⑥ | 위치 초기화 · 후원하기 | - |
 
 ### 명령어 (`/ezmf`, `/emf`, `/맵파인더`)
@@ -94,6 +96,7 @@ WoW Forever (`Interface: 16001`) · `v0.3.0` · `/ezmf`
 ### 알아두면 좋은 점
 
 - 전투 중에는 게임 규칙상 지도 지역을 바꿀 수 없습니다. 전투가 끝난 뒤 결과를 눌러 주세요.
+- "캐릭터 이동 중 월드맵 반투명화 해제"를 끄면 원래 쓰던 게임 설정으로 되돌립니다.
 - 검색은 프레임이 끊기지 않도록 나눠서 진행되며, 진행 중에는 `[검색중...] (%)`이 보입니다.
 
 ---
@@ -126,7 +129,7 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ② | Category tabs | All / Monster / NPC / Object / Quest / Item |
 | ③ | Search box | Type part of a name. A **prefix + space** narrows the type (table below). Run-together Korean shortcuts (e.g. “오그경매” = Orgrimmar auction house) are understood. **Clear Pins** removes the map markers. |
 | ④ | Beast info | With `P ` you get family, level, attack speed, diet, damage/armor/health modifiers and learnable skills (rank) in the results and tooltip. |
-| ⑤ | Show on map | Click a result to jump to its zone with a **bouncing arrow (▼)** and a Blizzard **waypoint pin**. With several spawns, each click moves to the next one. |
+| ⑤ | Show on map | Click a result to jump to its zone with a **bouncing arrow (▼)** and a Blizzard **waypoint pin**. Results are sorted **your current zone → nearest → the rest**, and the first click goes to the nearest spawn. With several spawns, each click moves to the next one. |
 | ⑥ | Zone info | Level range (coloured against your level) and required fishing skill next to the zone name |
 | ⑦ | Coordinates | Player and cursor coordinates below the map |
 | ⑧ | Transport | Boats, zeppelins, the Deeprun Tram and portals (incl. Zephras Isle, Riverglades and Dalaran) in faction colours; click to open the destination map. |
@@ -162,6 +165,8 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ⑤ | Show boats, zeppelins, trams & portals on World Map | On |
 | - | Alert when a rare monster is nearby (nameplate · mouseover · target, once per 5 minutes per monster, not in dungeons or raids) | On |
 | - | Play a sound with rare alerts | On |
+| - | Show turn-in spots of finished quests on the map (yellow `?` where quests in your log with all objectives done are given / turned in; click for a waypoint) | On |
+| - | Also show spots of quests still in progress (grey `?`) | Off |
 | ⑥ | Reset Position · Support | - |
 
 ### Slash commands (`/ezmf`, `/emf`, `/맵파인더`)
@@ -181,6 +186,7 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 ### Tips
 
 - The game does not allow changing the map zone in combat; click the result again after combat.
+- Turning off "Disable map fade while character is moving" puts your previous game setting back.
 - Searches run in small steps to avoid frame drops; `[Searching...] (%)` is shown meanwhile.
 
 ---
