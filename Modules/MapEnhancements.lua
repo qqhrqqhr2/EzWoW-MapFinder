@@ -232,140 +232,114 @@ function WorldMapCanvasEnhancer.initializeMapCoordOverlay()
     WorldMapCanvasEnhancer.refreshMapCoordsVisibility()
 end
 
-local function StripZoneLabelDecorations(rawText)
-    if type(rawText) ~= "string" or rawText == "" then return "" end
-    local s = rawText
-    -- Strip our own colored suffixes
-    s = s:gsub("%s*|cff%x%x%x%x%x%x%(%d+[^)]*%)|r.*$", "")
-    s = s:gsub("%s*|cff%x%x%x%x%x%x%[[^%]]*%]|r.*$", "")
-    -- Strip any native/second-line level suffix like "\n(20-30)" or " (20-30)"
-    s = s:gsub("%s*[\r\n]+%s*|?c?f?f?%x*%s*%(%d+%s*%-?%s*%d*%).*$", "")
-    s = s:gsub("%s*%(%d+%s*%-?%s*%d*%)$", "")
-    return s
+-- Zone level under the World Map's area label. The label writes the hovered
+-- area's name into its Name text; a hook on that SetText looks the name up in
+-- our zone table and shows the level range (and fishing skill) in texts of our
+-- own under it. Only names of zones we know get a level, so dungeons, cities
+-- and points of interest never do. Nothing of the game's label is written.
+local zoneLevelLabel, zoneLevelText, zoneFishText, zoneLevelByName
+
+function WorldMapCanvasEnhancer.buildZoneLevelNames()
+    zoneLevelByName = {}
+    if not (C_Map and C_Map.GetMapInfo) then return end
+    for mapID in pairs(ZONE_LEVEL_DATA) do
+        local ok, info = pcall(C_Map.GetMapInfo, mapID)
+        local name = ok and type(info) == "table" and info.name
+        if type(name) == "string" and name ~= "" and not zoneLevelByName[name] then
+            zoneLevelByName[name] = mapID
+        end
+    end
 end
 
-local function ApplyZoneLevelToMapLabel(labelFrame)
-    if not labelFrame or labelFrame._ezmfUpdating then return end
-    local nameFS = labelFrame.Name
-    if not nameFS then return end
-    local descFS = labelFrame.Description
-    local rawName = nameFS:GetText()
-    if not rawName or rawName == "" then return end
-
-    if not (ns.DB and ns.DB.showZoneLevels ~= false) then
-        local stripped = StripZoneLabelDecorations(rawName)
-        if stripped ~= rawName and stripped ~= "" then
-            labelFrame._ezmfUpdating = true
-            nameFS:SetText(stripped)
-            labelFrame._ezmfUpdating = false
-        end
-        return
-    end
-
-    -- Clear duplicate plain level range on Description if present so it never flickers on a 2nd line
-    if descFS and descFS.GetText then
-        local dTxt = descFS:GetText()
-        if dTxt and dTxt ~= "" then
-            local cleanDesc = dTxt:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
-            if cleanDesc:match("^%s*%(?%d+%s*%-?%s*%d*%)?%s*$") then
-                descFS:SetText("")
-            end
-        end
-    end
-
-    if rawName == labelFrame._ezmfLastName then return end
-
-    local baseName = StripZoneLabelDecorations(rawName)
-    if baseName == "" then return end
-
-    local uiMapID = WorldMapFrame and WorldMapFrame.GetMapID and WorldMapFrame:GetMapID()
-    if not uiMapID then return end
-    local targetMapID = uiMapID
-    local scVal = WorldMapFrame.ScrollContainer
-    if scVal and scVal.GetNormalizedCursorPosition and C_Map and C_Map.GetMapInfoAtPosition then
-        local cxVal, cyVal = scVal:GetNormalizedCursorPosition()
-        if cxVal and cyVal and cxVal >= 0 and cxVal <= 1 and cyVal >= 0 and cyVal <= 1 then
-            local qx = math.floor(cxVal * 500 + 0.5)
-            local qy = math.floor(cyVal * 500 + 0.5)
-            if labelFrame._ezmfLastMapID == uiMapID and labelFrame._ezmfLastQX == qx and labelFrame._ezmfLastQY == qy and labelFrame._ezmfCachedTargetMapID then
-                targetMapID = labelFrame._ezmfCachedTargetMapID
-            else
-                local childInfo = C_Map.GetMapInfoAtPosition(uiMapID, cxVal, cyVal)
-                if childInfo and childInfo.mapID then
-                    targetMapID = childInfo.mapID
-                end
-                labelFrame._ezmfLastMapID = uiMapID
-                labelFrame._ezmfLastQX = qx
-                labelFrame._ezmfLastQY = qy
-                labelFrame._ezmfCachedTargetMapID = targetMapID
-            end
-        end
-    end
-
-    local zInfo = ZONE_LEVEL_DATA[targetMapID]
-    if not zInfo then
-        labelFrame._ezmfLastName = rawName
-        return
-    end
-
-    local minL, maxL, fishReq = zInfo[1], zInfo[2], zInfo[3]
+function WorldMapCanvasEnhancer.formatZoneLevel(minL, maxL)
     local pLvl = UnitLevel("player") or 1
-    local fishLabel = L.fishingSkill or "Fishing"
-    local cacheKey = string.format("%s:%d:%d:%s", baseName, targetMapID, pLvl, fishLabel)
-    local finalHeader = (labelFrame._ezmfCacheKey == cacheKey) and labelFrame._ezmfCacheHeader or nil
-
-    if not finalHeader then
-        local columnIndex = "|cffffffff"
-        if pLvl < minL - 3 then
-            columnIndex = "|cffff5050"
-        elseif pLvl < minL then
-            columnIndex = "|cffff9933"
-        elseif pLvl <= maxL + 2 then
-            columnIndex = "|cff55e673"
-        else
-            columnIndex = "|cff99aabb"
-        end
-        local lvlText = (minL == maxL) and string.format("%s(%d)|r", columnIndex, minL) or string.format("%s(%d-%d)|r", columnIndex, minL, maxL)
-        local fishText = (fishReq and fishReq > 0) and string.format(" |cff7ecbe0[%s %d]|r", fishLabel, fishReq) or ""
-        finalHeader = baseName .. " " .. lvlText .. fishText
-        labelFrame._ezmfCacheKey = cacheKey
-        labelFrame._ezmfCacheHeader = finalHeader
+    local color
+    if pLvl < minL - 3 then
+        color = "|cffff5050"
+    elseif pLvl < minL then
+        color = "|cffff9933"
+    elseif pLvl <= maxL + 2 then
+        color = "|cff55e673"
+    else
+        color = "|cff99aabb"
     end
+    if minL == maxL then return string.format("%s(%d)|r", color, minL) end
+    return string.format("%s(%d-%d)|r", color, minL, maxL)
+end
 
-    labelFrame._ezmfLastName = finalHeader
-    if rawName ~= finalHeader then
-        labelFrame._ezmfUpdating = true
-        nameFS:SetText(finalHeader)
-        labelFrame._ezmfUpdating = false
+function WorldMapCanvasEnhancer.refreshZoneLevelLabel()
+    if not (zoneLevelText and zoneLevelLabel) then return end
+    zoneLevelText:Hide()
+    zoneFishText:Hide()
+    if not (ns.DB and ns.DB.showZoneLevels ~= false) then return end
+    if zoneLevelLabel.IsShown and not zoneLevelLabel:IsShown() then return end
+    local nameFS = zoneLevelLabel.Name
+    local name = nameFS and nameFS:GetText()
+    if type(name) ~= "string" or name == "" or (issecretvalue and issecretvalue(name)) then return end
+    if not zoneLevelByName then WorldMapCanvasEnhancer.buildZoneLevelNames() end
+    local mapID = zoneLevelByName[name]
+    local zInfo = mapID and ZONE_LEVEL_DATA[mapID]
+    if not zInfo then return end
+
+    -- below the description when the label shows one, else below the name
+    local anchor = nameFS
+    local descFS = zoneLevelLabel.Description
+    local desc = descFS and descFS.GetText and descFS:GetText()
+    if type(desc) == "string" and desc ~= "" and not (issecretvalue and issecretvalue(desc)) then anchor = descFS end
+    zoneLevelText:ClearAllPoints()
+    zoneLevelText:SetPoint("TOP", anchor, "BOTTOM", 0, -4)
+    zoneLevelText:SetText(WorldMapCanvasEnhancer.formatZoneLevel(zInfo[1], zInfo[2]))
+    zoneLevelText:Show()
+
+    local fishReq = zInfo[3]
+    if fishReq and fishReq > 0 then
+        zoneFishText:SetText(string.format("|cff7ecbe0%s %d|r", L.fishingSkill or "Fishing", fishReq))
+        zoneFishText:Show()
     end
 end
 
 function WorldMapCanvasEnhancer.installZoneLevelHeaderHook()
-    if not (WorldMapFrame and WorldMapFrame.dataProviders) then return end
-    for WorldMapDataProvider in pairs(WorldMapFrame.dataProviders) do
-        if WorldMapDataProvider and WorldMapDataProvider.Label and WorldMapDataProvider.Label.Name and not WorldMapDataProvider.Label._ezmfZoneLevelHooked then
-            local labelFrame = WorldMapDataProvider.Label
-            labelFrame._ezmfZoneLevelHooked = true
-            labelFrame:HookScript("OnUpdate", function(self)
-                ApplyZoneLevelToMapLabel(self)
-            end)
-            if type(WorldMapDataProvider.EvaluateLabels) == "function" then
-                hooksecurefunc(WorldMapDataProvider, "EvaluateLabels", function()
-                    ApplyZoneLevelToMapLabel(labelFrame)
-                end)
-            end
-            if labelFrame.Name and type(labelFrame.Name.SetText) == "function" then
-                hooksecurefunc(labelFrame.Name, "SetText", function()
-                    ApplyZoneLevelToMapLabel(labelFrame)
-                end)
-            end
-            if labelFrame.Description and type(labelFrame.Description.SetText) == "function" then
-                hooksecurefunc(labelFrame.Description, "SetText", function()
-                    ApplyZoneLevelToMapLabel(labelFrame)
-                end)
-            end
+    if zoneLevelLabel or not (WorldMapFrame and WorldMapFrame.dataProviders) then return end
+    local labelFrame
+    for provider in pairs(WorldMapFrame.dataProviders) do
+        local label = type(provider) == "table" and provider.Label
+        if label and label.Name and type(label.Name.SetText) == "function" then
+            labelFrame = label
+            break
         end
     end
+    if not labelFrame then return end
+    zoneLevelLabel = labelFrame
+
+    local holder = CreateFrame("Frame", nil, WorldMapFrame.ScrollContainer or WorldMapFrame)
+    holder:SetAllPoints()
+    holder:SetFrameStrata("HIGH")
+    holder:EnableMouse(false)
+    zoneLevelText = holder:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    zoneFishText = holder:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    local font, size, flags = labelFrame.Name:GetFont()
+    if font and size then
+        zoneLevelText:SetFont(font, math.max(10, math.floor(size * 0.65 + 0.5)), flags)
+        zoneFishText:SetFont(font, math.max(9, math.floor(size * 0.45 + 0.5)), flags)
+    end
+    zoneLevelText:SetShadowOffset(1, -1)
+    zoneLevelText:SetShadowColor(0, 0, 0, 1)
+    zoneFishText:SetShadowOffset(1, -1)
+    zoneFishText:SetShadowColor(0, 0, 0, 1)
+    zoneFishText:SetPoint("TOP", zoneLevelText, "BOTTOM", 0, -2)
+    zoneLevelText:Hide()
+    zoneFishText:Hide()
+
+    local refresh = WorldMapCanvasEnhancer.refreshZoneLevelLabel
+    hooksecurefunc(labelFrame.Name, "SetText", refresh)
+    if labelFrame.Description and type(labelFrame.Description.SetText) == "function" then
+        hooksecurefunc(labelFrame.Description, "SetText", refresh)
+    end
+    if labelFrame.HookScript then
+        labelFrame:HookScript("OnShow", refresh)
+        labelFrame:HookScript("OnHide", refresh)
+    end
+    refresh()
 end
 
 -- The player's own mapFade value is saved the first time the option takes effect
@@ -413,6 +387,60 @@ function WorldMapCanvasEnhancer.commitMapFade()
     end
 end
 
+-- Darkness of the screen behind the full-screen map (the map's own blackout texture).
+-- mapBackdropAlpha nil = the game's own look is left alone; a number 0-1 is applied.
+-- Only that texture's alpha changes (not a protected call); the frame still keeps
+-- clicks off the world. This is separate from mapFade, which fades the whole map
+-- window while moving, so the two settings do not overlap.
+local backdropOriginalAlpha
+local backdropTouched = false
+local backdropHooked = false
+
+function WorldMapCanvasEnhancer.getMapBackdropTexture()
+    local mapFrame = _G.WorldMapFrame
+    local holder = mapFrame and mapFrame.BlackoutFrame
+    local tex = holder and holder.Blackout
+    if tex and type(tex.SetAlpha) == "function" then return tex end
+    return nil
+end
+
+function WorldMapCanvasEnhancer.commitMapBackdrop()
+    local tex = WorldMapCanvasEnhancer.getMapBackdropTexture()
+    if not tex then return end
+    local value = ns.DB and ns.DB.mapBackdropAlpha
+    if type(value) == "number" then
+        if value < 0 then value = 0 elseif value > 1 then value = 1 end
+        if not backdropTouched then
+            local current = type(tex.GetAlpha) == "function" and tex:GetAlpha() or nil
+            if type(current) ~= "number" or (issecretvalue and issecretvalue(current)) then current = 1 end
+            backdropOriginalAlpha = current
+            backdropTouched = true
+        end
+        tex:SetAlpha(value)
+    elseif backdropTouched then
+        tex:SetAlpha(backdropOriginalAlpha or 1)
+        backdropTouched = false
+    end
+end
+
+function WorldMapCanvasEnhancer.installMapBackdropHooks()
+    if backdropHooked then return end
+    local mapFrame = _G.WorldMapFrame
+    if not mapFrame then return end
+    backdropHooked = true
+    local apply = WorldMapCanvasEnhancer.commitMapBackdrop
+    mapFrame:HookScript("OnShow", apply)
+    mapFrame:HookScript("OnSizeChanged", apply)
+    for _, method in ipairs({ "Maximize", "Minimize", "SynchronizeDisplayState" }) do
+        if type(mapFrame[method]) == "function" then
+            hooksecurefunc(mapFrame, method, apply)
+        end
+    end
+    local holder = mapFrame.BlackoutFrame
+    if holder and holder.HookScript then holder:HookScript("OnShow", apply) end
+    apply()
+end
+
 function WorldMapCanvasEnhancer.expandCanvasZoomRange(scVal)
     if not (ns.DB and ns.DB.enableMapZoom ~= false) then return end
     -- the zoom table belongs to the game's map; leave it alone during combat
@@ -446,11 +474,12 @@ function WorldMapCanvasEnhancer.commitMapZoom(resetZoom)
     end
 end
 
+local zoomLevelsHooked = false
 function WorldMapCanvasEnhancer.installMapWheelZoomHooks()
     if not (WorldMapFrame and WorldMapFrame.ScrollContainer) then return end
     local scVal = WorldMapFrame.ScrollContainer
-    if not scVal._ezmfZoomHooked and scVal.CreateZoomLevels then
-        scVal._ezmfZoomHooked = true
+    if not zoomLevelsHooked and scVal.CreateZoomLevels then
+        zoomLevelsHooked = true
         hooksecurefunc(scVal, "CreateZoomLevels", WorldMapCanvasEnhancer.expandCanvasZoomRange)
         WorldMapCanvasEnhancer.expandCanvasZoomRange(scVal)
     end
@@ -466,10 +495,19 @@ local TRANSIT_ICONS = {
 }
 local pendingTransitMapID, transitNavigationFrame
 
+-- Chat lines added in combat taint the chat history, so in combat the note goes
+-- on the open tooltip; a chat line is only printed out of combat.
 function WorldMapCanvasEnhancer.reportTransitNavigation(key, target)
     local message = L[key]
     if not message then return end
     if target then message = message:format(target) end
+    if InCombatLockdown and InCombatLockdown() then
+        if GameTooltip and GameTooltip:IsShown() then
+            GameTooltip:AddLine(message, unpack(Theme.warn))
+            GameTooltip:Show()
+        end
+        return
+    end
     if DEFAULT_CHAT_FRAME then DEFAULT_CHAT_FRAME:AddMessage("|cff4bc8e8EzWoW - Map Finder:|r " .. message) end
 end
 
@@ -567,8 +605,43 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
         local target = apiInfo and (apiInfo.members and apiInfo.zone or apiInfo.dest)
         if target then WorldMapCanvasEnhancer.openTransitMap(target) end
     end)
+    if ns.PassMapRightClicks then ns.PassMapRightClicks(pin) end
     transitPins[entryIndex] = pin
     return pin
+end
+
+-- Places a pin at its map position (0-1) at the current canvas zoom; pins keep
+-- one size on screen, so their offsets are in their own (scaled) units.
+function WorldMapCanvasEnhancer.anchorTransitPin(pin, canvasFrame, cwVal, chVal, cScale)
+    local pinScale = 1 / cScale
+    pin:SetScale(pinScale)
+    pin:ClearAllPoints()
+    pin:SetPoint("CENTER", canvasFrame, "TOPLEFT", (pin.nx * cwVal) / pinScale, -(pin.ny * chVal) / pinScale)
+end
+
+function WorldMapCanvasEnhancer.canvasMetrics()
+    local canvasFrame = (WorldMapFrame and WorldMapFrame.GetCanvas and WorldMapFrame:GetCanvas())
+        or (_G.EzWoWWorldMapDock and _G.EzWoWWorldMapDock:GetCanvas())
+        or WorldMapFrame
+    if not canvasFrame then return nil end
+    local cwVal, chVal = canvasFrame:GetWidth(), canvasFrame:GetHeight()
+    if not cwVal or not chVal or cwVal <= 0 or chVal <= 0 then return nil end
+    local cScale = (WorldMapFrame.GetCanvasScale and WorldMapFrame:GetCanvasScale()) or 1
+    if not cScale or cScale <= 0 then cScale = 1 end
+    return canvasFrame, cwVal, chVal, cScale
+end
+
+-- Zoom changes only move and resize the pins already shown.
+function WorldMapCanvasEnhancer.rescaleTransitPins()
+    if activeTransitCount == 0 then return end
+    local canvasFrame, cwVal, chVal, cScale = WorldMapCanvasEnhancer.canvasMetrics()
+    if not canvasFrame then return end
+    for index = 1, activeTransitCount do
+        local pin = transitPins[index]
+        if pin and pin:IsShown() and pin.nx then
+            WorldMapCanvasEnhancer.anchorTransitPin(pin, canvasFrame, cwVal, chVal, cScale)
+        end
+    end
 end
 
 -- Transit data is stored per zone map. On a continent or the world map the
@@ -637,14 +710,8 @@ function WorldMapCanvasEnhancer.renderWorldTransitMarkers()
     local itemList = uiMapID and WorldMapCanvasEnhancer.collectTransitForMap(uiMapID)
     if not itemList or #itemList == 0 then return end
 
-    local canvasFrame = (WorldMapFrame.GetCanvas and WorldMapFrame:GetCanvas())
-        or (_G.EzWoWWorldMapDock and _G.EzWoWWorldMapDock:GetCanvas())
-        or WorldMapFrame
-    local cwVal, chVal = canvasFrame:GetWidth(), canvasFrame:GetHeight()
-    if not cwVal or not chVal or cwVal <= 0 or chVal <= 0 then return end
-    local cScale = (WorldMapFrame.GetCanvasScale and WorldMapFrame:GetCanvasScale()) or 1
-    if not cScale or cScale <= 0 then cScale = 1 end
-    local pinScale = 1 / cScale
+    local canvasFrame, cwVal, chVal, cScale = WorldMapCanvasEnhancer.canvasMetrics()
+    if not canvasFrame then return end
 
     for index = 1, #itemList do
         local apiInfo = itemList[index]
@@ -656,9 +723,8 @@ function WorldMapCanvasEnhancer.renderWorldTransitMarkers()
         pin:SetHighlightTexture(texture, "ADD")
         local highlight = pin:GetHighlightTexture()
         if highlight then highlight:SetAlpha(0.3) end
-        pin:SetScale(pinScale)
-        pin:ClearAllPoints()
-        pin:SetPoint("CENTER", canvasFrame, "TOPLEFT", ((apiInfo.x / 100) * cwVal) / pinScale, -((apiInfo.y / 100) * chVal) / pinScale)
+        pin.nx, pin.ny = apiInfo.x / 100, apiInfo.y / 100
+        WorldMapCanvasEnhancer.anchorTransitPin(pin, canvasFrame, cwVal, chVal, cScale)
         pin:Show()
         activeTransitCount = index
     end
@@ -671,9 +737,14 @@ ns.SetupMapReveal = WorldMapCanvasEnhancer.installMapFogRevealHooks
 ns.UpdateMapCoordsVisibility = WorldMapCanvasEnhancer.refreshMapCoordsVisibility
 ns.SetupMapCoords = WorldMapCanvasEnhancer.initializeMapCoordOverlay
 ns.SetupZoneLevels = WorldMapCanvasEnhancer.installZoneLevelHeaderHook
+ns.RefreshZoneLevelLabel = WorldMapCanvasEnhancer.refreshZoneLevelLabel
 ns.ApplyMapFade = WorldMapCanvasEnhancer.commitMapFade
+ns.ApplyMapBackdrop = WorldMapCanvasEnhancer.commitMapBackdrop
+ns.SetupMapBackdrop = WorldMapCanvasEnhancer.installMapBackdropHooks
+ns.GetMapBackdropTexture = WorldMapCanvasEnhancer.getMapBackdropTexture
 ns.ExtendMapZoomLevels = WorldMapCanvasEnhancer.expandCanvasZoomRange
 ns.ApplyMapZoom = WorldMapCanvasEnhancer.commitMapZoom
 ns.SetupMapZoom = WorldMapCanvasEnhancer.installMapWheelZoomHooks
 ns.AcquireTransitPin = WorldMapCanvasEnhancer.obtainTransitPin
 ns.RefreshTransitPins = WorldMapCanvasEnhancer.renderWorldTransitMarkers
+ns.RescaleTransitPins = WorldMapCanvasEnhancer.rescaleTransitPins

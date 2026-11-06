@@ -19,6 +19,7 @@ local determineLocale = ns.SynchronizeActiveLocale
 local syncMapExplorations = ns.RefreshMapExplorations
 local refreshMapCoordsVisibility = ns.UpdateMapCoordsVisibility
 local commitMapFade = ns.ApplyMapFade
+local commitMapBackdrop = ns.ApplyMapBackdrop
 local commitMapZoom = ns.ApplyMapZoom
 local renderWorldTransitMarkers = ns.RefreshTransitPins
 
@@ -118,7 +119,7 @@ end
 function SettingsDialog.buildMapFinderSettingsFrame()
     if ns.settingsPanel then return ns.settingsPanel end
     local windowFrame = CreateFrame("Frame", "EzWoWMapFinderSettings", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    windowFrame:SetSize(440, 558)
+    windowFrame:SetSize(440, 606)
     SettingsDialog.restoreSettingsPosition(windowFrame)
     windowFrame:SetFrameStrata("FULLSCREEN_DIALOG")
     windowFrame:SetToplevel(true)
@@ -224,6 +225,18 @@ function SettingsDialog.buildMapFinderSettingsFrame()
     -- the single box takes 50px less than the old three rows of language buttons
     local LANG_ROWS_SAVED = 50
 
+    local function showOptionTip(owner, dbKey, title)
+        local hasKo = (ns.activeLocale == "koKR")
+        local otherTips = ns.OPTION_TIPS_OTHER and ns.OPTION_TIPS_OTHER[ns.activeLocale]
+        local tipWidget = (hasKo and OPTION_TIPS_KO[dbKey]) or (otherTips and otherTips[dbKey]) or OPTION_TIPS_EN[dbKey]
+        if tipWidget and GameTooltip then
+            GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+            GameTooltip:SetText(title or "", unpack(Theme.accent))
+            GameTooltip:AddLine(tipWidget, 0.92, 0.95, 0.97, true)
+            GameTooltip:Show()
+        end
+    end
+
     local function createCheckOptionRow(yOffset, dbKey, onToggle)
         local checkWidget = CreateFrame("CheckButton", nil, windowFrame, "UICheckButtonTemplate")
         checkWidget:SetSize(22, 22)
@@ -240,15 +253,7 @@ function SettingsDialog.buildMapFinderSettingsFrame()
             if onToggle then onToggle(ns.DB[dbKey]) end
         end)
         checkWidget:SetScript("OnEnter", function(self)
-            local hasKo = (ns.activeLocale == "koKR")
-            local otherTips = ns.OPTION_TIPS_OTHER and ns.OPTION_TIPS_OTHER[ns.activeLocale]
-            local tipWidget = (hasKo and OPTION_TIPS_KO[dbKey]) or (otherTips and otherTips[dbKey]) or OPTION_TIPS_EN[dbKey]
-            if tipWidget and GameTooltip then
-                GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-                GameTooltip:SetText(self.label:GetText() or "", unpack(Theme.accent))
-                GameTooltip:AddLine(tipWidget, 0.92, 0.95, 0.97, true)
-                GameTooltip:Show()
-            end
+            showOptionTip(self, dbKey, self.label:GetText())
         end)
         checkWidget:SetScript("OnLeave", function()
             if GameTooltip then GameTooltip:Hide() end
@@ -281,29 +286,108 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         refreshMapCoordsVisibility()
     end)
 
-    windowFrame.zoneLevelCheck = createCheckOptionRow(-322, "showZoneLevels", nil)
+    windowFrame.zoneLevelCheck = createCheckOptionRow(-322, "showZoneLevels", function()
+        if ns.RefreshZoneLevelLabel then ns.RefreshZoneLevelLabel() end
+    end)
 
     windowFrame.noFadeCheck = createCheckOptionRow(-348, "noMapFade", function()
         commitMapFade()
     end)
 
-    windowFrame.zoomCheck = createCheckOptionRow(-374, "enableMapZoom", function(enabled)
+    -- map backdrop darkness: 0-100% in steps of 5; "Default" leaves the game's look alone
+    do
+        local rowY = -374 + LANG_ROWS_SAVED
+        local backdropLabel = windowFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+        backdropLabel:SetPoint("TOPLEFT", 22, rowY - 4)
+        backdropLabel:SetWidth(300)
+        backdropLabel:SetJustifyH("LEFT")
+        if backdropLabel.SetWordWrap then backdropLabel:SetWordWrap(false) end
+        backdropLabel:SetTextColor(unpack(Theme.text))
+        windowFrame.backdropLabel = backdropLabel
+
+        local backdropValue = windowFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+        backdropValue:SetPoint("TOPRIGHT", windowFrame, "TOPRIGHT", -20, rowY - 4)
+        backdropValue:SetJustifyH("RIGHT")
+        backdropValue:SetTextColor(unpack(Theme.accent))
+        windowFrame.backdropValue = backdropValue
+
+        local slider = CreateFrame("Slider", nil, windowFrame, BackdropTemplateMixin and "BackdropTemplate" or nil)
+        slider:SetOrientation("HORIZONTAL")
+        slider:SetSize(310, 14)
+        slider:SetPoint("TOPLEFT", 24, rowY - 24)
+        if slider.SetBackdrop then
+            slider:SetBackdrop({ bgFile = "Interface\\Buttons\\WHITE8X8" })
+            slider:SetBackdropColor(0.071, 0.094, 0.122, 0.9)
+        end
+        slider:SetThumbTexture("Interface\\Buttons\\UI-SliderBar-Button-Horizontal")
+        slider:SetMinMaxValues(0, 100)
+        slider:SetValueStep(5)
+        slider:SetObeyStepOnDrag(true)
+        slider:EnableMouseWheel(false)
+        windowFrame.backdropSlider = slider
+
+        local function refreshBackdropControls()
+            local stored = ns.DB and ns.DB.mapBackdropAlpha
+            local percent
+            if type(stored) == "number" then
+                percent = math.floor(stored * 100 + 0.5)
+                backdropValue:SetText(percent .. "%")
+            else
+                -- show where the game's own darkness sits, without saving it
+                local tex = ns.GetMapBackdropTexture and ns.GetMapBackdropTexture()
+                local current = tex and type(tex.GetAlpha) == "function" and tex:GetAlpha() or nil
+                if type(current) ~= "number" or (issecretvalue and issecretvalue(current)) then current = 1 end
+                percent = math.floor(current * 20 + 0.5) * 5
+                backdropValue:SetText(L.mapBackdropDefault or "Default")
+            end
+            slider.refreshing = true
+            slider:SetValue(percent)
+            slider.refreshing = false
+        end
+        windowFrame.RefreshBackdropControls = refreshBackdropControls
+
+        slider:SetScript("OnValueChanged", function(self, value)
+            if self.refreshing or not ns.DB then return end
+            local percent = math.floor((value or 0) / 5 + 0.5) * 5
+            if percent < 0 then percent = 0 elseif percent > 100 then percent = 100 end
+            ns.DB.mapBackdropAlpha = percent / 100
+            backdropValue:SetText(percent .. "%")
+            if commitMapBackdrop then commitMapBackdrop() end
+        end)
+        slider:SetScript("OnEnter", function(self)
+            showOptionTip(self, "mapBackdrop", backdropLabel:GetText())
+        end)
+        slider:SetScript("OnLeave", function()
+            if GameTooltip then GameTooltip:Hide() end
+        end)
+
+        local defaultBtn = createStyledActionBtn(70, 20, false, function()
+            if not ns.DB then return end
+            ns.DB.mapBackdropAlpha = nil
+            if commitMapBackdrop then commitMapBackdrop() end
+            refreshBackdropControls()
+        end)
+        defaultBtn:SetPoint("LEFT", slider, "RIGHT", 16, 0)
+        windowFrame.backdropDefaultBtn = defaultBtn
+    end
+
+    windowFrame.zoomCheck = createCheckOptionRow(-422, "enableMapZoom", function(enabled)
         commitMapZoom(not enabled)
     end)
 
-    windowFrame.transitCheck = createCheckOptionRow(-400, "showTransit", function()
+    windowFrame.transitCheck = createCheckOptionRow(-448, "showTransit", function()
         renderWorldTransitMarkers()
     end)
 
-    windowFrame.rareAlertCheck = createCheckOptionRow(-426, "rareAlert", nil)
+    windowFrame.rareAlertCheck = createCheckOptionRow(-474, "rareAlert", nil)
 
-    windowFrame.rareSoundCheck = createCheckOptionRow(-452, "rareAlertSound", nil)
+    windowFrame.rareSoundCheck = createCheckOptionRow(-500, "rareAlertSound", nil)
 
-    windowFrame.questPinsCheck = createCheckOptionRow(-478, "questLogPins", function()
+    windowFrame.questPinsCheck = createCheckOptionRow(-526, "questLogPins", function()
         if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
     end)
 
-    windowFrame.questPinsAllCheck = createCheckOptionRow(-504, "questLogPinsAll", function()
+    windowFrame.questPinsAllCheck = createCheckOptionRow(-552, "questLogPinsAll", function()
         if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
     end)
 
@@ -352,6 +436,10 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         self.noFadeCheck.label:SetText(L.noMapFade)
         ns.UIKit:FitFontString(self.noFadeCheck.label, 380, 1)
         self.noFadeCheck:SetChecked(ns.DB.noMapFade ~= false)
+        self.backdropLabel:SetText(L.mapBackdrop)
+        ns.UIKit:FitFontString(self.backdropLabel, 300, 1)
+        self.backdropDefaultBtn:SetText(L.mapBackdropDefault)
+        self:RefreshBackdropControls()
         self.zoomCheck.label:SetText(L.enableMapZoom)
         ns.UIKit:FitFontString(self.zoomCheck.label, 380, 1)
         self.zoomCheck:SetChecked(ns.DB.enableMapZoom ~= false)

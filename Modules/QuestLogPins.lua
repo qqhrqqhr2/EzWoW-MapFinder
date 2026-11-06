@@ -2,8 +2,8 @@
 -- EzWoW - Map Finder
 -- Modules/QuestLogPins.lua : World Map marks for quests in the player's quest log
 --===========================================================================
--- Quests whose objectives are done get a yellow "?" at their quest giver /
--- turn-in spots (from the built-in quest locations). Quests still in progress
+-- Quests whose objectives are done get a yellow "?" at their turn-in spots
+-- (from the built-in quest locations). Quests still in progress
 -- can be shown too (grey "?", option). Clicking a mark sets a map waypoint.
 local _, ns = ...
 local type, pairs, ipairs, tonumber, tostring, pcall = type, pairs, ipairs, tonumber, tostring, pcall
@@ -21,6 +21,7 @@ local MERGE_PIXELS = 12
 local pins = {}
 local questIndex      -- questID -> quest entry of the built-in data
 local npcBySpot       -- "continent:x:y" -> npc entry (name for the tooltip)
+local entryByKey      -- "npc:id" / "object:id" -> entry
 
 local function isSecret(v) return issecretvalue and issecretvalue(v) end
 
@@ -31,8 +32,11 @@ end
 
 function QuestLogPins.buildIndexes()
     if questIndex then return end
-    questIndex, npcBySpot = {}, {}
+    questIndex, npcBySpot, entryByKey = {}, {}, {}
     for _, e in ipairs(_G.EzWoWMapFinderData or {}) do
+        if (e.kind == "npc" or e.kind == "object") and e.id and e.spawns then
+            entryByKey[e.kind .. ":" .. e.id] = entryByKey[e.kind .. ":" .. e.id] or e
+        end
         if e.kind == "quest" and e.id then
             questIndex[e.id] = e
         elseif e.kind == "npc" and e.spawns then
@@ -42,6 +46,96 @@ function QuestLogPins.buildIndexes()
             end
         end
     end
+end
+
+-- Quest spots are stored as NPC spots first, then object spots; within each
+-- group the quest givers come before the turn-in spots. When every spot is an
+-- NPC (or every spot is an object) and the count is even, the second half is
+-- the turn-in side. Mixed or odd lists can't be split here (see spotsFor).
+local turnInCache = {}
+
+function QuestLogPins.turnInSpawns(entry)
+    local cached = turnInCache[entry]
+    if cached then return cached end
+    local spawns = entry.spawns
+    local n = #spawns
+    local result = spawns
+    if n >= 2 and n % 2 == 0 then
+        local npcCount = 0
+        for _, sp in ipairs(spawns) do
+            local key = spotKey(sp)
+            if key and npcBySpot[key] then npcCount = npcCount + 1 end
+        end
+        local allNpc = npcCount == n
+        local noNpc = npcCount == 0
+        if allNpc or noNpc then
+            result = {}
+            for i = n / 2 + 1, n do result[#result + 1] = spawns[i] end
+        end
+    end
+    -- a single spot (or one spot listed twice) is never ambiguous
+    local unique = {}
+    for _, sp in ipairs(result) do unique[spotKey(sp) or tostring(sp)] = true end
+    local uniqueCount = 0
+    for _ in pairs(unique) do uniqueCount = uniqueCount + 1 end
+    cached = { spawns = result, sure = (result ~= spawns) or uniqueCount <= 1 }
+    turnInCache[entry] = cached
+    return cached
+end
+
+-- The NPC / object the player took a quest from is remembered, so that spot
+-- can be left out when the built-in data can't tell giver and turn-in apart.
+local function starterStore()
+    if not ns.DB then return nil end
+    if type(ns.DB.questStarters) ~= "table" then ns.DB.questStarters = {} end
+    return ns.DB.questStarters
+end
+
+local function guidToStarter(guid)
+    if type(guid) ~= "string" or isSecret(guid) then return nil end
+    local unitType, _, _, _, _, id = strsplit("-", guid)
+    id = tonumber(id)
+    if not id then return nil end
+    if unitType == "Creature" or unitType == "Vehicle" then return "npc:" .. id end
+    if unitType == "GameObject" then return "object:" .. id end
+    return nil
+end
+
+local function currentStarter()
+    for _, unit in ipairs({ "questnpc", "npc" }) do
+        local ok, guid = pcall(UnitGUID, unit)
+        if ok then
+            local starter = guidToStarter(guid)
+            if starter then return starter end
+        end
+    end
+    return nil
+end
+
+-- Spots of the remembered giver are removed; if nothing would be left
+-- (the same NPC gives and takes the quest) every spot is kept.
+-- Without a remembered giver an unclear quest gets no mark at all, so a
+-- mark never points back at where the quest was taken.
+local NO_SPOTS = {}
+
+function QuestLogPins.spotsFor(entry, questID)
+    local info = QuestLogPins.turnInSpawns(entry)
+    if info.sure then return info.spawns end
+    local store = starterStore()
+    local starter = store and store[questID]
+    local giver = type(starter) == "string" and entryByKey[starter]
+    if not (giver and giver.spawns) then return NO_SPOTS end
+    local giverSpots = {}
+    for _, sp in ipairs(giver.spawns) do
+        local key = spotKey(sp)
+        if key then giverSpots[key] = true end
+    end
+    local kept = {}
+    for _, sp in ipairs(info.spawns) do
+        if not giverSpots[spotKey(sp) or ""] then kept[#kept + 1] = sp end
+    end
+    if #kept == 0 then return info.spawns end
+    return kept
 end
 
 -----------------------------------------------------------------------------
@@ -132,6 +226,7 @@ function QuestLogPins.obtainPin(index)
         if not sp then return end
         if ns.ApplyWaypointForSpawn then ns.ApplyWaypointForSpawn(sp) end
     end)
+    if ns.PassMapRightClicks then ns.PassMapRightClicks(pin) end
     pins[index] = pin
     return pin
 end
@@ -164,7 +259,7 @@ function QuestLogPins.refresh()
                 quest.title = ns.GetLocalizedEntityName and ns.GetLocalizedEntityName(entry) or nil
             end
             local seenSpot = {}
-            for _, sp in ipairs(entry.spawns) do
+            for _, sp in ipairs(QuestLogPins.spotsFor(entry, quest.id)) do
                 local key = spotKey(sp) or tostring(sp)
                 if not seenSpot[key] then
                     seenSpot[key] = true
@@ -180,7 +275,7 @@ function QuestLogPins.refresh()
                         end
                         if not group then
                             local npc = npcBySpot[key]
-                            group = { px = px, py = py, spawn = sp, quests = {}, ids = {},
+                            group = { px = px, py = py, cw = cw, ch = ch, spawn = sp, quests = {}, ids = {},
                                 npcName = npc and ns.GetLocalizedEntityName and ns.GetLocalizedEntityName(npc) or nil }
                             groups[#groups + 1] = group
                         end
@@ -195,17 +290,63 @@ function QuestLogPins.refresh()
         end
     end
 
-    local pinScale = 1 / cScale
     for index, group in ipairs(groups) do
         local pin = QuestLogPins.obtainPin(index)
         pin:SetParent(canvasFrame)
         pin:SetFrameLevel((canvasFrame:GetFrameLevel() or 10) + (group.complete and 200 or 190))
         pin.group = group
         pin.icon:SetTexture(group.complete and ICON_READY or ICON_ACTIVE)
-        pin:SetScale(pinScale)
-        pin:ClearAllPoints()
-        pin:SetPoint("CENTER", canvasFrame, "TOPLEFT", group.px / pinScale, -group.py / pinScale)
+        QuestLogPins.anchorPin(pin, canvasFrame, cw, ch, cScale)
         pin:Show()
+    end
+end
+
+-- Pins keep one size on screen; group.px / py were taken at canvas size cw x ch.
+function QuestLogPins.anchorPin(pin, canvasFrame, cw, ch, cScale)
+    local group = pin.group
+    local pinScale = 1 / cScale
+    local px = group.px * (cw / (group.cw or cw))
+    local py = group.py * (ch / (group.ch or ch))
+    pin:SetScale(pinScale)
+    pin:ClearAllPoints()
+    pin:SetPoint("CENTER", canvasFrame, "TOPLEFT", px / pinScale, -py / pinScale)
+end
+
+-- Zoom changes move and resize the marks at once; the marks are grouped
+-- again (marks close together on screen share one) once zooming has stopped.
+local regroupPending = false
+local lastRescaleAt = 0
+local REGROUP_DELAY = 0.3
+
+local function regroupWhenSettled()
+    local waited = GetTime() - lastRescaleAt
+    if waited < REGROUP_DELAY then
+        C_Timer.After(REGROUP_DELAY - waited, regroupWhenSettled)
+        return
+    end
+    regroupPending = false
+    QuestLogPins.refresh()
+end
+
+function QuestLogPins.rescale()
+    if not (WorldMapFrame and WorldMapFrame:IsShown()) then return end
+    local canvasFrame = QuestLogPins.canvas()
+    local cw, ch = canvasFrame:GetWidth(), canvasFrame:GetHeight()
+    if not cw or not ch or cw <= 0 or ch <= 0 then return end
+    local cScale = (WorldMapFrame.GetCanvasScale and WorldMapFrame:GetCanvasScale()) or 1
+    if not cScale or cScale <= 0 then cScale = 1 end
+    local any = false
+    for _, pin in ipairs(pins) do
+        if pin:IsShown() and pin.group then
+            QuestLogPins.anchorPin(pin, canvasFrame, cw, ch, cScale)
+            any = true
+        end
+    end
+    if not any then return end
+    lastRescaleAt = GetTime()
+    if not regroupPending and C_Timer and C_Timer.After then
+        regroupPending = true
+        C_Timer.After(REGROUP_DELAY, regroupWhenSettled)
     end
 end
 
@@ -214,8 +355,40 @@ local events = CreateFrame("Frame")
 for _, event in ipairs({ "QUEST_LOG_UPDATE", "QUEST_ACCEPTED", "QUEST_REMOVED", "QUEST_TURNED_IN" }) do
     pcall(events.RegisterEvent, events, event)
 end
+pcall(events.RegisterEvent, events, "QUEST_DETAIL")
 local queued = false
-events:SetScript("OnEvent", function()
+local detailQuest, detailStarter   -- quest window currently open and who offers it
+
+local function rememberStarter(questID, starter)
+    questID = tonumber(questID)
+    if not questID or not starter or isSecret(questID) then return end
+    local store = starterStore()
+    if store then store[questID] = starter end
+end
+
+local function onQuestEvent(event, ...)
+    if event == "QUEST_DETAIL" then
+        local questID = type(GetQuestID) == "function" and GetQuestID() or nil
+        detailQuest, detailStarter = tonumber(questID), currentStarter()
+        return true
+    elseif event == "QUEST_ACCEPTED" then
+        -- newer clients pass (questID); older ones (logIndex, questID)
+        local a, b = ...
+        local questID = tonumber(b) or tonumber(a)
+        local starter = currentStarter()
+        if not starter and questID == detailQuest then starter = detailStarter end
+        rememberStarter(questID, starter)
+    elseif event == "QUEST_TURNED_IN" then
+        local questID = tonumber((...))
+        local store = starterStore()
+        if store and questID and not isSecret(questID) then store[questID] = nil end
+    end
+    return false
+end
+
+events:SetScript("OnEvent", function(_, event, ...)
+    local ok, skip = pcall(onQuestEvent, event, ...)
+    if ok and skip then return end
     if queued or not (WorldMapFrame and WorldMapFrame:IsShown()) then return end
     queued = true
     C_Timer.After(0.2, function()
@@ -225,3 +398,4 @@ events:SetScript("OnEvent", function()
 end)
 
 ns.RefreshQuestLogPins = QuestLogPins.refresh
+ns.RescaleQuestLogPins = QuestLogPins.rescale

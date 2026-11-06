@@ -62,6 +62,8 @@ function ns.InitializeDatabase()
     if CONST_DB.showCoords == nil then CONST_DB.showCoords = true end
     if CONST_DB.showZoneLevels == nil then CONST_DB.showZoneLevels = true end
     if CONST_DB.noMapFade == nil then CONST_DB.noMapFade = true end
+    -- map backdrop darkness: nil = leave the game's own look alone (0-1 otherwise)
+    if type(CONST_DB.mapBackdropAlpha) ~= "number" then CONST_DB.mapBackdropAlpha = nil end
     if CONST_DB.enableMapZoom == nil then CONST_DB.enableMapZoom = false end
     if CONST_DB.showTransit == nil then CONST_DB.showTransit = true end
     if CONST_DB.rareAlert == nil then CONST_DB.rareAlert = true end
@@ -115,6 +117,38 @@ function ns.CreateStyledButton(parent, w, h, isAccent, onClick)
     buttonWidget:SetScript("OnMouseUp", function() formatLocalizedLabel:SetPoint("CENTER", 0, 0) end)
     if onClick then buttonWidget:SetScript("OnClick", onClick) end
     return buttonWidget
+end
+
+-----------------------------------------------------------------------------
+-- Our own World Map marks let right clicks through to the map (zoom out).
+-- SetPassThroughButtons is blocked in combat: marks made then wait for its end.
+-----------------------------------------------------------------------------
+local passApplied = setmetatable({}, { __mode = "k" })
+local passWaiting = {}
+local passEvents
+
+local function applyRightClickPass(frame)
+    if passApplied[frame] or type(frame.SetPassThroughButtons) ~= "function" then return end
+    if pcall(frame.SetPassThroughButtons, frame, "RightButton") then passApplied[frame] = true end
+end
+
+function ns.PassMapRightClicks(frame)
+    if not frame or passApplied[frame] then return end
+    if InCombatLockdown and InCombatLockdown() then
+        passWaiting[#passWaiting + 1] = frame
+        if not passEvents then
+            passEvents = CreateFrame("Frame")
+            pcall(passEvents.RegisterEvent, passEvents, "PLAYER_REGEN_ENABLED")
+            passEvents:SetScript("OnEvent", function()
+                if InCombatLockdown and InCombatLockdown() then return end
+                local list = passWaiting
+                passWaiting = {}
+                for _, waiting in ipairs(list) do applyRightClickPass(waiting) end
+            end)
+        end
+        return
+    end
+    applyRightClickPass(frame)
 end
 
 -----------------------------------------------------------------------------

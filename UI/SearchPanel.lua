@@ -44,6 +44,7 @@ local initializeMapCoordOverlay = ns.SetupMapCoords
 local installZoneLevelHeaderHook = ns.SetupZoneLevels
 local installMapWheelZoomHooks = ns.SetupMapZoom
 local commitMapFade = ns.ApplyMapFade
+local installMapBackdropHooks = ns.SetupMapBackdrop
 local renderWorldTransitMarkers = ns.RefreshTransitPins
 local buildMapFinderSettingsFrame = ns.CreateSettingsPanel
 
@@ -222,8 +223,23 @@ function EntityExplorerPanel.acquireBouncingPinButton(idx)
             renderActiveEntityMapPins()
         end
     end)
+    if ns.PassMapRightClicks then ns.PassMapRightClicks(pinFrame) end
     mapPins[idx] = pinFrame
     return pinFrame
+end
+
+-- Zoom changes only resize the arrows of the pins already shown (their
+-- positions are in canvas units and do not change with the zoom).
+function EntityExplorerPanel.rescaleBouncingPins()
+    if activePinCount == 0 or not WorldMapFrame then return end
+    local cScale = (WorldMapFrame.GetCanvasScale and WorldMapFrame:GetCanvasScale()) or 1
+    if not cScale or cScale <= 0 then cScale = 1 end
+    for index = 1, activePinCount do
+        local pinFrame = mapPins[index]
+        if pinFrame and pinFrame:IsShown() then
+            pinFrame.arrow:SetScale((pinFrame.isPrimary and 1.0 or 0.72) / cScale)
+        end
+    end
 end
 
 renderActiveEntityMapPins = function()
@@ -1088,19 +1104,32 @@ function EntityExplorerPanel.init()
     })
 
     if WorldMapFrame then
-        if WorldMapFrame.OnMapChanged then
-            hooksecurefunc(WorldMapFrame, "OnMapChanged", function()
-                renderActiveEntityMapPins()
-                renderWorldTransitMarkers()
-                if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
-            end)
+        local function onMapChanged()
+            renderActiveEntityMapPins()
+            renderWorldTransitMarkers()
+            if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
         end
-        if WorldMapFrame.OnCanvasScaleChanged then
-            hooksecurefunc(WorldMapFrame, "OnCanvasScaleChanged", function()
-                renderActiveEntityMapPins()
-                renderWorldTransitMarkers()
-                if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
-            end)
+        local function onCanvasScaleChanged()
+            EntityExplorerPanel.rescaleBouncingPins()
+            if ns.RescaleTransitPins then ns.RescaleTransitPins() end
+            if ns.RescaleQuestLogPins then ns.RescaleQuestLogPins() end
+        end
+        -- map and zoom changes come in through a map data provider (the map's
+        -- own extension point) rather than post-hooks on the map's methods
+        if WorldMapFrame.AddDataProvider and MapCanvasDataProviderMixin and CreateFromMixins then
+            local provider = CreateFromMixins(MapCanvasDataProviderMixin)
+            provider.RemoveAllData = function() end
+            provider.RefreshAllData = function() end
+            provider.OnMapChanged = onMapChanged
+            provider.OnCanvasScaleChanged = onCanvasScaleChanged
+            WorldMapFrame:AddDataProvider(provider)
+        else
+            if WorldMapFrame.OnMapChanged then
+                hooksecurefunc(WorldMapFrame, "OnMapChanged", onMapChanged)
+            end
+            if WorldMapFrame.OnCanvasScaleChanged then
+                hooksecurefunc(WorldMapFrame, "OnCanvasScaleChanged", onCanvasScaleChanged)
+            end
         end
         WorldMapFrame:HookScript("OnShow", function()
             renderActiveEntityMapPins()
@@ -1119,6 +1148,7 @@ function EntityExplorerPanel.init()
     installZoneLevelHeaderHook()
     installMapWheelZoomHooks()
     commitMapFade()
+    installMapBackdropHooks()
     renderWorldTransitMarkers()
 
     SLASH_EZWOWMAPFINDER1 = "/ezmf"
