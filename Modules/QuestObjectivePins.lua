@@ -1456,14 +1456,7 @@ local function installMapHooks()
     mapHooked = true
     local function onMapChanged() QuestObjectivePins.refreshWorld() end
     local function onScale() QuestObjectivePins.rescaleWorld() end
-    if WorldMapFrame.AddDataProvider and MapCanvasDataProviderMixin and CreateFromMixins then
-        local provider = CreateFromMixins(MapCanvasDataProviderMixin)
-        provider.RemoveAllData = function() end
-        provider.RefreshAllData = function() end
-        provider.OnMapChanged = onMapChanged
-        provider.OnCanvasScaleChanged = onScale
-        WorldMapFrame:AddDataProvider(provider)
-    else
+    do
         if WorldMapFrame.OnMapChanged then hooksecurefunc(WorldMapFrame, "OnMapChanged", onMapChanged) end
         if WorldMapFrame.OnCanvasScaleChanged then hooksecurefunc(WorldMapFrame, "OnCanvasScaleChanged", onScale) end
     end

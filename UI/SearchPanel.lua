@@ -1162,16 +1162,10 @@ function EntityExplorerPanel.init()
             if ns.RescaleQuestLogPins then ns.RescaleQuestLogPins() end
             if ns.RescaleServiceNpcPins then ns.RescaleServiceNpcPins() end
         end
-        -- map and zoom changes come in through a map data provider (the map's
-        -- own extension point) rather than post-hooks on the map's methods
-        if WorldMapFrame.AddDataProvider and MapCanvasDataProviderMixin and CreateFromMixins then
-            local provider = CreateFromMixins(MapCanvasDataProviderMixin)
-            provider.RemoveAllData = function() end
-            provider.RefreshAllData = function() end
-            provider.OnMapChanged = onMapChanged
-            provider.OnCanvasScaleChanged = onCanvasScaleChanged
-            WorldMapFrame:AddDataProvider(provider)
-        else
+        -- map changes come in through post-hooks on the map. A map data provider would run
+        -- inside the map's own update loop, and the game's pins made after it in that
+        -- loop are then blocked in combat (SetPassThroughButtons).
+        do
             if WorldMapFrame.OnMapChanged then
                 hooksecurefunc(WorldMapFrame, "OnMapChanged", onMapChanged)
             end

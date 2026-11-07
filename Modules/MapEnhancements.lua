@@ -129,8 +129,30 @@ function WorldMapCanvasEnhancer.revealUnexploredMapTiles(state)
     end
 end
 
+-- Our map layer runs from post-hooks on the map instead of being registered
+-- as a map data provider: a provider runs inside the map's own update loop,
+-- and the game's pins made after it in that loop are then blocked in combat
+-- (SetPassThroughButtons). The layer keeps the provider method names.
+local function attachMapLayer(map, layer)
+    layer.owningMap = map
+    layer.GetMap = function() return map end
+    local function run(method, ...)
+        local fn = layer[method]
+        if type(fn) == "function" then fn(layer, ...) end
+    end
+    hooksecurefunc(map, "OnMapChanged", function() run("OnMapChanged") end)
+    for _, method in ipairs({ "OnCanvasScaleChanged", "OnCanvasSizeChanged", "SetGlobalAlpha" }) do
+        if type(map[method]) == "function" then
+            local target = method == "SetGlobalAlpha" and "OnGlobalAlphaChanged" or method
+            hooksecurefunc(map, method, function() run(target) end)
+        end
+    end
+    map:HookScript("OnShow", function() run("OnShow"); run("RefreshAllData", true) end)
+    map:HookScript("OnHide", function() run("OnHide") end)
+end
+
 function WorldMapCanvasEnhancer.bindMapExplorationPins(mapFrame)
-    if not (mapFrame and mapFrame.AddDataProvider and mapFrame.ScrollContainer and mapFrame.ScrollContainer.Child) then return end
+    if not (mapFrame and mapFrame.OnMapChanged and mapFrame.HookScript and mapFrame.ScrollContainer and mapFrame.ScrollContainer.Child) then return end
     if revealStates[mapFrame] then return revealStates[mapFrame] end
     if not (MapCanvasDataProviderMixin and CreateFromMixins) then return end
 
@@ -156,7 +178,7 @@ function WorldMapCanvasEnhancer.bindMapExplorationPins(mapFrame)
         local map = self:GetMap()
         if map and map.GetGlobalAlpha then layerFrame:SetAlpha(map:GetGlobalAlpha()) end
     end
-    mapFrame:AddDataProvider(provider)
+    attachMapLayer(mapFrame, provider)
     provider:OnGlobalAlphaChanged()
     if mapFrame:IsShown() then provider:OnShow() end
     state.provider = provider
