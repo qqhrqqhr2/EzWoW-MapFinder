@@ -1,7 +1,7 @@
-# v2.0.10
+# v2.0.11
 
 ### 한국어
-- 세계지도를 열어 둔 채 전투 중에 지역을 바꾸거나 지도를 열 때 나던 "애드온 동작 차단" 오류를 수정했습니다.
+- 전투 중에도 애드온 기능으로 세계지도를 열고 위치로 이동할 수 있습니다.
 
 ### English
-- Fixed the "action blocked" error when the world map was opened or changed zones during combat.
+- The world map can now be opened and moved to a location from the addon during combat.
