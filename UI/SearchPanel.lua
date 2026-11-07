@@ -209,7 +209,9 @@ function EntityExplorerPanel.acquireBouncingPinButton(idx)
         if self.sub then
             GameTooltip:AddLine(self.sub, 0.929, 0.957, 0.969, true)
         end
+        GameTooltip:AddDoubleLine(" ", "EzWoW - Map Finder", 0, 0, 0, 0.5, 0.5, 0.5)
         GameTooltip:Show()
+        if _G.EzWoWTooltipTagSizer and _G.EzWoWTooltipTagSizer.Refit then pcall(_G.EzWoWTooltipTagSizer.Refit, GameTooltip) end
     end)
     pinFrame:SetScript("OnLeave", function()
         GameTooltip:Hide()
@@ -631,6 +633,50 @@ function EntityExplorerPanel.handleSearchResultSelection(entry, forcedSpawnIdx)
     end
     EntityExplorerPanel.setMapWaypointForSpawn(anchorTarget)
     renderActiveEntityMapPins()
+end
+
+-- Points at one spot from outside the search panel (quest list clicks): the
+-- moving arrow pin on the World Map, which opens on that spot's map, and a
+-- waypoint with the game's arrow.
+function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
+    local sp = entry and entry.spawns and entry.spawns[spawnIdx]
+    if not sp then return false end
+    ns.selectedEntity = entry
+    ns.selectedSpawnIdx = spawnIdx
+    pcall(refreshRows)
+    local uiMapID, mx, my = projectWorldSpawnToMap(sp, nil)
+    if uiMapID and mx and my and C_Map and C_Map.SetUserWaypoint and UiMapPoint then
+        pcall(function()
+            if C_Map.CanSetUserWaypointOnMap and not C_Map.CanSetUserWaypointOnMap(uiMapID) then return end
+            C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(uiMapID, mx, my))
+            if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
+                C_SuperTrack.SetSuperTrackedUserWaypoint(true)
+            end
+        end)
+    end
+    if WorldMapFrame and not (InCombatLockdown and InCombatLockdown()) then
+        if not WorldMapFrame:IsShown() and ShowUIPanel then pcall(ShowUIPanel, WorldMapFrame) end
+        if uiMapID and WorldMapFrame.SetMapID then pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID) end
+    end
+    local okRender, err = pcall(renderActiveEntityMapPins)
+    if not okRender and DEFAULT_CHAT_FRAME then
+        DEFAULT_CHAT_FRAME:AddMessage("|cff4bc8e8EzWoW - Map Finder|r: " .. tostring(err))
+    end
+    -- the game may move the map back to the quest's own zone right after a
+    -- quest list click: go to the spot's map once more when that happened
+    if uiMapID and C_Timer and C_Timer.After then
+        for _, delay in ipairs({ 0.3, 1.0 }) do
+            C_Timer.After(delay, function()
+                if ns.selectedEntity ~= entry or not (WorldMapFrame and WorldMapFrame:IsShown()) then return end
+                if InCombatLockdown and InCombatLockdown() then return end
+                if WorldMapFrame.GetMapID and WorldMapFrame:GetMapID() ~= uiMapID and WorldMapFrame.SetMapID then
+                    pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
+                end
+                pcall(renderActiveEntityMapPins)
+            end)
+        end
+    end
+    return true
 end
 
 function EntityExplorerPanel.positionPanel()
@@ -1108,11 +1154,13 @@ function EntityExplorerPanel.init()
             renderActiveEntityMapPins()
             renderWorldTransitMarkers()
             if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
+            if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
         end
         local function onCanvasScaleChanged()
             EntityExplorerPanel.rescaleBouncingPins()
             if ns.RescaleTransitPins then ns.RescaleTransitPins() end
             if ns.RescaleQuestLogPins then ns.RescaleQuestLogPins() end
+            if ns.RescaleServiceNpcPins then ns.RescaleServiceNpcPins() end
         end
         -- map and zoom changes come in through a map data provider (the map's
         -- own extension point) rather than post-hooks on the map's methods
@@ -1135,11 +1183,13 @@ function EntityExplorerPanel.init()
             renderActiveEntityMapPins()
             renderWorldTransitMarkers()
             if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
+            if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
         end)
         WorldMapFrame:HookScript("OnSizeChanged", function()
             renderActiveEntityMapPins()
             renderWorldTransitMarkers()
             if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
+            if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
         end)
     end
 
@@ -1287,3 +1337,4 @@ ns.PositionPanel = EntityExplorerPanel.positionPanel
 ns.RefreshUITexts = EntityExplorerPanel.syncUITexts
 ns.RunSearch = EntityExplorerPanel.restartAsyncEntitySearch
 ns.SelectEntityOnMap = EntityExplorerPanel.handleSearchResultSelection
+ns.PointAtSpawn = EntityExplorerPanel.pointAtSpawn

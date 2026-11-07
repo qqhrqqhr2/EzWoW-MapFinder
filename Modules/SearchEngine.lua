@@ -118,9 +118,47 @@ local function localizeZoneIdentifier(key)
     return key
 end
 
+-- true when a world position lies inside one of the known zones of its continent.
+-- Some data spots are copies placed outside every zone (e.g. on islands in the
+-- open sea players can't reach); on continent and world maps they would show up
+-- in the middle of the ocean.
+local insideZoneCache = {}
+local function insideKnownZone(instID, wx, wy)
+    local key = tostring(instID) .. ":" .. math.floor(wx) .. ":" .. math.floor(wy)
+    local cached = insideZoneCache[key]
+    if cached ~= nil then return cached end
+    local found = false
+    for _, zb in ipairs(ZONE_BOUNDS or {}) do
+        if zb.mapID == instID and zb.mtype == 3 and wx >= zb.xMin and wx <= zb.xMax and wy >= zb.yMin and wy <= zb.yMax then
+            found = true
+            break
+        end
+    end
+    insideZoneCache[key] = found
+    return found
+end
+
+-- continent, world and cosmic maps (mapType 0-2)
+local wideMapCache = {}
+local function isWideMap(mapID)
+    local cached = wideMapCache[mapID]
+    if cached ~= nil then return cached end
+    local wide = false
+    if C_Map and C_Map.GetMapInfo then
+        local ok, info = pcall(C_Map.GetMapInfo, mapID)
+        if ok and type(info) == "table" and type(info.mapType) == "number" then wide = info.mapType <= 2 end
+    end
+    wideMapCache[mapID] = wide
+    return wide
+end
+
 function EntitySearchEngine.projectWorldSpawnToMap(spawn, targetMapID)
     if not spawn then return nil end
     local instID, wxVal, wyVal = spawn[1], spawn[2], spawn[3]
+    if targetMapID and instID ~= -1 and not INSTANCE_ZONES[instID] and type(wxVal) == "number" and type(wyVal) == "number"
+        and isWideMap(targetMapID) and not insideKnownZone(instID, wxVal, wyVal) then
+        return nil, nil, nil, nil
+    end
     if instID == -1 then
         local sMapID, smx, smy = spawn[2], spawn[3], spawn[4]
         local zbVal = sMapID and ZONE_BOUNDS_BY_ID[sMapID]
@@ -133,7 +171,8 @@ function EntitySearchEngine.projectWorldSpawnToMap(spawn, targetMapID)
             return sMapID, smx, smy, zKey
         end
         local tbVal = ZONE_BOUNDS_BY_ID[targetMapID]
-        if zbVal and tbVal and zbVal.mapID == tbVal.mapID and smx and smy then
+        -- the world map (mtype 1) draws both continents with their own offset: no straight-line bounds
+        if zbVal and tbVal and tbVal.mtype ~= 1 and zbVal.mapID == tbVal.mapID and smx and smy then
             local worldY = zbVal.yMax - smx * (zbVal.yMax - zbVal.yMin)
             local worldX = zbVal.xMax - smy * (zbVal.xMax - zbVal.xMin)
             if worldX >= tbVal.xMin and worldX <= tbVal.xMax and worldY >= tbVal.yMin and worldY <= tbVal.yMax then
@@ -155,7 +194,7 @@ function EntitySearchEngine.projectWorldSpawnToMap(spawn, targetMapID)
             end
             local zBound = ZONE_BOUNDS_BY_ID[instInfo.uiMapID]
             local tBound = ZONE_BOUNDS_BY_ID[targetMapID]
-            if zBound and tBound and zBound.mapID == tBound.mapID then
+            if zBound and tBound and tBound.mtype ~= 1 and zBound.mapID == tBound.mapID then
                 local worldY = zBound.yMax - instInfo.mx * (zBound.yMax - zBound.yMin)
                 local worldX = zBound.xMax - instInfo.my * (zBound.xMax - zBound.xMin)
                 if worldX >= tBound.xMin and worldX <= tBound.xMax and worldY >= tBound.yMin and worldY <= tBound.yMax then
@@ -166,7 +205,8 @@ function EntitySearchEngine.projectWorldSpawnToMap(spawn, targetMapID)
             end
         end
         local buttonWidget = ZONE_BOUNDS_BY_ID[targetMapID]
-        if buttonWidget and buttonWidget.mapID == instID and wxVal and wyVal then
+        -- on the world map only the game's own conversion is right (below)
+        if buttonWidget and buttonWidget.mtype ~= 1 and buttonWidget.mapID == instID and wxVal and wyVal then
             if wxVal >= buttonWidget.xMin and wxVal <= buttonWidget.xMax and wyVal >= buttonWidget.yMin and wyVal <= buttonWidget.yMax then
                 local mxVal = (buttonWidget.yMax - wyVal) / (buttonWidget.yMax - buttonWidget.yMin)
                 local myVal = (buttonWidget.xMax - wxVal) / (buttonWidget.xMax - buttonWidget.xMin)

@@ -15,7 +15,9 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ### 개요
 
-월드맵에서 **몬스터 · 희귀 몬스터 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템** 위치를 바로 찾아 주는 오프라인 검색 애드온입니다. 내장 데이터는 **20,930개 항목**(NPC 7,421 · 오브젝트 7,656 · 퀘스트 4,140 · 아이템 1,713)이며 8개 언어 이름으로 검색할 수 있습니다. 미탐험 지역 안개 제거, 좌표, 지역 적정 레벨, 휠 확대, 배·비행선·지하철·차원문 표시 같은 월드맵 편의 기능과, 근처에 레어 몬스터가 나타나면 알려 주고 바로 지도에 위치를 찍어 주는 기능도 들어 있습니다.
+월드맵에서 **몬스터 · 희귀 몬스터 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템** 위치를 바로 찾아 주는 오프라인 검색 애드온입니다. 내장 데이터는 **20,930개 항목**(NPC 7,421 · 오브젝트 7,656 · 퀘스트 4,140 · 아이템 1,713)이며 8개 언어 이름으로 검색할 수 있습니다. 미탐험 지역 안개 제거, 좌표, 지역 적정 레벨·낚시 숙련도, 지도 뒤 배경 어둡기, 확대 배율, 배·비행선·지하철·차원문 표시 같은 월드맵 편의 기능과, 근처에 레어 몬스터가 나타나면 알려 주고 바로 지도에 위치를 찍어 주는 기능, 퀘스트 보고 위치·목표 위치 표시도 들어 있습니다.
+
+> **EzWoW - Quest**가 함께 켜져 있으면 퀘스트 보고 위치(`?`)와 목표 위치 표시는 EzWoW - Quest가 맡습니다. 자세한 내용은 [EzWoW - Quest와 함께 쓰기](#ezwow---quest와-함께-쓰기)를 보세요.
 
 ### 화면 미리보기
 
@@ -23,7 +25,7 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ![설정창](docs/images/settings_ko.png)
 
-> 이미지는 애드온 코드의 창 크기·좌표·색상·문구와 내장 데이터(야수 이름·레벨·기술)로 재현한 **예시 화면**입니다. 실제로는 게임 월드맵 위에 나타납니다.
+> 이미지는 애드온 코드의 창 크기·좌표·색상·문구와 내장 데이터(야수 이름·레벨·기술·출현 위치, 지역 레벨, 이동 수단)로 재현한 **예시 화면**입니다. 지도는 단순화한 그림이고, 퀘스트·NPC 이름은 지어낸 예시입니다. 실제로는 게임 월드맵 위에 나타납니다.
 
 ### 설치
 
@@ -40,9 +42,13 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 | ③ | 검색창 | 이름 일부를 입력합니다. **접두어 + 공백**으로 종류를 좁힐 수 있습니다(아래 표). “오그경매”, “스톰은행”, “아포은행”, “가젯여관”, “기공”, “마부”, “수리”, “날탈”처럼 붙여 쓴 약칭도 알아듣습니다. **핀 지우기**는 지도에 찍은 표시를 지웁니다. |
 | ④ | 야수 정보 | `P `로 찾으면 야수 과, 레벨, 공격 속도, 먹이, 공격/방어/생명력 배율, 배울 수 있는 기술(단계)이 결과와 툴팁에 나옵니다. |
 | ⑤ | 위치 표시 | 결과를 누르면 그 지역 지도로 이동해 **튀는 화살표(▼)**와 게임 기본 **웨이포인트 핀**을 찍습니다. 결과는 **지금 있는 지역 → 가까운 순 → 나머지** 순서로 정렬되고, 처음 누르면 가장 가까운 출현 지점으로 갑니다. 출현 지점이 여러 곳이면 누를 때마다 다음 위치로 넘어갑니다. |
-| ⑥ | 지역 정보 | 지역 이름 옆에 적정 레벨(내 레벨 대비 색)과 필요한 낚시 숙련도 |
+| ⑥ | 지역 정보 | 지역 이름 아래에 적정 레벨(내 레벨 대비 색)과 필요한 낚시 숙련도 |
 | ⑦ | 좌표 | 지도 아래에 플레이어 · 마우스 좌표 |
 | ⑧ | 이동 수단 | 배 · 비행선 · 깊은굴 지하철 · 차원문(제프라스 섬 · 강물숲 · 달라란 포함)을 진영 색 아이콘으로 표시하고, 누르면 도착지 지도로 이동합니다. |
+| ⑨ | 미탐험 지역 | 가 보지 않은 지역의 안개를 걷고 푸른빛으로 구분합니다(전장 지도 `Shift+M` 포함). |
+| ⑩ | 레어 알림 | 근처에 레어 몬스터가 보이면(이름표 · 마우스오버 · 대상) 카드와 소리로 알려 주고, **지도에서 보기**로 위치를 찍습니다. 같은 몬스터는 5분에 한 번, 던전 · 공격대에서는 알리지 않습니다. |
+| ⑪ | 퀘스트 표시 | 목표를 다 채운 퀘스트의 보고 위치(금색 테두리 안의 노란 `?`)와 진행 중인 퀘스트의 목표 위치(퀘스트마다 다른 색 점, 미니맵에도 표시). 누르면 웨이포인트. **EzWoW - Quest**가 켜져 있으면 EzWoW - Quest가 맡습니다. |
+| - | 마을 NPC 표시 | 도시 지도에 여관주인·은행·비행 조련사·교관·상인·우체통 등을 미니맵 추적 아이콘처럼 표시(직업 교관은 직업 문장, 전문기술 교관은 그 전문기술 아이콘). 가리키면 이름과 칭호, 누르면 웨이포인트. |
 
 #### 접두어 검색
 
@@ -71,13 +77,19 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 | ④ | 월드맵 플레이어 · 마우스 좌표 표시 | 켬 |
 | ④ | 월드맵 지역 적정 레벨 · 낚시 숙련도 표시 | 켬 |
 | ⑤ | 캐릭터 이동 중 월드맵 반투명화 해제 | 켬 |
+| ⑤ | 지도 뒤 배경 어둡기: 전체 화면 월드맵 뒤 화면을 0~100%(5% 단위)로 어둡게. **기본** 버튼을 누르면 게임 기본 모습으로 | 기본 |
 | ⑤ | 월드맵 최대 확대 배율 늘리기 (최대 3.2배, 휠 확대·드래그는 게임 기본 기능) | 끔 |
 | ⑤ | 월드맵 배 · 비행선 · 지하철 · 차원문 표시 | 켬 |
-| - | 근처에 레어 몬스터가 나타나면 알림 (이름표 · 마우스오버 · 대상, 같은 몬스터는 5분에 한 번, 던전 · 공격대 제외) | 켬 |
-| - | 레어 알림 소리 재생 | 켬 |
-| - | 완료한 퀘스트의 보고 위치를 지도에 표시 (퀘스트 목록에서 목표를 다 채운 퀘스트를 주거나 받는 곳에 노란 `?`, 누르면 웨이포인트) | 켬 |
-| - | 진행 중인 퀘스트 위치도 표시 (회색 `?`) | 끔 |
-| ⑥ | 위치 초기화 · 후원하기 | - |
+| ⑥ | 근처에 레어 몬스터가 나타나면 알림 (이름표 · 마우스오버 · 대상, 같은 몬스터는 5분에 한 번, 던전 · 공격대 제외) | 켬 |
+| ⑥ | 레어 알림 소리 재생 | 켬 |
+| ⑦ | 완료한 퀘스트의 보고 위치를 지도에 표시 (목표를 다 채운 퀘스트를 주거나 받는 곳에 노란 `?`, 누르면 웨이포인트) | 켬 |
+| ⑦ | 진행 중인 퀘스트 위치도 표시 (회색 `?`) | 끔 |
+| ⑦ | 진행 중인 퀘스트 목표 위치 표시 (지도·미니맵, 퀘스트마다 다른 색 점) | 켬 |
+| ⑧ | 마을 지도에 주요 NPC 표시 (여관주인·은행원·경매인·비행 조련사·야수 관리인·직업/전문기술 교관·수리·잡화·음식·마법 재료·직업용품 상인·길드·전장 관리인·영혼의 치유사·우체통). 오른쪽 **종류 ▼**로 종류별 켜기/끄기 | 켬 |
+| ⑧ | 일반 지역 지도에도 표시 | 끔 |
+| ⑨ | 위치 초기화 · 후원하기 | - |
+
+- **EzWoW - Quest**가 켜져 있으면 ⑦의 세 줄 대신 “퀘스트 지도 표시는 EzWoW - Quest에서 설정합니다.” 한 줄이 나옵니다.
 
 ### 명령어 (`/ezmf`, `/emf`, `/맵파인더`)
 
@@ -88,6 +100,12 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 | `/ezmf clear` | 지도에 찍은 검색 핀과 웨이포인트 지우기 |
 | `/ezmf lang <auto\|ko\|en\|de\|fr\|es\|ru\|cn\|tw>` | 표시 언어 변경 |
 | `/ezmf help` | 도움말 |
+
+### EzWoW - Quest와 함께 쓰기
+
+- 퀘스트 보고 위치(`?`)와 진행 중인 퀘스트의 목표 위치 표시는 퀘스트 전용 애드온 **EzWoW - Quest**에도 들어 있습니다. EzWoW - Quest가 켜져 있으면 이 애드온의 퀘스트 표시는 저절로 꺼지고 EzWoW - Quest가 맡으므로, 지도에 두 번 그려지지 않습니다.
+- EzWoW - Quest는 처음 실행할 때 이 애드온의 퀘스트 표시 옵션을 **한 번** 가져갑니다.
+- EzWoW - Quest의 지도 표시는 이 애드온의 위치 정보를 쓰므로, 지도 표시를 쓰려면 이 애드온도 켜 두어야 합니다. 검색·월드맵 편의 기능·레어 알림은 언제나 이 애드온이 맡습니다.
 
 ### 저장 데이터
 
@@ -105,7 +123,9 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ### Overview
 
-Map Finder is an offline location search for the World Map: **monsters, rare elites, tameable beasts, NPCs, gathering nodes/objects, quests and items**. The built-in data has **20,930 entries** (7,421 NPCs · 7,656 objects · 4,140 quests · 1,713 items) searchable by name in 8 languages. It also adds World Map conveniences: reveal unexplored areas, coordinates, zone level ranges, wheel zoom and boat/zeppelin/tram/portal icons, plus an alert when a rare monster is nearby that can put its location straight on the map.
+Map Finder is an offline location search for the World Map: **monsters, rare elites, tameable beasts, NPCs, gathering nodes/objects, quests and items**. The built-in data has **20,930 entries** (7,421 NPCs · 7,656 objects · 4,140 quests · 1,713 items) searchable by name in 8 languages. It also adds World Map conveniences: reveal unexplored areas, coordinates, zone level ranges and fishing skill, map backdrop darkness, extended zoom and boat/zeppelin/tram/portal icons, plus an alert when a rare monster is nearby that can put its location straight on the map, and quest turn-in and objective spots.
+
+> When **EzWoW - Quest** is enabled, the quest turn-in (`?`) and objective marks are handled by EzWoW - Quest. See [Working with EzWoW - Quest](#working-with-ezwow---quest).
 
 ### Screenshots
 
@@ -113,7 +133,7 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 
 ![Settings window](docs/images/settings_en.png)
 
-> These are **mock-ups** rebuilt from the window sizes, coordinates, colours and strings in the code and the bundled data (beast names, levels and skills). In game it appears on the World Map.
+> These are **mock-ups** rebuilt from the window sizes, coordinates, colours and strings in the code and the bundled data (beast names, levels, skills and spawns, zone levels, transport). The map is a simplified drawing; quests and NPC names are made up. In game it appears on the World Map.
 
 ### Installation
 
@@ -130,9 +150,13 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ③ | Search box | Type part of a name. A **prefix + space** narrows the type (table below). Run-together Korean shortcuts (e.g. “오그경매” = Orgrimmar auction house) are understood. **Clear Pins** removes the map markers. |
 | ④ | Beast info | With `P ` you get family, level, attack speed, diet, damage/armor/health modifiers and learnable skills (rank) in the results and tooltip. |
 | ⑤ | Show on map | Click a result to jump to its zone with a **bouncing arrow (▼)** and a Blizzard **waypoint pin**. Results are sorted **your current zone → nearest → the rest**, and the first click goes to the nearest spawn. With several spawns, each click moves to the next one. |
-| ⑥ | Zone info | Level range (coloured against your level) and required fishing skill next to the zone name |
+| ⑥ | Zone info | Level range (coloured against your level) and required fishing skill under the zone name |
 | ⑦ | Coordinates | Player and cursor coordinates below the map |
 | ⑧ | Transport | Boats, zeppelins, the Deeprun Tram and portals (incl. Zephras Isle, Riverglades and Dalaran) in faction colours; click to open the destination map. |
+| ⑨ | Unexplored areas | Lifts the fog from areas you have not visited and tints them light blue (battlefield map `Shift+M` too). |
+| ⑩ | Rare alert | A card and a sound when a rare monster is nearby (nameplate · mouseover · target); **Show on map** marks it. Once per 5 minutes per monster, not in dungeons or raids. |
+| ⑪ | Quest marks | Turn-in spots of finished quests (a yellow `?` in a gold rim) and objective spots of quests in progress (one dot colour per quest, on the minimap too). Click for a waypoint. Handled by **EzWoW - Quest** while it is enabled. |
+| - | Town NPCs | Innkeepers, banks, flight masters, trainers, vendors, mailboxes and more on city maps, like the minimap tracking icons (class crests for class trainers, the profession's own icon for profession trainers). Hover for name and title, click for a waypoint. |
 
 #### Prefix search
 
@@ -161,13 +185,19 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ④ | Show player & cursor coordinates on World Map | On |
 | ④ | Show zone level & fishing skill on World Map | On |
 | ⑤ | Disable map fade while character is moving | On |
+| ⑤ | Map backdrop darkness: how dark the screen behind the full-screen World Map gets, 0–100% in 5% steps. The **Default** button keeps the game's own look | Default |
 | ⑤ | Extend World Map maximum zoom (up to 3.2×; wheel zoom and drag are built into the game) | Off |
 | ⑤ | Show boats, zeppelins, trams & portals on World Map | On |
-| - | Alert when a rare monster is nearby (nameplate · mouseover · target, once per 5 minutes per monster, not in dungeons or raids) | On |
-| - | Play a sound with rare alerts | On |
-| - | Show turn-in spots of finished quests on the map (yellow `?` where quests in your log with all objectives done are given / turned in; click for a waypoint) | On |
-| - | Also show spots of quests still in progress (grey `?`) | Off |
-| ⑥ | Reset Position · Support | - |
+| ⑥ | Alert when a rare monster is nearby (nameplate · mouseover · target, once per 5 minutes per monster, not in dungeons or raids) | On |
+| ⑥ | Play a sound with rare alerts | On |
+| ⑦ | Show turn-in spots of finished quests on the map (yellow `?` where quests with all objectives done are given / turned in; click for a waypoint) | On |
+| ⑦ | Also show spots of quests still in progress (grey `?`) | Off |
+| ⑦ | Show objective spots of quests in progress (map and minimap, one dot colour per quest) | On |
+| ⑧ | Show service NPCs on town maps (innkeepers, bankers, auctioneers, flight & stable masters, class/profession trainers, repair, general goods, food, reagent & trade supply vendors, guild & battle masters, spirit healers, mailboxes). The **Types ▼** button turns each kind on or off | On |
+| ⑧ | Also show them on regular zone maps | Off |
+| ⑨ | Reset Position · Support | - |
+
+- While **EzWoW - Quest** is enabled, the three ⑦ rows are replaced by one line: “Quest map marks are set in EzWoW - Quest.”
 
 ### Slash commands (`/ezmf`, `/emf`, `/맵파인더`)
 
@@ -178,6 +208,12 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | `/ezmf clear` | Clear search pins and the waypoint |
 | `/ezmf lang <auto\|ko\|en\|de\|fr\|es\|ru\|cn\|tw>` | Change display language |
 | `/ezmf help` | Help |
+
+### Working with EzWoW - Quest
+
+- The quest turn-in (`?`) and objective marks are also part of the quest addon **EzWoW - Quest**. While EzWoW - Quest is enabled, the quest marks of this addon turn themselves off and EzWoW - Quest takes over, so nothing is drawn twice.
+- On its first start, EzWoW - Quest carries over the quest mark options of this addon **once**.
+- EzWoW - Quest draws its map marks with the location data of this addon, so keep this addon enabled for them. Search, the map conveniences and rare alerts always stay in this addon.
 
 ### Saved data
 

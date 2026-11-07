@@ -84,6 +84,7 @@ Database\AllNames_zhTW.lua
 Database\RareMonsters.lua
 Database\HunterPets.lua
 Database\MapRevealData.lua
+Database\QuestData.lua
 Data\ZoneAndGatherData.lua
 Modules\SearchEngine.lua
 Modules\MapEnhancements.lua
@@ -91,4 +92,6 @@ UI\LanguageDropdown.lua
 UI\OptionsWindow.lua
 UI\SearchPanel.lua
 Modules\QuestLogPins.lua
+Modules\ServiceNpcPins.lua
+Modules\QuestObjectivePins.lua
 Modules\RareAlert.lua

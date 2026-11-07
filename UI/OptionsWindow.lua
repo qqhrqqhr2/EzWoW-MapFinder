@@ -119,7 +119,7 @@ end
 function SettingsDialog.buildMapFinderSettingsFrame()
     if ns.settingsPanel then return ns.settingsPanel end
     local windowFrame = CreateFrame("Frame", "EzWoWMapFinderSettings", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    windowFrame:SetSize(440, 606)
+    windowFrame:SetSize(440, 762)
     SettingsDialog.restoreSettingsPosition(windowFrame)
     windowFrame:SetFrameStrata("FULLSCREEN_DIALOG")
     windowFrame:SetToplevel(true)
@@ -391,6 +391,150 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
     end)
 
+    windowFrame.questObjCheck = createCheckOptionRow(-578, "questObjectivePins", function()
+        if ns.RefreshQuestObjectivePins then ns.RefreshQuestObjectivePins() end
+    end)
+
+    -- service NPC icons on town maps; the rows move up when the quest rows are hidden
+    local SERVICE_ROW_Y = -604
+    windowFrame.serviceCheck = createCheckOptionRow(-604, "serviceNpcPins", function()
+        if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
+    end)
+    windowFrame.serviceZonesCheck = createCheckOptionRow(-630, "serviceNpcPinsZones", function()
+        if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
+    end)
+
+    -- gathering helpers (herb / ore spots, interact icons, auto tracking)
+    windowFrame.gatherCheck = createCheckOptionRow(-656, "gatherPins", function()
+        if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
+        if ns.GatherPins and ns.GatherPins.updateMinimap then pcall(ns.GatherPins.updateMinimap) end
+    end)
+    windowFrame.gatherIconsCheck = createCheckOptionRow(-682, "gatherInteractIcons", function()
+        if ns.GatherPins and ns.GatherPins.applyInteractIcons then pcall(ns.GatherPins.applyInteractIcons) end
+    end)
+    windowFrame.gatherTrackCheck = createCheckOptionRow(-708, "gatherAutoTrack", function(enabled)
+        if enabled and ns.GatherPins and ns.GatherPins.autoTrack then pcall(ns.GatherPins.autoTrack) end
+    end)
+
+    -- per-type toggles: a small checklist under the "Types" button
+    local typesBtn = createStyledActionBtn(96, 20, false, nil)
+    windowFrame.serviceTypesBtn = typesBtn
+    local typesPopup
+    local function placeServiceRows(shift)
+        local y = SERVICE_ROW_Y + LANG_ROWS_SAVED + shift
+        windowFrame.serviceCheck:ClearAllPoints()
+        windowFrame.serviceCheck:SetPoint("TOPLEFT", 18, y)
+        windowFrame.serviceZonesCheck:ClearAllPoints()
+        windowFrame.serviceZonesCheck:SetPoint("TOPLEFT", 18, y - 26)
+        windowFrame.gatherCheck:ClearAllPoints()
+        windowFrame.gatherCheck:SetPoint("TOPLEFT", 18, y - 52)
+        windowFrame.gatherIconsCheck:ClearAllPoints()
+        windowFrame.gatherIconsCheck:SetPoint("TOPLEFT", 18, y - 78)
+        windowFrame.gatherTrackCheck:ClearAllPoints()
+        windowFrame.gatherTrackCheck:SetPoint("TOPLEFT", 18, y - 104)
+        typesBtn:ClearAllPoints()
+        typesBtn:SetPoint("TOPRIGHT", windowFrame, "TOPRIGHT", -20, y - 1)
+    end
+    windowFrame.PlaceServiceRows = placeServiceRows
+    placeServiceRows(0)
+
+    local function buildTypesPopup()
+        local popup = CreateFrame("Frame", nil, windowFrame, BackdropTemplateMixin and "BackdropTemplate" or nil)
+        local types = ns.SERVICE_NPC_TYPES or {}
+        local rowsPerCol = math.ceil(#types / 2)
+        popup:SetSize(372, rowsPerCol * 22 + 46)
+        popup:SetFrameLevel(windowFrame:GetFrameLevel() + 30)
+        popup:EnableMouse(true)
+        if popup.SetBackdrop then
+            ns.UIKit:ApplyBackdrop(popup)
+            popup:SetBackdropColor(unpack(Theme.bg))
+            popup:SetBackdropBorderColor(unpack(Theme.accent))
+        end
+        popup.rows = {}
+        for index, t in ipairs(types) do
+            local col = (index - 1) >= rowsPerCol and 1 or 0
+            local row = (index - 1) % rowsPerCol
+            local check = CreateFrame("CheckButton", nil, popup, "UICheckButtonTemplate")
+            check:SetSize(20, 20)
+            check:SetPoint("TOPLEFT", 8 + col * 182, -8 - row * 22)
+            local icon = check:CreateTexture(nil, "ARTWORK")
+            icon:SetSize(14, 14)
+            icon:SetPoint("LEFT", check, "RIGHT", 2, 0)
+            icon:SetTexture(t.tex)
+            if t.round then icon:SetTexCoord(0.08, 0.92, 0.08, 0.92) end
+            check.label = check:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+            check.label:SetPoint("LEFT", icon, "RIGHT", 4, 0)
+            check.label:SetJustifyH("LEFT")
+            if check.label.SetWordWrap then check.label:SetWordWrap(false) end
+            check.label:SetTextColor(unpack(Theme.text))
+            check.typeKey = t.key
+            check:SetScript("OnClick", function(self)
+                if type(ns.DB.serviceNpcTypes) ~= "table" then ns.DB.serviceNpcTypes = {} end
+                ns.DB.serviceNpcTypes[self.typeKey] = (not self:GetChecked()) and false or nil
+                if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
+            end)
+            popup.rows[#popup.rows + 1] = check
+        end
+        local function setAll(on)
+            ns.DB.serviceNpcTypes = {}
+            if not on then
+                for _, t in ipairs(types) do ns.DB.serviceNpcTypes[t.key] = false end
+            end
+            popup:RefreshTexts()
+            if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
+        end
+        local allBtn = createMapFinderButton(popup, 80, 20, false, function() setAll(true) end)
+        allBtn:SetPoint("BOTTOMLEFT", 10, 10)
+        allBtn:SetFrameLevel(popup:GetFrameLevel() + 2)
+        local noneBtn = createMapFinderButton(popup, 80, 20, false, function() setAll(false) end)
+        noneBtn:SetPoint("LEFT", allBtn, "RIGHT", 8, 0)
+        noneBtn:SetFrameLevel(popup:GetFrameLevel() + 2)
+        local closeBtn = createMapFinderButton(popup, 22, 20, false, function() popup:Hide() end)
+        closeBtn:SetPoint("BOTTOMRIGHT", -10, 10)
+        closeBtn:SetFrameLevel(popup:GetFrameLevel() + 2)
+        closeBtn:SetText("X")
+        function popup:RefreshTexts()
+            local disabled = type(ns.DB.serviceNpcTypes) == "table" and ns.DB.serviceNpcTypes or {}
+            for _, check in ipairs(self.rows) do
+                check.label:SetText(L["serviceType_" .. check.typeKey] or check.typeKey)
+                ns.UIKit:FitFontString(check.label, 140, 1)
+                check:SetChecked(disabled[check.typeKey] ~= false)
+            end
+            allBtn:SetText(L.serviceNpcAll)
+            noneBtn:SetText(L.serviceNpcNone)
+        end
+        popup:Hide()
+        return popup
+    end
+
+    typesBtn:SetScript("OnClick", function()
+        if not typesPopup then typesPopup = buildTypesPopup() end
+        if typesPopup:IsShown() then
+            typesPopup:Hide()
+            return
+        end
+        typesPopup:ClearAllPoints()
+        typesPopup:SetPoint("BOTTOMRIGHT", typesBtn, "TOPRIGHT", 0, 4)
+        typesPopup:RefreshTexts()
+        typesPopup:Show()
+    end)
+    windowFrame:HookScript("OnHide", function()
+        if typesPopup then typesPopup:Hide() end
+    end)
+    windowFrame.RefreshServiceTypesPopup = function()
+        if typesPopup and typesPopup:IsShown() then typesPopup:RefreshTexts() end
+    end
+
+    -- shown instead of the three quest rows while EzWoW - Quest is loaded
+    local questManagedNote = windowFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    questManagedNote:SetPoint("TOPLEFT", 22, -526 + LANG_ROWS_SAVED - 4)
+    questManagedNote:SetWidth(396)
+    questManagedNote:SetJustifyH("LEFT")
+    if questManagedNote.SetWordWrap then questManagedNote:SetWordWrap(false) end
+    questManagedNote:SetTextColor(unpack(Theme.muted))
+    questManagedNote:Hide()
+    windowFrame.questManagedNote = questManagedNote
+
     local resetBtn = createStyledActionBtn(194, 26, false, function()
         ns.DB.autoAlign = true
         ns.DB.buttonPos = { x = 0.04, y = 0.12 }
@@ -458,6 +602,35 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         self.questPinsAllCheck.label:SetText(L.questLogPinsAll)
         ns.UIKit:FitFontString(self.questPinsAllCheck.label, 380, 1)
         self.questPinsAllCheck:SetChecked(ns.DB.questLogPinsAll == true)
+        self.questObjCheck.label:SetText(L.questObjectivePins)
+        ns.UIKit:FitFontString(self.questObjCheck.label, 380, 1)
+        self.questObjCheck:SetChecked(ns.DB.questObjectivePins ~= false)
+        local questElsewhere = ns.IsQuestAddonActive and ns.IsQuestAddonActive() or false
+        self.questPinsCheck:SetShown(not questElsewhere)
+        self.questPinsAllCheck:SetShown(not questElsewhere)
+        self.questObjCheck:SetShown(not questElsewhere)
+        self.questManagedNote:SetText(L.questManagedByQuest or "")
+        ns.UIKit:FitFontString(self.questManagedNote, 396, 1)
+        self.questManagedNote:SetShown(questElsewhere)
+        self.serviceCheck.label:SetText(L.serviceNpcPins)
+        ns.UIKit:FitFontString(self.serviceCheck.label, 290, 1)
+        self.serviceCheck:SetChecked(ns.DB.serviceNpcPins ~= false)
+        self.serviceZonesCheck.label:SetText(L.serviceNpcPinsZones)
+        ns.UIKit:FitFontString(self.serviceZonesCheck.label, 380, 1)
+        self.serviceZonesCheck:SetChecked(ns.DB.serviceNpcPinsZones == true)
+        self.gatherCheck.label:SetText(L.gatherPins)
+        ns.UIKit:FitFontString(self.gatherCheck.label, 380, 1)
+        self.gatherCheck:SetChecked(ns.DB.gatherPins ~= false)
+        self.gatherIconsCheck.label:SetText(L.gatherInteractIcons)
+        ns.UIKit:FitFontString(self.gatherIconsCheck.label, 380, 1)
+        self.gatherIconsCheck:SetChecked(ns.DB.gatherInteractIcons ~= false)
+        self.gatherTrackCheck.label:SetText(L.gatherAutoTrack)
+        ns.UIKit:FitFontString(self.gatherTrackCheck.label, 380, 1)
+        self.gatherTrackCheck:SetChecked(ns.DB.gatherAutoTrack ~= false)
+        self.serviceTypesBtn:SetText((L.serviceNpcTypes or "Types") .. " ▼")
+        self.PlaceServiceRows(questElsewhere and 52 or 0)
+        self.RefreshServiceTypesPopup()
+        self:SetHeight(questElsewhere and 710 or 762)
         self.resetBtn:SetText(L.resetPos)
         self.donateBtn:SetText(L.donate)
         local getMeta = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata

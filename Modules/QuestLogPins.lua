@@ -6,6 +6,57 @@
 -- (from the built-in quest locations). Quests still in progress
 -- can be shown too (grey "?", option). Clicking a mark sets a map waypoint.
 local _, ns = ...
+
+-- Click pass-through can't be changed in combat: it is set once combat ends.
+local pendingPropagate = {}
+local propagateFrame
+local function setPropagateClicks(frame, value)
+    if not frame.SetPropagateMouseClicks then return end
+    if InCombatLockdown and InCombatLockdown() then
+        pendingPropagate[frame] = value
+        if not propagateFrame then
+            propagateFrame = CreateFrame("Frame")
+            propagateFrame:SetScript("OnEvent", function()
+                for f, v in pairs(pendingPropagate) do
+                    pendingPropagate[f] = nil
+                    f:SetPropagateMouseClicks(v)
+                end
+            end)
+            pcall(propagateFrame.RegisterEvent, propagateFrame, "PLAYER_REGEN_ENABLED")
+        end
+        return
+    end
+    pendingPropagate[frame] = nil
+    frame:SetPropagateMouseClicks(value)
+end
+
+-- The hovered mark comes to the front of marks that overlap it, and goes back
+-- to its own level when the mouse leaves.
+local function raisePin(self)
+    if self.ezBaseLevel == nil then self.ezBaseLevel = self:GetFrameLevel() end
+    self:SetFrameLevel(self.ezBaseLevel + 500)
+end
+local function lowerPin(self)
+    if self.ezBaseLevel ~= nil then
+        self:SetFrameLevel(self.ezBaseLevel)
+        self.ezBaseLevel = nil
+    end
+end
+
+-- Marks grow a little when the map is zoomed in (less than the map itself,
+-- at most 3x), so they stay readable without covering the map.
+local function zoomGrow(cScale)
+    local sc = WorldMapFrame and WorldMapFrame.ScrollContainer
+    local minScale
+    if sc and sc.GetScaleForMinZoom then
+        local ok, v = pcall(sc.GetScaleForMinZoom, sc)
+        if ok and type(v) == "number" and v > 0 then minScale = v end
+    end
+    if not minScale or not cScale or cScale <= minScale then return 1 end
+    local f = (cScale / minScale) ^ 0.6
+    if f > 3 then f = 3 end
+    return f
+end
 local type, pairs, ipairs, tonumber, tostring, pcall = type, pairs, ipairs, tonumber, tostring, pcall
 
 local QuestLogPins = ns.QuestLogPins or {}
@@ -28,6 +79,43 @@ local function isSecret(v) return issecretvalue and issecretvalue(v) end
 local function spotKey(sp)
     if type(sp) ~= "table" or type(sp[2]) ~= "number" or type(sp[3]) ~= "number" then return nil end
     return tostring(sp[1]) .. ":" .. math.floor(sp[2] + 0.5) .. ":" .. math.floor(sp[3] + 0.5)
+end
+
+-- "[16] " for a quest in the log (its level), "" when the level isn't known.
+function ns.QuestLevelPrefix(questID)
+    local level
+    if C_QuestLog and C_QuestLog.GetLogIndexForQuestID and C_QuestLog.GetInfo then
+        local okIndex, index = pcall(C_QuestLog.GetLogIndexForQuestID, questID)
+        if okIndex and type(index) == "number" and not isSecret(index) then
+            local okInfo, info = pcall(C_QuestLog.GetInfo, index)
+            if okInfo and type(info) == "table" then level = info.level end
+        end
+    end
+    if (type(level) ~= "number" or level <= 0) and C_QuestLog and C_QuestLog.GetQuestDifficultyLevel then
+        local ok, l = pcall(C_QuestLog.GetQuestDifficultyLevel, questID)
+        if ok then level = l end
+    end
+    if type(level) ~= "number" or isSecret(level) or level <= 0 then return "" end
+    -- the same short tag as the quest tracker: D dungeon, R raid, P PvP, + elite/group
+    local suffix = ""
+    if C_QuestLog and C_QuestLog.GetQuestTagInfo then
+        local okTag, tag = pcall(C_QuestLog.GetQuestTagInfo, questID)
+        if okTag and type(tag) == "table" then
+            local tagID, tagName = tag.tagID, tag.tagName
+            if isSecret(tagID) then tagID = nil end
+            if isSecret(tagName) then tagName = nil end
+            if tagID == 81 or (tagName and tagName == _G.LFG_TYPE_DUNGEON) then
+                suffix = "D"
+            elseif tagID == 62 or (tagName and tagName == _G.LFG_TYPE_RAID) then
+                suffix = "R"
+            elseif tagID == 41 or (tagName and tagName == _G.PVP) then
+                suffix = "P"
+            elseif tagID or tagName then
+                suffix = "+"
+            end
+        end
+    end
+    return "[" .. level .. suffix .. "] "
 end
 
 function QuestLogPins.buildIndexes()
@@ -138,6 +226,26 @@ function QuestLogPins.spotsFor(entry, questID)
     return kept
 end
 
+-- where a quest is turned in (nil when the data doesn't know the quest)
+function QuestLogPins.turnInSpotsForQuest(questID)
+    QuestLogPins.buildIndexes()
+    local entry = questIndex and questIndex[questID]
+    if not (entry and entry.spawns) then return nil end
+    return QuestLogPins.spotsFor(entry, questID)
+end
+
+function QuestLogPins.questEntry(questID)
+    QuestLogPins.buildIndexes()
+    return questIndex and questIndex[questID] or nil
+end
+
+-- every place the quest is taken or turned in at
+function QuestLogPins.questSpots(questID)
+    QuestLogPins.buildIndexes()
+    local entry = questIndex and questIndex[questID]
+    return entry and entry.spawns or nil
+end
+
 -----------------------------------------------------------------------------
 -- Quest log (C_QuestLog first, older globals as fallback)
 -----------------------------------------------------------------------------
@@ -202,11 +310,25 @@ function QuestLogPins.obtainPin(index)
     pin = CreateFrame("Button", nil, canvasFrame)
     pin:EnableMouse(true)
     pin:RegisterForClicks("LeftButtonUp")
-    if pin.SetPropagateMouseClicks then pin:SetPropagateMouseClicks(false) end
-    pin:SetSize(18, 18)
+    setPropagateClicks(pin, false)
+    pin:SetSize(15, 15)
     pin:SetFrameStrata("HIGH")
+    -- dark round backing with a light rim, so the yellow "?" stands out on
+    -- yellow and brown map art alike
+    local disc = "Interface\\CharacterFrame\\TempPortraitAlphaMask"
+    pin.rim = pin:CreateTexture(nil, "BACKGROUND", nil, 0)
+    pin.rim:SetTexture(disc)
+    pin.rim:SetPoint("CENTER")
+    pin.rim:SetSize(16, 16)
+    pin.rim:SetVertexColor(0.95, 0.85, 0.45, 0.95)
+    pin.back = pin:CreateTexture(nil, "BACKGROUND", nil, 1)
+    pin.back:SetTexture(disc)
+    pin.back:SetPoint("CENTER")
+    pin.back:SetSize(14, 14)
+    pin.back:SetVertexColor(0.08, 0.06, 0.04, 0.92)
     pin.icon = pin:CreateTexture(nil, "ARTWORK")
-    pin.icon:SetAllPoints()
+    pin.icon:SetPoint("CENTER")
+    pin.icon:SetSize(12, 12)
     pin:SetScript("OnEnter", function(self)
         local group = self.group
         if not group then return end
@@ -214,13 +336,16 @@ function QuestLogPins.obtainPin(index)
         GameTooltip:SetText(group.npcName or (L.title or "EzWoW - Map Finder"), unpack(Theme.accent))
         for _, quest in ipairs(group.quests) do
             local state = quest.complete and ("|cff40ff59" .. L.questPinReady .. "|r") or ("|cffa7b9c5" .. L.questPinActive .. "|r")
-            GameTooltip:AddLine((quest.title or ("#" .. quest.id)) .. "  " .. state, 0.929, 0.957, 0.969, true)
+            GameTooltip:AddLine(ns.QuestLevelPrefix(quest.id) .. (quest.title or ("#" .. quest.id)) .. "  " .. state, 0.929, 0.957, 0.969, true)
         end
         GameTooltip:AddLine(L.questPinHint, unpack(Theme.muted))
-        GameTooltip:AddLine("EzWoW - Map Finder", unpack(Theme.muted))
+        GameTooltip:AddDoubleLine(" ", "EzWoW - Map Finder", 0, 0, 0, 0.5, 0.5, 0.5)
         GameTooltip:Show()
+        if _G.EzWoWTooltipTagSizer and _G.EzWoWTooltipTagSizer.Refit then pcall(_G.EzWoWTooltipTagSizer.Refit, GameTooltip) end
     end)
     pin:SetScript("OnLeave", function() GameTooltip:Hide() end)
+    pin:HookScript("OnEnter", raisePin)
+    pin:HookScript("OnLeave", lowerPin)
     pin:SetScript("OnClick", function(self)
         local sp = self.group and self.group.spawn
         if not sp then return end
@@ -237,6 +362,8 @@ end
 
 function QuestLogPins.refresh()
     QuestLogPins.hideAll()
+    -- EzWoW - Quest draws these marks when it is loaded
+    if ns.IsQuestAddonActive and ns.IsQuestAddonActive() then return end
     if not (ns.DB and ns.DB.questLogPins ~= false) then return end
     if not (WorldMapFrame and WorldMapFrame:IsShown()) then return end
     local project = ns.ProjectSpawnToWorldMapCoords
@@ -304,7 +431,7 @@ end
 -- Pins keep one size on screen; group.px / py were taken at canvas size cw x ch.
 function QuestLogPins.anchorPin(pin, canvasFrame, cw, ch, cScale)
     local group = pin.group
-    local pinScale = 1 / cScale
+    local pinScale = zoomGrow(cScale) / cScale
     local px = group.px * (cw / (group.cw or cw))
     local py = group.py * (ch / (group.ch or ch))
     pin:SetScale(pinScale)
@@ -367,6 +494,7 @@ local function rememberStarter(questID, starter)
 end
 
 local function onQuestEvent(event, ...)
+    if ns.IsQuestAddonActive and ns.IsQuestAddonActive() then return true end
     if event == "QUEST_DETAIL" then
         local questID = type(GetQuestID) == "function" and GetQuestID() or nil
         detailQuest, detailStarter = tonumber(questID), currentStarter()

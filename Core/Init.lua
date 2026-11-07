@@ -70,6 +70,10 @@ function ns.InitializeDatabase()
     if CONST_DB.rareAlertSound == nil then CONST_DB.rareAlertSound = true end
     if CONST_DB.questLogPins == nil then CONST_DB.questLogPins = true end
     if CONST_DB.questLogPinsAll == nil then CONST_DB.questLogPinsAll = false end
+    if CONST_DB.questObjectivePins == nil then CONST_DB.questObjectivePins = true end
+    if CONST_DB.serviceNpcPins == nil then CONST_DB.serviceNpcPins = true end
+    if CONST_DB.serviceNpcPinsZones == nil then CONST_DB.serviceNpcPinsZones = false end
+    if type(CONST_DB.serviceNpcTypes) ~= "table" then CONST_DB.serviceNpcTypes = {} end
     if type(CONST_DB.buttonPos) ~= "table" then
         CONST_DB.buttonPos = { x = 0.04, y = 0.12 }
     end
@@ -150,6 +154,80 @@ function ns.PassMapRightClicks(frame)
     end
     applyRightClickPass(frame)
 end
+
+-----------------------------------------------------------------------------
+-- Quest map marks moved to EzWoW - Quest. While that addon is loaded (or,
+-- before login, is about to load) the copies here stay off.
+-----------------------------------------------------------------------------
+local QUEST_ADDON = "EzWoW-Quest"
+local questAddonActive
+
+function ns.IsQuestAddonActive()
+    if questAddonActive ~= nil then return questAddonActive end
+    local isLoaded = (C_AddOns and C_AddOns.IsAddOnLoaded) or _G.IsAddOnLoaded
+    if type(isLoaded) == "function" then
+        local ok, loaded = pcall(isLoaded, QUEST_ADDON)
+        if ok and loaded then
+            questAddonActive = true
+            return true
+        end
+    end
+    if IsLoggedIn and IsLoggedIn() then
+        questAddonActive = false
+        return false
+    end
+    local getState = C_AddOns and C_AddOns.GetAddOnEnableState
+    local isLoadable = C_AddOns and C_AddOns.IsAddOnLoadable
+    if type(getState) == "function" then
+        local okName, character = pcall(UnitName, "player")
+        local okState, state = pcall(getState, QUEST_ADDON, okName and character or nil)
+        if okState and type(state) == "number" and state > 0 then
+            if type(isLoadable) ~= "function" then return true end
+            local okLoad, loadable = pcall(isLoadable, QUEST_ADDON)
+            return (not okLoad) or (loadable and true or false)
+        end
+    end
+    return false
+end
+
+-----------------------------------------------------------------------------
+-- Public table for other EzWoW addons (EzWoW - Quest draws its map marks
+-- with this). Every call looks the helper up when it runs, so load order
+-- inside this addon does not matter.
+-----------------------------------------------------------------------------
+_G.EzWoWMapFinderAPI = {
+    version = 1,
+    -- (spawn, mapID) -> mapID, x, y on that map (nil when the spawn is not on it)
+    ProjectSpawn = function(spawn, mapID)
+        local fn = ns.ProjectSpawnToWorldMapCoords
+        if type(fn) == "function" then return fn(spawn, mapID) end
+        return nil
+    end,
+    ApplyWaypoint = function(spawn)
+        local fn = ns.ApplyWaypointForSpawn
+        if type(fn) == "function" then fn(spawn) end
+    end,
+    -- (entry, spawn index) -> true when the moving arrow pin and waypoint were set
+    PointAtSpawn = function(entry, spawnIdx)
+        local fn = ns.PointAtSpawn
+        if type(fn) == "function" then return fn(entry, spawnIdx) == true end
+        return false
+    end,
+    PassMapRightClicks = function(frame)
+        ns.PassMapRightClicks(frame)
+    end,
+    LocalizedName = function(entry)
+        local fn = ns.GetLocalizedEntityName
+        if type(fn) == "function" then return fn(entry) end
+        return nil
+    end,
+    IsAutoWaypoint = function()
+        return not (ns.DB and ns.DB.autoWaypoint == false)
+    end,
+    GetData = function() return _G.EzWoWMapFinderData end,
+    GetTranslations = function() return _G.EzWoWMapFinderTranslations end,
+    GetQuestData = function() return _G.EzWoWMapFinderQuestData end,
+}
 
 -----------------------------------------------------------------------------
 -- Module Class Exports

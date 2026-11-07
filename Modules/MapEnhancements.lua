@@ -3,6 +3,29 @@
 -- Modules/MapEnhancements.lua : Fog-of-War Reveal, Cursor Coords, Zoom Extender & Transit Pins
 --===========================================================================
 local _, ns = ...
+
+-- Click pass-through can't be changed in combat: it is set once combat ends.
+local pendingPropagate = {}
+local propagateFrame
+local function setPropagateClicks(frame, value)
+    if not frame.SetPropagateMouseClicks then return end
+    if InCombatLockdown and InCombatLockdown() then
+        pendingPropagate[frame] = value
+        if not propagateFrame then
+            propagateFrame = CreateFrame("Frame")
+            propagateFrame:SetScript("OnEvent", function()
+                for f, v in pairs(pendingPropagate) do
+                    pendingPropagate[f] = nil
+                    f:SetPropagateMouseClicks(v)
+                end
+            end)
+            pcall(propagateFrame.RegisterEvent, propagateFrame, "PLAYER_REGEN_ENABLED")
+        end
+        return
+    end
+    pendingPropagate[frame] = nil
+    frame:SetPropagateMouseClicks(value)
+end
 -- Text for the game's AddOns panel in the six languages without their own line: { deDE, frFR, esES, ruRU, zhCN, zhTW }
 local PANEL_LANG_INDEX = { deDE = 1, frFR = 2, esES = 3, esMX = 3, ruRU = 4, zhCN = 5, zhTW = 6, de = 1, fr = 2, es = 3, ru = 4 }
 local function panelText(code, ko, en, others)
@@ -560,7 +583,7 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
     pin:EnableMouse(true)
     pin:RegisterForClicks("LeftButtonUp")
     if pin.SetMouseClickEnabled then pin:SetMouseClickEnabled(true) end
-    if pin.SetPropagateMouseClicks then pin:SetPropagateMouseClicks(false) end
+    setPropagateClicks(pin, false)
     pin:SetSize(20, 20)
     pin:SetFrameStrata("HIGH")
     pin:SetFrameLevel((canvasFrame:GetFrameLevel() or 10) + 180)
@@ -586,8 +609,9 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
                 GameTooltip:AddLine(hasKo and member.ko or member.en, mc[1], mc[2], mc[3], true)
             end
             GameTooltip:AddLine(L.transitClickZone or (hasKo and "클릭: 이 지역 지도 열기" or "Click: Open this zone's map"), unpack(Theme.muted))
-            GameTooltip:AddLine("EzWoW - Map Finder", unpack(Theme.muted))
+            GameTooltip:AddDoubleLine(" ", "EzWoW - Map Finder", 0, 0, 0, 0.5, 0.5, 0.5)
             GameTooltip:Show()
+            if _G.EzWoWTooltipTagSizer and _G.EzWoWTooltipTagSizer.Refit then pcall(_G.EzWoWTooltipTagSizer.Refit, GameTooltip) end
             return
         end
         GameTooltip:SetText(titleStr, unpack(Theme.accent))
@@ -595,8 +619,9 @@ function WorldMapCanvasEnhancer.obtainTransitPin(entryIndex)
         if apiInfo.dest then
             GameTooltip:AddLine(L.transitClick or "Click: Open destination map", unpack(Theme.muted))
         end
-        GameTooltip:AddLine("EzWoW - Map Finder", unpack(Theme.muted))
+        GameTooltip:AddDoubleLine(" ", "EzWoW - Map Finder", 0, 0, 0, 0.5, 0.5, 0.5)
         GameTooltip:Show()
+        if _G.EzWoWTooltipTagSizer and _G.EzWoWTooltipTagSizer.Refit then pcall(_G.EzWoWTooltipTagSizer.Refit, GameTooltip) end
     end)
     pin:SetScript("OnLeave", function() GameTooltip:Hide() end)
     pin:SetScript("OnMouseDown", function(self, button)
