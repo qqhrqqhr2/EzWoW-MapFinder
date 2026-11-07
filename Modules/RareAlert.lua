@@ -174,11 +174,6 @@ function RareAlertNotifier.buildAlertCard()
     return card
 end
 
--- Opening the map in combat would be blocked (and chat lines added in combat
--- taint the chat history), so in combat the card says the map opens after
--- combat and the request waits for PLAYER_REGEN_ENABLED.
-local pendingFocus, focusEvents
-
 function RareAlertNotifier.openEntityOnMap(entity, spawnIdx)
     if WorldMapFrame and not WorldMapFrame:IsShown() then
         if ToggleWorldMap then pcall(ToggleWorldMap) else pcall(ShowUIPanel, WorldMapFrame) end
@@ -191,23 +186,6 @@ end
 function RareAlertNotifier.focusCardEntityOnMap()
     local card = alertCard
     if not card or not card.entity then return end
-    if InCombatLockdown and InCombatLockdown() then
-        pendingFocus = { entity = card.entity, spawnIdx = card.spawnIdx }
-        if not focusEvents then
-            focusEvents = CreateFrame("Frame")
-            pcall(focusEvents.RegisterEvent, focusEvents, "PLAYER_REGEN_ENABLED")
-            focusEvents:SetScript("OnEvent", function()
-                local request = pendingFocus
-                pendingFocus = nil
-                if request and not (InCombatLockdown and InCombatLockdown()) then
-                    RareAlertNotifier.openEntityOnMap(request.entity, request.spawnIdx)
-                end
-            end)
-        end
-        card.placeText:SetText(L.transitQueued or "")
-        return
-    end
-    pendingFocus = nil
     RareAlertNotifier.openEntityOnMap(card.entity, card.spawnIdx)
     card:Hide()
 end

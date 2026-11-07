@@ -603,7 +603,7 @@ function EntityExplorerPanel.handleSearchResultSelection(entry, forcedSpawnIdx)
     local anchorTarget = spawns and spawns[ns.selectedSpawnIdx]
     if not anchorTarget then
         local _, fallbackUiMapID = resolveEntityZoneKey(entry, 1)
-        if fallbackUiMapID and WorldMapFrame and WorldMapFrame.SetMapID and not (InCombatLockdown and InCombatLockdown()) then
+        if fallbackUiMapID and WorldMapFrame and WorldMapFrame.SetMapID then
             pcall(WorldMapFrame.SetMapID, WorldMapFrame, fallbackUiMapID)
         end
         statusRegion:SetText(L.noCoords)
@@ -612,11 +612,7 @@ function EntityExplorerPanel.handleSearchResultSelection(entry, forcedSpawnIdx)
     end
     local uiMapID, mxVal, myVal, zKey = projectWorldSpawnToMap(anchorTarget, nil)
     if uiMapID and WorldMapFrame and WorldMapFrame.SetMapID then
-        if InCombatLockdown and InCombatLockdown() then
-            statusRegion:SetText(L.combatNote)
-        else
-            pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
-        end
+        pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
     end
     local mapID = WorldMapFrame and WorldMapFrame.GetMapID and WorldMapFrame:GetMapID() or uiMapID
     local _, cxVal, cyVal, lookupKey = projectWorldSpawnToMap(anchorTarget, mapID)
@@ -654,7 +650,7 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
             end
         end)
     end
-    if WorldMapFrame and not (InCombatLockdown and InCombatLockdown()) then
+    if WorldMapFrame then
         if not WorldMapFrame:IsShown() and ShowUIPanel then pcall(ShowUIPanel, WorldMapFrame) end
         if uiMapID and WorldMapFrame.SetMapID then pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID) end
     end
@@ -668,7 +664,6 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
         for _, delay in ipairs({ 0.3, 1.0 }) do
             C_Timer.After(delay, function()
                 if ns.selectedEntity ~= entry or not (WorldMapFrame and WorldMapFrame:IsShown()) then return end
-                if InCombatLockdown and InCombatLockdown() then return end
                 if WorldMapFrame.GetMapID and WorldMapFrame:GetMapID() ~= uiMapID and WorldMapFrame.SetMapID then
                     pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
                 end
@@ -1227,7 +1222,7 @@ function EntityExplorerPanel.init()
             print("|cff4bc8e8EzWoW - Map Finder|r: " .. L.help)
             return
         end
-        if WorldMapFrame and not WorldMapFrame:IsShown() and not (InCombatLockdown and InCombatLockdown()) then
+        if WorldMapFrame and not WorldMapFrame:IsShown() then
             -- open through the UI panel manager so ESC / other panels close it normally
             if ShowUIPanel then pcall(ShowUIPanel, WorldMapFrame) end
             if not WorldMapFrame:IsShown() then WorldMapFrame:Show() end
@@ -1308,7 +1303,7 @@ parentFrame:SetScript("OnEvent", function(self, event, addonName)
         SLASH_EZWOWMAPFINDER2 = "/emf"
         SLASH_EZWOWMAPFINDER3 = "/맵파인더"
         local function pendingSlashHandler(msg)
-            if not uiPanel and ToggleWorldMap and not (InCombatLockdown and InCombatLockdown()) then
+            if not uiPanel and ToggleWorldMap then
                 pcall(ToggleWorldMap)
             end
             local realHandler = SlashCmdList.EZWOWMAPFINDER
