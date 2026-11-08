@@ -15,7 +15,7 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ### 개요
 
-월드맵에서 **몬스터 · 희귀 몬스터 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템** 위치를 바로 찾아 주는 오프라인 검색 애드온입니다. 내장 데이터는 **20,930개 항목**(NPC 7,421 · 오브젝트 7,656 · 퀘스트 4,140 · 아이템 1,713)이며 8개 언어 이름으로 검색할 수 있습니다. 미탐험 지역 안개 제거, 좌표, 지역 적정 레벨·낚시 숙련도, 지도 뒤 배경 어둡기, 확대 배율, 배·비행선·지하철·차원문 표시 같은 월드맵 편의 기능과, 근처에 레어 몬스터가 나타나면 알려 주고 바로 지도에 위치를 찍어 주는 기능, 퀘스트 보고 위치·목표 위치 표시도 들어 있습니다.
+월드맵에서 **몬스터 · 희귀 몬스터 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템** 위치를 바로 찾아 주는 오프라인 검색 애드온입니다. 내장 데이터는 **20,930개 항목**(NPC 7,421 · 오브젝트 7,656 · 퀘스트 4,140 · 아이템 1,713)이며 8개 언어 이름으로 검색할 수 있습니다. 미탐험 지역 안개 제거, 좌표, 지역 적정 레벨·낚시 숙련도, 지도 뒤 배경 어둡기, 확대 배율, 배·비행선·지하철·차원문 표시 같은 월드맵 편의 기능과, 근처에 레어 몬스터가 나타나면 알려 주고 바로 지도에 위치를 찍어 주는 기능, 퀘스트 보고 위치·목표 위치 표시, 도시 지도의 주요 NPC 아이콘, 약초채집·채광 캐릭터를 위한 채집 도우미(약초·광맥 자리 표시, 상호작용 아이콘, 약초 찾기·광물 찾기 자동 켜기)도 들어 있습니다. 검색과 지도 이동은 전투 중에도 됩니다.
 
 > **EzWoW - Quest**가 함께 켜져 있으면 퀘스트 보고 위치(`?`)와 목표 위치 표시는 EzWoW - Quest가 맡습니다. 자세한 내용은 [EzWoW - Quest와 함께 쓰기](#ezwow---quest와-함께-쓰기)를 보세요.
 
@@ -48,7 +48,8 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 | ⑨ | 미탐험 지역 | 가 보지 않은 지역의 안개를 걷고 푸른빛으로 구분합니다(전장 지도 `Shift+M` 포함). |
 | ⑩ | 레어 알림 | 근처에 레어 몬스터가 보이면(이름표 · 마우스오버 · 대상) 카드와 소리로 알려 주고, **지도에서 보기**로 위치를 찍습니다. 같은 몬스터는 5분에 한 번, 던전 · 공격대에서는 알리지 않습니다. |
 | ⑪ | 퀘스트 표시 | 목표를 다 채운 퀘스트의 보고 위치(금색 테두리 안의 노란 `?`)와 진행 중인 퀘스트의 목표 위치(퀘스트마다 다른 색 점, 미니맵에도 표시). 누르면 웨이포인트. **EzWoW - Quest**가 켜져 있으면 EzWoW - Quest가 맡습니다. |
-| - | 마을 NPC 표시 | 도시 지도에 여관주인·은행·비행 조련사·교관·상인·우체통 등을 미니맵 추적 아이콘처럼 표시(직업 교관은 직업 문장, 전문기술 교관은 그 전문기술 아이콘). 가리키면 이름과 칭호, 누르면 웨이포인트. |
+| ⑫ | 약초 · 광맥 자리 | 약초채집 · 채광이 있는 캐릭터는 약초(초록 테두리)와 광맥(주황 테두리)이 자랄 수 있는 자리가 지역 지도와 미니맵(가까운 곳)에 나옵니다. 숙련도가 모자란 자리는 흐리게 표시합니다. 가리키면 이름과 필요 숙련도. 자랄 수 있는 자리일 뿐 항상 있지는 않습니다. |
+| - | 마을 NPC 표시 | 도시 지도에 여관주인·은행·비행 조련사·교관·상인·우체통 등을 미니맵 추적 아이콘처럼 표시(직업 교관은 직업 문장, 전문기술 교관은 그 전문기술 아이콘, 직업용품 상인은 가방 아이콘). 가리키면 이름과 칭호, 누르면 웨이포인트. |
 
 #### 접두어 검색
 
@@ -87,9 +88,13 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 | ⑦ | 진행 중인 퀘스트 목표 위치 표시 (지도·미니맵, 퀘스트마다 다른 색 점) | 켬 |
 | ⑧ | 마을 지도에 주요 NPC 표시 (여관주인·은행원·경매인·비행 조련사·야수 관리인·직업/전문기술 교관·수리·잡화·음식·마법 재료·직업용품 상인·길드·전장 관리인·영혼의 치유사·우체통). 오른쪽 **종류 ▼**로 종류별 켜기/끄기 | 켬 |
 | ⑧ | 일반 지역 지도에도 표시 | 끔 |
-| ⑨ | 위치 초기화 · 후원하기 | - |
+| ⑨ | 미니맵 · 지역 지도에 약초 · 광맥 자리 표시 (약초채집 · 채광이 있는 캐릭터, 숙련도가 모자라면 흐리게) | 켬 |
+| ⑨ | 앞에 있는 가장 가까운 약초 · 광맥 위에 아이콘 표시 (게임 기본 상호작용 아이콘, 상자 포함. 끄면 원래 설정으로) | 켬 |
+| ⑨ | 약초 찾기 · 광물 찾기 자동으로 켜기 (접속할 때와 부활한 뒤. 직접 끄면 다음 접속이나 사망 전까지 그대로) | 켬 |
+| ⑩ | 위치 초기화 · 후원하기 | - |
 
-- **EzWoW - Quest**가 켜져 있으면 ⑦의 세 줄 대신 “퀘스트 지도 표시는 EzWoW - Quest에서 설정합니다.” 한 줄이 나옵니다.
+- **EzWoW - Quest**가 켜져 있으면 ⑦의 세 줄 대신 “퀘스트 지도 표시는 EzWoW - Quest에서 설정합니다.” 한 줄이 나오고, ⑧ · ⑨ 줄이 그만큼 위로 올라갑니다.
+- ⑨의 채집 도우미는 약초채집이나 채광을 배운 캐릭터에서만 동작합니다.
 
 ### 명령어 (`/ezmf`, `/emf`, `/맵파인더`)
 
@@ -113,7 +118,7 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ### 알아두면 좋은 점
 
-- 전투 중에는 게임 규칙상 지도 지역을 바꿀 수 없습니다. 전투가 끝난 뒤 결과를 눌러 주세요.
+- 검색창 · `/ezmf 검색어` · 레어 알림의 **지도에서 보기**는 전투 중에도 월드맵을 열고 그 지역으로 이동합니다. 이동 수단 아이콘은 전투 중에 누르면 전투가 끝난 뒤 도착지 지도를 엽니다.
 - "캐릭터 이동 중 월드맵 반투명화 해제"를 끄면 원래 쓰던 게임 설정으로 되돌립니다.
 - 검색은 프레임이 끊기지 않도록 나눠서 진행되며, 진행 중에는 `[검색중...] (%)`이 보입니다.
 
@@ -123,7 +128,7 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ### Overview
 
-Map Finder is an offline location search for the World Map: **monsters, rare elites, tameable beasts, NPCs, gathering nodes/objects, quests and items**. The built-in data has **20,930 entries** (7,421 NPCs · 7,656 objects · 4,140 quests · 1,713 items) searchable by name in 8 languages. It also adds World Map conveniences: reveal unexplored areas, coordinates, zone level ranges and fishing skill, map backdrop darkness, extended zoom and boat/zeppelin/tram/portal icons, plus an alert when a rare monster is nearby that can put its location straight on the map, and quest turn-in and objective spots.
+Map Finder is an offline location search for the World Map: **monsters, rare elites, tameable beasts, NPCs, gathering nodes/objects, quests and items**. The built-in data has **20,930 entries** (7,421 NPCs · 7,656 objects · 4,140 quests · 1,713 items) searchable by name in 8 languages. It also adds World Map conveniences: reveal unexplored areas, coordinates, zone level ranges and fishing skill, map backdrop darkness, extended zoom and boat/zeppelin/tram/portal icons, plus an alert when a rare monster is nearby that can put its location straight on the map, quest turn-in and objective spots, service NPC icons on city maps and gathering helpers for herbalists and miners (herb and ore spots, interact icons, Find Herbs / Find Minerals switched on for you). Search and map jumps work in combat too.
 
 > When **EzWoW - Quest** is enabled, the quest turn-in (`?`) and objective marks are handled by EzWoW - Quest. See [Working with EzWoW - Quest](#working-with-ezwow---quest).
 
@@ -156,7 +161,8 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ⑨ | Unexplored areas | Lifts the fog from areas you have not visited and tints them light blue (battlefield map `Shift+M` too). |
 | ⑩ | Rare alert | A card and a sound when a rare monster is nearby (nameplate · mouseover · target); **Show on map** marks it. Once per 5 minutes per monster, not in dungeons or raids. |
 | ⑪ | Quest marks | Turn-in spots of finished quests (a yellow `?` in a gold rim) and objective spots of quests in progress (one dot colour per quest, on the minimap too). Click for a waypoint. Handled by **EzWoW - Quest** while it is enabled. |
-| - | Town NPCs | Innkeepers, banks, flight masters, trainers, vendors, mailboxes and more on city maps, like the minimap tracking icons (class crests for class trainers, the profession's own icon for profession trainers). Hover for name and title, click for a waypoint. |
+| ⑫ | Herb & ore spots | For characters with Herbalism or Mining, the places where herbs (green rim) and ore (orange rim) can grow appear on zone maps and on the minimap (nearby). Spots above your skill are dimmed. Hover for the name and the skill needed. A spot is where a node can grow, not always one that is there now. |
+| - | Town NPCs | Innkeepers, banks, flight masters, trainers, vendors, mailboxes and more on city maps, like the minimap tracking icons (class crests for class trainers, the profession's own icon for profession trainers, a bag for trade supply vendors). Hover for name and title, click for a waypoint. |
 
 #### Prefix search
 
@@ -195,9 +201,13 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ⑦ | Show objective spots of quests in progress (map and minimap, one dot colour per quest) | On |
 | ⑧ | Show service NPCs on town maps (innkeepers, bankers, auctioneers, flight & stable masters, class/profession trainers, repair, general goods, food, reagent & trade supply vendors, guild & battle masters, spirit healers, mailboxes). The **Types ▼** button turns each kind on or off | On |
 | ⑧ | Also show them on regular zone maps | Off |
-| ⑨ | Reset Position · Support | - |
+| ⑨ | Show herb and ore spots on the minimap and zone maps (characters with Herbalism or Mining; dimmed when your skill is too low) | On |
+| ⑨ | Icon over the nearest herb or vein in front of you (the game's own interact icon, chests too; your own settings come back when turned off) | On |
+| ⑨ | Turn on Find Herbs / Find Minerals automatically (at login and after you come back to life; turning it off by hand is kept until the next login or death) | On |
+| ⑩ | Reset Position · Support | - |
 
-- While **EzWoW - Quest** is enabled, the three ⑦ rows are replaced by one line: “Quest map marks are set in EzWoW - Quest.”
+- While **EzWoW - Quest** is enabled, the three ⑦ rows are replaced by one line: “Quest map marks are set in EzWoW - Quest.”, and the ⑧ · ⑨ rows move up.
+- The ⑨ gathering helpers only work on characters that have Herbalism or Mining.
 
 ### Slash commands (`/ezmf`, `/emf`, `/맵파인더`)
 
@@ -221,7 +231,7 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 
 ### Tips
 
-- The game does not allow changing the map zone in combat; click the result again after combat.
+- The search panel, `/ezmf keyword` and **Show on map** on the rare alert open the World Map and move to the zone in combat too. A transport icon clicked in combat opens its destination map after combat.
 - Turning off "Disable map fade while character is moving" puts your previous game setting back.
 - Searches run in small steps to avoid frame drops; `[Searching...] (%)` is shown meanwhile.
 

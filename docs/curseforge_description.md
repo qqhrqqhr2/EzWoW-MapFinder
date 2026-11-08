@@ -1,13 +1,13 @@
 <!--
-CurseForge summary (EN): Offline World Map search for monsters, rares, tameable beasts, NPCs, nodes, quests and items in 8 languages, plus map reveal, coordinates, zone levels, transport icons and rare alerts.
-CurseForge summary (KO): 월드맵에서 몬스터·희귀 몹·사냥꾼 야수·NPC·채집물·퀘스트·아이템 위치를 8개 언어로 검색, 안개 제거·좌표·지역 레벨·이동 수단 표시와 레어 알림.
+CurseForge summary (EN): Offline World Map search for monsters, rares, tameable beasts, NPCs, nodes, quests and items in 8 languages, plus map reveal, coordinates, zone levels, transport icons, rare alerts and gathering helpers.
+CurseForge summary (KO): 월드맵에서 몬스터·희귀 몹·사냥꾼 야수·NPC·채집물·퀘스트·아이템 위치를 8개 언어로 검색, 안개 제거·좌표·지역 레벨·이동 수단 표시, 레어 알림, 채집 도우미.
 -->
 
 # EzWoW - Map Finder
 
 **English** · [한국어](#한국어)
 
-An offline location search for the World Map of WoW Forever: monsters, rare elites, tameable beasts, NPCs, gathering nodes and objects, quests and items, by name in 8 languages. It also adds World Map conveniences and an alert when a rare monster is nearby.
+An offline location search for the World Map of WoW Forever: monsters, rare elites, tameable beasts, NPCs, gathering nodes and objects, quests and items, by name in 8 languages. It also adds World Map conveniences, an alert when a rare monster is nearby, service NPC icons on city maps and gathering helpers for herbalists and miners. Search and map jumps work in combat too.
 
 ![World Map search](https://raw.githubusercontent.com/qqhrqqhr2/EzWoW-MapFinder/master/docs/images/ui_en.png)
 
@@ -24,6 +24,7 @@ An offline location search for the World Map of WoW Forever: monsters, rare elit
 - Tameable beasts show family, level, attack speed and skills; the tooltip adds diet and stat modifiers.
 - Gathering nodes show the skill they need.
 - Click a result to open its zone with a bouncing arrow and a waypoint. Results are sorted current zone → nearest → the rest; each click moves to the next spawn.
+- Works in combat too: the panel, `/ezmf keyword` and the rare alert's "Show on map" open the World Map and move to the zone. A transport icon clicked in combat opens its destination after combat.
 
 ### World Map conveniences
 - Reveal unexplored areas, with an optional light-blue tint (battlefield map too).
@@ -40,12 +41,18 @@ An offline location search for the World Map of WoW Forever: monsters, rare elit
 - Objective spots of quests in progress, one dot colour per quest, on the World Map and the minimap.
 
 ### Town NPCs
-- Small icons for innkeepers, bankers, auctioneers, flight and stable masters, class and profession trainers (class crests and profession icons), repair, general goods, food, reagent and trade supply vendors, guild and battle masters, spirit healers and mailboxes on city maps. Hover for name and title, click for a waypoint. Pick the kinds in the settings; regular zone maps are optional.
+- Small icons for innkeepers, bankers, auctioneers, flight and stable masters, class and profession trainers (class crests and profession icons), repair, general goods, food, reagent and trade supply vendors (bag icon), guild and battle masters, spirit healers and mailboxes on city maps. Hover for name and title, click for a waypoint. Pick the kinds in the settings; regular zone maps are optional.
+
+### Gathering helpers (Herbalism / Mining)
+- Herb and ore spots on zone maps and the minimap (nearby): green rim for herbs, orange rim for ore, dimmed when your skill is too low. Hover for the name and the skill needed. A spot is where a node can grow, not always one that is there now.
+- The game's own interact icon over the nearest herb, vein or chest in front of you; your own settings come back when turned off.
+- Find Herbs / Find Minerals switched on at login and after you come back to life.
+- Each helper can be turned off in the settings.
 
 ## Working with EzWoW - Quest
 - The quest marks are also part of **EzWoW - Quest**. While it is enabled, the quest marks here turn themselves off and EzWoW - Quest draws them; the settings window shows one note line instead of the quest options.
 - EzWoW - Quest uses the location data of this addon for its map marks, so keep both enabled.
-- Search, the map conveniences and rare alerts always stay in this addon.
+- Search, the map conveniences, rare alerts, town NPCs and the gathering helpers always stay in this addon.
 
 ## Commands
 - `/ezmf keyword` — open the search panel and search (`P wolf` and other prefixes work)
@@ -60,7 +67,7 @@ Languages: English, 한국어, Deutsch, Français, Español, Русский, 简
 
 ## 한국어
 
-WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템 위치를 8개 언어 이름으로 바로 찾아 주는 오프라인 검색 애드온입니다. 월드맵 편의 기능과 근처 레어 몬스터 알림도 들어 있습니다.
+WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템 위치를 8개 언어 이름으로 바로 찾아 주는 오프라인 검색 애드온입니다. 월드맵 편의 기능, 근처 레어 몬스터 알림, 도시 지도의 주요 NPC 아이콘, 약초채집·채광 캐릭터를 위한 채집 도우미도 들어 있습니다. 검색과 지도 이동은 전투 중에도 됩니다.
 
 ![월드맵 검색](https://raw.githubusercontent.com/qqhrqqhr2/EzWoW-MapFinder/master/docs/images/ui_ko.png)
 
@@ -77,6 +84,7 @@ WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 �
 - 사냥꾼 야수는 야수 과 · 레벨 · 공격 속도 · 기술을, 툴팁에서 먹이와 배율까지 보여 줍니다.
 - 채집물은 필요한 숙련도를 함께 표시합니다.
 - 결과를 누르면 그 지역 지도로 이동해 튀는 화살표와 웨이포인트를 찍습니다. 지금 있는 지역 → 가까운 순 → 나머지 순서로 정렬되고, 누를 때마다 다음 출현 위치로 넘어갑니다.
+- 전투 중에도 됩니다: 검색창 · `/ezmf 검색어` · 레어 알림의 “지도에서 보기”가 월드맵을 열고 그 지역으로 이동합니다. 이동 수단 아이콘은 전투 중에 누르면 전투가 끝난 뒤 도착지 지도를 엽니다.
 
 ### 월드맵 편의 기능
 - 미탐험 지역 안개 제거와 푸른빛 구분(전장 지도 포함).
@@ -93,12 +101,18 @@ WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 �
 - 진행 중인 퀘스트의 목표 위치를 퀘스트마다 다른 색 점으로 월드맵과 미니맵에 표시.
 
 ### 마을 NPC 표시
-- 도시 지도에 여관주인·은행원·경매인·비행 조련사·야수 관리인·직업/전문기술 교관(직업 문장·전문기술 아이콘)·수리·잡화·음식·마법 재료·직업용품 상인·길드·전장 관리인·영혼의 치유사·우체통을 작은 아이콘으로 표시합니다. 가리키면 이름과 칭호, 누르면 웨이포인트. 설정에서 종류를 고르고, 일반 지역 지도 표시는 선택입니다.
+- 도시 지도에 여관주인·은행원·경매인·비행 조련사·야수 관리인·직업/전문기술 교관(직업 문장·전문기술 아이콘)·수리·잡화·음식·마법 재료·직업용품 상인(가방 아이콘)·길드·전장 관리인·영혼의 치유사·우체통을 작은 아이콘으로 표시합니다. 가리키면 이름과 칭호, 누르면 웨이포인트. 설정에서 종류를 고르고, 일반 지역 지도 표시는 선택입니다.
+
+### 채집 도우미 (약초채집 · 채광)
+- 약초 · 광맥이 자랄 수 있는 자리를 지역 지도와 미니맵(가까운 곳)에 표시합니다. 약초는 초록, 광맥은 주황 테두리이고 숙련도가 모자라면 흐리게 나옵니다. 가리키면 이름과 필요 숙련도. 자랄 수 있는 자리일 뿐 항상 있지는 않습니다.
+- 앞에 있는 가장 가까운 약초 · 광맥 · 상자 위에 게임 기본 상호작용 아이콘을 띄웁니다. 끄면 원래 설정으로 돌아갑니다.
+- 접속할 때와 부활한 뒤에 약초 찾기 · 광물 찾기를 자동으로 켭니다.
+- 설정에서 하나씩 끌 수 있습니다.
 
 ## EzWoW - Quest와 함께 쓰기
 - 퀘스트 표시는 **EzWoW - Quest**에도 들어 있습니다. EzWoW - Quest가 켜져 있으면 이 애드온의 퀘스트 표시는 저절로 꺼지고 EzWoW - Quest가 그립니다. 설정창에는 퀘스트 옵션 대신 안내 한 줄이 나옵니다.
 - EzWoW - Quest는 지도 표시에 이 애드온의 위치 정보를 쓰므로 두 애드온을 함께 켜 둡니다.
-- 검색 · 월드맵 편의 기능 · 레어 알림은 언제나 이 애드온이 맡습니다.
+- 검색 · 월드맵 편의 기능 · 레어 알림 · 마을 NPC 표시 · 채집 도우미는 언제나 이 애드온이 맡습니다.
 
 ## 명령어
 - `/ezmf 검색어` — 검색창을 열고 바로 검색 (`P 늑대`처럼 접두어 사용 가능)

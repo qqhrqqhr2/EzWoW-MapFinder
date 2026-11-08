@@ -21,6 +21,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 PAGE_W = 1600
@@ -131,6 +132,11 @@ def parse_pets(src):
     return fams, skills, pets
 
 
+def parse_gather_colors(src):
+    return {k.lower(): [float(v) for v in body.split(",")] for k, body in
+            re.findall(r"local (HERB|ORE)_COLOR = \{\s*([\d.,\s]+)\}", src)}
+
+
 def css(c, alpha=None):
     r, g, b = (round(min(1, v) * 255) for v in c[:3])
     a = alpha if alpha is not None else (c[3] if len(c) > 3 else 1)
@@ -151,7 +157,7 @@ RARE_EN = "Takk the Leaper"
 
 T = {
     "ko": {
-        "lead": "월드맵에서 몬스터 · 희귀 몹 · 사냥꾼 야수 · NPC · 채집물 · 퀘스트 · 아이템 위치를 8개 언어로 바로 검색, 월드맵 편의 기능과 레어 알림",
+        "lead": "월드맵에서 몬스터 · 희귀 몹 · 사냥꾼 야수 · NPC · 채집물 · 퀘스트 · 아이템 위치를 8개 언어로 바로 검색, 월드맵 편의 기능, 레어 알림, 채집 도우미",
         "query": "P 랩터",
         "mapTitle": "칼림도어 - 불모의 땅",
         "quest": "[16] 오아시스의 위협",
@@ -170,10 +176,11 @@ T = {
             ("미탐험 지역", "가 보지 않은 지역의 안개를 걷고 푸른빛으로 구분합니다(전장 지도 포함)."),
             ("레어 알림", "근처에 레어 몬스터가 보이면 카드와 소리로 알려 주고, “지도에서 보기”로 위치를 찍습니다(같은 몬스터는 5분에 한 번, 던전·공격대 제외)."),
             ("퀘스트 표시", "목표를 다 채운 퀘스트의 보고 위치(?)와 진행 중인 퀘스트의 목표 위치(퀘스트마다 다른 색 점). EzWoW - Quest가 켜져 있으면 EzWoW - Quest가 맡습니다."),
+            ("약초 · 광맥 자리", "약초채집 · 채광이 있으면 약초(초록)와 광맥(주황)이 자랄 수 있는 자리를 지역 지도와 미니맵에 표시합니다. 숙련도가 모자라면 흐리게."),
         ],
         "foot": "애드온 코드의 창 크기·좌표·색상·문구와 내장 데이터(야수 이름·레벨·기술·출현 위치, 지역 레벨, 이동 수단)로 재현한 예시 화면입니다. 지도는 단순화한 그림이고, 퀘스트·NPC 이름은 지어낸 예시입니다.",
         "sTitle": "설정창",
-        "sLead": "/ezmf config · 언어, 지도 버튼, 웨이포인트, 안개 제거, 좌표·지역 레벨, 지도 배경, 확대, 이동 수단, 레어 알림, 퀘스트 표시, 마을 NPC 표시",
+        "sLead": "/ezmf config · 언어, 지도 버튼, 웨이포인트, 안개 제거, 좌표·지역 레벨, 지도 배경, 확대, 이동 수단, 레어 알림, 퀘스트 표시, 마을 NPC, 채집 도우미",
         "sNotes": [
             ("언어", "자동 또는 8개 언어. 검색 결과 이름과 화면 문구가 바로 바뀝니다."),
             ("검색 동작", "도킹 버튼을 왼쪽 아래에 자동 정렬, 결과를 고를 때 웨이포인트 자동 표시."),
@@ -183,13 +190,14 @@ T = {
             ("레어 알림", "근처 레어 몬스터 알림과 알림 소리."),
             ("퀘스트 표시", "완료한 퀘스트의 보고 위치, 진행 중인 퀘스트 위치(처음엔 꺼짐), 진행 중인 퀘스트 목표 위치(지도·미니맵)."),
             ("마을 NPC 표시", "도시 지도에 여관주인·은행·경매인·비행 조련사·교관·상인·우체통 아이콘(교관은 직업 문장·전문기술 아이콘). ‘종류’로 고르고, 일반 지역 지도 표시는 처음엔 꺼짐."),
+            ("채집 도우미", "약초채집·채광이 있는 캐릭터용: 미니맵·지역 지도에 약초·광맥 자리, 앞에 있는 가장 가까운 약초·광맥 위 아이콘, 접속·부활 때 약초 찾기·광물 찾기 자동 켜기."),
             ("하단", "도킹 버튼 위치 초기화, 후원하기."),
         ],
         "sHand": ("EzWoW - Quest와 함께 쓸 때", "퀘스트 표시 세 줄 대신 안내 한 줄이 나오고(아래 그림), 지도의 퀘스트 표시는 EzWoW - Quest가 맡습니다."),
         "sFoot": "애드온 코드의 창 크기·좌표·색상·문구로 재현한 예시 화면입니다. 체크 상태는 기본값입니다.",
     },
     "en": {
-        "lead": "Find monsters, rares, tameable beasts, NPCs, nodes, quests and items on the World Map in 8 languages, plus map conveniences and rare alerts",
+        "lead": "Find monsters, rares, tameable beasts, NPCs, nodes, quests and items on the World Map in 8 languages, plus map conveniences, rare alerts and gathering helpers",
         "query": "P raptor",
         "mapTitle": "Kalimdor - The Barrens",
         "quest": "[16] Trouble at the Oasis",
@@ -208,10 +216,11 @@ T = {
             ("Unexplored areas", "Lifts the fog from areas you have not visited and tints them light blue (battlefield map too)."),
             ("Rare alert", "A card and a sound when a rare monster is nearby; “Show on map” marks it (once per 5 minutes per monster, not in dungeons or raids)."),
             ("Quest marks", "Turn-in spots of finished quests (?) and objective spots of quests in progress (one dot colour per quest). With EzWoW - Quest enabled, EzWoW - Quest handles them."),
+            ("Herb & ore spots", "With Herbalism or Mining, the places where herbs (green) and ore (orange) can grow on zone maps and the minimap. Dimmed when your skill is too low."),
         ],
         "foot": "Mock-up rebuilt from the window sizes, coordinates, colours and strings in the addon code and the bundled data (beast names, levels, skills and spawns, zone levels, transport). The map is a simplified drawing; quests and NPC names are made up.",
         "sTitle": "Settings",
-        "sLead": "/ezmf config · language, map button, waypoint, reveal, coordinates & zone level, map backdrop, zoom, transport, rare alerts, quest marks, town NPC icons",
+        "sLead": "/ezmf config · language, map button, waypoint, reveal, coordinates & zone level, map backdrop, zoom, transport, rare alerts, quest marks, town NPCs, gathering",
         "sNotes": [
             ("Language", "Auto or one of 8 languages. Result names and texts change at once."),
             ("Search behaviour", "Keep the dock button at the bottom-left, set a waypoint when you pick a result."),
@@ -221,6 +230,7 @@ T = {
             ("Rare alert", "Alert for nearby rare monsters and its sound."),
             ("Quest marks", "Turn-in spots of finished quests, spots of quests in progress (off by default), objective spots of quests in progress (map and minimap)."),
             ("Town NPCs", "Icons for innkeepers, banks, auctioneers, flight masters, trainers, vendors and mailboxes on city maps (class crests and profession icons for trainers). Pick kinds with ‘Types’; regular zone maps are off by default."),
+            ("Gathering helpers", "For characters with Herbalism or Mining: herb and ore spots on the minimap and zone maps, an icon over the nearest herb or vein in front of you, Find Herbs / Find Minerals switched on at login and after death."),
             ("Bottom", "Reset the dock button position, support."),
         ],
         "sHand": ("With EzWoW - Quest", "One note line replaces the three quest rows (picture below) and EzWoW - Quest draws the quest marks on the map."),
@@ -419,6 +429,15 @@ def search_panel(ctx, lang, x0, y0, results, selected):
 # World map (simplified art) with the addon's marks
 # ---------------------------------------------------------------------------
 BOAT_ICON = "Transit-Boat.png"
+# a character with Herbalism and Mining: (kind, x %, y %, skill high enough)
+GATHER_SPOTS = [("herb", 42.5, 82.0, True), ("herb", 48.0, 86.5, True), ("ore", 53.5, 80.5, True),
+                ("herb", 58.0, 87.0, True), ("ore", 61.0, 79.0, False)]
+HERB_SVG = ('<svg viewBox="0 0 20 20" width="100%" height="100%"><rect width="20" height="20" fill="#2f4a22"/>'
+            '<g fill="#e9d36a"><circle cx="10" cy="5.5" r="3"/><circle cx="14.5" cy="9" r="3"/><circle cx="12.5" cy="14" r="3"/>'
+            '<circle cx="7.5" cy="14" r="3"/><circle cx="5.5" cy="9" r="3"/></g><circle cx="10" cy="10" r="2.4" fill="#b8542a"/></svg>')
+ORE_SVG = ('<svg viewBox="0 0 20 20" width="100%" height="100%"><rect width="20" height="20" fill="#3b332c"/>'
+           '<path d="M3 14 L7 6 L13 5 L17 11 L13 16 L6 17 Z" fill="#c07a45" stroke="#6b4022" stroke-width="1"/>'
+           '<path d="M7 6 L10 11 L13 5 M10 11 L6 17 M10 11 L17 11" stroke="#e7a56c" stroke-width=".8" fill="none"/></svg>')
 
 
 def map_scene(ctx, lang, x0, y0, w, h):
@@ -499,6 +518,18 @@ def map_scene(ctx, lang, x0, y0, w, h):
                  f'<div style="color:{css(th["muted"])}">EzWoW - Map Finder</div></div>')
     anchors["quest"] = (pts[2][0] - 26, pts[2][1] + 4)
     anchors["questQ"] = (qx, qy)
+    # herb / ore spots (Modules/ServiceNpcPins.lua GatherPins): coloured rim, round icon,
+    # dimmed and desaturated when the skill is too low
+    gs = 18 * S  # drawn larger than in game so the icons read at this size
+    for kind, gx, gy, can in GATHER_SPOTS:
+        cx_, cy_ = M(gx, gy)
+        col = ctx["gather"][kind]
+        icon = HERB_SVG if kind == "herb" else ORE_SVG
+        parts.append(f'<div class="abs" style="left:{cx_ - gs / 2:.1f}px;top:{cy_ - gs / 2:.1f}px;width:{gs:.1f}px;height:{gs:.1f}px;border-radius:50%;'
+                     f'background:{css(col, 1 if can else .5)};opacity:{1 if can else .55};padding:{1.5 * S:.1f}px;'
+                     f'filter:{"none" if can else "grayscale(1)"} drop-shadow(0 0 1px #000)">'
+                     f'<div style="width:100%;height:100%;border-radius:50%;overflow:hidden">{icon}</div></div>')
+    anchors["gather"] = (M(*GATHER_SPOTS[0][1:3])[0] - 30, M(*GATHER_SPOTS[0][1:3])[1])
     # coordinate bar (250 x 20, bottom of the map)
     bw, bh = 250 * S, 20 * S
     bx, by = x0 + w / 2 - bw / 2, y0 + h - 8 * S - bh
@@ -582,6 +613,7 @@ def ui_page(lang, ctx):
         M(28, 5),                                       # 9 unexplored tint
         (card_x - 22, card_y + 37 * S),                 # 10 rare alert
         anchors["quest"],                               # 11 quest marks
+        anchors["gather"],                              # 12 herb and ore spots
     ]
     for i, (x, y) in enumerate(calls, 1):
         parts.append(f'<div class="call" style="left:{x - 15:.0f}px;top:{y - 15:.0f}px">{i}</div>')
@@ -637,7 +669,7 @@ def settings_window(ctx, lang, x0, y0, managed=False, crop=None):
         val = d.get(r["field"])
         on = (val is not False) if r["op"] == "~= false" else (val is True)
         y = r["y"]
-        service = r["field"].startswith("serviceNpc")
+        service = r["field"].startswith(("serviceNpc", "gather"))  # placeServiceRows moves both
         if managed and service:
             y -= o["serviceShift"]  # rows move up into the space of the hidden quest rows
         fit = 290 if r["field"] == "serviceNpcPins" else 380
@@ -682,7 +714,7 @@ def settings_page(lang, ctx):
     spans = [(93, 134), (ys["autoAlign"], ys["autoWaypoint"] + 22), (ys["revealMap"], ys["revealTint"] + 22),
              (ys["showCoords"], ys["showZoneLevels"] + 22), (ys["noMapFade"], ys["showTransit"] + 22),
              (ys["rareAlert"], ys["rareAlertSound"] + 22), (ys["questLogPins"], ys["questObjectivePins"] + 22),
-             (ys["serviceNpcPins"], ys["serviceNpcPinsZones"] + 22), (H - 58, H)]
+             (ys["serviceNpcPins"], ys["serviceNpcPinsZones"] + 22), (ys["gatherPins"], ys["gatherAutoTrack"] + 22), (H - 58, H)]
     calls = "".join(f'<div class="call" style="left:{ox + W * S + 18:.0f}px;top:{oy + (a + b) / 2 * S - 15:.0f}px">{i}</div>'
                     for i, (a, b) in enumerate(spans, 1))
     nx = ox + W * S + 80
@@ -713,10 +745,26 @@ def find_chrome():
 def render(chrome, html_text, out_png, height, tmp):
     page = Path(tmp) / (out_png.stem + ".html")
     page.write_text(html_text, encoding="utf-8")
-    subprocess.run([chrome, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1",
-                    f"--user-data-dir={Path(tmp) / 'chrome_profile'}", f"--window-size={PAGE_W},{int(height)}",
-                    "--virtual-time-budget=2000", f"--screenshot={out_png}", page.as_uri()],
-                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120)
+    before = out_png.stat().st_mtime_ns if out_png.exists() else 0
+    proc = subprocess.Popen([chrome, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1",
+                             f"--user-data-dir={Path(tmp) / 'chrome_profile'}", f"--window-size={PAGE_W},{int(height)}",
+                             "--virtual-time-budget=2000", f"--screenshot={out_png}", page.as_uri()],
+                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # Chrome sometimes keeps running after the screenshot is saved: stop waiting
+    # once the file is written and no longer growing.
+    deadline, last = time.time() + 180, -1
+    while proc.poll() is None and time.time() < deadline:
+        time.sleep(0.5)
+        if out_png.exists() and out_png.stat().st_mtime_ns != before:
+            size = out_png.stat().st_size
+            if size and size == last:
+                break
+            last = size
+    if proc.poll() is None:
+        proc.kill()
+        proc.wait()
+    if not (out_png.exists() and out_png.stat().st_mtime_ns != before):
+        sys.exit(f"screenshot failed: {out_png}")
 
 
 def data_uri(path):
@@ -740,6 +788,7 @@ def main(root: Path):
         "transit": parse_transit(zone_src, MAP_ID),
         "factions": parse_faction_colors(zone_src),
         "pets": parse_pets(read(root, "Database/HunterPets.lua")),
+        "gather": parse_gather_colors(read(root, "Modules/ServiceNpcPins.lua")),
         "qcolors": [[float(v) for v in b.split(",")] for b in re.findall(r"\{\s*([\d.,\s]+)\}", qblock)],
         "icon": data_uri(root / "Media" / "Icon.png"),
         "icons": {k: data_uri(root / "Media" / f"Transit-{n}.png") for k, n in
