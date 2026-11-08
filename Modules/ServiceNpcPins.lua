@@ -90,7 +90,7 @@ local TYPES = {
     { key = "general",      tex = "Interface\\GossipFrame\\VendorGossipIcon",   color = { 0.95, 0.95, 0.80 } },
     { key = "food",         tex = "Interface\\Minimap\\Tracking\\Food",         color = { 0.95, 0.55, 0.35 } },
     { key = "reagent",      tex = "Interface\\Minimap\\Tracking\\Reagents",     color = { 0.70, 0.45, 0.95 } },
-    { key = "trade",        tex = "Interface\\Icons\\INV_Fabric_Linen_01",      color = { 0.80, 0.80, 0.55 }, round = true },
+    { key = "trade",        tex = "Interface\\Icons\\INV_Misc_Bag_10",          color = { 0.80, 0.80, 0.55 }, round = true },
     { key = "guild",        tex = "Interface\\GossipFrame\\TabardGossipIcon",   color = { 0.40, 0.80, 0.90 } },
     { key = "battlemaster", tex = "Interface\\Minimap\\Tracking\\BattleMaster", color = { 0.95, 0.35, 0.35 } },
     { key = "spirit",       tex = "Interface\\Icons\\Spell_Holy_Resurrection",  color = { 0.75, 0.90, 1.00 }, round = true },
