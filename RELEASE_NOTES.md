@@ -1,7 +1,7 @@
-# v2.0.11
+# v2.0.12
 
 ### 한국어
-- 전투 중에도 애드온 기능으로 세계지도를 열고 위치로 이동할 수 있습니다.
+- 직업용품 상인 아이콘을 알아보기 쉬운 그림으로 바꿨습니다.
 
 ### English
-- The world map can now be opened and moved to a location from the addon during combat.
+- Changed the trade supplies vendor icon to a clearer one.
