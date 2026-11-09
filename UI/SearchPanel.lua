@@ -641,14 +641,38 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
     ns.selectedSpawnIdx = spawnIdx
     pcall(refreshRows)
     local uiMapID, mx, my = projectWorldSpawnToMap(sp, nil)
-    if uiMapID and mx and my and C_Map and C_Map.SetUserWaypoint and UiMapPoint then
+    local wpMap = uiMapID
+    local function setWaypoint()
+        if not (wpMap and mx and my and C_Map and C_Map.SetUserWaypoint and UiMapPoint) then return end
         pcall(function()
-            if C_Map.CanSetUserWaypointOnMap and not C_Map.CanSetUserWaypointOnMap(uiMapID) then return end
-            C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(uiMapID, mx, my))
+            if C_Map.CanSetUserWaypointOnMap and not C_Map.CanSetUserWaypointOnMap(wpMap) then return end
+            C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(wpMap, mx, my))
             if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
                 C_SuperTrack.SetSuperTrackedUserWaypoint(true)
             end
         end)
+    end
+    -- a quest's details open in the map's quest list go back to the list when
+    -- the map moves or the game's arrow leaves that quest: while they are open
+    -- only the pins are shown, and the waypoint follows once the map closes
+    -- (opening another quest's details closes them for a moment as well)
+    local details = _G.QuestMapFrame and _G.QuestMapFrame.DetailsFrame
+    local keepMap = details and details.IsShown and details:IsShown() and WorldMapFrame and WorldMapFrame:IsShown()
+    if keepMap then
+        EntityExplorerPanel.pendingWaypoint = setWaypoint
+        if not EntityExplorerPanel.detailsHooked then
+            EntityExplorerPanel.detailsHooked = true
+            local function flush()
+                local fn = EntityExplorerPanel.pendingWaypoint
+                EntityExplorerPanel.pendingWaypoint = nil
+                if fn then fn() end
+            end
+            WorldMapFrame:HookScript("OnHide", flush)
+        end
+        uiMapID = nil
+    else
+        EntityExplorerPanel.pendingWaypoint = nil
+        setWaypoint()
     end
     if WorldMapFrame then
         if not WorldMapFrame:IsShown() and ShowUIPanel then pcall(ShowUIPanel, WorldMapFrame) end
