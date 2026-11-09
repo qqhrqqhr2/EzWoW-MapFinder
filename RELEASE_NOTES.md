@@ -1,11 +1,7 @@
-# v2.0.13
+# v2.0.14
 
 ### 한국어
-- 레어 알림 창에 대상 지정 버튼과 징표 찍기 아이콘(8가지)을 추가했습니다.
-- 레어 알림 소리를 더 화려하고 잘 들리는 소리로 바꿨습니다.
-- 레어 알림 창이 빛나는 효과와 함께 나타납니다.
+- 세계 지도에 퀘스트 상세 내용이 열려 있을 때 위치를 찍어도 상세 창이 목록으로 돌아가지 않습니다. 길 안내는 지도를 닫으면 이어집니다.
 
 ### English
-- The rare alert now has a Target button and eight raid mark icons.
-- The rare alert sound is now a brighter fanfare that is easier to hear.
-- The rare alert card now appears with a glowing effect.
+- Pointing at a spot while a quest's details are open on the World Map no longer sends the details back to the list. The waypoint is set when the map closes.
