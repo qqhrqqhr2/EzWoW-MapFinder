@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="EZWOW_PAD_FOCUS" header="EZWOWPAD" category="ADDONS">
+		if EzWoW_GamePad and EzWoW_GamePad.EnterHUD then EzWoW_GamePad.EnterHUD(true) end
+	</Binding>
+</Bindings>

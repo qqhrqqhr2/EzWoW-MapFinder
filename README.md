@@ -122,6 +122,17 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 - "캐릭터 이동 중 월드맵 반투명화 해제"를 끄면 원래 쓰던 게임 설정으로 되돌립니다.
 - 검색은 프레임이 끊기지 않도록 나눠서 진행되며, 진행 중에는 `[검색중...] (%)`이 보입니다.
 
+<!-- ezwow-pad-share -->
+### 게임패드
+- 게임패드 UI를 켜면 EzWoW 창을 패드로 다룰 수 있습니다. 방향키로 이동, A(✕)로 누르기, X(□)로 오른쪽 클릭, LB/RB로 스크롤, B(○)로 닫기입니다. 창 아래에 연결된 패드 모양으로 키 안내가 나옵니다.
+- 블리자드 창이 열려 있지 않을 때 **보기(Back) / Create 버튼**을 누르면 화면의 EzWoW 프레임(유틸리티 바, 퀘스트 목록 등)으로 이동합니다. 다시 누르거나 B를 누르면 돌아갑니다.
+- 세계지도에서는 보기 / Create 버튼으로 왼쪽 아래 EzWoW 아이콘에 갑니다.
+- 다른 버튼을 쓰려면 설정 > 단축키 > 애드온 > EzWoW > "게임패드: EzWoW 창으로 이동/돌아가기"에 지정합니다(EzWoW-MapFinder가 설치돼 있을 때).
+
+### 기록 공유
+- 모든 EzWoW 애드온이 함께 쓰는 기록 공유가 **기본으로 켜져 있습니다**. 직접 확인한 퀘스트 NPC, 희귀 몬스터 목격, 아이템 드롭, 채집 위치를 다른 EzWoW 사용자와 나눕니다.
+- `/ezshare` 또는 `/공유`: `on` / `off` 켜기·끄기, `channel on` / `channel off` 서버 채널 사용, `status` 현재 상태와 기록 수.
+
 ---
 
 ## English
@@ -234,6 +245,16 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 - The search panel, `/ezmf keyword` and **Show on map** on the rare alert open the World Map and move to the zone in combat too. A transport icon clicked in combat opens its destination map after combat.
 - Turning off "Disable map fade while character is moving" puts your previous game setting back.
 - Searches run in small steps to avoid frame drops; `[Searching...] (%)` is shown meanwhile.
+
+### Gamepad
+- With the gamepad UI on, EzWoW windows work with a gamepad: D-pad to move, A (✕) to press, X (□) for right-click, LB/RB to scroll, B (○) to close. A key guide in your pad's button style shows under the window.
+- With no game window open, press **View (Back) / Create** to move to the EzWoW frames on screen (Utility Bar, quest list and more). Press it again or B to go back.
+- On the World Map, View / Create moves to the EzWoW icons at the bottom left.
+- To use another button, set Key Bindings > AddOns > EzWoW > "Gamepad: move to / leave the EzWoW frames" (with EzWoW-MapFinder installed).
+
+### Record sharing
+- Record sharing, used by all EzWoW addons, is **on by default**. Quest NPCs, rare monster sightings, item drops and gathering spots you have seen yourself are shared with other EzWoW users.
+- `/ezshare`: `on` / `off` to turn it on or off, `channel on` / `channel off` for the server channel, `status` for the current state and record counts.
 
 ---
 

@@ -418,7 +418,8 @@ combatWatcher:SetScript("OnEvent", function()
 end)
 
 function RareAlertNotifier.openEntityOnMap(entity, spawnIdx)
-    if WorldMapFrame and not WorldMapFrame:IsShown() then
+    -- with the gamepad on, only the waypoint and pins are set: see ns.IsGamePadUI
+    if WorldMapFrame and not WorldMapFrame:IsShown() and not ns.IsGamePadUI() then
         if ToggleWorldMap then pcall(ToggleWorldMap) else pcall(ShowUIPanel, WorldMapFrame) end
     end
     if ns.SelectEntityOnMap then
@@ -463,6 +464,47 @@ function RareAlertNotifier.presentAlertCard(unitName, entity, spawnIdx, mapName,
     card:Show()
     pcall(RareAlertNotifier.playCardEffects, card)
     RareAlertNotifier.updateTargetButton()
+end
+
+-----------------------------------------------------------------------------
+-- Rares other players of the EzWoW addons saw (Libs/EzWoWShare): a sighting
+-- in the player's zone, at most 10 minutes old, shows the same card
+-----------------------------------------------------------------------------
+local SHARED_MAX_AGE = 600
+
+function RareAlertNotifier.onSharedRecords(kinds)
+    if type(kinds) ~= "table" or not kinds.rare then return end
+    local share = ns.Share
+    if not (share and share.TakeNewRares) then return end
+    local list = share.TakeNewRares()
+    local db = ns.DB
+    if not db or db.rareAlert == false or (InCombatLockdown and InCombatLockdown()) then return end
+    local inInstance, instanceType = IsInInstance()
+    if inInstance and instanceType ~= "none" then return end
+    local mapID, _, _, mapName = RareAlertNotifier.resolvePlayerLocation()
+    for _, npcId in ipairs(list) do
+        local rec = share.GetRare(npcId)
+        local age = rec and (time() - (rec.t or 0))
+        if rec and rec.shared and rec.m == mapID and age and age <= SHARED_MAX_AGE
+            and not (lastAlertAt[npcId] and GetTime() - lastAlertAt[npcId] < REPEAT_COOLDOWN) then
+            lastAlertAt[npcId] = GetTime()
+            local entity = (rareEntityById or RareAlertNotifier.buildRareEntityIndex())[npcId]
+            local name = (entity and ns.GetLocalizedEntityName and ns.GetLocalizedEntityName(entity))
+                or share.SourceName("n" .. npcId) or "?"
+            local spawnIdx = entity and RareAlertNotifier.findNearestSpawnIndex(entity, mapID, rec.x, rec.y)
+            RareAlertNotifier.presentAlertCard(name, entity, spawnIdx, mapName, rec.x, rec.y)
+            local card = RareAlertNotifier.buildAlertCard()
+            card.heading:SetText(L.rareSharedTitle .. " · " .. share.Ago(rec.t))
+            if db.rareAlertSound ~= false and PlaySound and SOUNDKIT and SOUNDKIT.RAID_WARNING then
+                pcall(PlaySound, SOUNDKIT.RAID_WARNING)
+            end
+            break
+        end
+    end
+end
+
+if ns.Share and ns.Share.RegisterCallback then
+    ns.Share.RegisterCallback("EzWoW-MapFinder", function(kinds) RareAlertNotifier.onSharedRecords(kinds) end)
 end
 
 -----------------------------------------------------------------------------

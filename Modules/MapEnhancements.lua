@@ -3,6 +3,9 @@
 -- Modules/MapEnhancements.lua : Fog-of-War Reveal, Cursor Coords, Zoom Extender & Transit Pins
 --===========================================================================
 local _, ns = ...
+-- frames made on the World Map are made without a parent and put in after
+-- (Libs/EzWoWGamePad MakeFrame: keeps the game's gamepad cursor untainted)
+local CreateFrame = (ns.GamePad and ns.GamePad.MakeFrame) or CreateFrame
 
 -- Click pass-through can't be changed in combat: it is set once combat ends.
 local pendingPropagate = {}
@@ -559,6 +562,8 @@ end
 function WorldMapCanvasEnhancer.openTransitMap(target)
     target = tonumber(target)
     if not target or not WorldMapFrame or not WorldMapFrame.SetMapID then return end
+    -- a map changed by addon code taints the gamepad navigation (see ns.IsGamePadUI)
+    if ns.IsGamePadUI() then return end
     if InCombatLockdown and InCombatLockdown() then
         pendingTransitMapID = target
         if not transitNavigationFrame then

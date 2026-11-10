@@ -8,6 +8,9 @@
 -- NPCs are sorted into types once from their game flags and titles; each map
 -- gets its own list the first time it is opened.
 local _, ns = ...
+-- frames made on the World Map are made without a parent and put in after
+-- (Libs/EzWoWGamePad MakeFrame: keeps the game's gamepad cursor untainted)
+local CreateFrame = (ns.GamePad and ns.GamePad.MakeFrame) or CreateFrame
 
 -- Click pass-through can't be changed in combat: it is set once combat ends.
 local pendingPropagate = {}
@@ -674,32 +677,87 @@ local function readSkills()
     end
 end
 
--- every spot once: { kind = "herb"/"ore", need = skill, entry, spawn }, by continent and grid cell
+-- every spot once: { kind = "herb"/"ore", need = skill, entry, spawn [, shared] }, by continent and grid cell
 local spotsByContinent
+local SHARED_SAME = 10             -- yards: a shared spot this close to a known one is the same place
+
+local function addSpot(continent, x, y, spot)
+    local grid = spotsByContinent[continent]
+    if not grid then grid = {}; spotsByContinent[continent] = grid end
+    local key = math.floor(x / BUCKET) .. ":" .. math.floor(y / BUCKET)
+    local cell = grid[key]
+    if not cell then cell = {}; grid[key] = cell end
+    cell[#cell + 1] = spot
+end
+
+local function knownNear(continent, x, y)
+    local grid = spotsByContinent[continent]
+    if not grid then return false end
+    local bx, by = math.floor(x / BUCKET), math.floor(y / BUCKET)
+    for dx = -1, 1 do
+        for dy = -1, 1 do
+            local cell = grid[(bx + dx) .. ":" .. (by + dy)]
+            if cell then
+                for _, s in ipairs(cell) do
+                    local ex, ey = s.spawn[2] - x, s.spawn[3] - y
+                    if ex * ex + ey * ey <= SHARED_SAME * SHARED_SAME then return true end
+                end
+            end
+        end
+    end
+    return false
+end
+
 local function buildSpots()
     if spotsByContinent then return end
     spotsByContinent = {}
     local herbs, ores = ns.HERB_SKILL_BY_OBJECT or {}, ns.MINE_SKILL_BY_OBJECT or {}
+    local entryByID = {}
     for _, e in ipairs(_G.EzWoWMapFinderData or {}) do
         if e.kind == "object" and e.id and type(e.spawns) == "table" then
             local kind, need
             if herbs[e.id] then kind, need = "herb", herbs[e.id]
             elseif ores[e.id] then kind, need = "ore", ores[e.id] end
             if kind then
+                entryByID[e.id] = entryByID[e.id] or e
                 for _, sp in ipairs(e.spawns) do
                     local continent, x, y = sp[1], sp[2], sp[3]
                     if type(continent) == "number" and continent >= 0 and type(x) == "number" and type(y) == "number" then
-                        local grid = spotsByContinent[continent]
-                        if not grid then grid = {}; spotsByContinent[continent] = grid end
-                        local key = math.floor(x / BUCKET) .. ":" .. math.floor(y / BUCKET)
-                        local cell = grid[key]
-                        if not cell then cell = {}; grid[key] = cell end
-                        cell[#cell + 1] = { kind = kind, need = need, entry = e, spawn = sp }
+                        addSpot(continent, x, y, { kind = kind, need = need, entry = e, spawn = sp })
                     end
                 end
             end
         end
     end
+    -- places other players of the EzWoW addons (and this character) gathered
+    -- herbs and ore that the built-in data does not have (Libs/EzWoWShare)
+    local share = ns.Share
+    local gather = share and share.Data and share.Data().gather
+    if type(gather) ~= "table" then return end
+    for objectID, spots in pairs(gather) do
+        local kind, need
+        if herbs[objectID] then kind, need = "herb", herbs[objectID]
+        elseif ores[objectID] then kind, need = "ore", ores[objectID] end
+        local e = kind and entryByID[objectID]
+        if e and type(spots) == "table" then
+            for _, sp in ipairs(spots) do
+                local continent, x, y = sp[1], sp[2], sp[3]
+                if type(continent) == "number" and type(x) == "number" and type(y) == "number"
+                    and not knownNear(continent, x, y) then
+                    addSpot(continent, x, y, { kind = kind, need = need, entry = e, spawn = sp, shared = true })
+                end
+            end
+        end
+    end
+end
+
+-- new shared places: rebuilt on the next refresh
+if ns.Share and ns.Share.RegisterCallback then
+    ns.Share.RegisterCallback("EzWoW-MapFinder-Gather", function(kinds)
+        if type(kinds) ~= "table" or not kinds.gather then return end
+        spotsByContinent = nil
+        if WorldMapFrame and WorldMapFrame:IsShown() and GatherPins.refresh then pcall(GatherPins.refresh) end
+    end)
 end
 
 local function wanted(spot)
@@ -728,6 +786,9 @@ local function showGatherTooltip(self)
     local ok = (skills[first.kind] or 0) >= (first.need or 1)
     GameTooltip:AddLine(string.format("%s %d", skillName, first.need or 1), ok and 0.6 or 1, ok and 0.9 or 0.4, ok and 0.6 or 0.4)
     GameTooltip:AddLine(L.gatherSpotHint or "A place where it can grow (not always there)", unpack(Theme.muted))
+    if first.shared then
+        GameTooltip:AddLine(L.gatherShared or "Gathered here by an EzWoW user", 0.6, 0.8, 1)
+    end
     GameTooltip:AddDoubleLine(" ", "EzWoW - Map Finder", 0, 0, 0, 0.5, 0.5, 0.5)
     GameTooltip:Show()
     if _G.EzWoWTooltipTagSizer and _G.EzWoWTooltipTagSizer.Refit then pcall(_G.EzWoWTooltipTagSizer.Refit, GameTooltip) end

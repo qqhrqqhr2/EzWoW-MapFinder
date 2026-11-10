@@ -156,6 +156,15 @@ function ns.PassMapRightClicks(frame)
 end
 
 -----------------------------------------------------------------------------
+-- Gamepad UI: a World Map opened or moved by addon code taints the game's
+-- gamepad navigation (Libs/EzWoWGamePad). With the gamepad on, the map is
+-- left for the player to open and move.
+-----------------------------------------------------------------------------
+function ns.IsGamePadUI()
+    return ns.GamePad and ns.GamePad.IsActive() or false
+end
+
+-----------------------------------------------------------------------------
 -- Quest map marks moved to EzWoW - Quest. While that addon is loaded (or,
 -- before login, is about to load) the copies here stay off.
 -----------------------------------------------------------------------------
@@ -220,6 +229,32 @@ _G.EzWoWMapFinderAPI = {
         local fn = ns.GetLocalizedEntityName
         if type(fn) == "function" then return fn(entry) end
         return nil
+    end,
+    -- ("npc" | "object", ID) -> name in the chosen language (shared records'
+    -- tooltips use it); the lookup table is made on the first call
+    NameByID = function(kind, id)
+        if not ns.entityByKindID then
+            local index = {}
+            local data = _G.EzWoWMapFinderData
+            if type(data) == "table" then
+                for _, e in ipairs(data) do
+                    if type(e) == "table" and e.id and (e.kind == "npc" or e.kind == "object") then
+                        local key = e.kind .. ":" .. e.id
+                        index[key] = index[key] or e
+                    end
+                end
+            end
+            ns.entityByKindID = index
+        end
+        local e = ns.entityByKindID[tostring(kind) .. ":" .. tostring(id)]
+        local fn = ns.GetLocalizedEntityName
+        if e and type(fn) == "function" then
+            local ok, name = pcall(fn, e)
+            if ok and type(name) == "string" and name ~= "" then return name end
+        end
+        local names = e and e.names
+        if type(names) ~= "table" then return nil end
+        return names[(GetLocale and GetLocale()) or "enUS"] or names.enUS
     end,
     IsAutoWaypoint = function()
         return not (ns.DB and ns.DB.autoWaypoint == false)

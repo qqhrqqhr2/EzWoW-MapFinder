@@ -3,6 +3,9 @@
 -- UI/SearchPanel.lua : WorldMap Docked Entity Search Panel & Animated Map Pins
 --===========================================================================
 local _, ns = ...
+-- frames made on the World Map are made without a parent and put in after
+-- (Libs/EzWoWGamePad MakeFrame: keeps the game's gamepad cursor untainted)
+local CreateFrame = (ns.GamePad and ns.GamePad.MakeFrame) or CreateFrame
 -- Text for the game's AddOns panel in the six languages without their own line: { deDE, frFR, esES, ruRU, zhCN, zhTW }
 local PANEL_LANG_INDEX = { deDE = 1, frFR = 2, esES = 3, esMX = 3, ruRU = 4, zhCN = 5, zhTW = 6, de = 1, fr = 2, es = 3, ru = 4 }
 local function panelText(code, ko, en, others)
@@ -19,6 +22,14 @@ local L = ns.L
 local lower = ns.ToLowerSafeString
 local KIND_COLORS = ns.KIND_COLORS
 local LANG_ALIASES = ns.LANG_ALIASES
+
+-- Shows another map in the World Map. Not with the gamepad on: a map changed
+-- by addon code taints the gamepad navigation (see ns.IsGamePadUI); the pins
+-- and the waypoint still point at the spot.
+local function moveWorldMap(uiMapID)
+    if not (uiMapID and WorldMapFrame and WorldMapFrame.SetMapID) or ns.IsGamePadUI() then return false end
+    return pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
+end
 local BADGE_PREFIX_POOLS = ns.BADGE_PREFIX_POOLS
 local HERB_SKILL_BY_OBJECT = ns.HERB_SKILL_BY_OBJECT
 local MINE_SKILL_BY_OBJECT = ns.MINE_SKILL_BY_OBJECT
@@ -603,17 +614,13 @@ function EntityExplorerPanel.handleSearchResultSelection(entry, forcedSpawnIdx)
     local anchorTarget = spawns and spawns[ns.selectedSpawnIdx]
     if not anchorTarget then
         local _, fallbackUiMapID = resolveEntityZoneKey(entry, 1)
-        if fallbackUiMapID and WorldMapFrame and WorldMapFrame.SetMapID then
-            pcall(WorldMapFrame.SetMapID, WorldMapFrame, fallbackUiMapID)
-        end
+        moveWorldMap(fallbackUiMapID)
         statusRegion:SetText(L.noCoords)
         renderActiveEntityMapPins()
         return
     end
     local uiMapID, mxVal, myVal, zKey = projectWorldSpawnToMap(anchorTarget, nil)
-    if uiMapID and WorldMapFrame and WorldMapFrame.SetMapID then
-        pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
-    end
+    moveWorldMap(uiMapID)
     local mapID = WorldMapFrame and WorldMapFrame.GetMapID and WorldMapFrame:GetMapID() or uiMapID
     local _, cxVal, cyVal, lookupKey = projectWorldSpawnToMap(anchorTarget, mapID)
     mxVal, myVal = cxVal or mxVal, cyVal or myVal
@@ -675,8 +682,8 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
         setWaypoint()
     end
     if WorldMapFrame then
-        if not WorldMapFrame:IsShown() and ShowUIPanel then pcall(ShowUIPanel, WorldMapFrame) end
-        if uiMapID and WorldMapFrame.SetMapID then pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID) end
+        if not WorldMapFrame:IsShown() and ShowUIPanel and not ns.IsGamePadUI() then pcall(ShowUIPanel, WorldMapFrame) end
+        moveWorldMap(uiMapID)
     end
     local okRender, err = pcall(renderActiveEntityMapPins)
     if not okRender and DEFAULT_CHAT_FRAME then
@@ -688,8 +695,8 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
         for _, delay in ipairs({ 0.3, 1.0 }) do
             C_Timer.After(delay, function()
                 if ns.selectedEntity ~= entry or not (WorldMapFrame and WorldMapFrame:IsShown()) then return end
-                if WorldMapFrame.GetMapID and WorldMapFrame:GetMapID() ~= uiMapID and WorldMapFrame.SetMapID then
-                    pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
+                if WorldMapFrame.GetMapID and WorldMapFrame:GetMapID() ~= uiMapID then
+                    moveWorldMap(uiMapID)
                 end
                 pcall(renderActiveEntityMapPins)
             end)
@@ -775,8 +782,10 @@ function EntityExplorerPanel.init()
     if uiPanel then return end
     bootstrapDB()
     local canvasFrame = _G.EzWoWWorldMapDock:GetCanvas()
+    -- made on the map window, not the canvas: see the dock's GetHost
+    local hostFrame = WorldMapFrame or canvasFrame
 
-    switchBtn = CreateFrame("Button", "EzWoWMapFinderToggle", canvasFrame)
+    switchBtn = CreateFrame("Button", "EzWoWMapFinderToggle", hostFrame)
     switchBtn:SetSize(28, 28)
     switchBtn:SetFrameStrata("HIGH")
     switchBtn:SetFrameLevel((canvasFrame:GetFrameLevel() or 10) + 450)
@@ -841,7 +850,7 @@ function EntityExplorerPanel.init()
         EntityExplorerPanel.anchorFreeButton(self, _G.EzWoWWorldMapDock:GetCanvas())
     end)
 
-    uiPanel = CreateFrame("Frame", "EzWoWMapFinderPanel", canvasFrame, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    uiPanel = CreateFrame("Frame", "EzWoWMapFinderPanel", hostFrame,BackdropTemplateMixin and "BackdropTemplate" or nil)
     uiPanel:SetSize(368, 390)
     uiPanel:SetFrameStrata("DIALOG")
     uiPanel:SetFrameLevel(switchBtn:GetFrameLevel() + 10)
@@ -1247,6 +1256,10 @@ function EntityExplorerPanel.init()
             return
         end
         if WorldMapFrame and not WorldMapFrame:IsShown() then
+            if ns.IsGamePadUI() then
+                print("|cff4bc8e8EzWoW - Map Finder|r: " .. L.padOpenMap)
+                return
+            end
             -- open through the UI panel manager so ESC / other panels close it normally
             if ShowUIPanel then pcall(ShowUIPanel, WorldMapFrame) end
             if not WorldMapFrame:IsShown() then WorldMapFrame:Show() end
@@ -1327,6 +1340,10 @@ parentFrame:SetScript("OnEvent", function(self, event, addonName)
         SLASH_EZWOWMAPFINDER2 = "/emf"
         SLASH_EZWOWMAPFINDER3 = "/맵파인더"
         local function pendingSlashHandler(msg)
+            if not uiPanel and ns.IsGamePadUI() then
+                print("|cff4bc8e8EzWoW - Map Finder|r: " .. L.padOpenMap)
+                return
+            end
             if not uiPanel and ToggleWorldMap then
                 pcall(ToggleWorldMap)
             end

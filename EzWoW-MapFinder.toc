@@ -23,9 +23,11 @@
 ## Author: qqhrqqhr2
 ## Version: 2.0.14
 ## Category: EzWoW
-## SavedVariables: EzWoW_MapFinderDB
+## SavedVariables: EzWoW_MapFinderDB, EzWoW_SharedData
 ## IconTexture: Interface\AddOns\EzWoW-MapFinder\Media\Icon
 
+Libs\EzWoWGamePad\GamePad.lua
+Libs\EzWoWShare\Share.lua
 Core\Init.lua
 Core\UIKit.lua
 Core\Locales.lua

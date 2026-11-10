@@ -8,6 +8,9 @@
 -- dots, one colour per quest. The game's own quest position for the shown
 -- map gets a larger ring marker. The minimap shows the dots near the player.
 local _, ns = ...
+-- frames made on the World Map are made without a parent and put in after
+-- (Libs/EzWoWGamePad MakeFrame: keeps the game's gamepad cursor untainted)
+local CreateFrame = (ns.GamePad and ns.GamePad.MakeFrame) or CreateFrame
 
 -- Click pass-through can't be changed in combat: it is set once combat ends.
 local pendingPropagate = {}
