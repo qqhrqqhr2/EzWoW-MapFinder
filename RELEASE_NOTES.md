@@ -1,15 +1,13 @@
-# v2.0.15
+# v2.0.16
 
 ### 한국어
-- 게임패드를 지원합니다. 패드로 EzWoW 창을 다루고, 보기(Create) 버튼으로 화면의 EzWoW 프레임으로 이동합니다.
-- EzWoW 애드온끼리 퀘스트·희귀 몬스터·드롭·채집 기록을 공유합니다(기본 켜짐, `/ezshare`).
-- 게임패드 사용 중 지도 아이콘·검색창 때문에 패드가 멈추거나 기능 차단 오류가 나던 문제를 수정했습니다.
-- 세계지도에서 보기(Create) 버튼으로 왼쪽 아래 EzWoW 아이콘에 갈 수 있습니다.
-- 다른 사용자가 공유한 희귀 몬스터 목격과 채집 위치를 알림·지도에 표시합니다.
+- 일부 던전 보스의 한국어 이름을 바로잡았습니다.
+- 몬스터·물체·퀘스트 위치를 최신 정보로 갱신하고, 빠져 있던 몬스터와 채집물 위치를 더했습니다.
+- 아이템 검색에서 판매 상인뿐 아니라 떨구는 몬스터·물체 위치도 보여 줍니다.
+- EzWoW - Data(공용 자료)가 설치돼 있으면 그 자료를 함께 씁니다. 없어도 그대로 동작합니다.
 
 ### English
-- Added gamepad support: EzWoW windows work with a gamepad, and View (Create) moves to the EzWoW frames on screen.
-- EzWoW addons now share quest, rare monster, drop and gathering records (on by default, `/ezshare`).
-- Fixed the gamepad freezing or actions being blocked by the map icons and search panel.
-- On the World Map, View (Create) moves to the EzWoW icons at the bottom left.
-- Rare monster sightings and gathering spots shared by other users are shown in alerts and on the map.
+- Fixed the Korean names of some dungeon bosses.
+- Updated monster, object and quest spots and added missing monsters and gathering nodes.
+- Item search now shows where an item drops, not only who sells it.
+- Uses EzWoW - Data (shared data) when it is installed; works the same without it.
