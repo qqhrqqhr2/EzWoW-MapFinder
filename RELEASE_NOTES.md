@@ -1,13 +1,9 @@
-# v2.0.16
+# v2.0.17
 
 ### 한국어
-- 일부 던전 보스의 한국어 이름을 바로잡았습니다.
-- 몬스터·물체·퀘스트 위치를 최신 정보로 갱신하고, 빠져 있던 몬스터와 채집물 위치를 더했습니다.
-- 아이템 검색에서 판매 상인뿐 아니라 떨구는 몬스터·물체 위치도 보여 줍니다.
-- EzWoW - Data(공용 자료)가 설치돼 있으면 그 자료를 함께 씁니다. 없어도 그대로 동작합니다.
+- 세계 지도 지역 이름 아래의 레벨과 낚시 숙련도를 "Lv.30-40  (낚시 아이콘) 150"처럼 한 줄로 간단하게 표시합니다.
+- 다른 EzWoW 사용자와 기록을 주고받는 공유 기능이 동작하지 않던 문제를 수정했습니다.
 
 ### English
-- Fixed the Korean names of some dungeon bosses.
-- Updated monster, object and quest spots and added missing monsters and gathering nodes.
-- Item search now shows where an item drops, not only who sells it.
-- Uses EzWoW - Data (shared data) when it is installed; works the same without it.
+- The level range and fishing skill under the World Map area name now show on one line, like "Lv.30-40  (fishing icon) 150".
+- Fixed data sharing with other EzWoW users not working.
