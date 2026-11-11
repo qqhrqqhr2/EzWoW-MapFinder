@@ -1,9 +1,9 @@
-# v2.0.17
+# v2.0.18
 
 ### 한국어
-- 세계 지도 지역 이름 아래의 레벨과 낚시 숙련도를 "Lv.30-40  (낚시 아이콘) 150"처럼 한 줄로 간단하게 표시합니다.
-- 다른 EzWoW 사용자와 기록을 주고받는 공유 기능이 동작하지 않던 문제를 수정했습니다.
+- 지도에 추적 핀을 찍으면 화면에 방향 화살표와 남은 거리가 나옵니다. 추적 중인 대상 이름도 함께 보입니다.
+- 화살표 창을 오른쪽 클릭하면 화살표 모양(금색 화살표·스티커·친구·사탕·자동차·비행기·잠자리)을 고를 수 있습니다.
 
 ### English
-- The level range and fishing skill under the World Map area name now show on one line, like "Lv.30-40  (fishing icon) 150".
-- Fixed data sharing with other EzWoW users not working.
+- Setting a map waypoint now shows an on-screen arrow with the distance and the name of what you are tracking.
+- Right-click the arrow to pick its look (gold arrow, sticker, buddy, candy, car, airplane, dragonfly).
