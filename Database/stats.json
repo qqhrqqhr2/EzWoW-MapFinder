@@ -1,11 +1,11 @@
 {
-  "entries": 20930,
+  "entries": 25720,
   "shards": 42,
   "types": {
-    "item": 1713,
-    "npc": 7421,
-    "object": 7656,
-    "quest": 4140
+    "item": 5769,
+    "npc": 7927,
+    "object": 7882,
+    "quest": 4142
   },
   "world_coordinates_only": true
 }

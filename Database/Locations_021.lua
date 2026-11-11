@@ -1,501 +1,614 @@
 EzWoWMapFinderData = EzWoWMapFinderData or {}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3847,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,323.86,-4824.97,10.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3848,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,308.58,-4833.61,10.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3849,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,301.24,-4827.67,10.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3850,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,304.67,-4811.2,10.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3851,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,315.03,-4809.18,10.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3852,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-401.16,1860.0,128.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3853,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-421.93,1850.12,128.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3855,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-422.42,1868.29,128.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3856,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-411.84,1847.04,128.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3857,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-413.77,1872.18,128.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3888,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-357.0,1727.36,139.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3890,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-354.95,1791.56,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3891,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-350.96,1725.13,139.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3892,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-353.08,1747.82,139.57}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3893,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-353.64,1758.22,139.62}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3894,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-311.16,1752.08,139.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3895,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-337.26,1797.88,139.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3896,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-343.08,1799.94,139.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3897,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-383.36,1773.23,139.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3898,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-320.56,1765.15,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3899,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-370.92,1780.58,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3900,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-339.57,1733.7,139.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3901,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-310.74,1758.49,139.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3902,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-331.32,1762.97,139.57}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3903,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-341.35,1777.37,139.57}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3904,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-363.24,1762.35,139.57}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3905,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-369.3,1747.69,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3906,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-362.15,1740.15,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3907,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-332.32,1784.88,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3908,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-323.18,1744.76,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3909,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-340.53,1767.06,139.62}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3910,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,-324.84,1777.23,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3911,kind="object",names={enUS="Burning Embers"},flags=0,spawns={{1,-373.44,1757.53,139.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3936,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{0,-8092.23,-1901.79,134.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3937,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{0,-8093.63,-1885.11,182.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3938,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{0,-8096.9,-1885.86,134.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3939,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{0,-8080.51,-1889.3,134.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3940,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{0,-8086.9,-1881.16,147.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3941,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{0,-8081.28,-1900.51,147.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3942,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{0,-8100.9,-1896.27,147.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3943,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{0,-8081.89,-1895.87,182.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3944,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-1835.57,605.21,109.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3945,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-1840.2,588.71,157.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3946,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-1829.55,596.71,122.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3947,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-1836.86,588.3,109.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3948,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-1851.1,597.13,109.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3949,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-1846.53,607.41,122.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3950,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-1847.87,587.3,122.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3951,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,-1847.55,602.83,157.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3960,kind="object",names={enUS="Burning Embers"},flags=0,spawns={{0,-6648.95,-2153.67,245.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3962,kind="object",names={enUS="Burning Embers"},flags=0,spawns={{0,-10493.9,-3251.54,21.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3963,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-297.85,-1966.34,90.58}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3964,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,-314.07,-1965.78,90.58}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3967,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{0,-10474.0,-3189.87,18.46},{0,-10426.9,-3192.65,19.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3968,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{0,-10490.2,-3189.44,18.46},{0,-10443.0,-3190.39,19.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=3972,kind="object",names={enUS="WANTED"},flags=0,spawns={{1,-918.82,-3719.89,10.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4004,kind="object",names={enUS="Fire Plume Ridge Lava Lake"},flags=0,spawns={{1,-7126.2,-1274.44,-194.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4072,kind="object",names={enUS="Main Control Valve"},flags=0,spawns={{1,831.22,-2679.75,91.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4087,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,-3789.3,-4375.33,16.79},{0,-3785.63,-866.55,11.6},{0,-571.59,33.47,49.88},{0,-9464.95,89.98,58.34}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4088,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,-3796.44,-4364.35,16.79},{0,-3798.59,-864.62,11.6},{0,-572.29,46.55,49.88},{0,-9455.0,98.5,58.34}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4089,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,-3800.78,-4368.29,16.79},{0,-3798.51,-870.49,11.6},{0,-578.02,45.31,49.88},{0,-9459.47,102.28,58.34}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4090,kind="object",names={enUS="Forge"},flags=0,spawns={{1,-3792.84,-4369.9,14.98},{0,-3792.04,-865.61,9.79},{0,-571.95,39.94,48.07},{0,-9460.03,94.2,56.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4096,kind="object",names={enUS="Alliance Chest"},flags=0,spawns={{0,-842.76,57.26,3.6},{0,-1358.34,-1245.93,40.18},{0,-801.12,65.32,8.89},{0,-1314.03,-1267.86,39.35},{0,-722.05,131.32,21.12}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4097,kind="object",names={enUS="Ratchet"},flags=0,spawns={{1,-452.23,-2664.52,98.12}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4098,kind="object",names={enUS="Durotar"},flags=0,spawns={{1,-451.0,-2663.02,98.07}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4099,kind="object",names={enUS="Mulgore"},flags=0,spawns={{1,-453.7,-2663.27,98.08}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4100,kind="object",names={enUS="Stonetalon Mountains"},flags=0,spawns={{1,-452.42,-2661.85,98.08}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4101,kind="object",names={enUS="Crossroads"},flags=0,spawns={{1,-958.23,-3680.35,10.46}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4102,kind="object",names={enUS="The Crossroads"},flags=0,spawns={{1,-532.68,-1571.91,94.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4103,kind="object",names={enUS="Stonetalon Mountains"},flags=0,spawns={{1,-532.87,-1569.25,94.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4104,kind="object",names={enUS="Ashenvale"},flags=0,spawns={{1,-451.0,-2663.03,97.24}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4105,kind="object",names={enUS="Dustwallow Marsh"},flags=0,spawns={{1,-453.74,-2663.27,97.3}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4106,kind="object",names={enUS="Thousand Needles"},flags=0,spawns={{1,-453.73,-2663.26,96.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4115,kind="object",names={enUS="The Crossroads"},flags=0,spawns={{1,-2286.44,-2170.93,98.52}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4116,kind="object",names={enUS="Dustwallow Marsh"},flags=0,spawns={{1,-2288.93,-2171.02,98.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4117,kind="object",names={enUS="Mulgore"},flags=0,spawns={{1,-2287.78,-2168.84,98.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4118,kind="object",names={enUS="Thousand Needles"},flags=0,spawns={{1,-2288.92,-2171.02,97.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4119,kind="object",names={enUS="Durotar"},flags=0,spawns={{1,-2286.46,-2170.92,97.75}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4120,kind="object",names={enUS="Mulgore"},flags=0,spawns={{1,-3475.83,-2045.37,99.08}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4121,kind="object",names={enUS="Dustwallow Marsh"},flags=0,spawns={{1,-3477.1,-2046.78,99.08}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4122,kind="object",names={enUS="Thousand Needles"},flags=0,spawns={{1,-3478.57,-2045.6,99.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4123,kind="object",names={enUS="The Crossroads"},flags=0,spawns={{1,-3475.8,-2045.37,98.25}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4132,kind="object",names={enUS="Ashenvale"},flags=0,spawns={{1,48.17,-2707.77,94.01}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4133,kind="object",names={enUS="The Crossroads"},flags=0,spawns={{1,45.46,-2708.02,94.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4134,kind="object",names={enUS="Durotar"},flags=0,spawns={{1,46.94,-2709.26,94.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4135,kind="object",names={enUS="The Crossroads"},flags=0,spawns={{1,313.79,-3599.11,29.26}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4136,kind="object",names={enUS="Durotar"},flags=0,spawns={{1,314.79,-3601.51,29.3}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4137,kind="object",names={enUS="Mulgore"},flags=0,spawns={{1,313.83,-3599.14,28.48}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4138,kind="object",names={enUS="Mulgore"},flags=0,spawns={{1,45.48,-2708.01,93.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4141,kind="object",names={enUS="Control Console"},flags=0,spawns={{1,825.53,-2686.73,91.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4149,kind="object",names={enUS="Solid Chest"},flags=0,spawns={{0,-6676.9,-1337.2,247.96},{0,-6974.81,-1124.58,256.03},{0,-6717.42,-1218.2,181.43},{0,-7033.53,-1311.28,256.87},{0,-6467.37,-900.23,324.34},{0,-7438.18,-2317.32,237.04},{0,-14919.2,89.77,0.2},{0,-14668.9,-204.65,6.01},{0,-12474.5,-999.97,49.9},{0,-13254.4,-547.91,17.28},{0,-12973.8,-820.66,71.05},{0,-13361.6,9.93,21.39},{0,-14687.8,486.56,2.85},{0,-13822.6,451.24,91.46},{0,-10862.7,-3631.31,11.58},{0,-10555.6,-3527.02,22.74},{1,-4223.75,-3891.03,-8.23},{1,-4446.37,-4121.62,-5.03},{1,-7280.29,-4542.58,8.88},{1,-7686.44,-4269.25,9.15},{1,-7378.62,-4403.74,9.49},{0,-13279.3,-428.96,16.93},{0,-10662.9,-4337.71,1.24},{0,-10396.9,-4399.83,2.74},{1,-5097.62,-3964.18,40.86},{1,-4306.4,-3289.77,35.38},{1,-4399.68,-2954.71,27.33},{0,-233.41,-3120.78,125.67},{0,-249.46,-2551.53,117.29},{0,-294.9,-3471.44,192.46}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4166,kind="object",names={enUS="Alchemical Implements"},flags=0,spawns={{1,-424.92,-2590.89,97.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4170,kind="object",names={enUS="Mesa Elevator"},flags=0,spawns={{1,-1286.24,189.72,130.08}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4171,kind="object",names={enUS="Mesa Elevator"},flags=0,spawns={{1,-1308.38,185.29,68.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4406,kind="object",names={enUS="Webwood Eggs"},flags=0,spawns={{1,10932.4,911.63,1337.94},{1,10929.4,923.08,1339.99},{1,10932.1,917.92,1339.32},{1,10933.3,922.3,1340.05},{1,10933.3,929.18,1340.81},{1,10931.6,926.53,1340.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=4608,kind="object",names={enUS="Timberling Sprout"},flags=0,spawns={{1,9438.71,756.4,1253.52},{1,9494.46,676.28,1265.11},{1,9424.74,721.66,1260.28},{1,9386.93,1264.87,1251.3},{1,9359.21,827.2,1264.37},{1,9508.07,649.09,1271.74},{1,9347.0,1196.95,1247.41},{1,9493.85,1119.84,1252.87},{1,9408.91,1123.34,1249.89},{1,9464.73,756.77,1254.89},{1,9457.63,699.05,1264.7},{1,9492.57,1079.29,1250.12},{1,9440.77,1089.94,1251.58},{1,9366.38,1270.76,1251.89},{1,9477.68,778.67,1253.19},{1,9458.01,1010.13,1253.44},{1,9591.29,1007.3,1271.32},{1,9354.87,1130.44,1253.44},{1,9483.56,1141.8,1252.26},{1,9383.43,753.56,1261.82},{1,9446.56,1067.29,1249.51},{1,9427.97,1221.07,1250.06},{1,9319.93,1150.49,1254.28},{1,9668.24,765.36,1280.41},{1,9594.89,701.12,1267.78},{1,9375.99,786.28,1262.29},{1,9323.76,1241.87,1253.63},{1,9607.18,895.86,1261.84},{1,9561.51,970.76,1267.12},{1,9614.88,864.64,1259.62}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=5619,kind="object",names={enUS="Flawed Power Stone"},flags=0,spawns={{1,259.18,-3694.17,27.09}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=5620,kind="object",names={enUS="Flawed Power Stones"},flags=0,spawns={{1,258.92,-3694.56,27.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=5621,kind="object",names={enUS="Flawed Power Stones"},flags=0,spawns={{1,258.75,-3694.16,27.08}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=5622,kind="object",names={enUS="Purple aura, short column, 0.6 scale"},flags=0,spawns={{1,258.99,-3694.39,27.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6288,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,2489.38,-2146.48,200.48}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6289,kind="object",names={enUS="Smoldering Blaze"},flags=0,spawns={{1,2456.86,-3413.34,100.86}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6290,kind="object",names={enUS="Smoldering Blaze"},flags=0,spawns={{1,2437.12,-3408.23,99.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6291,kind="object",names={enUS="Smoldering Brazier"},flags=0,spawns={{1,2449.56,-3479.43,92.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6292,kind="object",names={enUS="Smoldering Brazier"},flags=0,spawns={{1,2434.27,-3478.44,92.34}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6751,kind="object",names={enUS="Strange Fruited Plant"},flags=0,spawns={{1,9245.65,1644.85,1303.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6752,kind="object",names={enUS="Strange Fronded Plant"},flags=0,spawns={{1,10855.3,2052.4,1327.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6906,kind="object",names={enUS="Red Raptor Nest"},flags=0,spawns={{1,-1533.44,-2692.78,91.29}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6907,kind="object",names={enUS="Blue Raptor Nest"},flags=0,spawns={{1,-1502.47,-2707.26,92.81}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6908,kind="object",names={enUS="Yellow Raptor Nest"},flags=0,spawns={{1,-1527.43,-2648.48,92.11}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=7510,kind="object",names={enUS="Sprouted Frond"},flags=0,spawns={{1,9504.34,721.47,1255.94},{1,9502.75,718.02,1255.94},{1,9503.46,720.08,1255.94}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=7923,kind="object",names={enUS="Denalan's Planter"},flags=0,spawns={{1,9502.27,720.54,1255.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=9630,kind="object",names={enUS="Flagongut's Fossil"},flags=0,spawns={{0,-3586.88,-1996.54,116.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=9847,kind="object",names={enUS="Cooking Fire"},flags=0,spawns={{1,-5062.52,-2329.1,-54.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10082,kind="object",names={enUS="Stormwind"},flags=0,spawns={{0,-8879.98,567.07,93.35}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10083,kind="object",names={enUS="Goldshire"},flags=0,spawns={{0,-8882.02,565.45,93.35}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10192,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8558.13,730.03,101.72}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10193,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8556.18,727.8,101.72}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10194,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8602.56,378.0,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10195,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8557.39,724.92,101.72}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10196,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8554.06,719.46,101.75}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10197,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8848.98,792.05,102.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10198,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8846.36,793.77,102.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10199,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8643.99,680.85,101.77}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10200,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8644.0,682.32,101.77}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10201,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8603.47,394.96,102.93}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10202,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8645.12,683.65,101.77}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10203,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8646.96,683.92,101.77}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10204,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8655.05,673.23,108.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10205,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8653.19,670.58,108.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10206,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8543.57,546.7,102.77}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10207,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8859.68,821.75,98.35}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10208,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8861.97,819.85,98.35}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10209,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8603.98,392.58,102.93}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10210,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8564.63,702.33,103.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10211,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8566.48,704.9,103.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10212,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8564.42,704.55,103.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10213,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8566.76,702.61,103.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10214,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8568.68,709.47,103.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10215,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8571.62,707.77,103.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10216,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8602.05,380.56,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10217,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8573.43,710.86,103.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10218,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8596.46,386.36,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10219,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8571.09,712.62,103.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10220,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8860.45,863.9,99.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10222,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8857.95,865.66,99.65}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10223,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8599.53,380.3,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10224,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8858.19,863.52,99.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=10388,kind="object",names={enUS="Cooking Fire"},flags=0,spawns={{1,-4608.19,-1216.53,-55.82}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=11713,kind="object",names={enUS="Death Cap"},flags=0,spawns={{1,6808.75,-745.47,69.88},{1,6758.94,-698.87,69.73},{1,6794.09,-750.83,69.67},{1,6752.75,-709.93,89.83},{1,6766.05,-684.71,69.76},{1,6750.5,-690.5,89.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=11714,kind="object",names={enUS="Scaber Stalk"},flags=0,spawns={{1,6822.92,-669.14,64.35},{1,6831.38,-695.99,64.19},{1,6848.88,-679.09,83.34},{1,6877.56,-663.55,84.19},{1,6818.76,-666.78,86.85},{1,6826.27,-709.84,80.97},{1,6779.85,-680.78,89.24},{1,6792.66,-694.19,73.22},{1,6822.92,-753.83,58.99},{1,6778.14,-660.19,67.45},{1,6735.58,-703.06,69.89},{1,6829.69,-766.54,67.83},{1,6726.14,-661.75,68.28},{1,6796.66,-769.3,69.66},{1,6857.62,-795.15,62.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=11898,kind="object",names={enUS="Mesa Elevator"},flags=0,spawns={{1,-4665.43,-1827.67,85.41},{1,-5399.19,-2504.62,89.02},{209,2600.81,1228.72,89.02},{47,1734.57,1372.33,85.41}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=11899,kind="object",names={enUS="Mesa Elevator"},flags=0,spawns={{1,-4670.77,-1849.61,-44.14},{1,-5382.5,-2489.42,-40.53},{209,2617.51,1243.92,-40.53},{47,1729.23,1350.39,-44.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12144,kind="object",names={enUS="Twilight Tome"},flags=0,spawns={{1,4566.1,419.45,34.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12351,kind="object",names={enUS="Dolanaar"},flags=0,spawns={{1,10374.6,743.24,1322.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12352,kind="object",names={enUS="Starbreeze Village"},flags=0,spawns={{1,10374.6,743.26,1321.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12353,kind="object",names={enUS="Shadowglen"},flags=0,spawns={{1,9955.03,659.75,1310.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12354,kind="object",names={enUS="Aldrassil"},flags=0,spawns={{1,9955.03,659.75,1309.54}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12355,kind="object",names={enUS="Starbreeze Village"},flags=0,spawns={{1,9954.96,659.81,1310.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12356,kind="object",names={enUS="Dolanaar"},flags=0,spawns={{1,9955.04,659.8,1310.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12357,kind="object",names={enUS="Darnassus"},flags=0,spawns={{1,9955.04,659.78,1309.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12358,kind="object",names={enUS="Starbreeze Village"},flags=0,spawns={{1,9891.84,919.78,1307.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12359,kind="object",names={enUS="Shadowglen"},flags=0,spawns={{1,9891.84,919.77,1306.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12360,kind="object",names={enUS="The Oracle Glade"},flags=0,spawns={{1,9891.9,919.85,1306.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12361,kind="object",names={enUS="Dolanaar"},flags=0,spawns={{1,9891.89,919.88,1307.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12362,kind="object",names={enUS="Aldrassil"},flags=0,spawns={{1,9891.83,919.75,1306.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12363,kind="object",names={enUS="Darnassus"},flags=0,spawns={{1,9891.89,919.88,1306.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12364,kind="object",names={enUS="Dolanaar"},flags=0,spawns={{1,10019.2,1825.5,1319.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12365,kind="object",names={enUS="The Oracle Glade"},flags=0,spawns={{1,10019.2,1825.55,1319.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12366,kind="object",names={enUS="Darnassus"},flags=0,spawns={{1,10019.2,1825.56,1319.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12654,kind="object",names={enUS="Mathystra Relic"},flags=0,spawns={{1,7319.75,-1041.32,35.47},{1,7284.45,-984.77,34.17},{1,7506.25,-1025.4,-9.88},{1,7274.62,-892.33,33.29},{1,7490.88,-887.41,16.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12665,kind="object",names={enUS="Cooking Table"},flags=0,spawns={{1,-563.02,-4217.51,41.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12666,kind="object",names={enUS="Twilight Tome"},flags=0,spawns={{1,4575.75,417.03,34.93}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12893,kind="object",names={enUS="Grove of the Ancients"},flags=0,spawns={{1,4982.94,218.76,38.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12894,kind="object",names={enUS="Ameth'Aran"},flags=0,spawns={{1,4983.03,218.75,38.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12895,kind="object",names={enUS="Ashenvale"},flags=0,spawns={{1,4982.93,218.84,38.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12896,kind="object",names={enUS="Auberdine"},flags=0,spawns={{1,4983.03,218.74,38.4}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12897,kind="object",names={enUS="Ameth'Aran"},flags=0,spawns={{1,5633.76,324.24,19.91}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12898,kind="object",names={enUS="Grove of the Ancients"},flags=0,spawns={{1,5633.67,324.35,19.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12899,kind="object",names={enUS="Ashenvale"},flags=0,spawns={{1,5633.67,324.35,19.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12900,kind="object",names={enUS="Bashal'Aran"},flags=0,spawns={{1,5633.85,324.27,19.29}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12901,kind="object",names={enUS="Auberdine"},flags=0,spawns={{1,5633.85,324.27,19.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12902,kind="object",names={enUS="Bashal'Aran"},flags=0,spawns={{1,6303.99,325.89,24.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12903,kind="object",names={enUS="Mathystra"},flags=0,spawns={{1,6303.99,325.89,23.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12904,kind="object",names={enUS="Ashenvale"},flags=0,spawns={{1,6303.93,326.03,24.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12907,kind="object",names={enUS="Mathystra"},flags=0,spawns={{1,6817.33,48.41,16.84}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12908,kind="object",names={enUS="Auberdine"},flags=0,spawns={{1,6817.33,48.56,16.85}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12909,kind="object",names={enUS="Bashal'Aran"},flags=0,spawns={{1,6817.28,48.54,16.84}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13348,kind="object",names={enUS="Darkshore"},flags=0,spawns={{1,3230.7,233.38,10.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13349,kind="object",names={enUS="Astranaar"},flags=0,spawns={{1,3230.65,233.42,10.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13350,kind="object",names={enUS="Astranaar"},flags=0,spawns={{1,2834.15,158.17,102.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13351,kind="object",names={enUS="Darkshore"},flags=0,spawns={{1,2834.15,158.12,102.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13352,kind="object",names={enUS="The Shrine of Aessina"},flags=0,spawns={{1,2834.15,158.17,102.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13353,kind="object",names={enUS="The Shrine of Aessina"},flags=0,spawns={{1,3230.65,233.42,9.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13354,kind="object",names={enUS="The Shrine of Aessina"},flags=0,spawns={{1,2797.61,-298.65,107.24}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13355,kind="object",names={enUS="Darkshore"},flags=0,spawns={{1,2797.62,-298.64,106.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13356,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,2667.99,-417.02,107.42}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13357,kind="object",names={enUS="Felwood"},flags=0,spawns={{1,2668.0,-417.04,106.81}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13358,kind="object",names={enUS="Azshara"},flags=0,spawns={{1,2668.04,-416.99,106.09}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13359,kind="object",names={enUS="Cat Figurine"},flags=0,spawns={{1,7388.81,-1064.92,38.51},{1,7312.25,-954.66,32.27},{1,7667.91,-994.12,35.52}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13360,kind="object",names={enUS="Mathystra Relic"},flags=0,spawns={{1,7240.45,-887.03,34.74},{1,7351.27,-772.62,7.95},{1,7378.4,-874.38,21.2},{1,7456.8,-868.26,1.34},{1,7483.87,-839.69,13.02},{1,7438.97,-1085.67,37.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13405,kind="object",names={enUS="Felwood"},flags=0,spawns={{1,2270.18,-1739.42,112.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13406,kind="object",names={enUS="Astranaar"},flags=0,spawns={{1,2270.15,-1739.35,112.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13407,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,2270.17,-1739.4,112.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13408,kind="object",names={enUS="Azshara"},flags=0,spawns={{1,2270.17,-1739.39,111.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13409,kind="object",names={enUS="Azshara"},flags=0,spawns={{1,1937.49,-2172.0,94.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13410,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,1937.48,-2171.9,94.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13411,kind="object",names={enUS="Felwood"},flags=0,spawns={{1,1937.5,-2171.93,94.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13412,kind="object",names={enUS="Astranaar"},flags=0,spawns={{1,1937.5,-2171.93,93.86}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13872,kind="object",names={enUS="Mathystra Relic"},flags=0,spawns={{1,7204.22,-859.88,41.36},{1,7384.89,-1008.86,31.51},{1,7502.27,-976.04,-9.84},{1,7299.35,-862.12,29.84},{1,7430.48,-864.88,3.55},{1,7525.01,-1073.16,36.73},{1,7471.83,-1072.76,34.76},{1,7586.5,-920.02,19.55},{1,7395.16,-1123.29,41.13}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13873,kind="object",names={enUS="Cat Figurine"},flags=0,spawns={{1,7395.53,-782.86,7.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13891,kind="object",names={enUS="Serpentbloom"},flags=0,spawns={{1,-651.43,-2350.74,20.85},{1,-542.54,-2247.05,43.36},{1,-611.49,-2189.51,50.52},{1,-598.61,-2130.15,50.86},{1,-566.24,-2327.57,26.32},{1,-717.18,-2105.74,65.75},{1,-599.77,-2044.96,57.17},{1,-790.11,-2090.43,75.38},{1,-695.57,-2347.81,19.97},{1,-577.17,-2250.14,40.01},{1,-564.22,-2206.49,49.08},{1,-733.29,-2059.56,69.56},{1,-672.65,-2006.37,64.68},{1,-705.33,-2249.4,16.44},{1,-674.61,-2202.58,25.47},{43,-382.75,-100.2,-64.46},{43,-111.87,-38.75,-28.45},{43,-360.63,43.28,-100.91},{43,3.28,411.87,-65.94},{43,45.95,275.33,-89.1},{43,-293.32,-319.38,-68.23},{43,-164.13,-337.61,-68.92},{43,48.04,-165.49,-81.72},{43,-36.3,-281.64,-66.58},{43,-94.13,-264.68,-55.59},{43,-169.72,-224.06,-55.66},{43,-0.31,-42.18,-65.02},{43,-232.34,-148.22,-62.75},{43,-147.21,-146.16,-66.95},{43,-178.29,-101.69,-65.85}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13949,kind="object",names={enUS="Pitted Iron Chest"},flags=0,spawns={{48,-330.54,212.01,-69.71}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13965,kind="object",names={enUS="Factory Door"},flags=0,spawns={{36,-191.41,-457.45,54.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=15068,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-2265.87,-307.14,-9.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=15069,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-2386.13,-390.92,-3.39}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=16393,kind="object",names={enUS="Ancient Flame"},flags=0,spawns={{1,5633.84,166.19,32.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=16394,kind="object",names={enUS="Ancient Flame"},flags=0,spawns={{1,5633.83,166.26,34.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=16396,kind="object",names={enUS="Moonbrook"},flags=0,spawns={{0,-9979.23,1007.14,31.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=16397,kind="object",names={enUS="Iron Clad Door"},flags=0,spawns={{36,-100.5,-668.77,7.41}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=16398,kind="object",names={enUS="Defias Cannon"},flags=0,spawns={{36,-107.56,-659.67,7.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=16399,kind="object",names={enUS="Foundry Door"},flags=0,spawns={{36,-168.51,-579.86,19.32}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=16400,kind="object",names={enUS="Mast Room Door"},flags=0,spawns={{36,-290.29,-536.96,49.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17153,kind="object",names={enUS="Heavy Door"},flags=0,spawns={{36,-262.71,-482.36,49.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17154,kind="object",names={enUS="Heavy Door"},flags=0,spawns={{36,-242.97,-578.56,51.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17155,kind="object",names={enUS="Defias Gunpowder"},flags=0,spawns={{36,-106.41,-617.28,13.85}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17156,kind="object",names={enUS="Door Lever"},flags=0,spawns={{0,-6039.81,-2489.11,311.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17157,kind="object",names={enUS="Door Lever"},flags=0,spawns={{0,-6350.34,-2079.46,244.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17182,kind="object",names={enUS="Buzzbox 827"},flags=0,spawns={{1,6313.35,541.66,13.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17183,kind="object",names={enUS="Buzzbox 411"},flags=0,spawns={{1,7083.71,193.24,0.82}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17184,kind="object",names={enUS="Buzzbox 323"},flags=0,spawns={{1,7260.43,-417.56,26.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17185,kind="object",names={enUS="Buzzbox 525"},flags=0,spawns={{1,4815.38,230.72,49.16}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17188,kind="object",names={enUS="The Lay of Ameth'Aran"},flags=0,spawns={{1,5771.17,105.76,35.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17189,kind="object",names={enUS="The Fall of Ameth'Aran"},flags=0,spawns={{1,5576.07,147.81,28.91}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17190,kind="object",names={enUS="Forge"},flags=0,spawns={{1,-1981.14,442.02,133.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17191,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,-1978.85,443.6,133.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17249,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8608.17,375.81,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17250,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8954.27,1008.3,122.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17251,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8956.6,1008.58,122.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17252,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8617.62,394.26,102.93}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17253,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-9076.53,836.78,108.42}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17254,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-9070.64,831.41,108.42}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17255,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8618.09,391.59,102.93}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17256,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-9075.87,839.09,108.42}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17257,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-9084.21,822.61,115.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17258,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8596.63,383.5,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17259,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8861.44,854.28,99.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17260,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8858.79,851.65,99.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17261,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8909.32,614.13,99.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17262,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8907.33,615.29,99.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17263,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8918.03,635.64,99.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17264,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8920.27,634.51,99.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17265,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8931.5,628.36,99.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17266,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8612.39,371.32,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17267,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8933.21,627.35,99.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17268,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8920.59,607.74,99.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17269,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8922.39,606.78,99.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17270,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8938.35,1005.09,122.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17271,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8939.65,1006.7,122.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17272,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8942.29,1006.78,122.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17273,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8942.79,1004.3,122.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17274,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8605.59,375.39,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17275,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8614.85,371.6,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17276,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8608.41,373.17,110.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17277,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8941.54,1002.57,122.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17278,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8939.07,1002.53,122.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17279,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8953.95,1010.44,122.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17280,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8956.34,1010.81,122.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17281,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8613.99,389.68,102.93}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17282,kind="object",names={enUS="Plant Bundle"},flags=0,spawns={{1,3722.3,-37.07,-2.38},{1,3866.55,-83.86,6.67},{1,3692.97,-55.56,-1.3},{1,3769.16,-149.36,2.34},{1,3801.19,-165.12,1.0},{1,3797.38,-67.86,4.67},{1,3729.87,-157.55,6.13},{1,3763.18,-68.08,-0.76},{1,3837.68,-155.8,0.38},{1,3853.51,-252.53,7.92},{1,3822.99,-207.99,3.26},{1,3791.12,-137.19,0.58},{1,3782.52,-177.97,4.07},{1,3838.51,-111.63,1.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17284,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,3470.87,848.71,5.39}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=17783,kind="object",names={enUS="Ancient Statuette"},flags=0,spawns={{1,3879.52,880.97,0.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18033,kind="object",names={enUS="Mulgore"},flags=0,spawns={{1,-2348.22,-1910.58,98.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18034,kind="object",names={enUS="The Crossroads"},flags=0,spawns={{1,-2348.0,-1913.21,98.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18035,kind="object",names={enUS="Tribal Fire"},flags=0,spawns={{1,-2240.59,-401.03,-9.42}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18036,kind="object",names={enUS="Bottle of Disease"},flags=0,spawns={{1,1908.14,-2643.02,83.67},{1,1909.85,-2642.83,84.22},{1,1896.83,-2641.82,83.88},{1,1913.1,-2640.38,83.09},{1,1898.27,-2642.36,83.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18043,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,220.98,-2606.29,160.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18045,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-26.28,-2465.58,122.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18046,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-28.41,-2806.42,122.3}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18063,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-200.95,-3908.78,215.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18064,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-219.45,-3975.78,195.03}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18065,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-216.87,-4046.03,173.91}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18066,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-275.1,-3908.01,215.86}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18067,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-275.0,-4018.38,174.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18068,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-350.38,-4215.59,152.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18069,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-392.79,-3803.21,238.35}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18070,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-374.33,-4057.11,174.01}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18071,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-414.07,-4018.49,195.1}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18072,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-404.46,-4195.62,174.07}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18073,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-466.48,-4189.62,195.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18074,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-528.59,-4181.07,215.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18075,kind="object",names={enUS="Cooking Table"},flags=0,spawns={{1,315.73,-4666.47,16.16}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18076,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,317.67,-4671.1,16.12}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18077,kind="object",names={enUS="Smoking Rack"},flags=0,spawns={{1,-782.76,-4903.25,19.52}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18079,kind="object",names={enUS="Bubbling Cauldron"},flags=0,spawns={{1,313.72,-4661.79,16.13}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18083,kind="object",names={enUS="Bubbling Cauldron"},flags=0,spawns={{1,-557.68,-4219.21,41.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18084,kind="object",names={enUS="Bubbling Cauldron"},flags=0,spawns={{1,-1265.08,-5510.95,5.26}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18085,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,869.4,-4186.35,-13.93}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18087,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-6235.4,-3854.96,-58.75}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18089,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-10464.0,-812.86,51.32}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18090,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-10640.4,-889.79,49.19}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18340,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,-5049.23,-2679.08,319.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18341,kind="object",names={enUS="Bubbling Cauldron"},flags=0,spawns={{0,-5275.48,-2706.69,342.65}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18342,kind="object",names={enUS="Boiling Cauldron"},flags=0,spawns={{0,-4840.23,-4040.98,315.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18343,kind="object",names={enUS="Cooking Fire"},flags=0,spawns={{0,-4866.01,-4041.11,314.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18344,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-4941.19,-4029.23,301.13}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18345,kind="object",names={enUS="Bubbling Cauldron"},flags=0,spawns={{0,-6039.7,-2985.6,401.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18596,kind="object",names={enUS="Crackling Campfire"},flags=0,spawns={{1,1791.6,-1234.65,149.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18603,kind="object",names={enUS="Ancient Statuette"},flags=0,spawns={{1,3471.96,847.07,5.37}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18643,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,2208.02,-1421.51,90.82}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18644,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,2218.27,-1537.09,88.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18645,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,2247.52,-1565.23,87.57}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18895,kind="object",names={enUS="Courtyard Door"},flags=0,spawns={{33,-242.58,2159.05,90.62}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18899,kind="object",names={enUS="Lever"},flags=0,spawns={{33,-113.76,2165.08,157.85}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18900,kind="object",names={enUS="Lever"},flags=0,spawns={{33,-252.7,2114.22,82.81}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18901,kind="object",names={enUS="Lever"},flags=0,spawns={{33,-249.22,2123.1,82.81}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18930,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-903.61,-2931.61,91.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18934,kind="object",names={enUS="Cell Door"},flags=0,spawns={{33,-251.24,2116.38,81.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18935,kind="object",names={enUS="Cell Door"},flags=0,spawns={{33,-244.14,2134.41,81.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18936,kind="object",names={enUS="Cell Door"},flags=0,spawns={{33,-247.76,2125.23,81.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18971,kind="object",names={enUS="Arugal's Lair"},flags=0,spawns={{33,-118.11,2161.86,155.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18972,kind="object",names={enUS="Sorcerer's Gate"},flags=0,spawns={{33,-129.03,2166.16,129.19}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=18973,kind="object",names={enUS="Arugal's Focus"},flags=0,spawns={{33,-146.39,2173.0,150.54}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19015,kind="object",names={enUS="Elune's Tear"},flags=0,spawns={{1,2908.22,-972.49,201.76},{1,2906.27,-966.66,201.54},{1,2894.13,-959.72,199.57},{1,2883.09,-956.49,197.73},{1,2869.01,-972.12,197.03},{1,2869.9,-986.37,196.67},{1,2905.43,-987.23,199.08},{1,2882.52,-993.01,197.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19016,kind="object",names={enUS="Stardust Covered Bush"},flags=0,spawns={{1,2036.25,-209.53,98.66},{1,2073.01,-232.02,97.13},{1,2060.09,-221.89,97.06},{1,2113.95,-257.08,97.49},{1,2042.3,-192.18,97.07},{1,2072.58,-270.35,94.02},{1,2034.09,-227.39,96.37},{1,2089.97,-218.55,97.06},{1,2100.94,-178.59,96.82},{1,2045.81,-197.15,97.35}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19017,kind="object",names={enUS="Giant Clam"},flags=0,spawns={{1,-1725.04,-3959.15,-7.28},{1,-1795.0,-3811.41,-5.59},{1,-1811.82,-3876.19,-6.81},{1,-1898.69,-3837.65,-13.91},{1,-2158.09,-3927.81,-12.53},{1,-1383.11,-4079.08,-29.28},{1,-2049.98,-3822.86,-8.51},{0,-10280.3,2274.59,-38.41},{0,-10676.5,2242.93,-22.26},{0,-11583.1,1775.77,-20.02},{0,-10993.4,2237.13,-26.13},{0,-9489.83,1377.83,-20.17},{0,-11485.0,2019.67,-24.08},{1,-1127.55,-3949.3,-64.38},{1,-1186.6,-4108.33,-82.84},{1,-1240.06,-3986.87,-14.94},{1,-1480.74,-4023.45,-11.22},{1,-1612.91,-4012.49,-2.8},{1,-1126.61,-3861.84,-26.53},{1,-1085.12,-4114.9,-67.65},{1,-967.79,-3883.59,-65.07},{1,-922.27,-4008.96,-55.82},{1,5811.37,1006.28,-37.15},{1,4336.19,1274.6,-49.5},{1,4481.62,1134.2,-44.25},{1,4482.54,899.81,-2.97},{1,4545.3,825.71,-4.14},{1,4699.86,957.88,-14.32},{1,4890.71,867.02,-10.47},{1,5066.94,883.78,-33.26}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19018,kind="object",names={enUS="Giant Clam"},flags=0,spawns={{48,-770.51,-189.07,-48.81},{48,-790.22,-176.53,-45.17},{48,-760.68,-155.53,-51.51},{48,-781.43,-165.56,-47.91},{48,-741.05,-152.38,-56.76},{48,-734.43,-96.03,-36.96},{48,-732.47,-67.33,-38.44},{48,-730.43,-31.51,-41.47},{48,-807.62,-120.47,-37.31},{48,-784.33,-82.74,-43.05},{48,-766.49,-62.31,-44.0},{48,-710.16,-49.47,-41.6},{48,-727.02,-118.42,-37.01},{48,-700.2,-100.68,-35.68},{48,-753.17,-21.33,-37.5},{48,-354.93,308.11,-69.82},{48,-450.11,130.31,-71.38},{48,-346.63,291.61,-70.79},{48,-368.94,256.86,-71.79},{48,-308.6,198.45,-65.1},{48,-345.41,222.05,-67.92},{48,-359.86,279.13,-77.02},{48,-489.73,144.38,-72.41},{48,-526.05,149.89,-79.71},{48,-410.67,348.69,-71.74},{48,-405.57,319.07,-68.08},{48,-400.43,279.81,-71.14},{48,-472.57,130.78,-72.33},{48,-302.45,48.79,-67.43},{48,-348.72,-34.5,-68.46}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19019,kind="object",names={enUS="Box of Assorted Parts"},flags=0,spawns={{0,-10543.9,2119.12,0.08},{0,-9750.41,1811.15,0.34},{0,-11098.1,2090.4,-0.06},{0,-10036.0,1945.72,0.04},{1,1367.9,-3651.88,97.26},{1,1332.44,-3449.7,95.16},{1,1326.78,-3639.1,91.74},{1,1294.64,-3592.48,91.9},{0,-10949.5,1572.38,46.98},{0,-10981.8,1477.53,50.61},{0,-11013.9,1528.84,43.77},{0,-11059.0,1445.25,43.32},{36,-43.05,-691.14,4.21},{36,-209.95,-595.73,20.98},{36,-185.02,-692.19,8.82},{36,-200.77,-574.16,20.98},{36,-123.42,-706.0,8.44},{36,-236.25,-560.5,19.31},{36,-141.93,-770.3,2.45},{36,-170.77,-588.51,19.33},{36,-214.7,-545.26,19.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19020,kind="object",names={enUS="Box of Assorted Parts"},flags=0,spawns={{1,-4125.63,-2222.27,50.18},{1,-4075.15,-2302.65,125.64},{90,-527.6,-134.66,-152.5},{90,-466.2,104.8,-150.11},{90,-541.04,15.71,-179.73},{90,-472.19,509.81,-230.6},{1,-4163.62,-2197.79,50.18},{1,-4111.56,-2305.06,125.46},{1,-4144.57,-2178.27,50.4},{1,-4168.89,-2187.92,50.23},{1,-4187.06,-2192.49,50.19},{1,-4071.55,-2166.92,50.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19022,kind="object",names={enUS="Worn Chest"},flags=0,spawns={{1,3312.35,-1438.02,176.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19024,kind="object",names={enUS="Hidden Shrine"},flags=0,spawns={{1,2781.92,-1549.56,261.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19025,kind="object",names={enUS="Ancient Inscription"},flags=0,spawns={{1,3150.38,-1200.59,216.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19027,kind="object",names={enUS="Tome of Mel'Thandris"},flags=0,spawns={{1,3168.89,-1211.61,216.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19028,kind="object",names={enUS="Scarlet Watch Post"},flags=0,spawns={{0,2654.7,-633.42,108.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19030,kind="object",names={enUS="Mound of Dirt"},flags=0,spawns={{0,-11141.2,-1151.89,43.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19033,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,-1795.64,-18.64,-8.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19283,kind="object",names={enUS="Compendium of the Fallen"},flags=0,spawns={{189,277.48,-425.39,20.07}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19284,kind="object",names={enUS="Mythology of the Titans"},flags=0,spawns={{189,281.39,-352.26,20.4}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19463,kind="object",names={enUS="Cliffspring Falls Cave Mouth"},flags=0,spawns={{1,6878.81,-655.54,84.46}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19464,kind="object",names={enUS="Dreadmist Peak Pool"},flags=0,spawns={{1,336.56,-2281.51,239.37}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19534,kind="object",names={enUS="Anton's Letter of Commendation"},flags=0,spawns={{0,-848.56,-576.39,19.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19536,kind="object",names={enUS="Crackling Campfire"},flags=0,spawns={{1,4687.8,-5392.43,112.12}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19538,kind="object",names={enUS="World Tree Portal"},flags=0,spawns={{1,2780.11,-1552.79,266.25},{1,2779.46,-1552.08,265.37}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19539,kind="object",names={enUS="Grinding Wheel"},flags=0,spawns={{1,2781.14,-1553.91,267.74},{1,2779.82,-1552.47,263.94}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19540,kind="object",names={enUS="Orc Manacle"},flags=0,spawns={{1,2782.03,-1554.47,267.0},{1,2780.24,-1552.93,264.42}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19543,kind="object",names={enUS="Deepmoss Eggs trap"},flags=0,spawns={{1,1069.0,247.82,19.58},{1,1139.26,-545.7,7.49},{1,1597.57,767.38,132.16},{1,1425.79,-197.04,20.33},{1,1297.68,313.88,25.5},{1,1402.17,853.09,147.0},{1,862.68,209.65,27.71},{1,1524.46,604.21,145.68},{1,1503.16,1011.93,142.6},{1,989.75,166.38,22.71},{1,1525.06,-389.07,32.09},{1,1498.51,-566.27,61.44},{1,543.95,595.89,74.17},{1,524.56,580.35,90.99},{1,456.92,677.47,78.43},{1,544.57,667.32,78.87},{1,962.66,85.6,20.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19544,kind="object",names={enUS="Jin'Zil's Smoke"},flags=0,spawns={{1,-274.04,-396.3,18.08}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19545,kind="object",names={enUS="The Oracle Glade"},flags=0,spawns={{1,9988.92,1958.52,1326.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19546,kind="object",names={enUS="Dolanaar"},flags=0,spawns={{1,9988.91,1958.51,1325.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19547,kind="object",names={enUS="Venture Co. Explosives Wagon"},flags=0,spawns={{1,1169.03,49.43,-0.83},{1,1432.74,49.07,21.73},{1,1268.82,-300.33,6.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19548,kind="object",names={enUS="Eye of Azora"},flags=0,spawns={{0,-9552.76,-719.37,99.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19549,kind="object",names={enUS="Shadowglen Moonwell"},flags=0,spawns={{1,10709.6,762.34,1320.24}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19550,kind="object",names={enUS="Starbreeze Village Moonwell"},flags=0,spawns={{1,9859.68,587.28,1299.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19551,kind="object",names={enUS="Pools of Arlithrien Moonwell"},flags=0,spawns={{1,9554.56,1655.09,1297.83}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19552,kind="object",names={enUS="Oracle Glade Moonwell"},flags=0,spawns={{1,10675.3,1857.27,1323.36}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19553,kind="object",names={enUS="Greatwood Vale"},flags=0,spawns={{1,-247.69,-990.2,18.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19554,kind="object",names={enUS="Stonetalon Peak"},flags=0,spawns={{1,-247.79,-990.7,16.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19555,kind="object",names={enUS="Windshear Crag"},flags=0,spawns={{1,-247.69,-990.17,17.75}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19556,kind="object",names={enUS="The Charred Vale"},flags=0,spawns={{1,-247.62,-990.05,17.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19557,kind="object",names={enUS="Welcome"},flags=0,spawns={{1,-249.25,-992.1,16.5}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19558,kind="object",names={enUS="Windshear Crag"},flags=0,spawns={{1,92.31,-55.58,22.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19559,kind="object",names={enUS="Sun Rock Retreat"},flags=0,spawns={{1,92.33,-55.55,21.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19560,kind="object",names={enUS="Stonetalon Peak"},flags=0,spawns={{1,92.44,-55.48,21.12}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19561,kind="object",names={enUS="Greatwood Vale"},flags=0,spawns={{1,92.59,-56.89,19.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19562,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,92.13,-57.33,19.42}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19563,kind="object",names={enUS="Windshear Crag"},flags=0,spawns={{1,603.94,326.39,47.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19564,kind="object",names={enUS="Greatwood Vale"},flags=0,spawns={{1,603.02,325.88,46.72}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19565,kind="object",names={enUS="Sun Rock Retreat"},flags=0,spawns={{1,602.86,327.27,45.52}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19566,kind="object",names={enUS="Desolace"},flags=0,spawns={{1,602.78,327.07,44.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19567,kind="object",names={enUS="Stonetalon Peak"},flags=0,spawns={{1,602.77,327.7,44.5}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19568,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,603.36,325.84,46.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19569,kind="object",names={enUS="End of Venture Co. Lands"},flags=0,spawns={{1,633.42,359.59,52.01}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19570,kind="object",names={enUS="DANGER!"},flags=0,spawns={{1,633.26,359.9,51.37}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19571,kind="object",names={enUS="KEEP OUT!"},flags=0,spawns={{1,633.12,359.46,50.91}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19572,kind="object",names={enUS="Desolace"},flags=0,spawns={{1,1576.59,1026.5,137.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19573,kind="object",names={enUS="Stonetalon Peak"},flags=0,spawns={{1,1576.64,1026.36,137.73}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19574,kind="object",names={enUS="Windshear Crag"},flags=0,spawns={{1,1576.49,1026.46,137.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19575,kind="object",names={enUS="Greatwood Vale"},flags=0,spawns={{1,1576.49,1026.45,137.07}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19576,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,1576.5,1026.46,136.4}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19577,kind="object",names={enUS="The Charred Vale"},flags=0,spawns={{1,1576.05,1027.92,138.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19578,kind="object",names={enUS="Windshear Crag"},flags=0,spawns={{1,2397.4,1168.34,311.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19579,kind="object",names={enUS="Desolace"},flags=0,spawns={{1,2397.41,1168.34,311.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19580,kind="object",names={enUS="Greatwood Vale"},flags=0,spawns={{1,2397.39,1168.35,310.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19581,kind="object",names={enUS="Stonetalon Peak"},flags=0,spawns={{1,2397.48,1168.49,311.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19583,kind="object",names={enUS="Sun Rock Retreat"},flags=0,spawns={{1,101.52,-244.56,8.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19585,kind="object",names={enUS="Venture Co. Stonetalon Mtns. Project"},flags=0,spawns={{1,-248.93,-992.05,15.82}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19590,kind="object",names={enUS="Venture Co. Wagon Trap"},flags=0,spawns={{1,1048.91,-440.57,4.02},{1,1168.98,49.81,-3.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19591,kind="object",names={enUS="Venture Co. Wagon (Blue)"},flags=0,spawns={{1,1166.8,51.13,-0.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19592,kind="object",names={enUS="NG-5 Explosives (Red)"},flags=0,spawns={{1,1049.03,-442.1,4.8}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19594,kind="object",names={enUS="Venture Co. Copter Pad"},flags=0,spawns={{1,1435.89,-2.29,23.43},{1,1435.6,-2.2,37.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19595,kind="object",names={enUS="Gatekeeper's Hold"},flags=0,spawns={{1,2415.62,1785.69,393.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19596,kind="object",names={enUS="Sleepers' Cache"},flags=0,spawns={{1,2546.77,1998.05,347.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19597,kind="object",names={enUS="Druids' Cache"},flags=0,spawns={{1,2400.82,1802.94,360.38}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19598,kind="object",names={enUS="Barrow Cache"},flags=0,spawns={{1,2466.91,1880.6,363.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19599,kind="object",names={enUS="Talon Den Hoard"},flags=0,spawns={{1,2562.67,1947.02,347.03}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19600,kind="object",names={enUS="Venture Co. Wagon (Red)"},flags=0,spawns={{1,1049.96,-442.42,3.4}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19601,kind="object",names={enUS="NG-5 Explosives (Blue)"},flags=0,spawns={{1,1168.32,50.78,0.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19602,kind="object",names={enUS="Venture Co. Engineering Plans"},flags=0,spawns={{1,1245.09,18.26,-4.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19603,kind="object",names={enUS="Venture Co. Documents"},flags=0,spawns={{1,985.85,-390.18,9.57}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19839,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,-4731.76,-1811.68,-43.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19840,kind="object",names={enUS="Freewind Post"},flags=0,spawns={{1,-4734.31,-1810.87,-43.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19841,kind="object",names={enUS="The Shimmering Flats"},flags=0,spawns={{1,-4734.33,-1810.85,-44.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19842,kind="object",names={enUS="Feralas"},flags=0,spawns={{1,-4971.38,-1716.99,-59.35}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19843,kind="object",names={enUS="Freewind Post"},flags=0,spawns={{1,-4973.21,-1719.14,-59.32}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19844,kind="object",names={enUS="The Great Lift"},flags=0,spawns={{1,-4971.3,-1718.92,-59.38}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19845,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,-4971.33,-1718.9,-60.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19846,kind="object",names={enUS="The Shimmering Flats"},flags=0,spawns={{1,-4973.23,-1719.17,-60.16}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19847,kind="object",names={enUS="Thalanaar"},flags=0,spawns={{1,-4971.37,-1714.06,-61.34}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19848,kind="object",names={enUS="Freewind Post"},flags=0,spawns={{1,-5342.75,-2338.28,-44.84}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19849,kind="object",names={enUS="The Shimmering Flats"},flags=0,spawns={{1,-5341.05,-2339.33,-44.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19850,kind="object",names={enUS="Tanaris"},flags=0,spawns={{1,-5341.03,-2339.36,-45.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19851,kind="object",names={enUS="The Great Lift"},flags=0,spawns={{1,-5341.59,-2336.64,-44.83}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19852,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,-5341.58,-2336.67,-45.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19853,kind="object",names={enUS="Freewind Post"},flags=0,spawns={{1,-5643.92,-3489.95,-54.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19854,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,-5643.93,-3489.95,-55.79}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19855,kind="object",names={enUS="Tanaris"},flags=0,spawns={{1,-5645.22,-3492.39,-54.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19856,kind="object",names={enUS="The Barrens"},flags=0,spawns={{1,-4389.27,-875.88,-57.41}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19857,kind="object",names={enUS="The Shimmering Flats"},flags=0,spawns={{1,-4389.27,-875.87,-58.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19858,kind="object",names={enUS="Thalanaar"},flags=0,spawns={{1,-4389.35,-875.72,-57.48}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19859,kind="object",names={enUS="Feralas"},flags=0,spawns={{1,-4389.22,-875.85,-57.46}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19861,kind="object",names={enUS="Henrig Lonebrow's Journal"},flags=0,spawns={{1,-4680.84,-1785.27,-41.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19862,kind="object",names={enUS="Glowing Soulgem"},flags=0,spawns={{1,3184.06,190.81,4.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19863,kind="object",names={enUS="Maestra's Post"},flags=0,spawns={{1,3230.68,233.38,10.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19874,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,-5577.35,-429.41,397.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19876,kind="object",names={enUS="Flame of Uzel"},flags=0,spawns={{0,263.34,-267.68,143.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19877,kind="object",names={enUS="Velinde's Locker"},flags=0,spawns={{1,9650.52,2279.11,1346.62}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19878,kind="object",names={enUS="Parts Crate"},flags=0,spawns={{1,-6232.26,-3854.72,-58.75}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19879,kind="object",names={enUS="Red Soulgem"},flags=0,spawns={{1,2482.02,-2141.87,201.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19897,kind="object",names={enUS="Cask of Fool's Stout"},flags=0,spawns={{1,-6233.25,-3857.11,-58.75}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19901,kind="object",names={enUS="Circle of Imprisonment"},flags=0,spawns={{1,2482.07,-2141.97,201.52}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19902,kind="object",names={enUS="Forge"},flags=0,spawns={{0,-6763.66,-3125.51,242.1}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19903,kind="object",names={enUS="Indurium Mineral Vein"},flags=0,spawns={{70,-52.29,271.08,-46.72},{70,-133.77,358.59,-42.55},{70,-89.29,190.29,-48.18},{70,-248.93,220.85,-46.61},{70,-14.07,300.25,-46.2},{70,-143.01,210.89,-46.49},{70,-119.96,269.69,-45.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19904,kind="object",names={enUS="Mok'Morokk's Snuff"},flags=0,spawns={{1,-4344.74,-3312.62,34.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19905,kind="object",names={enUS="Mok'Morokk's Grog"},flags=0,spawns={{1,-4328.22,-3004.77,35.54}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19906,kind="object",names={enUS="Mok'Morokk's Strongbox"},flags=0,spawns={{1,-4468.35,-2898.64,21.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20351,kind="object",names={enUS="Blue Soulgem"},flags=0,spawns={{1,2805.8,-3005.47,157.07}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20352,kind="object",names={enUS="Circle of Imprisonment"},flags=0,spawns={{1,2805.86,-3005.34,157.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20356,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-5227.14,-2803.95,-8.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20358,kind="object",names={enUS="White Smoke Emitter - scale 0.2"},flags=0,spawns={{0,-6763.94,-3125.04,243.25}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20359,kind="object",names={enUS="Egg of Onyxia"},flags=0,spawns={{1,-4672.63,-3950.24,39.97},{1,-4671.64,-3949.5,40.11},{1,-4971.42,-3719.98,39.61},{1,-4971.79,-3718.97,39.97},{1,-4970.59,-3718.54,39.49},{1,-4610.62,-3520.07,33.96},{1,-4609.87,-3520.61,34.05},{1,-4610.09,-3519.29,33.76},{1,-4670.55,-3949.92,40.42},{1,-4900.21,-3916.78,47.54},{1,-4899.57,-3916.47,47.48},{1,-4900.9,-3915.55,48.15},{1,-4899.75,-3915.34,47.51},{1,-4970.68,-3719.99,39.46},{1,-4693.17,-3514.73,38.4},{1,-4692.87,-3515.56,38.07},{1,-4692.06,-3514.8,38.48},{1,-4693.95,-3515.32,38.7},{1,-4609.01,-3519.81,34.03},{1,-4571.9,-3786.92,35.23},{1,-4571.62,-3787.61,35.05},{1,-4572.65,-3787.5,35.55},{1,-4571.22,-3786.65,35.64},{1,-4672.53,-3949.18,40.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20447,kind="object",names={enUS="Harpy Foodstuffs"},flags=0,spawns={{1,-5567.63,-1574.0,9.91},{1,-5573.47,-1570.52,9.83},{1,-5570.18,-1571.24,9.65}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20649,kind="object",names={enUS="Undervator"},flags=0,spawns={{0,1596.15,291.8,14.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20650,kind="object",names={enUS="upperLdoor"},flags=0,spawns={{0,1596.04,282.74,55.4}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20651,kind="object",names={enUS="lowerLdoor"},flags=0,spawns={{0,1596.21,302.4,-40.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20652,kind="object",names={enUS="Undervator"},flags=0,spawns={{0,1595.26,188.64,-40.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20653,kind="object",names={enUS="upperLdoor"},flags=0,spawns={{0,1595.38,197.71,55.4}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20654,kind="object",names={enUS="lowerLdoor"},flags=0,spawns={{0,1595.21,178.69,-40.52}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20655,kind="object",names={enUS="Undervator"},flags=0,spawns={{0,1544.24,240.77,-40.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20656,kind="object",names={enUS="upperLdoor"},flags=0,spawns={{0,1553.3,240.66,55.4}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20657,kind="object",names={enUS="lowerLdoor"},flags=0,spawns={{0,1533.88,240.83,-32.35}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20689,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,-10357.0,-1251.07,35.3}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20691,kind="object",names={enUS="Cozzle's Footlocker"},flags=0,spawns={{0,-12033.5,-544.27,14.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20692,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,508.54,916.67,128.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20693,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,483.14,986.4,128.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20694,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,1103.72,-4938.1,15.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20724,kind="object",names={enUS="Dor'Danil Pillar"},flags=0,spawns={{1,1813.94,-2657.88,52.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20725,kind="object",names={enUS="The Legacy of the Aspects"},flags=0,spawns={{1,1814.23,-2657.59,54.41}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20726,kind="object",names={enUS="Beginnings of the Undead Threat"},flags=0,spawns={{189,238.55,-307.69,21.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20727,kind="object",names={enUS="Gizmorium Shipping Crate"},flags=0,spawns={{1,-4010.62,-3813.58,37.34}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20738,kind="object",names={enUS="Forge"},flags=0,spawns={{1,787.84,-1821.5,91.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20739,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,785.53,-1821.2,91.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20805,kind="object",names={enUS="Rizzle's Unguarded Plans"},flags=0,spawns={{1,-6236.64,-3830.48,-58.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20806,kind="object",names={enUS="Ashenvale Moonwell"},flags=0,spawns={{1,1870.43,-1771.57,61.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20807,kind="object",names={enUS="Ancient Brazier"},flags=0,spawns={{1,-4889.76,-2281.96,-70.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20810,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,171.92,-3597.01,27.18}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20829,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-2560.16,-3815.43,1.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20830,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-2564.28,-3988.05,8.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20831,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-2585.09,-3998.99,6.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20849,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-3128.13,-2875.01,33.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20850,kind="object",names={enUS="Crackling Campfire"},flags=0,spawns={{1,4311.79,-5731.2,101.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20869,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,610.18,-427.19,161.13}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20870,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,565.05,-277.39,150.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20871,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,844.3,-562.16,141.91}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20872,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,681.54,-593.63,162.83}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20873,kind="object",names={enUS="Smoldering Brazier"},flags=0,spawns={{1,3586.01,-4382.09,110.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20874,kind="object",names={enUS="Smoldering Brazier"},flags=0,spawns={{1,3617.23,-4411.15,112.8}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20875,kind="object",names={enUS="Smoldering Brazier"},flags=0,spawns={{1,3618.39,-4429.87,111.36}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20876,kind="object",names={enUS="Smoldering Brazier"},flags=0,spawns={{1,3593.64,-4426.62,110.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20877,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,-5663.11,-1566.88,383.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20878,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,-3899.46,-3033.81,11.03}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20879,kind="object",names={enUS="Crackling Campfire"},flags=0,spawns={{1,4591.83,-5577.89,98.13}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20881,kind="object",names={enUS="Flickering Campfire"},flags=0,spawns={{1,4024.34,-5412.36,116.29}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20898,kind="object",names={enUS="Burning Pile of Bones"},flags=0,spawns={{1,4491.25,-6363.81,124.25}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20899,kind="object",names={enUS="Venture Co. Explosives Wagon"},flags=0,spawns={{1,1048.63,-440.45,3.94}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20917,kind="object",names={enUS="Blue aura. short column. scale 3"},flags=0,spawns={{1,-2370.01,-4091.62,9.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20918,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,3896.5,-5845.14,6.54}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20919,kind="object",names={enUS="Tuber Node"},flags=0,spawns={{47,2072.84,1582.57,82.14},{47,2077.92,1740.42,77.01},{47,2141.6,1634.92,81.88},{47,2197.64,1611.29,81.05},{47,2176.8,1526.98,71.55},{47,2014.35,1546.19,80.72},{47,2188.1,1819.3,62.06},{47,2165.94,1854.16,57.48},{47,2038.78,1860.75,55.8},{47,2067.48,1848.23,55.26},{47,2125.36,1851.84,50.27},{47,2133.34,1809.76,46.87},{47,2062.74,1773.09,57.92},{47,2034.71,1730.53,60.91},{47,2082.86,1704.65,56.28},{47,2137.09,1736.08,51.81},{47,2146.11,1679.81,58.08},{47,2105.7,1672.02,59.09},{47,2064.12,1648.8,61.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20920,kind="object",names={enUS="Blueleaf Tuber"},flags=0,spawns={{47,1991.49,1608.53,81.16},{47,2000.85,1533.93,80.4},{47,2179.95,1514.06,69.07},{47,2156.98,1542.26,72.85},{47,2207.92,1596.91,80.74},{47,2126.0,1661.15,82.48},{47,2075.75,1742.04,76.72},{47,2200.15,1897.64,71.32},{47,2091.33,1861.73,51.03},{47,2030.32,1867.61,56.29},{47,2196.64,1827.96,61.47},{47,2055.28,1767.7,58.46},{47,2080.89,1703.36,56.64},{47,2159.43,1687.49,57.54},{47,2082.74,1671.82,61.24}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20921,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-11374.3,1796.17,8.32}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20922,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-11388.2,1793.76,8.24}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20923,kind="object",names={enUS="Stone of Remembrance"},flags=0,spawns={{0,-9135.07,-1050.37,70.53}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20924,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,2211.71,-6377.91,2.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20925,kind="object",names={enUS="Captain's Footlocker"},flags=0,spawns={{1,-3825.0,-4730.16,-25.71}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20926,kind="object",names={enUS="Flickering Campfire"},flags=0,spawns={{1,4777.12,-6628.49,111.73}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20939,kind="object",names={enUS="Bogbean Plant"},flags=0,spawns={{1,-2820.73,-3596.14,31.3}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20960,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,3262.54,-364.49,153.1}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20961,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,3361.12,-479.11,154.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20962,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,2930.07,-109.98,96.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20963,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,3181.12,-269.17,120.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20964,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,2943.09,-2821.35,214.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12425,kind="npc",names={enUS="Flint Shadowmore"},flags=2,spawns={{0,944.16,-1458.45,62.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12427,kind="npc",names={enUS="Mountaineer Dolf"},flags=0,spawns={{0,-5668.69,-454.09,394.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12428,kind="npc",names={enUS="Deathguard Kel"},flags=0,spawns={{0,2436.81,359.07,33.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12429,kind="npc",names={enUS="Sentinel Shaya"},flags=0,spawns={{1,9675.8,900.02,1285.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12430,kind="npc",names={enUS="Grunt Kor'ja"},flags=0,spawns={{1,170.6,-4769.92,14.49}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12431,kind="npc",names={enUS="Gorefang"},flags=0,spawns={{0,1452.7,949.92,60.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12432,kind="npc",names={enUS="Old Vicejaw"},flags=0,spawns={{0,212.52,1188.48,69.75}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12433,kind="npc",names={enUS="Krethis Shadowspinner"},flags=0,spawns={{0,1435.59,1950.61,9.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12434,kind="npc",names={enUS="Monster Generator (Blackwing)"},flags=0,spawns={{469,-7623.09,-1094.06,407.29},{469,-7548.46,-1041.98,407.29},{469,-7568.61,-1012.67,407.29},{469,-7643.39,-1064.69,407.29},{469,-7583.08,-990.48,407.28},{469,-7607.78,-1116.16,407.28},{469,-7659.81,-1043.81,407.28},{469,-7532.72,-1063.49,407.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12435,kind="npc",names={enUS="Razorgore the Untamed"},flags=0,spawns={{469,-7571.7,-1088.25,413.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12457,kind="npc",names={enUS="Blackwing Spellbinder"},flags=0,spawns={{469,-7514.66,-915.67,457.74},{469,-7490.72,-880.02,464.98},{469,-7411.74,-920.01,464.98},{469,-7413.56,-900.29,464.98},{469,-7448.26,-943.32,464.98},{469,-7440.38,-962.32,465.01},{469,-7526.0,-1055.04,449.24},{469,-7539.89,-980.12,449.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12458,kind="npc",names={enUS="Blackwing Taskmaster"},flags=0,spawns={{469,-7710.41,-1074.5,445.22},{469,-7711.3,-1076.48,445.26},{469,-7714.44,-1074.78,445.26},{469,-7596.28,-987.92,440.18},{469,-7594.45,-991.83,440.18},{469,-7594.02,-987.55,440.45},{469,-7711.19,-1061.22,445.24},{469,-7708.62,-1064.7,445.26},{469,-7711.34,-1064.65,445.26}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12459,kind="npc",names={enUS="Blackwing Warlock"},flags=0,spawns={{469,-7519.72,-924.98,457.58},{469,-7506.75,-908.37,457.58},{469,-7485.52,-879.6,464.98},{469,-7453.46,-867.44,464.98},{469,-7419.66,-900.65,464.98},{469,-7399.84,-935.08,464.98},{469,-7458.91,-926.42,464.98},{469,-7435.58,-959.66,465.01},{469,-7547.44,-1041.23,449.24},{469,-7547.4,-1017.41,449.24},{469,-7494.59,-1037.94,449.24},{469,-7519.54,-1055.8,449.24},{469,-7518.77,-967.76,449.24},{469,-7532.98,-978.99,449.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12460,kind="npc",names={enUS="Death Talon Wyrmguard"},flags=0,spawns={{469,-7388.2,-955.98,465.05},{469,-7396.24,-961.43,465.04},{469,-7405.67,-964.44,465.03},{469,-7471.39,-988.33,449.84},{469,-7435.86,-1052.22,477.02},{469,-7450.36,-1032.99,476.98},{469,-7446.95,-1044.77,476.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12461,kind="npc",names={enUS="Death Talon Overseer"},flags=0,spawns={{469,-7516.77,-918.17,457.58},{469,-7459.91,-871.23,464.98},{469,-7409.78,-927.67,464.98},{469,-7449.36,-932.48,464.98},{469,-7498.0,-1037.51,449.24},{469,-7461.63,-985.51,449.78},{469,-7467.69,-995.6,449.32},{469,-7459.26,-995.38,449.79},{469,-7515.29,-972.69,449.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12463,kind="npc",names={enUS="Death Talon Flamescale"},flags=0,spawns={{469,-7591.24,-941.37,428.3},{469,-7522.07,-924.43,428.0},{469,-7534.13,-924.27,428.05}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12464,kind="npc",names={enUS="Death Talon Seether"},flags=0,spawns={{469,-7595.81,-931.23,428.36},{469,-7576.75,-922.27,428.38},{469,-7539.27,-905.86,428.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12465,kind="npc",names={enUS="Death Talon Wyrmkin"},flags=0,spawns={{469,-7572.26,-932.45,428.3},{469,-7587.03,-916.31,428.46},{469,-7517.52,-912.76,428.03},{469,-7527.61,-904.83,428.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12467,kind="npc",names={enUS="Death Talon Captain"},flags=0,spawns={{469,-7580.13,-940.16,428.26},{469,-7541.13,-917.75,428.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12468,kind="npc",names={enUS="Death Talon Hatcher"},flags=0,spawns={{469,-7655.51,-1100.16,449.24},{469,-7592.86,-1075.23,449.25},{469,-7673.25,-1039.96,440.28},{469,-7649.78,-1057.55,449.25},{469,-7668.59,-986.57,440.33},{469,-7624.29,-1035.04,449.24},{469,-7639.27,-968.39,440.09},{469,-7620.51,-998.37,440.32},{469,-7695.27,-1005.48,440.3},{469,-7630.35,-1101.33,449.25},{469,-7649.74,-1019.88,440.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12474,kind="npc",names={enUS="Emeraldon Boughguard"},flags=0,spawns={{1,3175.95,-3581.62,131.54},{1,3173.86,-3577.92,131.38},{1,3147.45,-3462.05,139.41},{1,3242.32,-3645.28,128.13},{1,3243.34,-3793.69,125.01},{1,3240.53,-3790.5,124.41},{1,3143.54,-3777.3,122.38},{1,3141.63,-3774.74,122.69},{1,3149.48,-3460.1,139.71},{1,3245.31,-3642.27,129.29},{1,3185.15,-3511.56,134.41},{1,3181.42,-3512.31,133.48},{1,3155.36,-3653.06,121.82},{1,3155.66,-3657.3,121.58},{1,3177.21,-3578.26,131.58},{1,3145.24,-3460.18,139.38},{1,3242.05,-3642.06,128.4},{1,3182.94,-3509.48,134.51},{1,3240.11,-3793.59,124.7},{1,3158.41,-3655.17,121.92},{1,3140.91,-3777.18,122.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12475,kind="npc",names={enUS="Emeraldon Tree Warder"},flags=0,spawns={{1,3149.48,-3460.1,139.71},{1,3245.31,-3642.27,129.29},{1,3185.15,-3511.56,134.41},{1,3181.42,-3512.31,133.48},{1,3155.36,-3653.06,121.82},{1,3155.66,-3657.3,121.58},{1,3175.95,-3581.62,131.54},{1,3173.86,-3577.92,131.38},{1,3147.45,-3462.05,139.41},{1,3242.32,-3645.28,128.13},{1,3243.34,-3793.69,125.01},{1,3240.53,-3790.5,124.41},{1,3143.54,-3777.3,122.38},{1,3141.63,-3774.74,122.69},{1,3177.21,-3578.26,131.58},{1,3145.24,-3460.18,139.38},{1,3242.05,-3642.06,128.4},{1,3182.94,-3509.48,134.51},{1,3240.11,-3793.59,124.7},{1,3158.41,-3655.17,121.92},{1,3140.91,-3777.18,122.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12476,kind="npc",names={enUS="Emeraldon Oracle"},flags=0,spawns={{1,3177.21,-3578.26,131.58},{1,3145.24,-3460.18,139.38},{1,3242.05,-3642.06,128.4},{1,3182.94,-3509.48,134.51},{1,3240.11,-3793.59,124.7},{1,3158.41,-3655.17,121.92},{1,3140.91,-3777.18,122.48},{1,3175.95,-3581.62,131.54},{1,3173.86,-3577.92,131.38},{1,3147.45,-3462.05,139.41},{1,3242.32,-3645.28,128.13},{1,3243.34,-3793.69,125.01},{1,3240.53,-3790.5,124.41},{1,3143.54,-3777.3,122.38},{1,3141.63,-3774.74,122.69},{1,3149.48,-3460.1,139.71},{1,3245.31,-3642.27,129.29},{1,3185.15,-3511.56,134.41},{1,3181.42,-3512.31,133.48},{1,3155.36,-3653.06,121.82},{1,3155.66,-3657.3,121.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12477,kind="npc",names={enUS="Verdantine Boughguard"},flags=0,spawns={{0,825.2,-4092.49,92.75},{0,1057.52,-3946.17,110.93},{0,1061.6,-3945.02,111.9},{0,994.76,-3832.09,112.38},{0,681.95,-3844.73,116.16},{0,677.73,-3845.15,116.28},{0,1096.24,-4259.49,173.34},{0,752.27,-3946.57,101.85},{0,756.22,-3945.75,102.08},{0,602.93,-4075.23,114.64},{0,607.15,-4075.68,113.81},{0,741.92,-4131.69,93.55},{0,750.6,-4212.02,114.22},{0,746.61,-4210.53,114.21},{0,1009.9,-4140.81,117.08},{0,1005.69,-4141.33,116.69},{0,669.43,-3910.57,106.07},{0,677.63,-4178.04,109.21},{0,680.73,-4175.12,107.83},{0,877.25,-4108.94,96.75},{0,877.34,-4104.65,96.4},{0,674.88,-3991.71,96.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12478,kind="npc",names={enUS="Verdantine Oracle"},flags=0,spawns={{0,827.54,-4088.95,93.15},{0,1058.77,-3943.05,111.21},{0,994.79,-3832.74,112.16},{0,679.63,-3842.83,116.66},{0,1092.03,-4260.0,171.59},{0,753.98,-3944.69,102.34},{0,605.25,-4073.04,112.98},{0,744.55,-4128.35,94.98},{0,749.58,-4209.15,113.86},{0,1008.11,-4143.04,116.82},{0,665.47,-3912.1,106.44},{0,677.97,-4175.15,108.64},{0,812.68,-3877.12,108.13},{0,875.38,-4106.46,96.42},{0,678.61,-3993.74,97.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12479,kind="npc",names={enUS="Verdantine Tree Warder"},flags=0,spawns={{0,827.62,-4091.5,92.75},{0,1093.88,-4257.64,171.34},{0,744.38,-4131.01,94.18},{0,666.83,-3909.8,106.23},{0,813.36,-3874.13,108.61},{0,809.65,-3876.07,108.02},{0,675.85,-3994.41,97.34},{0,995.09,-3831.15,112.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12480,kind="npc",names={enUS="Melris Malagan"},flags=0,spawns={{0,-8823.62,630.5,94.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12481,kind="npc",names={enUS="Justine Demalier"},flags=0,spawns={{0,-8824.79,631.93,94.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12496,kind="npc",names={enUS="Dreamtracker"},flags=0,spawns={{0,803.39,-3996.83,122.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12497,kind="npc",names={enUS="Dreamroarer"},flags=0,spawns={{1,-2702.4,1877.4,33.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12498,kind="npc",names={enUS="Dreamstalker"},flags=0,spawns={{1,3247.17,-3723.5,149.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12557,kind="npc",names={enUS="Grethok the Controller"},flags=0,spawns={{469,-7616.54,-1024.1,413.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12576,kind="npc",names={enUS="Grish Longrunner"},flags=2,spawns={{1,-4602.11,-1835.37,86.19}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12577,kind="npc",names={enUS="Jarrodenus"},flags=11,spawns={{1,2718.18,-3880.75,101.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12578,kind="npc",names={enUS="Mishellena"},flags=11,spawns={{1,6204.08,-1951.43,571.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12579,kind="npc",names={enUS="Bloodfury Ripper"},flags=0,spawns={{1,900.68,1743.99,-11.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12596,kind="npc",names={enUS="Bibilfaz Featherwhistle"},flags=11,spawns={{0,928.27,-1429.08,64.83}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12616,kind="npc",names={enUS="Vhulgra"},flags=11,spawns={{1,2305.64,-2520.15,103.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12617,kind="npc",names={enUS="Khaelyn Steelwing"},flags=11,spawns={{0,2269.85,-5345.39,87.02}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12636,kind="npc",names={enUS="Georgia"},flags=11,spawns={{0,2328.48,-5290.72,81.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12656,kind="npc",names={enUS="Thamarian"},flags=3,spawns={{1,6494.46,801.75,8.14}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12657,kind="npc",names={enUS="Don Pompa"},flags=3,spawns={{0,-3720.61,-596.26,6.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12658,kind="npc",names={enUS="Adam Lind"},flags=3,spawns={{0,-3906.42,-609.04,5.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12676,kind="npc",names={enUS="Sharptalon"},flags=0,spawns={{1,1978.22,-2421.45,89.98}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12677,kind="npc",names={enUS="Shadumbra"},flags=2,spawns={{1,2518.44,-1615.66,144.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12678,kind="npc",names={enUS="Ursangous"},flags=2,spawns={{1,2166.47,-592.88,103.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12696,kind="npc",names={enUS="Senani Thunderheart"},flags=3,spawns={{1,2310.52,-2554.7,101.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12716,kind="npc",names={enUS="Decedra Willham"},flags=1,spawns={{1,-4003.41,-4717.35,4.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12717,kind="npc",names={enUS="Muglash"},flags=2,spawns={{1,3341.65,1004.38,3.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12718,kind="npc",names={enUS="Gurda Ragescar"},flags=2,spawns={{1,1937.83,-2337.02,92.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12719,kind="npc",names={enUS="Marukai"},flags=2,spawns={{1,3331.24,1025.91,6.36}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12720,kind="npc",names={enUS="Framnali"},flags=2,spawns={{1,2251.3,-2503.09,125.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12721,kind="npc",names={enUS="Mitsuwa"},flags=2,spawns={{1,3333.34,1028.3,6.36}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12722,kind="npc",names={enUS="Vera Nightshade"},flags=2,spawns={{1,2358.47,-2570.35,102.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12723,kind="npc",names={enUS="Har'alen"},flags=2,spawns={{1,2344.08,-2504.8,103.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12724,kind="npc",names={enUS="Pixel"},flags=3,spawns={{1,2309.79,-2513.19,105.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12736,kind="npc",names={enUS="Je'neu Sancrea"},flags=3,spawns={{1,3355.07,1033.14,6.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12737,kind="npc",names={enUS="Mastok Wrilehiss"},flags=3,spawns={{1,2366.48,-2548.22,103.27}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12738,kind="npc",names={enUS="Nori Pridedrift"},flags=2,spawns={{0,-6371.13,571.82,385.83}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12740,kind="npc",names={enUS="Faustron"},flags=11,spawns={{1,7466.15,-2122.08,492.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12757,kind="npc",names={enUS="Karang Amakkar"},flags=3,spawns={{1,3345.46,1013.93,3.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12758,kind="npc",names={enUS="Onyxia Trigger"},flags=0,spawns={{249,-27.05,-219.1,-89.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12759,kind="npc",names={enUS="Tideress"},flags=0,spawns={{1,1958.41,-945.93,70.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12776,kind="npc",names={enUS="Hraug"},flags=5,spawns={{1,-604.01,-4107.27,43.59}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12777,kind="npc",names={enUS="Captain Dirgehammer"},flags=16388,spawns={{449,-7.02,-5.14,5.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12778,kind="npc",names={enUS="Lieutenant Rachel Vaccar"},flags=0,spawns={{449,-2.79,29.68,1.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12779,kind="npc",names={enUS="Archmage Gaiman"},flags=0,spawns={{449,-0.99,31.7,1.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12780,kind="npc",names={enUS="Sergeant Major Skyshadow"},flags=0,spawns={{449,2.65,29.71,1.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12781,kind="npc",names={enUS="Master Sergeant Biggins"},flags=4,spawns={{449,-3.69,15.15,-0.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12782,kind="npc",names={enUS="Captain O'Neal"},flags=16388,spawns={{449,7.22,33.65,1.14}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12783,kind="npc",names={enUS="Lieutenant Karter"},flags=4,spawns={{449,6.31,34.96,1.14}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12784,kind="npc",names={enUS="Lieutenant Jackspring"},flags=4,spawns={{449,7.16,4.27,-0.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12785,kind="npc",names={enUS="Sergeant Major Clate"},flags=4,spawns={{449,-9.12,-4.27,5.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12786,kind="npc",names={enUS="Guard Quine"},flags=0,spawns={{449,-2.74,3.61,-0.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12787,kind="npc",names={enUS="Guard Hammon"},flags=0,spawns={{449,2.05,3.64,-0.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12788,kind="npc",names={enUS="Legionnaire Teena"},flags=0,spawns={{450,239.88,85.61,24.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12789,kind="npc",names={enUS="Blood Guard Hini'wana"},flags=0,spawns={{450,246.29,86.58,24.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12790,kind="npc",names={enUS="Advisor Willington"},flags=0,spawns={{450,239.89,84.13,24.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12791,kind="npc",names={enUS="Chieftain Earthbind"},flags=0,spawns={{450,246.83,82.42,24.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12792,kind="npc",names={enUS="Lady Palanseer"},flags=16388,spawns={{450,261.77,86.28,25.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12793,kind="npc",names={enUS="Brave Stonehide"},flags=4,spawns={{450,256.49,99.4,25.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12794,kind="npc",names={enUS="Stone Guard Zarg"},flags=4,spawns={{450,240.62,103.32,25.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12795,kind="npc",names={enUS="First Sergeant Hola'mahi"},flags=4,spawns={{450,256.6,70.67,25.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12796,kind="npc",names={enUS="Raider Bork"},flags=4,spawns={{450,258.96,73.22,25.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12797,kind="npc",names={enUS="Grunt Korf"},flags=0,spawns={{450,230.81,86.73,25.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12798,kind="npc",names={enUS="Grunt Bek'rah"},flags=0,spawns={{450,238.21,73.38,25.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12799,kind="npc",names={enUS="Sergeant Ba'sha"},flags=16388,spawns={{1,1632.21,-4262.19,49.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12800,kind="npc",names={enUS="Chimaerok"},flags=0,spawns={{1,-6434.27,3269.59,38.66},{1,-6119.36,3379.44,59.5},{1,-5820.14,3485.02,28.52},{1,-6116.64,3369.37,57.61},{1,-6197.07,3334.46,58.63},{1,-6319.28,3344.16,65.21},{1,-5787.43,3485.04,28.56},{1,-5909.7,3494.38,56.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12801,kind="npc",names={enUS="Arcane Chimaerok"},flags=0,spawns={{1,-6330.06,3291.88,70.86},{1,-6436.39,3345.68,58.66},{1,-6315.02,3316.28,68.06},{1,-5863.11,3412.64,23.56},{1,-5751.47,3491.62,34.19},{1,-5954.25,3450.71,45.59},{1,-6017.64,3382.51,46.05},{1,-6048.84,3347.2,50.59},{1,-6082.72,3316.35,54.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12802,kind="npc",names={enUS="Chimaerok Devourer"},flags=0,spawns={{1,-5877.04,3316.89,37.79},{1,-5882.79,3385.49,25.02},{1,-5675.77,3462.87,47.41},{1,-5668.09,3429.49,48.02},{1,-5918.32,3419.05,34.05},{1,-5983.55,3415.0,45.99},{1,-6022.17,3448.47,55.67},{1,-6047.88,3416.94,54.75},{1,-6084.55,3380.53,53.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12803,kind="npc",names={enUS="Lord Lakmaeran"},flags=0,spawns={{1,-5731.73,3402.58,65.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12805,kind="npc",names={enUS="Officer Areyn"},flags=16388,spawns={{0,-8759.2,389.12,101.14}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12807,kind="npc",names={enUS="Greshka"},flags=6,spawns={{0,-10466.0,-3337.19,25.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12816,kind="npc",names={enUS="Xen'Zilla"},flags=2,spawns={{1,-177.57,-233.32,8.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12818,kind="npc",names={enUS="Ruul Snowhoof"},flags=2,spawns={{1,3347.35,-694.7,159.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12836,kind="npc",names={enUS="Wandering Protector"},flags=2,spawns={{1,2982.87,-2074.86,201.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12837,kind="npc",names={enUS="Yama Snowhoof"},flags=2,spawns={{1,2331.42,-2573.9,102.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12856,kind="npc",names={enUS="Ashenvale Outrunner"},flags=0,spawns={{1,1804.44,-2440.47,89.01},{1,1743.69,-2335.42,115.47},{1,1746.22,-2392.39,104.78},{1,1952.05,-2546.59,76.82},{1,2003.3,-2580.79,94.69},{1,2001.47,-2482.13,92.24},{1,1863.14,-2685.91,93.27},{1,2018.93,-2689.83,105.8},{1,1954.48,-2703.97,108.84},{1,1965.68,-2666.29,100.03},{1,1971.31,-2458.63,88.58},{1,1975.44,-2502.32,87.34},{1,1786.42,-2562.15,83.35},{1,1960.59,-2635.88,91.01},{1,1888.41,-2598.28,76.65},{1,1737.92,-2468.7,96.04},{1,1882.36,-2392.49,86.83},{1,1928.89,-2671.93,98.36},{1,1887.73,-2482.09,70.06},{1,1841.4,-2447.05,81.53},{1,2074.37,-2692.65,104.12},{1,1972.43,-2243.35,100.28},{1,1861.82,-2238.03,118.53},{1,1808.78,-2529.31,80.08},{1,1803.69,-2469.85,83.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12858,kind="npc",names={enUS="Torek"},flags=2,spawns={{1,1778.68,-2241.09,107.94}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12859,kind="npc",names={enUS="Splintertree Raider"},flags=0,spawns={{1,1775.05,-2241.5,106.81},{1,1776.5,-2244.44,106.52},{1,1775.11,-2238.94,106.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12862,kind="npc",names={enUS="Warsong Scout"},flags=2,spawns={{1,2045.41,-2396.98,87.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12863,kind="npc",names={enUS="Warsong Runner"},flags=3,spawns={{1,3357.72,995.13,4.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12864,kind="npc",names={enUS="Warsong Outrider"},flags=2,spawns={{1,2543.5,-2854.8,0.0},{1,2526.86,-2817.97,158.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12865,kind="npc",names={enUS="Ambassador Malcin"},flags=0,spawns={{1,-4515.87,-2218.68,93.65},{1,-4637.12,-2247.05,83.91},{1,-4847.45,-2294.25,86.74},{1,-4486.14,-2069.18,76.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12866,kind="npc",names={enUS="Myriam Moonsinger"},flags=3,spawns={{1,-4801.73,-2343.74,116.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12867,kind="npc",names={enUS="Kuray'bin"},flags=2,spawns={{1,2054.63,-2400.39,87.83}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12877,kind="npc",names={enUS="Ertog Ragetusk"},flags=2,spawns={{1,2271.91,-2511.46,102.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12896,kind="npc",names={enUS="Silverwing Sentinel"},flags=0,spawns={{1,1769.79,-2067.71,102.75},{1,1789.85,-2094.91,100.99},{1,1815.16,-2008.96,103.7},{1,1783.29,-2070.34,102.27},{1,1770.32,-2047.77,109.92},{1,1779.58,-2006.37,111.69},{1,1811.15,-2112.73,99.2},{1,1783.87,-2024.86,109.92},{1,1816.76,-1981.9,110.45},{1,1801.99,-2098.45,99.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12897,kind="npc",names={enUS="Silverwing Warrior"},flags=0,spawns={{1,1799.54,-2012.99,103.08},{1,1846.46,-2004.18,109.5},{1,1769.78,-2024.41,109.92},{1,1816.76,-1981.9,110.45},{1,1801.99,-2098.45,99.67},{1,1784.03,-2044.12,109.92},{1,1789.85,-2094.91,100.99},{1,1815.16,-2008.96,103.7},{1,1811.15,-2112.73,99.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12899,kind="npc",names={enUS="Axtroz"},flags=0,spawns={{0,-3477.62,-3773.35,63.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12900,kind="npc",names={enUS="Somnus"},flags=0,spawns={{0,-10666.0,-3923.0,18.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12902,kind="npc",names={enUS="Lorgus Jett"},flags=0,spawns={{48,-455.84,-40.26,-32.33},{48,-475.54,-87.06,-40.01},{48,-622.36,-10.35,-22.78},{48,-764.02,4.24,-28.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12903,kind="npc",names={enUS="Splintertree Guard"},flags=0,spawns={{1,2254.29,-2579.92,125.8},{1,1916.52,-2321.09,92.79},{1,1926.23,-2340.2,92.42},{1,1932.74,-2328.0,92.54},{1,2248.29,-2504.21,118.64},{1,2280.55,-2568.19,103.82},{1,2255.7,-2518.31,100.43},{1,2378.95,-2531.35,110.08},{1,2376.77,-2524.23,110.14},{1,2293.64,-2523.68,100.79},{1,2266.63,-2497.32,100.94},{1,3351.39,1021.99,3.15},{1,3338.33,1009.41,3.74},{1,3380.21,1015.3,3.07},{1,3352.41,996.48,4.48},{1,2227.26,-2532.79,86.22},{1,2224.63,-2527.84,86.06},{1,2228.45,-2546.19,86.52},{1,2338.61,-2523.05,103.05},{1,2225.23,-2550.08,86.46},{1,2259.1,-2565.06,100.95},{1,2321.0,-2551.91,101.92},{1,2033.42,-2395.2,89.12},{1,2064.72,-2408.8,87.55},{1,2078.43,-2428.07,87.02},{1,2053.49,-2376.35,105.0},{1,2389.06,-2524.09,111.42},{1,2245.86,-2550.66,90.26}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12918,kind="npc",names={enUS="Chief Murgut"},flags=0,spawns={{1,2218.93,-1587.73,86.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12919,kind="npc",names={enUS="Nat Pagle"},flags=7,spawns={{1,-4135.29,-4052.02,1.52}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12920,kind="npc",names={enUS="Doctor Gregory Victor"},flags=19,spawns={{0,-1018.77,-3509.47,63.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12921,kind="npc",names={enUS="Enraged Foulweald"},flags=0,spawns={{1,2270.49,-1565.88,90.14},{1,2275.75,-1555.43,90.63},{1,2260.91,-1580.76,89.37},{1,2243.83,-1587.83,87.03},{1,2221.73,-1586.1,86.43},{1,2194.23,-1558.24,86.59},{1,2196.89,-1543.91,87.69},{1,2205.77,-1528.12,89.37},{1,2218.48,-1522.08,90.28},{1,2247.58,-1517.18,89.95},{1,2259.34,-1524.77,88.92},{1,2231.14,-1518.42,90.31},{1,2200.84,-1574.21,85.83}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12923,kind="npc",names={enUS="부상병"},flags=0,spawns={{0,-1040.53,-3332.67,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12924,kind="npc",names={enUS="위태로운 부상병"},flags=0,spawns={{0,-1040.53,-3332.67,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12925,kind="npc",names={enUS="위독한 부상병"},flags=0,spawns={{0,-1040.53,-3332.67,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12936,kind="npc",names={enUS="위태로운 얼라이언스 부상병"},flags=0,spawns={{1,-3744.83,-4529.25,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12937,kind="npc",names={enUS="위독한 얼라이언스 부상병"},flags=0,spawns={{1,-3744.83,-4529.25,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12938,kind="npc",names={enUS="얼라이언스 부상병"},flags=0,spawns={{1,-3744.83,-4529.25,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12939,kind="npc",names={enUS="Doctor Gustaf VanHowzen"},flags=19,spawns={{1,-3747.27,-4532.25,11.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12940,kind="npc",names={enUS="채찍꼬리 보르샤"},flags=0,spawns={{1,3612.04,1146.4,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12941,kind="npc",names={enUS="Jase Farlane"},flags=6,spawns={{0,2313.88,-5305.0,82.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12942,kind="npc",names={enUS="Leonard Porter"},flags=16390,spawns={{0,949.88,-1435.65,62.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12943,kind="npc",names={enUS="Werg Thickblade"},flags=6,spawns={{0,1737.1,-730.88,59.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12944,kind="npc",names={enUS="Lokhtos Darkbargainer"},flags=7,spawns={{230,912.52,-185.86,-43.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12956,kind="npc",names={enUS="Zannok Hidepiercer"},flags=6,spawns={{1,-6370.38,-318.96,-1.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12957,kind="npc",names={enUS="Blimo Gadgetspring"},flags=6,spawns={{1,2269.97,-5569.55,21.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12958,kind="npc",names={enUS="Gigget Zipcoil"},flags=6,spawns={{0,476.27,-2901.61,165.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12959,kind="npc",names={enUS="Nergal"},flags=6,spawns={{1,-6157.44,-1067.73,-194.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12960,kind="npc",names={enUS="Christi Galvanis"},flags=6,spawns={{1,243.02,1238.59,192.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12961,kind="npc",names={enUS="Kil'Hiwana"},flags=19,spawns={{1,3379.21,1075.54,0.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12962,kind="npc",names={enUS="Wik'Tar"},flags=6,spawns={{1,3362.23,1024.84,2.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12976,kind="npc",names={enUS="콜카르일족 잠복꾼"},flags=0,spawns={{1,-1922.27,2605.84,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12977,kind="npc",names={enUS="콜카르일족 매복병"},flags=0,spawns={{1,-1922.27,2605.84,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12996,kind="npc",names={enUS="Mounted Ironforge Mountaineer"},flags=1,spawns={{0,-4025.61,-1404.07,155.25},{0,-4900.52,-1693.01,503.92},{0,-4748.86,-1658.8,504.45},{0,-4524.09,-1601.46,503.94},{0,-4495.38,-1632.11,503.28},{0,-4025.61,-1404.07,155.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12997,kind="npc",names={enUS="Monty"},flags=3,spawns={{369,-19.63,40.08,-4.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12998,kind="npc",names={enUS="Dwarven Farmer"},flags=0,spawns={{0,-4147.28,-1106.97,168.92},{0,-4110.72,-1068.8,168.91},{0,-4074.56,-1256.74,146.4},{0,-4101.77,-1261.85,149.04},{0,-4029.86,-1453.53,167.19},{0,-1853.49,-4091.65,9.82},{0,-1853.19,-4122.06,11.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=12999,kind="npc",names={enUS="Blackwing Trigger"},flags=0,spawns={{0,1732.31,520.87,36.33},{469,-7696.49,-1084.81,449.2},{469,-7515.32,-1191.12,476.88},{469,-7533.07,-1244.8,476.88},{469,-7551.71,-1216.2,476.88},{469,-7495.41,-1218.15,476.88},{469,-7516.0,-1050.2,476.64},{469,-7638.84,-1099.39,449.16},{469,-7705.6,-1082.73,447.13},{469,-7625.86,-980.58,440.11},{469,-7639.1,-1090.77,408.57},{469,-7591.69,-1264.38,481.09},{469,-7477.6,-1048.63,426.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13000,kind="npc",names={enUS="Gnome Engineer"},flags=1,spawns={{0,-4778.53,-1702.25,503.41},{0,-4749.17,-1703.08,503.41},{0,-4749.27,-1709.56,503.41},{0,-4739.14,-1705.1,503.41},{0,-4708.23,-1701.42,503.41},{0,-4753.54,-1644.35,503.41}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13016,kind="npc",names={enUS="Deeprun Rat"},flags=0,spawns={{369,-47.2,41.94,-13.86},{369,5.6,52.12,-13.86},{369,-33.07,71.52,-4.3},{369,13.67,80.67,-4.3},{369,35.21,16.02,-4.3},{369,21.33,25.47,-4.3},{369,28.34,-18.43,-4.3},{369,-56.91,-14.39,-4.3},{369,-72.54,-21.73,-4.3},{369,-74.64,23.69,-4.3},{369,-64.57,12.04,-4.3},{369,-43.05,-5.69,-13.86},{369,-40.71,-32.75,-4.3},{369,27.05,1.41,-4.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13018,kind="npc",names={enUS="Nipsy"},flags=7,spawns={{369,-20.98,2459.93,-4.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13019,kind="npc",names={enUS="Burning Blade Seer"},flags=0,spawns={{1,-451.79,1753.09,153.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13020,kind="npc",names={enUS="Vaelastrasz the Corrupt"},flags=3,spawns={{469,-7483.79,-1015.99,408.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13021,kind="npc",names={enUS="Warpwood Crusher"},flags=0,spawns={{429,-16.88,-177.09,-2.63},{429,-87.19,-173.29,-2.63},{429,-135.92,-278.62,-3.97},{429,-110.69,-357.62,-4.05},{429,-20.02,-366.39,-4.04},{429,131.58,-352.84,-4.07},{429,134.91,-288.92,-4.06},{429,330.65,-375.38,-71.05},{429,360.39,-436.85,-87.3},{429,360.36,-490.42,-101.99},{429,216.98,-356.29,-67.44},{429,187.1,-543.16,-111.89},{429,197.83,-483.2,-100.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13022,kind="npc",names={enUS="Whip Lasher"},flags=0,spawns={{429,-148.84,-200.75,-4.21},{429,-149.7,-197.89,-4.21},{429,-156.94,-201.48,-4.07},{429,-152.67,-202.8,-4.07},{429,-157.88,-198.87,-4.19},{429,-154.06,-198.69,-4.2},{429,-154.1,-195.96,-4.2},{429,-147.42,-325.32,-4.15},{429,-143.09,-330.21,-4.03},{429,-140.13,-325.93,-4.09},{429,-139.72,-320.57,-4.09},{429,-142.5,-315.23,-4.11},{429,-138.62,-328.02,-3.99},{429,-136.0,-323.64,-4.06},{429,-80.25,-350.76,-4.0},{429,-84.03,-349.01,-4.06},{429,-78.03,-346.74,-4.05},{429,-83.26,-352.63,-4.08},{429,-88.61,-353.52,-4.08},{429,-86.02,-357.57,-4.05},{429,-75.47,-349.99,-3.99},{429,53.63,-353.29,-4.02},{429,49.12,-353.7,-4.02},{429,44.48,-354.61,-4.03},{429,39.59,-355.57,-4.04},{429,51.57,-349.53,-3.99},{429,45.79,-349.02,-3.98},{429,40.71,-351.44,-4.0},{429,111.06,-324.67,-4.01},{429,116.84,-329.88,-4.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13036,kind="npc",names={enUS="Gordok Mastiff"},flags=0,spawns={{429,723.74,487.94,28.18},{429,718.51,476.05,28.18},{429,712.8,468.68,28.26},{429,725.3,462.2,28.18},{429,714.15,493.18,28.18},{429,727.17,498.69,28.18},{429,340.88,-22.17,-25.05},{429,357.61,-31.31,-25.32},{429,349.14,-36.25,-25.38},{429,341.75,-30.12,-25.19},{429,382.17,-69.23,-23.66},{429,377.48,-51.76,-24.11},{429,383.91,-45.49,-23.97},{429,374.83,-59.13,-24.15},{429,343.2,36.28,-24.36},{429,407.79,-50.72,-23.1},{429,426.84,-34.86,-24.67},{429,416.49,-36.77,-24.04},{429,428.12,79.52,-23.73},{429,426.05,73.28,-23.45},{429,434.37,68.88,-23.23},{429,448.11,303.94,11.29},{429,441.87,292.3,11.29},{429,399.75,102.83,-3.8},{429,402.41,171.53,2.94},{429,410.88,174.52,2.94},{429,412.8,183.45,2.94},{429,435.91,168.07,2.85},{429,435.82,174.59,2.85},{429,412.69,-61.53,-25.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13076,kind="npc",names={enUS="Dun Morogh Mountaineer"},flags=1,spawns={{0,-5564.03,-2361.04,400.5},{0,-5726.6,-1551.43,381.21},{0,-5724.94,-1551.48,381.84},{0,-5360.34,293.12,394.78},{0,-5383.14,318.85,394.36},{0,-5398.17,315.19,395.99},{0,-5382.49,296.6,393.88},{0,-5669.67,-1289.84,390.47},{0,-5679.92,-1564.0,383.88},{0,-5639.04,-1532.83,401.19},{0,-5681.81,-1548.1,390.85},{0,-5684.27,-1593.43,383.33},{0,-5535.4,-2439.24,400.93},{0,-5536.79,-2392.37,400.77},{0,-5192.67,-2284.61,400.71},{0,-5175.93,-2326.68,400.78},{0,-5100.96,-2275.54,400.3},{0,-5065.83,-2318.03,412.62},{0,-5001.71,-2292.66,408.55},{0,-5029.86,-2311.39,402.11},{0,-5001.43,-2312.56,405.77},{0,-4952.2,-2352.81,407.78},{0,-5344.71,297.23,394.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13078,kind="npc",names={enUS="Umi Thorson"},flags=0,spawns={{30,865.55,-438.74,50.73}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13079,kind="npc",names={enUS="Keetar"},flags=2,spawns={{30,865.55,-438.74,50.73}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13080,kind="npc",names={enUS="Irondeep Guard"},flags=0,spawns={{30,955.81,-440.3,55.34},{30,937.38,-377.82,65.39},{30,925.06,-331.35,65.76},{30,922.92,-396.63,60.39},{30,909.99,-462.15,59.08},{30,907.89,-388.79,61.79},{30,898.8,-437.11,58.53},{30,884.24,-407.6,61.57},{30,880.74,-344.68,66.41},{30,876.05,-341.86,65.87},{30,874.67,-402.08,61.76},{30,871.91,-404.21,62.13},{30,871.61,-403.67,62.08},{30,871.56,-404.11,62.13},{30,871.53,-404.25,62.15},{30,871.49,-404.12,62.13},{30,871.28,-403.84,62.11},{30,868.29,-392.39,61.48},{30,868.26,-392.36,61.48},{30,867.8,-392.51,61.51},{30,867.61,-392.37,61.52},{30,858.59,-439.61,50.22},{30,851.47,-362.52,47.31},{30,846.94,-347.28,66.29},{30,842.08,-421.77,48.27},{30,838.36,-371.21,63.33},{30,827.57,-417.48,48.45},{30,827.01,-457.4,48.93},{30,825.53,-322.37,63.94},{30,867.63,-443.61,51.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13084,kind="npc",names={enUS="Bixi Wobblebonk"},flags=19,spawns={{0,-5042.06,-1205.56,508.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13085,kind="npc",names={enUS="Myrokos Silentform"},flags=3,spawns={{0,-0.49,-1594.8,195.07}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13086,kind="npc",names={enUS="Aggi Rumblestomp"},flags=0,spawns={{30,-856.18,-87.73,68.55},{30,-848.9,-92.93,68.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13088,kind="npc",names={enUS="Masha Swiftcut"},flags=2,spawns={{30,-845.87,-96.38,68.46},{30,-848.9,-92.93,68.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13089,kind="npc",names={enUS="Coldmine Guard"},flags=2,spawns={{30,-963.55,-210.22,69.17},{30,-970.63,-204.14,68.73}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13096,kind="npc",names={enUS="Coldmine Explorer"},flags=0,spawns={{30,-956.22,-190.86,66.25},{30,-954.62,-110.96,80.79},{30,-951.48,-53.96,80.02},{30,-946.81,-126.04,78.86},{30,-940.69,-140.71,79.92},{30,-933.95,-159.63,60.78},{30,-922.54,-130.29,61.38},{30,-915.86,-151.74,76.94},{30,-888.32,-159.83,62.53},{30,-874.36,-42.48,69.43},{30,-873.19,-50.49,70.06},{30,-868.51,-148.39,62.35},{30,-868.44,-121.65,64.51},{30,-868.32,-77.72,71.48},{30,-859.85,-19.65,70.73},{30,-828.05,-150.51,62.2},{30,-826.25,-58.69,72.0},{30,-976.09,-44.18,76.03},{30,-971.86,-87.42,81.5},{30,-966.55,-74.11,80.02},{30,-958.51,-173.65,77.9},{30,-951.51,-181.24,65.53},{30,-940.97,-186.24,77.7},{30,-930.0,-65.09,79.08},{30,-920.86,-40.2,78.26},{30,-919.09,-148.02,62.03},{30,-901.52,-116.33,75.69},{30,-897.86,-84.43,74.08},{30,-897.62,-52.05,71.95},{30,-894.89,-153.95,61.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13097,kind="npc",names={enUS="Coldmine Surveyor"},flags=2,spawns={{30,-987.36,-262.5,65.39},{30,-954.62,-110.96,80.79},{30,-951.48,-53.96,80.02},{30,-946.81,-126.04,78.86},{30,-940.69,-140.71,79.92},{30,-933.95,-159.63,60.78},{30,-922.54,-130.29,61.38},{30,-915.86,-151.74,76.94},{30,-888.32,-159.83,62.53},{30,-874.36,-42.48,69.43},{30,-873.19,-50.49,70.06},{30,-868.51,-148.39,62.35},{30,-868.44,-121.65,64.51},{30,-868.32,-77.72,71.48},{30,-859.85,-19.65,70.73},{30,-828.05,-150.51,62.2},{30,-826.25,-58.69,72.0},{30,-976.09,-44.18,76.03},{30,-971.86,-87.42,81.5},{30,-966.55,-74.11,80.02},{30,-958.51,-173.65,77.9},{30,-951.51,-181.24,65.53},{30,-940.97,-186.24,77.7},{30,-930.0,-65.09,79.08},{30,-920.86,-40.2,78.26},{30,-919.09,-148.02,62.03},{30,-901.52,-116.33,75.69},{30,-897.86,-84.43,74.08},{30,-897.62,-52.05,71.95},{30,-894.89,-153.95,61.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13099,kind="npc",names={enUS="Irondeep Explorer"},flags=0,spawns={{30,955.81,-440.3,55.34},{30,937.38,-377.82,65.39},{30,925.06,-331.35,65.76},{30,922.92,-396.63,60.39},{30,909.99,-462.15,59.08},{30,907.89,-388.79,61.79},{30,898.8,-437.11,58.53},{30,884.24,-407.6,61.57},{30,880.74,-344.68,66.41},{30,876.05,-341.86,65.87},{30,874.67,-402.08,61.76},{30,871.91,-404.21,62.13},{30,871.61,-403.67,62.08},{30,871.56,-404.11,62.13},{30,871.53,-404.25,62.15},{30,871.49,-404.12,62.13},{30,871.28,-403.84,62.11},{30,868.29,-392.39,61.48},{30,868.26,-392.36,61.48},{30,867.8,-392.51,61.51},{30,867.61,-392.37,61.52},{30,858.59,-439.61,50.22},{30,851.47,-362.52,47.31},{30,846.94,-347.28,66.29},{30,842.08,-421.77,48.27},{30,838.36,-371.21,63.33},{30,827.57,-417.48,48.45},{30,827.01,-457.4,48.93},{30,825.53,-322.37,63.94},{30,867.63,-443.61,51.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13116,kind="npc",names={enUS="Alliance Spirit Guide"},flags=64,spawns={{489,1415.33,1554.79,343.16},{30,643.0,44.0,69.74},{30,676.0,-374.0,30.0},{30,73.42,-496.43,48.73},{30,-157.41,31.21,77.05},{30,-531.22,-405.23,49.55},{30,-1090.48,-253.31,57.67},{30,-1496.07,-333.34,101.14},{30,873.0,-491.28,96.54},{529,1200.03,1171.09,-56.47},{529,1017.43,960.61,-42.95},{529,833.0,793.0,-57.25},{529,775.17,1206.4,15.79},{529,1207.48,787.0,-83.36},{529,1357.17,1280.23,-11.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13117,kind="npc",names={enUS="Horde Spirit Guide"},flags=64,spawns={{489,1029.14,1387.49,340.84},{30,643.0,44.0,69.74},{30,676.0,-374.0,30.0},{30,73.42,-496.43,48.73},{30,-157.41,31.21,77.05},{30,-531.22,-405.23,49.55},{30,-1090.48,-253.31,57.67},{30,-1496.07,-333.34,101.14},{30,-818.56,-619.25,54.04},{529,1200.03,1171.09,-56.47},{529,1017.43,960.61,-42.95},{529,833.0,793.0,-57.25},{529,775.17,1206.4,15.79},{529,1207.48,787.0,-83.36},{529,714.61,646.15,-10.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13118,kind="npc",names={enUS="Crimson Bodyguard"},flags=0,spawns={{0,2807.56,-4474.55,89.97},{0,2821.24,-4460.42,89.94},{0,2818.17,-4463.67,89.96},{0,2810.57,-4471.33,89.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13136,kind="npc",names={enUS="Hive'Ashi Drone"},flags=0,spawns={{1,-7184.58,443.38,26.53},{1,-7176.78,446.97,28.67},{1,-7176.66,439.08,26.72}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13137,kind="npc",names={enUS="Lieutenant Rugba"},flags=2,spawns={{30,-637.6,-373.81,61.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13138,kind="npc",names={enUS="Lieutenant Spencer"},flags=0,spawns={{30,121.04,-369.64,43.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13139,kind="npc",names={enUS="Commander Randolph"},flags=0,spawns={{30,-151.68,-440.28,40.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13140,kind="npc",names={enUS="Commander Dardosh"},flags=2,spawns={{30,-571.08,-263.75,75.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13141,kind="npc",names={enUS="Deeprot Stomper"},flags=0,spawns={{349,880.11,-367.95,-51.97},{349,855.32,-382.35,-64.0},{349,807.82,-373.91,-59.04},{349,669.35,-152.99,-50.1},{349,633.69,-167.71,-53.59},{349,647.04,-201.6,-64.31},{349,627.64,-260.4,-53.24},{349,620.88,-349.23,-51.94},{349,796.36,-373.9,-59.07},{349,816.5,-376.74,-59.1},{349,830.02,-448.15,-56.25},{349,753.9,-478.24,-52.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13142,kind="npc",names={enUS="Deeprot Tangler"},flags=0,spawns={{349,692.31,-265.62,-52.81},{349,688.89,-164.71,-48.67},{349,642.86,-160.18,-52.95},{349,614.71,-206.54,-64.3},{349,656.93,-227.15,-64.31},{349,639.61,-261.65,-52.78},{349,712.48,-340.13,51.81},{349,617.45,-354.99,-52.02},{349,697.09,-372.95,-51.94},{349,771.38,-352.87,-61.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13143,kind="npc",names={enUS="Lieutenant Stronghoof"},flags=2,spawns={{30,-610.16,-404.24,60.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13144,kind="npc",names={enUS="Lieutenant Vol'talar"},flags=2,spawns={{30,-498.93,-195.04,57.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13145,kind="npc",names={enUS="Lieutenant Grummus"},flags=2,spawns={{30,-579.18,-308.31,46.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13146,kind="npc",names={enUS="Lieutenant Murp"},flags=2,spawns={{30,-731.04,-344.07,66.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13147,kind="npc",names={enUS="Lieutenant Lewis"},flags=2,spawns={{30,-491.38,-176.36,57.54}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13151,kind="npc",names={enUS="Syndicate Master Ryson"},flags=2,spawns={{30,-325.45,-631.5,121.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13152,kind="npc",names={enUS="Commander Malgor"},flags=2,spawns={{30,-1090.32,-349.62,54.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13153,kind="npc",names={enUS="Commander Mulfort"},flags=2,spawns={{30,-1410.34,-312.17,89.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13154,kind="npc",names={enUS="Commander Louis Philips"},flags=2,spawns={{30,-764.65,-355.08,90.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13157,kind="npc",names={enUS="Makasgar"},flags=0,spawns={{1,-528.63,-5215.8,12.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13158,kind="npc",names={enUS="Lieutenant Sanders"},flags=0,spawns={{0,2514.5,-908.42,56.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13159,kind="npc",names={enUS="James Clark"},flags=0,spawns={{0,-9491.77,-1193.42,49.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13160,kind="npc",names={enUS="Carrion Swarmer"},flags=0,spawns={{429,532.73,535.46,-25.32},{429,478.77,542.64,-25.29},{429,506.44,541.64,-25.31},{429,494.07,531.73,-25.31},{429,512.34,556.75,-25.32},{429,479.43,534.18,-25.3},{429,520.43,531.48,-25.31},{429,480.38,551.97,-25.3},{429,522.05,543.65,-25.32},{429,533.79,552.41,-25.32},{429,462.82,251.53,8.82},{429,449.77,243.48,11.3},{429,462.6,260.85,8.91},{429,477.19,251.0,2.95},{429,471.89,252.94,4.97},{429,452.47,260.49,11.3},{429,448.1,251.63,11.3},{429,452.72,247.4,11.3},{429,455.37,253.91,11.3},{429,448.47,258.72,11.3},{429,474.59,316.7,2.94},{429,467.47,316.59,2.94},{429,483.92,329.0,2.94},{429,494.21,319.36,2.94},{429,490.88,329.76,2.94},{429,471.95,324.63,2.94},{429,485.19,320.71,2.94},{429,478.28,324.04,2.94},{429,486.49,313.6,2.94},{429,493.18,309.85,2.94}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13176,kind="npc",names={enUS="Smith Regzar"},flags=3,spawns={{30,-1251.5,-316.33,62.66}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13177,kind="npc",names={enUS="Vahgruk"},flags=11,spawns={{0,-7504.06,-2190.77,165.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13179,kind="npc",names={enUS="Wing Commander Guse"},flags=2,spawns={{30,-1332.0,-331.24,91.26}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13180,kind="npc",names={enUS="Wing Commander Jeztor"},flags=2,spawns={{30,367.08,-516.74,72.02}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13181,kind="npc",names={enUS="Wing Commander Mulverick"},flags=2,spawns={{30,-1341.47,-330.75,91.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13196,kind="npc",names={enUS="Phase Lasher"},flags=0,spawns={{429,-25.87,-208.43,-3.97},{429,-85.93,-208.18,-3.97},{429,-166.73,-271.49,-4.06},{429,-146.43,-366.64,-4.07},{429,-51.43,-358.12,-4.05},{429,70.9,-357.22,-4.05},{429,51.13,-748.84,-25.1},{429,51.14,-755.75,-25.09},{429,61.93,-648.15,-25.13},{429,64.68,-620.78,-25.16},{429,21.0,-457.19,-4.16},{429,15.18,-402.73,-4.14},{429,-48.45,-401.62,-4.14},{429,-104.78,-405.62,-4.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13197,kind="npc",names={enUS="Fel Lash"},flags=0,spawns={{429,-35.18,-458.88,-58.53},{429,47.39,-447.76,-58.52},{429,55.59,-405.28,-58.52},{429,51.13,-748.84,-25.1},{429,51.14,-755.75,-25.09},{429,61.93,-648.15,-25.13},{429,64.68,-620.78,-25.16},{429,21.0,-457.19,-4.16},{429,15.18,-402.73,-4.14},{429,-48.45,-401.62,-4.14},{429,-104.78,-405.62,-4.13},{429,287.54,-479.89,-119.04},{429,282.99,-503.02,-119.12},{429,240.0,-491.47,-119.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13216,kind="npc",names={enUS="Gaelden Hammersmith"},flags=16388,spawns={{30,569.98,-95.0,38.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13217,kind="npc",names={enUS="Thanthaldis Snowgleam"},flags=16388,spawns={{0,-24.19,-321.18,131.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13218,kind="npc",names={enUS="Grunnda Wolfheart"},flags=16388,spawns={{30,-1244.92,-308.92,63.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13219,kind="npc",names={enUS="Jekyll Flandring"},flags=16388,spawns={{0,393.57,-976.09,110.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13220,kind="npc",names={enUS="Layo Starstrike"},flags=3,spawns={{1,-6398.14,-314.36,-1.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13236,kind="npc",names={enUS="Primalist Thurloga"},flags=2,spawns={{30,-1319.56,-342.68,60.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13257,kind="npc",names={enUS="Murgot Deepforge"},flags=3,spawns={{30,647.61,-61.15,41.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13276,kind="npc",names={enUS="Wildspawn Imp"},flags=0,spawns={{429,-70.91,-439.96,-58.61},{429,-64.4,-442.44,-58.61},{429,-72.52,-436.88,-58.61},{429,-61.43,-444.8,-58.53},{429,-71.64,-440.32,-58.61},{429,-3.22,-460.54,-58.55},{429,-14.16,-460.89,-58.62},{429,-6.83,-455.48,-58.54},{429,-3.06,-456.82,-58.55},{429,-10.92,-456.24,-58.62},{429,32.19,-393.65,-58.61},{429,42.29,-388.17,-58.53},{429,40.44,-397.35,-58.53},{429,34.49,-396.16,-58.53},{429,43.4,-392.17,-58.53},{429,7.57,-440.69,-37.88},{429,1.66,-434.83,-37.96},{429,1.54,-438.74,-37.96},{429,7.73,-443.67,-37.88},{429,-1.04,-435.26,-37.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13277,kind="npc",names={enUS="Dahne Pierce"},flags=0,spawns={{1,-3612.15,-4482.0,21.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13278,kind="npc",names={enUS="Duke Hydraxis"},flags=3,spawns={{1,2849.59,-7297.15,20.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13280,kind="npc",names={enUS="Hydrospawn"},flags=0,spawns={{429,4.58,-438.41,-59.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13282,kind="npc",names={enUS="Noxxion"},flags=0,spawns={{349,1130.4,-191.34,-80.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13283,kind="npc",names={enUS="Lord Tony Romano"},flags=19,spawns={{0,-8790.2,328.03,103.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13284,kind="npc",names={enUS="Frostwolf Shaman"},flags=0,spawns={{30,-1321.64,-343.73,60.48},{30,-1317.61,-342.85,60.37},{30,-1319.31,-344.48,60.38}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13285,kind="npc",names={enUS="Death Lash"},flags=0,spawns={{429,83.37,-204.61,-56.71},{429,42.25,-196.09,-53.1},{429,-38.5,-194.4,-55.78},{429,-114.83,-195.78,-52.65},{429,115.87,-356.12,-55.0},{429,80.18,-334.15,-53.81},{429,40.61,-361.18,-54.04},{429,-129.87,-334.24,-56.8},{429,14.33,-261.83,-52.1},{429,-99.14,-249.61,-56.68},{429,-129.89,-246.63,-54.05},{429,287.54,-479.89,-119.04},{429,282.99,-503.02,-119.12},{429,240.0,-491.47,-119.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13296,kind="npc",names={enUS="Lieutenant Largent"},flags=0,spawns={{30,68.57,-235.04,16.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13297,kind="npc",names={enUS="Lieutenant Stouthandle"},flags=0,spawns={{30,-32.83,-288.68,15.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13298,kind="npc",names={enUS="Lieutenant Greywand"},flags=0,spawns={{30,84.03,-260.13,19.82}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13299,kind="npc",names={enUS="Lieutenant Lonadin"},flags=0,spawns={{30,79.97,-236.94,17.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13300,kind="npc",names={enUS="Lieutenant Mancuso"},flags=0,spawns={{30,-40.9,-480.17,44.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13301,kind="npc",names={enUS="잠복꾼 하이브아쉬"},flags=0,spawns={{1,-8016.44,1116.3,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13316,kind="npc",names={enUS="Coldmine Peon"},flags=2,spawns={{30,-968.23,-255.0,65.82},{30,-970.39,-223.09,68.46},{30,-917.65,-46.89,77.09},{30,-912.69,-45.45,76.23},{30,-905.46,-84.52,75.36},{30,-904.33,-111.51,75.59},{30,-904.27,-160.42,61.99},{30,-904.02,-90.46,75.37},{30,-978.68,-37.31,75.84},{30,-973.08,-36.5,77.5},{30,-963.95,-87.73,81.56},{30,-961.94,-90.73,81.66},{30,-957.62,-186.58,66.6},{30,-952.48,-179.78,78.68},{30,-950.43,-115.01,79.61},{30,-950.25,-151.95,79.46},{30,-950.17,-188.1,66.62},{30,-949.94,-142.98,80.54},{30,-947.85,-170.5,79.76},{30,-946.74,-139.57,80.09},{30,-945.5,-65.07,79.79},{30,-943.68,-110.99,80.26},{30,-942.99,-56.99,79.89},{30,-938.2,-155.84,61.31},{30,-930.49,-214.52,72.14},{30,-929.95,-154.45,61.51},{30,-927.41,-135.31,61.2},{30,-920.68,-156.86,62.8},{30,-916.75,-136.09,62.24},{30,-915.32,-132.72,62.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13317,kind="npc",names={enUS="Coldmine Miner"},flags=0,spawns={{30,-946.07,-54.06,79.86},{30,-859.58,-11.97,70.82},{30,-964.5,-93.99,81.42},{30,-947.94,-181.6,64.89},{30,-897.42,-113.12,75.48},{30,-917.65,-46.89,77.09},{30,-912.69,-45.45,76.23},{30,-905.46,-84.52,75.36},{30,-904.33,-111.51,75.59},{30,-904.27,-160.42,61.99},{30,-904.02,-90.46,75.37},{30,-978.68,-37.31,75.84},{30,-973.08,-36.5,77.5},{30,-963.95,-87.73,81.56},{30,-961.94,-90.73,81.66},{30,-957.62,-186.58,66.6},{30,-952.48,-179.78,78.68},{30,-950.43,-115.01,79.61},{30,-950.25,-151.95,79.46},{30,-950.17,-188.1,66.62},{30,-949.94,-142.98,80.54},{30,-947.85,-170.5,79.76},{30,-946.74,-139.57,80.09},{30,-945.5,-65.07,79.79},{30,-943.68,-110.99,80.26},{30,-942.99,-56.99,79.89},{30,-938.2,-155.84,61.31},{30,-930.49,-214.52,72.14},{30,-929.95,-154.45,61.51},{30,-927.41,-135.31,61.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13318,kind="npc",names={enUS="Commander Mortimer"},flags=0,spawns={{30,688.86,-131.36,63.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13319,kind="npc",names={enUS="Commander Duffy"},flags=2,spawns={{30,672.59,-296.52,30.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13320,kind="npc",names={enUS="Commander Karl Philips"},flags=2,spawns={{30,196.84,-362.73,49.27}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13321,kind="npc",names={enUS="Frog"},flags=0,spawns={{309,-11618.3,-1331.68,78.05},{309,-11594.5,-1344.47,77.61},{309,-11600.7,-1403.8,67.74},{309,-11553.9,-1235.25,79.32},{309,-11605.9,-1375.77,73.52},{309,-11611.1,-1238.78,80.41},{309,-11624.7,-1367.77,77.36},{309,-11827.4,-1510.56,15.03},{309,-11832.5,-1759.44,12.15},{309,-11872.2,-1761.27,10.06},{309,-11896.6,-1726.76,10.99},{309,-11815.9,-1311.57,60.28},{309,-11765.1,-1301.81,58.62},{309,-11775.4,-1414.0,9.8},{309,-11883.7,-1685.52,14.4},{309,-11824.4,-1492.95,11.42},{309,-11787.6,-1382.22,10.92},{349,617.5,27.36,-96.23},{349,576.58,41.63,-96.23},{349,564.21,22.59,-96.23},{349,566.12,108.65,-96.23},{349,469.15,82.63,-96.23},{349,496.83,-1.76,-96.23},{349,339.67,11.29,-130.87},{349,331.65,49.38,-130.92},{349,294.31,24.93,-130.92},{349,300.67,-22.77,-130.93},{349,275.08,56.31,-130.93},{349,298.62,68.26,-130.93},{349,323.72,135.5,-131.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13322,kind="npc",names={enUS="Hydraxian Honor Guard"},flags=1,spawns={{1,2762.99,-7309.48,-19.74},{1,2914.3,-7342.59,-21.5},{1,2813.02,-7338.97,-22.66},{1,2831.77,-7240.2,-12.36},{1,2881.41,-7245.37,-14.72},{1,2918.7,-7282.79,-13.72},{1,2790.41,-7240.09,-13.59}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13323,kind="npc",names={enUS="Subterranean Diemetradon"},flags=0,spawns={{349,216.69,-98.69,-129.51},{349,227.78,-93.71,-129.53},{349,218.67,-85.75,-129.53},{349,267.63,-159.27,-110.86},{349,265.3,-169.48,-110.97},{349,259.11,-173.23,-110.96},{349,224.73,-184.53,-131.02},{349,225.37,-173.71,-131.12},{349,216.76,-177.46,-131.08},{349,214.37,-212.26,-131.08},{349,225.21,-223.84,-131.03},{349,219.41,-217.14,-131.06},{349,238.62,-272.99,-131.51},{349,248.38,-270.49,-131.51},{349,237.79,-263.62,-131.06},{349,150.39,-240.11,-108.77},{349,139.83,-221.5,-108.77},{349,143.57,-229.42,-108.77},{349,134.96,-232.4,-108.85},{349,253.7,-401.57,-139.47},{349,251.93,-389.68,-139.47},{349,243.17,-390.64,-139.47},{349,244.51,-398.87,-139.56},{349,219.95,-360.82,-160.77},{349,216.35,-371.05,-160.23},{349,206.24,-357.84,-160.23},{349,217.31,-355.46,-160.77},{349,146.24,-381.37,-174.92},{349,152.66,-372.99,-174.92},{349,144.84,-363.08,-174.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13326,kind="npc",names={enUS="Seasoned Defender"},flags=0,spawns={{30,-5336.52,562.95,395.82},{30,635.17,-29.56,46.51},{30,642.49,-32.94,46.37},{30,642.33,-27.94,46.92},{30,635.95,-33.62,45.72},{30,669.27,-297.3,30.29},{30,674.08,-292.33,30.48},{30,667.01,-288.53,29.88},{30,664.15,-294.04,30.29},{30,81.7,-406.13,47.78},{30,78.14,-409.21,48.04},{30,73.41,-407.04,46.75},{30,78.23,-401.86,46.42},{30,-207.41,-110.62,78.8},{30,-197.95,-112.2,78.57},{30,-202.71,-116.83,78.44},{30,-202.06,-108.31,78.58},{30,-615.5,-393.8,60.43},{30,-608.51,-392.72,62.57},{30,-609.77,-400.07,60.72},{30,-616.09,-398.29,60.56},{30,-1077.7,-340.21,55.47},{30,-1082.74,-333.82,54.8},{30,-1090.66,-341.27,54.68},{30,-1081.58,-344.63,55.26},{30,-1408.95,-311.69,89.25},{30,-1407.15,-305.32,89.2},{30,-1400.64,-304.3,89.7},{30,-1400.4,-311.35,89.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13328,kind="npc",names={enUS="Seasoned Guardian"},flags=0,spawns={{30,635.17,-29.56,46.51},{30,642.49,-32.94,46.37},{30,642.33,-27.94,46.92},{30,635.95,-33.62,45.72},{30,669.27,-297.3,30.29},{30,674.08,-292.33,30.48},{30,667.01,-288.53,29.88},{30,664.15,-294.04,30.29},{30,81.7,-406.13,47.78},{30,78.14,-409.21,48.04},{30,73.41,-407.04,46.75},{30,78.23,-401.86,46.42},{30,-207.41,-110.62,78.8},{30,-197.95,-112.2,78.57},{30,-202.71,-116.83,78.44},{30,-202.06,-108.31,78.58},{30,-615.5,-393.8,60.43},{30,-608.51,-392.72,62.57},{30,-609.77,-400.07,60.72},{30,-616.09,-398.29,60.56},{30,-1077.7,-340.21,55.47},{30,-1082.74,-333.82,54.8},{30,-1090.66,-341.27,54.68},{30,-1081.58,-344.63,55.26},{30,-1408.95,-311.69,89.25},{30,-1407.15,-305.32,89.2},{30,-1400.64,-304.3,89.7},{30,-1400.4,-311.35,89.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13331,kind="npc",names={enUS="Veteran Defender"},flags=0,spawns={{30,676.38,-31.93,50.62},{30,704.81,-38.83,50.62},{30,692.08,3.15,50.62},{30,671.83,-17.72,50.62},{30,635.17,-29.56,46.51},{30,642.49,-32.94,46.37},{30,642.33,-27.94,46.92},{30,635.95,-33.62,45.72},{30,669.27,-297.3,30.29},{30,674.08,-292.33,30.48},{30,667.01,-288.53,29.88},{30,664.15,-294.04,30.29},{30,81.7,-406.13,47.78},{30,78.14,-409.21,48.04},{30,73.41,-407.04,46.75},{30,78.23,-401.86,46.42},{30,-207.41,-110.62,78.8},{30,-197.95,-112.2,78.57},{30,-202.71,-116.83,78.44},{30,-202.06,-108.31,78.58},{30,-615.5,-393.8,60.43},{30,-608.51,-392.72,62.57},{30,-609.77,-400.07,60.72},{30,-616.09,-398.29,60.56},{30,-1077.7,-340.21,55.47},{30,-1082.74,-333.82,54.8},{30,-1090.66,-341.27,54.68},{30,-1081.58,-344.63,55.26},{30,-1408.95,-311.69,89.25},{30,-1407.15,-305.32,89.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13332,kind="npc",names={enUS="Veteran Guardian"},flags=0,spawns={{30,635.17,-29.56,46.51},{30,642.49,-32.94,46.37},{30,642.33,-27.94,46.92},{30,635.95,-33.62,45.72},{30,669.27,-297.3,30.29},{30,674.08,-292.33,30.48},{30,667.01,-288.53,29.88},{30,664.15,-294.04,30.29},{30,81.7,-406.13,47.78},{30,78.14,-409.21,48.04},{30,73.41,-407.04,46.75},{30,78.23,-401.86,46.42},{30,-207.41,-110.62,78.8},{30,-197.95,-112.2,78.57},{30,-202.71,-116.83,78.44},{30,-202.06,-108.31,78.58},{30,-615.5,-393.8,60.43},{30,-608.51,-392.72,62.57},{30,-609.77,-400.07,60.72},{30,-616.09,-398.29,60.56},{30,-1077.7,-340.21,55.47},{30,-1082.74,-333.82,54.8},{30,-1090.66,-341.27,54.68},{30,-1081.58,-344.63,55.26},{30,-1408.95,-311.69,89.25},{30,-1407.15,-305.32,89.2},{30,-1400.64,-304.3,89.7},{30,-1400.4,-311.35,89.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13358,kind="npc",names={enUS="Stormpike Bowman"},flags=0,spawns={{30,569.39,-101.06,52.83},{30,574.85,-92.98,52.59},{30,575.41,-83.6,52.36},{30,571.35,-75.66,52.48},{30,668.6,-122.53,64.12},{30,662.25,-129.1,64.18},{30,661.21,-138.88,64.23},{30,665.48,-146.86,64.13},{30,225.23,-368.91,57.0},{30,191.36,-369.9,57.15},{30,215.52,-384.02,56.99},{30,199.62,-382.18,56.87},{30,-172.85,-452.37,40.87},{30,-147.15,-435.05,40.8},{30,-169.46,-440.32,40.98},{30,-163.49,-434.9,41.07}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13359,kind="npc",names={enUS="Frostwolf Bowman"},flags=0,spawns={{30,-573.52,-271.85,75.01},{30,-565.62,-269.05,75.0},{30,-562.83,-261.09,74.99},{30,-569.18,-254.45,74.88},{30,-763.04,-371.03,90.79},{30,-759.76,-358.26,90.87},{30,-768.81,-353.06,90.88},{30,-775.94,-362.64,90.89},{30,-1294.13,-313.05,107.33},{30,-1306.5,-308.11,113.77},{30,-1294.78,-319.97,113.79},{30,-1294.83,-312.24,113.8},{30,-1300.96,-275.11,114.06},{30,-1302.41,-259.26,114.06},{30,-1287.97,-262.09,114.17},{30,-1291.59,-271.17,114.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13396,kind="npc",names={enUS="Irondeep Miner"},flags=2,spawns={{30,971.67,-442.66,57.7},{30,969.98,-457.15,58.11},{30,958.69,-333.48,63.23},{30,957.11,-325.92,61.76},{30,948.25,-448.27,56.9},{30,934.73,-385.8,63.03},{30,931.75,-403.46,59.67},{30,931.15,-359.67,66.03},{30,929.7,-412.4,56.88},{30,926.85,-379.07,63.53},{30,921.97,-358.6,66.43},{30,921.45,-341.98,67.13},{30,921.1,-395.81,60.46},{30,919.27,-394.99,60.35},{30,916.85,-393.89,60.17},{30,914.57,-326.21,66.17},{30,913.06,-395.77,60.14},{30,909.25,-474.58,58.21},{30,909.25,-474.58,58.29},{30,907.21,-428.27,59.81},{30,905.97,-459.53,58.76},{30,905.07,-396.07,60.21},{30,901.81,-457.71,59.01},{30,900.96,-427.44,59.08},{30,897.93,-471.74,59.77},{30,893.38,-343.17,68.15},{30,890.58,-406.05,61.19},{30,888.21,-332.56,68.15},{30,887.65,-391.54,61.87},{30,885.11,-343.34,67.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13397,kind="npc",names={enUS="Irondeep Peon"},flags=2,spawns={{30,971.67,-442.66,57.7},{30,969.98,-457.15,58.11},{30,958.69,-333.48,63.23},{30,957.11,-325.92,61.76},{30,948.25,-448.27,56.9},{30,934.73,-385.8,63.03},{30,931.75,-403.46,59.67},{30,931.15,-359.67,66.03},{30,929.7,-412.4,56.88},{30,926.85,-379.07,63.53},{30,921.97,-358.6,66.43},{30,921.45,-341.98,67.13},{30,921.1,-395.81,60.46},{30,919.27,-394.99,60.35},{30,916.85,-393.89,60.17},{30,914.57,-326.21,66.17},{30,913.06,-395.77,60.14},{30,909.25,-474.58,58.21},{30,909.25,-474.58,58.29},{30,907.21,-428.27,59.81},{30,905.97,-459.53,58.76},{30,905.07,-396.07,60.21},{30,901.81,-457.71,59.01},{30,900.96,-427.44,59.08},{30,897.93,-471.74,59.77},{30,893.38,-343.17,68.15},{30,890.58,-406.05,61.19},{30,888.21,-332.56,68.15},{30,887.65,-391.54,61.87},{30,885.11,-343.34,67.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13417,kind="npc",names={enUS="Sagorne Creststrider"},flags=19,spawns={{1,1937.84,-4222.84,42.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13418,kind="npc",names={enUS="Kaymard Copperpinch"},flags=7,spawns={{1,1651.95,-4428.67,16.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13420,kind="npc",names={enUS="Penney Copperpinch"},flags=5,spawns={{1,1657.5,-4426.88,17.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13421,kind="npc",names={enUS="Champion Guardian"},flags=0,spawns={{30,635.17,-29.56,46.51},{30,642.49,-32.94,46.37},{30,642.33,-27.94,46.92},{30,635.95,-33.62,45.72},{30,669.27,-297.3,30.29},{30,674.08,-292.33,30.48},{30,667.01,-288.53,29.88},{30,664.15,-294.04,30.29},{30,81.7,-406.13,47.78},{30,78.14,-409.21,48.04},{30,73.41,-407.04,46.75},{30,78.23,-401.86,46.42},{30,-207.41,-110.62,78.8},{30,-197.95,-112.2,78.57},{30,-202.71,-116.83,78.44},{30,-202.06,-108.31,78.58},{30,-615.5,-393.8,60.43},{30,-608.51,-392.72,62.57},{30,-609.77,-400.07,60.72},{30,-616.09,-398.29,60.56},{30,-1077.7,-340.21,55.47},{30,-1082.74,-333.82,54.8},{30,-1090.66,-341.27,54.68},{30,-1081.58,-344.63,55.26},{30,-1408.95,-311.69,89.25},{30,-1407.15,-305.32,89.2},{30,-1400.64,-304.3,89.7},{30,-1400.4,-311.35,89.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13422,kind="npc",names={enUS="Champion Defender"},flags=0,spawns={{30,700.03,-13.94,50.14},{30,701.63,-19.65,50.14},{30,635.17,-29.56,46.51},{30,642.49,-32.94,46.37},{30,642.33,-27.94,46.92},{30,635.95,-33.62,45.72},{30,669.27,-297.3,30.29},{30,674.08,-292.33,30.48},{30,667.01,-288.53,29.88},{30,664.15,-294.04,30.29},{30,81.7,-406.13,47.78},{30,78.14,-409.21,48.04},{30,73.41,-407.04,46.75},{30,78.23,-401.86,46.42},{30,-207.41,-110.62,78.8},{30,-197.95,-112.2,78.57},{30,-202.71,-116.83,78.44},{30,-202.06,-108.31,78.58},{30,-615.5,-393.8,60.43},{30,-608.51,-392.72,62.57},{30,-609.77,-400.07,60.72},{30,-616.09,-398.29,60.56},{30,-1077.7,-340.21,55.47},{30,-1082.74,-333.82,54.8},{30,-1090.66,-341.27,54.68},{30,-1081.58,-344.63,55.26},{30,-1408.95,-311.69,89.25},{30,-1407.15,-305.32,89.2},{30,-1400.64,-304.3,89.7},{30,-1400.4,-311.35,89.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13425,kind="npc",names={enUS="Champion Legionnaire"},flags=0,spawns={{30,-1189.04,-355.77,53.3},{30,-1186.78,-351.52,53.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13429,kind="npc",names={enUS="Nardstrum Copperpinch"},flags=6,spawns={{0,1629.23,218.48,-43.02}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13430,kind="npc",names={enUS="Jaycrue Copperpinch"},flags=5,spawns={{0,1630.85,219.42,-43.02}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13431,kind="npc",names={enUS="훌워트 코퍼핀치"},flags=1,spawns={{1,-1257.76,59.5,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13432,kind="npc",names={enUS="Seersa Copperpinch"},flags=7,spawns={{1,-1274.94,109.17,129.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13433,kind="npc",names={enUS="Wulmort Jinglepocket"},flags=7,spawns={{0,-4923.96,-980.01,501.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13434,kind="npc",names={enUS="Macey Jinglepocket"},flags=7,spawns={{0,-4926.36,-979.27,501.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13435,kind="npc",names={enUS="Khole Jinglepocket"},flags=7,spawns={{0,-8810.0,641.54,94.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13436,kind="npc",names={enUS="Guchie Jinglepocket"},flags=5,spawns={{0,-8807.0,635.28,94.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13437,kind="npc",names={enUS="Wing Commander Ichman"},flags=3,spawns={{30,-1297.57,-264.63,114.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13438,kind="npc",names={enUS="Wing Commander Slidore"},flags=3,spawns={{30,569.96,-42.02,37.76}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13439,kind="npc",names={enUS="Wing Commander Vipore"},flags=3,spawns={{30,-1218.89,-350.26,57.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13441,kind="npc",names={enUS="Frostwolf Wolf Rider Commander"},flags=2,spawns={{30,-1252.27,-636.15,52.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13442,kind="npc",names={enUS="Arch Druid Renferal"},flags=3,spawns={{30,729.2,-78.81,51.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13443,kind="npc",names={enUS="Druid of the Grove"},flags=1,spawns={{30,729.12,-82.87,51.63},{30,725.55,-79.5,51.63},{30,724.77,-84.16,51.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13444,kind="npc",names={enUS="Greatfather Winter"},flags=3,spawns={{0,-4914.36,-976.11,501.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13445,kind="npc",names={enUS="Great-father Winter"},flags=3,spawns={{1,1626.74,-4416.81,15.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13446,kind="npc",names={enUS="Field Marshal Teravaine"},flags=2,spawns={{30,-157.78,-437.91,33.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13447,kind="npc",names={enUS="Corporal Noreg Stormpike"},flags=3,spawns={{30,596.68,-83.06,39.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13448,kind="npc",names={enUS="Sergeant Yazra Bloodsnarl"},flags=2,spawns={{30,-1212.11,-261.77,73.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13476,kind="npc",names={enUS="Balai Lok'Wein"},flags=4,spawns={{1,-3095.85,-2890.54,34.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13525,kind="npc",names={enUS="Seasoned Commando"},flags=0,spawns={{30,-1196.46,-346.5,53.48},{30,-1199.71,-349.07,53.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13536,kind="npc",names={enUS="Champion Coldmine Guard"},flags=2,spawns={{30,-852.53,-86.97,68.51},{30,-991.15,-261.65,66.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13539,kind="npc",names={enUS="Champion Coldmine Surveyor"},flags=2,spawns={{30,-850.34,-89.5,68.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13545,kind="npc",names={enUS="Champion Irondeep Raider"},flags=2,spawns={{30,956.46,-448.21,56.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13546,kind="npc",names={enUS="Seasoned Coldmine Explorer"},flags=0,spawns={{30,-988.59,-259.48,65.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13548,kind="npc",names={enUS="Champion Coldmine Explorer"},flags=0,spawns={{30,-1028.56,-362.43,54.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13551,kind="npc",names={enUS="Champion Coldmine Invader"},flags=0,spawns={{30,-1009.55,-353.44,56.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13554,kind="npc",names={enUS="Champion Irondeep Guard"},flags=0,spawns={{30,883.62,-445.02,54.6},{30,875.56,-448.31,54.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13557,kind="npc",names={enUS="Champion Irondeep Surveyor"},flags=0,spawns={{30,880.27,-448.1,54.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13577,kind="npc",names={enUS="Stormpike Ram Rider Commander"},flags=3,spawns={{30,600.03,-2.92,42.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13596,kind="npc",names={enUS="Rotgrip"},flags=0,spawns={{349,42.08,-65.95,-199.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13599,kind="npc",names={enUS="Stolid Snapjaw"},flags=0,spawns={{349,618.18,27.98,-96.23},{349,594.19,-0.67,-96.23},{349,575.89,40.6,-96.23},{349,565.72,72.62,-96.31},{349,566.32,76.26,-96.31},{349,563.66,70.05,-96.31},{349,560.32,74.55,-96.31},{349,561.54,106.6,-96.23},{349,557.38,14.81,-96.23},{349,565.58,111.1,-96.31},{349,489.51,70.77,-96.23},{349,501.7,15.98,-96.23},{349,498.23,-33.25,-96.31},{349,484.04,-41.0,-96.31},{349,479.86,-47.12,-96.31},{349,477.12,-47.54,-96.31},{349,478.96,-43.83,-96.31},{349,477.19,-42.68,-96.31},{349,-29.19,9.89,-131.12},{349,84.98,7.09,-131.07},{349,-44.63,58.08,-131.07},{349,101.29,47.04,-131.07},{349,-18.8,96.24,-131.07},{349,90.55,84.81,-131.07},{349,54.83,113.88,-131.07},{349,13.72,117.55,-131.07}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13601,kind="npc",names={enUS="Tinkerer Gizlock"},flags=0,spawns={{349,134.9,-313.73,-173.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13602,kind="npc",names={enUS="The Abominable Greench"},flags=2,spawns={{0,171.68,-260.07,150.13},{0,361.08,-54.29,145.19},{0,313.33,-377.0,169.6},{0,550.98,-101.97,145.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13616,kind="npc",names={enUS="Frostwolf Stable Master"},flags=8195,spawns={{30,-1243.74,-640.96,52.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13617,kind="npc",names={enUS="Stormpike Stable Master"},flags=8195,spawns={{30,610.24,-21.85,43.27}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13618,kind="npc",names={enUS="Stabled Frostwolf"},flags=0,spawns={{30,-1253.72,-605.13,55.39},{30,-1268.26,-598.1,55.39},{30,-1269.19,-609.82,55.33},{30,-1267.93,-592.81,55.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13636,kind="npc",names={enUS="Strange Snowman"},flags=2,spawns={{0,147.42,-208.91,153.49}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13656,kind="npc",names={enUS="Willow"},flags=2,spawns={{1,-735.86,1437.12,91.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13676,kind="npc",names={enUS="Stabled Alterac Ram"},flags=0,spawns={{30,2.64,-437.79,44.59},{30,-6.28,-451.07,44.59}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13697,kind="npc",names={enUS="Cavindra"},flags=3,spawns={{1,-1465.35,2790.2,94.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13698,kind="npc",names={enUS="Keeper Marandis"},flags=3,spawns={{1,132.22,1363.84,199.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13699,kind="npc",names={enUS="Selendra"},flags=3,spawns={{1,-1876.34,3025.16,19.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13717,kind="npc",names={enUS="Centaur Pariah"},flags=3,spawns={{1,-2145.71,1966.42,84.49}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13718,kind="npc",names={enUS="The Nameless Prophet"},flags=3,spawns={{1,-1418.38,2967.57,124.25},{1,-1472.38,2965.48,122.54},{1,-1418.72,2940.61,95.4},{1,-1440.7,3008.51,115.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13737,kind="npc",names={enUS="Marandis' Sister"},flags=0,spawns={{1,149.93,1356.59,197.56},{1,140.92,1350.38,197.56},{1,-1875.75,3015.39,20.69},{1,-1882.36,3028.11,18.76},{1,-1873.48,3025.41,19.07}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13743,kind="npc",names={enUS="Corrupt Force of Nature"},flags=0,spawns={{349,725.95,85.29,-86.93},{349,719.01,79.01,-86.97},{349,724.38,70.68,-86.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13776,kind="npc",names={enUS="Corporal Teeka Bloodsnarl"},flags=3,spawns={{0,470.82,-1052.1,108.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13777,kind="npc",names={enUS="Sergeant Durgen Stormpike"},flags=3,spawns={{0,59.1,-246.02,129.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13797,kind="npc",names={enUS="Mountaineer Boombellow"},flags=2,spawns={{30,613.42,-150.76,33.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13798,kind="npc",names={enUS="Jotek"},flags=2,spawns={{30,-1213.91,-370.62,56.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13816,kind="npc",names={enUS="Prospector Stonehewer"},flags=2,spawns={{0,14.91,-354.98,131.13},{30,704.35,-22.91,50.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13817,kind="npc",names={enUS="Voggah Deathgrip"},flags=2,spawns={{0,371.2,-1004.14,109.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13836,kind="npc",names={enUS="Burning Blade Nightmare"},flags=0,spawns={{1,-1939.64,645.02,107.35},{1,-1945.07,647.09,107.34},{1,-1928.98,656.58,107.66}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13837,kind="npc",names={enUS="Captured Stallion"},flags=0,spawns={{1,-1939.65,660.63,107.64},{1,-1928.45,642.28,107.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13839,kind="npc",names={enUS="Royal Dreadguard"},flags=2,spawns={{0,1382.09,433.12,-52.85},{0,1246.15,336.82,-63.58},{0,1312.74,377.39,-66.65},{0,1306.3,276.61,-63.58},{0,1324.69,408.23,-61.05},{0,1447.42,401.28,-57.87},{0,1412.84,421.47,-55.11},{0,1326.72,358.62,-63.58},{0,1475.56,376.34,-59.35},{0,1462.01,362.81,-59.35},{0,1439.81,393.83,-57.87},{0,1420.34,428.31,-55.15},{0,1347.12,438.3,-55.84},{0,1384.79,443.29,-52.84},{0,1350.39,428.46,-55.75},{0,1258.26,289.54,-63.58},{0,1341.65,310.21,-63.58},{0,1317.43,415.17,-61.11},{0,1302.77,380.19,-66.64},{0,1281.1,370.94,-63.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13840,kind="npc",names={enUS="Warmaster Laggrond"},flags=3,spawns={{0,400.81,-960.11,110.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13841,kind="npc",names={enUS="Lieutenant Haggerdin"},flags=3,spawns={{0,-16.33,-321.62,131.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13842,kind="npc",names={enUS="Frostwolf Ambassador Rokhstrom"},flags=2,spawns={{1,1607.92,-4376.44,9.66}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13843,kind="npc",names={enUS="Lieutenant Rotimer"},flags=2,spawns={{0,-4903.01,-968.24,501.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13876,kind="npc",names={enUS="Mekgineer Trigger"},flags=0,spawns={{90,-617.38,715.52,-326.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13896,kind="npc",names={enUS="Scalebeard"},flags=0,spawns={{1,3740.01,-5943.91,-13.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13916,kind="npc",names={enUS="Dire Maul Crystal Totem"},flags=0,spawns={{429,13.45,277.63,1.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13917,kind="npc",names={enUS="Izzy Coppergrab"},flags=256,spawns={{1,6783.17,-4679.94,723.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13936,kind="npc",names={enUS="Ravenholdt"},flags=0,spawns={{0,19.34,-1449.73,176.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13959,kind="npc",names={enUS="Alterac Yeti"},flags=0,spawns={{30,2.18,160.64,10.02},{30,32.1,61.66,-0.49},{30,148.34,66.22,6.05},{30,71.04,187.1,7.41},{30,92.56,133.91,3.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13976,kind="npc",names={enUS="Tortured Drake"},flags=0,spawns={{469,-7344.75,-958.09,481.69},{469,-7393.3,-1070.78,479.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=13996,kind="npc",names={enUS="Blackwing Technician"},flags=0,spawns={{469,-7492.67,-1003.49,408.65},{469,-7471.64,-1005.85,408.65},{469,-7478.53,-996.15,408.65},{469,-7486.45,-1025.62,408.64},{469,-7490.95,-1014.89,408.64},{469,-7474.0,-1020.49,408.65},{469,-7509.21,-906.47,457.66},{469,-7519.58,-932.07,457.66},{469,-7523.42,-929.52,457.66},{469,-7525.49,-924.4,457.66},{469,-7526.44,-921.5,457.66},{469,-7527.31,-919.01,457.66},{469,-7524.24,-916.83,457.66},{469,-7506.35,-904.14,457.66},{469,-7514.63,-936.93,457.66},{469,-7518.07,-933.76,457.66},{469,-7488.13,-880.57,465.07},{469,-7484.71,-886.08,465.07},{469,-7472.84,-870.65,465.07},{469,-7471.76,-871.89,465.07},{469,-7453.61,-860.51,465.07},{469,-7452.37,-863.4,465.07},{469,-7448.91,-868.3,465.07},{469,-7463.19,-867.52,465.07},{469,-7464.36,-862.94,465.07},{469,-7485.81,-883.08,465.07},{469,-7411.48,-901.35,465.07},{469,-7419.28,-895.44,465.07},{469,-7398.45,-930.86,465.07},{469,-7411.15,-909.45,465.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14020,kind="npc",names={enUS="Chromaggus"},flags=0,spawns={{469,-7515.34,-1029.62,476.73}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14022,kind="npc",names={enUS="Corrupted Red Whelp"},flags=0,spawns={{469,-7656.85,-975.14,440.29},{469,-7673.17,-988.17,440.31},{469,-7645.7,-1016.46,440.3},{469,-7633.5,-1062.02,449.25},{469,-7648.7,-1025.35,440.26},{469,-7643.36,-1017.6,440.31},{469,-7669.85,-1042.61,440.23},{469,-7647.48,-1093.84,449.25},{469,-7658.36,-1071.11,449.25},{469,-7678.29,-1123.55,449.1},{469,-7681.89,-998.11,440.34},{469,-7624.56,-1038.27,449.25},{469,-7618.44,-1038.33,449.25},{469,-7622.55,-978.52,440.13},{469,-7695.47,-1017.1,440.39},{469,-7619.76,-1047.64,449.25},{469,-7652.35,-992.23,440.07},{469,-7708.75,-1082.18,446.22},{469,-7693.29,-1094.91,449.2},{469,-7634.62,-961.16,440.35},{469,-7601.64,-1050.85,449.25},{469,-7600.73,-1025.35,449.25},{469,-7632.46,-1003.41,440.35},{469,-7653.06,-1092.68,449.25},{469,-7716.05,-1071.89,445.26},{469,-7597.61,-1067.39,449.25},{469,-7681.28,-1007.74,440.07},{469,-7598.69,-1072.55,449.25},{469,-7643.34,-997.21,440.35},{469,-7676.78,-1036.71,440.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14023,kind="npc",names={enUS="Corrupted Green Whelp"},flags=0,spawns={{469,-7621.75,-1068.85,449.25},{469,-7666.0,-1036.99,440.26},{469,-7641.1,-1015.7,440.31},{469,-7667.06,-991.9,440.07},{469,-7666.45,-1044.84,440.19},{469,-7646.14,-1022.28,440.29},{469,-7647.05,-1068.97,449.25},{469,-7655.83,-1066.95,449.25},{469,-7684.35,-1122.91,449.08},{469,-7669.68,-1112.44,449.14},{469,-7695.53,-1013.02,440.1},{469,-7681.77,-992.09,440.28},{469,-7641.78,-987.45,440.35},{469,-7622.71,-1029.08,449.25},{469,-7624.89,-1046.62,449.25},{469,-7683.09,-1108.72,449.22},{469,-7630.01,-1069.4,449.25},{469,-7636.66,-963.87,440.36},{469,-7618.11,-1059.93,449.25},{469,-7602.88,-1031.5,449.25},{469,-7629.85,-1001.31,440.35},{469,-7719.53,-1067.46,445.26},{469,-7594.8,-1086.24,449.25},{469,-7673.18,-1009.97,440.34},{469,-7687.76,-1025.21,440.36},{469,-7639.89,-990.15,440.35},{469,-7685.87,-1036.16,440.47},{469,-7571.0,-1064.3,449.25},{469,-7694.26,-1023.88,440.46},{469,-7706.02,-1062.06,445.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14024,kind="npc",names={enUS="Corrupted Blue Whelp"},flags=0,spawns={{469,-7652.4,-1052.16,449.26},{469,-7632.09,-1015.39,440.24},{469,-7659.83,-979.34,440.31},{469,-7608.47,-1066.02,449.25},{469,-7635.41,-1018.93,440.24},{469,-7656.67,-1038.08,440.19},{469,-7659.56,-1086.99,449.25},{469,-7646.83,-1086.38,449.25},{469,-7692.41,-1112.29,449.08},{469,-7630.92,-1049.91,449.25},{469,-7701.07,-1019.07,440.55},{469,-7678.04,-998.59,440.34},{469,-7688.92,-990.72,440.2},{469,-7686.58,-1012.38,440.07},{469,-7630.23,-1033.7,449.25},{469,-7618.19,-989.43,440.12},{469,-7616.03,-1044.02,449.25},{469,-7693.18,-1100.67,449.21},{469,-7662.24,-1080.32,449.25},{469,-7602.56,-1016.52,449.25},{469,-7635.01,-1087.5,449.25},{469,-7642.42,-965.78,440.3},{469,-7606.54,-1020.91,449.25},{469,-7627.33,-1009.28,440.27},{469,-7607.43,-1041.7,449.25},{469,-7710.71,-1066.49,445.26},{469,-7678.43,-1018.0,440.07},{469,-7592.26,-1079.79,449.25},{469,-7653.86,-1010.09,440.07},{469,-7631.21,-971.92,440.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14025,kind="npc",names={enUS="Corrupted Bronze Whelp"},flags=0,spawns={{469,-7638.1,-1016.86,440.27},{469,-7661.5,-988.09,440.07},{469,-7621.99,-1077.23,449.25},{469,-7635.98,-1012.13,440.31},{469,-7648.13,-1057.97,449.25},{469,-7660.0,-1041.1,440.19},{469,-7640.15,-1011.7,440.07},{469,-7636.04,-1078.19,449.25},{469,-7678.87,-1129.23,449.08},{469,-7689.31,-1115.75,449.08},{469,-7657.58,-1104.8,449.17},{469,-7625.2,-1033.05,449.25},{469,-7625.08,-1051.81,449.25},{469,-7703.72,-1015.03,440.5},{469,-7684.85,-993.85,440.27},{469,-7627.4,-988.57,440.09},{469,-7683.67,-1096.39,449.19},{469,-7597.26,-1019.24,449.25},{469,-7634.91,-956.02,440.25},{469,-7632.52,-1008.38,440.33},{469,-7640.47,-961.67,440.26},{469,-7609.71,-1054.55,449.25},{469,-7625.7,-1000.88,440.35},{469,-7612.87,-1067.8,449.25},{469,-7642.84,-1075.91,449.25},{469,-7710.85,-1073.44,445.26},{469,-7713.35,-1064.88,445.26},{469,-7659.99,-1016.2,440.34},{469,-7605.22,-1080.31,449.25},{469,-7682.46,-1041.22,440.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14041,kind="npc",names={enUS="Haggle"},flags=0,spawns={{369,-18.5,-17.03,-4.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14121,kind="npc",names={enUS="Deeprun Diver"},flags=0,spawns={{369,95.8,1375.94,-122.22},{369,49.31,1205.64,-121.84},{369,53.56,1303.29,-121.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14123,kind="npc",names={enUS="Steeljaw Snapper"},flags=0,spawns={{1,-6897.33,-4759.57,9.86},{1,-7149.54,-4846.48,0.68},{1,-7820.95,-5221.76,-8.05},{1,-7418.07,-4946.77,-2.0},{1,-7685.06,-5079.76,-7.54},{1,-7699.08,-4930.32,-1.16},{1,-7853.5,-5275.31,-4.89},{1,-7613.66,-4915.94,-6.46},{1,-7820.43,-5257.31,-8.3},{1,-7764.69,-5103.61,0.4},{1,-6712.36,-4853.42,-2.5},{1,-7063.03,-4908.05,-5.71},{1,-7542.11,-4875.38,0.62},{1,-6742.75,-4840.46,0.68},{1,-7378.5,-4947.44,-11.76},{1,-7578.06,-4939.5,-6.83},{1,-6804.02,-4859.49,0.68},{1,-6970.85,-4920.84,-12.69},{1,-6699.81,-4859.48,-8.07},{1,-6862.72,-4896.75,-3.61},{1,-7451.76,-4918.8,0.39},{1,-7257.76,-4944.02,-9.61},{1,-7521.84,-4934.7,-9.32},{1,-7142.26,-4931.4,-7.1},{1,-7079.52,-4888.16,-1.16},{1,-7588.39,-4888.28,-1.05},{1,-6877.57,-4924.21,-15.42},{1,-6775.01,-4894.7,-7.13},{1,-7029.91,-4703.65,9.13},{1,-7709.58,-5151.98,-8.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14182,kind="npc",names={enUS="Bounty Hunter Kolark"},flags=268435458,spawns={{1,2048.03,-4727.28,25.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14183,kind="npc",names={enUS="Artilleryman Sheldonore"},flags=2,spawns={{0,-4842.4,-868.65,502.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14185,kind="npc",names={enUS="Najak Hexxen"},flags=2,spawns={{30,-1271.24,-335.77,62.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14186,kind="npc",names={enUS="Ravak Grimtotem"},flags=2,spawns={{30,-1268.64,-332.69,62.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14187,kind="npc",names={enUS="Athramanis"},flags=2,spawns={{30,648.36,-65.22,41.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14188,kind="npc",names={enUS="Dirk Swindle"},flags=2,spawns={{30,648.24,-67.89,41.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14221,kind="npc",names={enUS="Gravis Slipknot"},flags=0,spawns={{0,717.66,-846.4,160.75}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14222,kind="npc",names={enUS="Araga"},flags=0,spawns={{0,153.89,-62.18,100.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14223,kind="npc",names={enUS="Cranky Benj"},flags=0,spawns={{0,1129.87,-260.8,33.19}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14224,kind="npc",names={enUS="7:XT"},flags=0,spawns={{0,-7276.23,-3448.95,305.13},{0,-6777.48,-3428.61,241.67},{0,-6758.16,-2670.21,242.45},{0,-7029.18,-2793.56,241.67},{0,-7187.85,-2567.51,245.43},{0,-7000.52,-2416.89,241.67},{0,-7221.25,-2147.2,305.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14225,kind="npc",names={enUS="Prince Kellen"},flags=0,spawns={{1,-184.96,684.98,91.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14226,kind="npc",names={enUS="Kaskk"},flags=0,spawns={{1,-2130.13,1933.63,62.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14227,kind="npc",names={enUS="Hissperak"},flags=0,spawns={{1,-1049.27,1856.88,63.73}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14228,kind="npc",names={enUS="Giggler"},flags=0,spawns={{1,-414.57,1477.82,90.76}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14229,kind="npc",names={enUS="Accursed Slitherblade"},flags=0,spawns={{1,-117.75,2337.5,-24.02}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14230,kind="npc",names={enUS="Burgle Eye"},flags=0,spawns={{1,-2587.64,-4014.07,7.02},{1,-2357.19,-4077.67,6.79},{1,-2703.59,-4255.08,7.44},{1,-2979.75,-4331.81,10.94}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14231,kind="npc",names={enUS="Drogoth the Roamer"},flags=0,spawns={{1,-2703.8,-3123.47,38.14},{1,-2608.36,-3011.72,29.42},{1,-2800.88,-3121.34,28.92},{1,-2639.03,-3026.1,27.88},{1,-2740.71,-3018.02,37.16},{1,-2740.71,-3018.02,37.16},{1,-2750.74,-3075.69,29.95},{1,-2769.55,-3040.72,34.85},{1,-2608.36,-3011.72,29.42},{1,-2700.64,-3052.18,38.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14232,kind="npc",names={enUS="Dart"},flags=0,spawns={{1,-2660.32,-3491.51,33.54},{1,-2709.5,-3530.38,34.46},{1,-2600.31,-3454.6,33.14},{1,-2592.01,-3498.18,33.52},{1,-2714.64,-3489.85,34.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14233,kind="npc",names={enUS="Ripscale"},flags=0,spawns={{1,-3969.57,-3182.07,28.9},{1,-4040.93,-3557.63,28.52},{1,-3795.77,-2958.63,28.65},{1,-3779.78,-3273.46,28.65},{1,-4453.28,-3973.02,29.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14234,kind="npc",names={enUS="Hayoc"},flags=0,spawns={{1,-4376.98,-3878.91,48.35},{1,-4219.99,-3708.12,59.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14235,kind="npc",names={enUS="The Rot"},flags=0,spawns={{1,-4100.05,-3683.57,44.85},{1,-3926.89,-3745.08,37.64},{1,-3814.24,-3650.64,37.96},{1,-3985.36,-3723.25,41.86},{1,-4042.09,-3753.6,43.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14236,kind="npc",names={enUS="Lord Angler"},flags=0,spawns={{1,-4183.3,-3912.85,-8.55},{1,-4201.15,-3973.48,-13.32},{1,-4282.74,-3923.41,-5.73},{1,-4190.0,-4011.0,-9.0},{1,-4250.64,-3849.09,-6.72}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14237,kind="npc",names={enUS="Oozeworm"},flags=0,spawns={{1,-4207.99,-2911.04,44.95},{1,-4240.73,-2866.63,37.13},{1,-4240.14,-3028.64,44.06},{1,-4513.47,-2809.81,34.17},{1,-4408.82,-2861.63,28.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14266,kind="npc",names={enUS="Shanda the Spinner"},flags=0,spawns={{0,-5450.6,-4147.61,392.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14267,kind="npc",names={enUS="Emogg the Crusher"},flags=0,spawns={{0,-4983.44,-4009.71,299.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14268,kind="npc",names={enUS="Lord Condar"},flags=0,spawns={{0,-5865.87,-4138.18,387.28},{0,-5718.08,-4055.36,367.92},{0,-5789.31,-4052.05,370.92},{0,-5932.27,-3719.54,342.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14269,kind="npc",names={enUS="Seeker Aqualon"},flags=0,spawns={{0,-9389.29,-2875.27,39.76},{0,-9460.92,-2925.02,54.49},{0,-9608.91,-3027.87,51.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14270,kind="npc",names={enUS="Squiddic"},flags=0,spawns={{0,-9519.94,-2576.63,51.66}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14271,kind="npc",names={enUS="Ribchaser"},flags=0,spawns={{0,-9520.45,-1921.31,75.6},{0,-9536.69,-1904.69,73.63},{0,-9523.61,-1875.84,76.46},{0,-9480.52,-1865.39,84.81},{0,-9459.8,-1882.21,84.44},{0,-9459.46,-1892.84,82.61},{0,-9486.82,-1927.99,79.53},{0,-9469.04,-1995.28,97.17},{0,-9739.95,-2238.59,61.33},{0,-9769.58,-2274.49,59.99},{0,-9779.92,-2318.48,68.91},{0,-9776.57,-2272.11,59.34},{0,-9789.92,-2241.84,69.0},{0,-9790.79,-2210.7,58.61},{0,-9796.56,-2172.15,59.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14272,kind="npc",names={enUS="Snarlflare"},flags=0,spawns={{0,-9023.74,-2492.91,129.57},{0,-9060.64,-2606.6,126.41},{0,-9083.68,-2613.05,126.22},{0,-9054.55,-2648.11,129.63},{0,-9057.79,-2531.08,126.91},{0,-9057.89,-2497.79,126.42},{0,-9048.0,-2443.42,128.69},{0,-9004.7,-2524.84,134.93},{0,-9505.86,-2354.15,68.33},{0,-9520.13,-2364.48,60.93},{0,-9532.94,-2319.91,67.42},{0,-9570.29,-2313.42,66.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14273,kind="npc",names={enUS="Boulderheart"},flags=0,spawns={{0,-9542.72,-3499.75,128.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14275,kind="npc",names={enUS="Tamra Stormpike"},flags=0,spawns={{0,-1265.12,-1195.08,40.05},{0,-1329.94,-1277.46,49.99},{0,-1356.64,-1247.21,49.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14276,kind="npc",names={enUS="Scargil"},flags=0,spawns={{0,-1169.36,136.21,0.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14277,kind="npc",names={enUS="Lady Zephris"},flags=0,spawns={{0,-1473.69,-1099.37,-4.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14278,kind="npc",names={enUS="Ro'Bark"},flags=0,spawns={{0,-883.28,-1036.26,30.49}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14279,kind="npc",names={enUS="Creepthess"},flags=0,spawns={{0,-845.13,-168.46,34.05}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14280,kind="npc",names={enUS="Big Samras"},flags=0,spawns={{0,-451.79,-1686.39,85.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14281,kind="npc",names={enUS="Jimmy the Bleeder"},flags=0,spawns={{0,206.33,-857.0,154.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14282,kind="npc",names={enUS="Frostwolf Bloodhound"},flags=0,spawns={{30,-563.43,-287.68,51.66},{30,-472.37,-195.45,53.51},{30,-529.06,-221.18,57.81},{30,-747.01,-429.69,66.54},{30,-745.01,-431.69,66.54},{30,-859.71,-570.81,57.66},{30,-863.92,-573.42,57.67},{30,-730.98,-690.55,50.88},{30,-730.73,-689.15,50.8},{30,-1206.62,-253.15,72.6},{30,-1208.62,-251.15,72.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14283,kind="npc",names={enUS="Stormpike Owl"},flags=0,spawns={{30,356.0,-389.97,-0.44},{30,355.83,-394.0,-0.6},{30,882.27,-496.38,96.77},{30,878.65,-495.92,96.62},{30,932.85,-511.02,93.67},{30,935.81,-513.98,93.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14284,kind="npc",names={enUS="Stormpike Battleguard"},flags=0,spawns={{0,105.14,-180.78,128.09},{0,107.09,-183.62,127.82},{0,95.44,-185.41,127.45},{0,96.37,-188.23,127.14},{0,62.3,-228.43,129.74},{0,64.45,-231.36,129.69},{0,63.58,-238.59,129.55},{0,67.1,-238.45,129.56},{0,59.02,-249.2,129.26},{0,58.94,-253.76,129.28},{0,43.64,-249.37,129.66},{0,23.8,-285.15,133.01},{0,25.85,-285.86,133.09},{30,773.87,-498.32,99.21},{30,817.49,-490.79,100.38},{30,867.47,-509.06,96.59},{30,787.53,-489.54,99.7},{30,775.2,-485.48,98.92},{30,884.19,-499.01,96.79},{30,934.73,-519.52,93.78},{30,877.23,-505.65,96.62},{30,947.41,-509.98,95.11},{30,934.56,-512.39,93.66},{30,939.42,-502.78,94.59},{30,854.28,-494.24,96.8},{30,776.62,-487.77,99.4},{30,880.17,-495.7,96.62},{30,775.75,-496.89,99.34},{30,949.1,-506.91,95.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14285,kind="npc",names={enUS="Frostwolf Battleguard"},flags=0,spawns={{0,489.73,-1052.06,108.7},{0,491.43,-1049.46,108.68},{0,478.52,-1052.58,108.49},{0,477.59,-1049.47,108.57},{0,534.98,-1080.86,106.32},{0,531.74,-1081.91,105.96},{0,541.28,-1088.98,107.06},{0,538.75,-1091.26,106.8},{30,-861.47,-573.1,57.66},{30,-724.38,-700.21,52.19},{0,400.15,-1008.2,111.47},{30,-802.93,-679.85,51.14},{30,-826.89,-629.26,54.19},{30,-757.16,-675.39,52.07},{30,-878.15,-538.23,56.13},{30,-835.5,-604.8,54.49},{30,-780.09,-676.09,52.46},{30,-839.34,-620.15,54.04},{30,-732.61,-691.93,50.9},{30,-883.43,-547.64,57.52},{30,-750.27,-682.47,51.07},{30,-817.18,-630.12,54.36},{30,-733.18,-701.72,51.57},{30,-830.36,-607.47,54.36},{30,-828.78,-633.76,54.29},{30,-798.61,-682.1,51.34},{30,-784.32,-677.32,52.23},{30,-886.27,-544.84,56.45},{30,-835.6,-621.3,53.96},{30,-877.56,-541.96,57.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14301,kind="npc",names={enUS="Brinna Valanaar"},flags=16388,spawns={{1,2691.34,-3885.63,109.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14303,kind="npc",names={enUS="Petrified Guardian"},flags=0,spawns={{429,58.27,291.58,-7.44},{429,-25.97,198.63,-3.41},{429,134.72,202.95,-4.9},{429,131.32,351.77,-4.9},{429,-39.89,286.15,-7.39},{429,49.98,283.45,-8.01},{429,-30.57,251.47,-8.74},{429,74.13,265.43,-8.14},{429,118.75,196.82,-3.39},{429,-101.77,352.2,-4.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14304,kind="npc",names={enUS="Kor'kron Elite"},flags=268435456,spawns={{1,1927.48,-4175.91,41.01},{1,1922.2,-4204.38,42.07},{1,1930.46,-4238.26,42.02},{1,1912.25,-4124.2,43.12},{1,1901.27,-4171.16,43.56},{1,1890.67,-4150.02,43.55},{1,1902.47,-4150.23,40.93},{1,1951.96,-4145.71,43.55},{1,1898.32,-4149.7,40.99},{1,1898.44,-4128.35,43.53},{1,1924.79,-4238.43,42.01},{1,1926.54,-4135.56,40.49},{1,1928.19,-4203.37,42.05},{1,1944.79,-4168.14,43.54},{1,1933.29,-4168.81,41.01},{1,1910.21,-4169.48,41.01},{1,1928.03,-4246.21,41.69},{1,1919.36,-4176.05,41.01},{1,1944.36,-4146.45,40.96},{1,1931.52,-4244.78,41.92},{1,1914.56,-4136.63,40.49},{1,1927.04,-4123.48,43.05},{1,1924.73,-4245.42,41.94},{1,1941.71,-4124.25,43.54}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14305,kind="npc",names={enUS="인간 고아"},flags=0,spawns={{0,-8621.33,744.71,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14308,kind="npc",names={enUS="Ferra"},flags=0,spawns={{429,-87.34,543.8,28.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14321,kind="npc",names={enUS="Guard Fengus"},flags=3,spawns={{429,356.8,258.31,11.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14322,kind="npc",names={enUS="Stomper Kreeg"},flags=7,spawns={{429,491.23,97.39,-2.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14323,kind="npc",names={enUS="Guard Slip'kik"},flags=3,spawns={{429,550.38,533.73,-25.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14324,kind="npc",names={enUS="Cho'Rush the Observer"},flags=1,spawns={{429,834.0,489.54,37.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14325,kind="npc",names={enUS="Captain Kromcrush"},flags=3,spawns={{429,627.59,481.72,29.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14326,kind="npc",names={enUS="Guard Mol'dar"},flags=3,spawns={{429,410.71,-3.15,-24.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14327,kind="npc",names={enUS="Lethtendris"},flags=0,spawns={{429,-5.45,-441.13,16.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14338,kind="npc",names={enUS="Knot Thimblejack"},flags=3,spawns={{429,581.08,523.29,-25.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14339,kind="npc",names={enUS="Death Howl"},flags=0,spawns={{1,4177.33,-1235.07,343.26},{1,4265.29,-1110.32,319.88},{1,4136.53,-1137.87,295.42},{1,3711.72,-1587.78,202.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14340,kind="npc",names={enUS="Alshirr Banebreath"},flags=0,spawns={{1,4026.52,-555.29,342.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14342,kind="npc",names={enUS="Ragepaw"},flags=0,spawns={{1,3565.93,-1103.12,221.94}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14343,kind="npc",names={enUS="Olm the Wise"},flags=0,spawns={{1,5875.65,-1242.83,403.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14344,kind="npc",names={enUS="Mongress"},flags=0,spawns={{1,3914.9,-1063.66,243.25},{1,4196.29,-849.41,258.51},{1,4250.07,-781.84,262.33},{1,4053.78,-645.12,298.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14345,kind="npc",names={enUS="The Ongar"},flags=0,spawns={{1,5220.47,-785.92,346.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14347,kind="npc",names={enUS="Highlord Demitrian"},flags=3,spawns={{1,-6157.52,1781.23,29.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14348,kind="npc",names={enUS="Earthcaller Franzahl"},flags=3,spawns={{1,4254.92,-4148.9,945.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14349,kind="npc",names={enUS="Pimgib"},flags=0,spawns={{429,-6.91,-440.74,16.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14354,kind="npc",names={enUS="Pusillin"},flags=3,spawns={{429,86.19,-197.89,-4.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14355,kind="npc",names={enUS="Azj'Tordin"},flags=2,spawns={{1,-4097.25,96.46,76.36}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14356,kind="npc",names={enUS="Sawfin Frenzy"},flags=0,spawns={{0,-10317.6,-3808.75,3.48},{0,-10342.3,-3892.1,2.07},{0,-10429.8,-3924.42,0.04},{0,-10405.6,-3738.31,-1.46},{0,-10473.4,-3926.25,-1.04},{0,-10510.4,-3745.33,-1.75},{0,-10540.7,-3805.86,-0.65},{0,-10553.7,-3896.77,-5.26}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14357,kind="npc",names={enUS="Lake Thresher"},flags=0,spawns={{0,-9375.91,-2614.56,33.55},{0,-9436.17,-2441.64,49.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14358,kind="npc",names={enUS="Shen'dralar Ancient"},flags=3,spawns={{429,11.75,396.11,25.14}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14361,kind="npc",names={enUS="Shen'dralar Wisp"},flags=0,spawns={{429,-29.25,656.44,-24.65},{429,-86.2,228.48,-4.99},{429,-128.59,904.71,-24.58},{429,-42.39,940.36,-24.58},{429,96.5,530.6,28.6},{429,89.47,828.22,-24.58},{429,-3.18,466.54,-23.31},{429,39.02,547.06,-23.29},{429,15.37,351.89,-4.99},{429,133.91,604.36,-27.88},{429,77.3,214.75,-4.99},{429,-84.53,498.93,28.61},{429,37.05,471.38,-23.29},{429,51.23,912.18,-24.58},{429,-167.3,823.02,-24.58},{429,-19.34,276.22,-8.44},{429,-73.35,541.22,-4.4},{429,-78.46,337.55,-4.99},{429,-103.55,670.81,-24.59},{429,85.48,267.6,-7.98},{429,101.78,543.99,-4.4},{429,153.77,597.65,-48.47},{429,118.22,298.48,-4.71},{429,152.12,466.99,-48.47},{429,-26.49,562.96,-23.31},{429,14.43,393.47,25.06},{429,47.01,686.31,-24.58},{429,0.72,467.73,-23.31},{429,-28.69,659.39,-24.56},{429,132.56,604.33,-27.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14363,kind="npc",names={enUS="Thief Catcher Shadowdelve"},flags=0,spawns={{0,-4896.55,-996.01,504.02}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14365,kind="npc",names={enUS="Thief Catcher Farmountain"},flags=0,spawns={{0,-4956.43,-906.79,503.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14367,kind="npc",names={enUS="Thief Catcher Thunderbrew"},flags=0,spawns={{0,-4824.52,-1168.42,502.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14368,kind="npc",names={enUS="Lorekeeper Lydros"},flags=3,spawns={{429,164.34,522.5,-48.38}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14369,kind="npc",names={enUS="Shen'dralar Zealot"},flags=1,spawns={{429,121.17,468.78,-48.38},{429,121.75,476.58,-48.38},{429,186.68,457.62,-48.36},{429,186.98,479.25,-48.37},{429,114.44,602.18,-27.81},{429,153.43,626.97,-27.89},{429,192.93,587.38,-48.38},{429,163.73,555.39,-48.38},{429,130.96,524.28,-48.05},{429,128.3,516.19,-48.47},{429,188.17,537.3,-48.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14371,kind="npc",names={enUS="Shen'dralar Provisioner"},flags=16388,spawns={{429,120.66,459.21,-48.38}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14373,kind="npc",names={enUS="Sage Korolusk"},flags=2,spawns={{1,-4405.43,273.86,25.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14374,kind="npc",names={enUS="Scholar Runethorn"},flags=3,spawns={{1,-4401.73,3275.46,12.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14375,kind="npc",names={enUS="Scout Stronghand"},flags=268435456,spawns={{1,1605.42,-4385.34,10.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14376,kind="npc",names={enUS="Scout Manslayer"},flags=268435456,spawns={{1,1690.04,-4382.51,24.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14377,kind="npc",names={enUS="Scout Tharr"},flags=268435456,spawns={{1,1994.89,-4696.83,24.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14378,kind="npc",names={enUS="Huntress Skymane"},flags=2,spawns={{1,9937.49,2509.93,1317.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14379,kind="npc",names={enUS="Huntress Ravenoak"},flags=2,spawns={{1,10130.4,2577.26,1324.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14380,kind="npc",names={enUS="Huntress Leafrunner"},flags=2,spawns={{1,9629.79,2347.47,1327.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14381,kind="npc",names={enUS="Lorekeeper Javon"},flags=3,spawns={{429,193.61,514.85,-48.38}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14382,kind="npc",names={enUS="Lorekeeper Mykos"},flags=3,spawns={{429,193.17,473.24,-48.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14383,kind="npc",names={enUS="Lorekeeper Kildrath"},flags=3,spawns={{429,135.15,441.45,-48.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14386,kind="npc",names={enUS="Wandering Eye of Kilrogg"},flags=0,spawns={{429,560.92,545.41,-25.32},{429,446.83,542.64,-21.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14387,kind="npc",names={enUS="Lothos Riftwaker"},flags=3,spawns={{0,-7508.63,-1039.84,181.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14388,kind="npc",names={enUS="Rogue Black Drake"},flags=0,spawns={{0,-8217.0,-499.0,197.38},{0,-8205.0,-483.0,193.82},{0,-8184.0,-577.0,200.64},{0,-8150.0,-540.0,200.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14390,kind="npc",names={enUS="Expeditionary Mountaineer"},flags=0,spawns={{0,-8176.53,-584.7,200.54},{0,-8181.8,-585.5,200.42},{0,-8208.0,-485.0,193.74},{0,-8180.9,-586.2,200.42},{0,-8177.19,-593.88,200.34},{0,-8176.6,-593.33,200.08},{0,-8181.13,-591.84,200.28},{0,-8177.8,-585.95,200.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14392,kind="npc",names={enUS="Overlord Runthak"},flags=3,spawns={{1,1568.0,-4405.87,8.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14393,kind="npc",names={enUS="Expeditionary Priest"},flags=0,spawns={{0,-8176.67,-592.84,200.17},{0,-8176.06,-591.69,200.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14394,kind="npc",names={enUS="Major Mattingly"},flags=3,spawns={{0,-8986.33,555.95,93.94}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14395,kind="npc",names={enUS="Griniblix the Spectator"},flags=1,spawns={{1,-3762.79,1135.47,159.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14398,kind="npc",names={enUS="Eldreth Darter"},flags=0,spawns={{429,48.12,508.6,-3.48},{429,90.77,485.78,28.68},{429,4.41,505.23,-3.48},{429,-61.64,526.78,28.69},{429,56.27,526.81,28.69},{429,-54.92,568.48,28.7},{429,5.65,567.15,28.69},{429,-27.43,507.02,-3.48},{429,-17.1,531.37,28.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14399,kind="npc",names={enUS="Arcane Torrent"},flags=0,spawns={{429,-160.72,778.77,-24.58},{429,-104.2,700.94,-24.58},{429,-1.45,678.05,-24.6},{429,11.94,685.69,-24.58},{429,26.83,918.52,-24.58},{429,-49.83,680.98,-24.62},{429,80.45,837.85,-24.58},{429,-163.84,815.51,-24.58},{429,-85.25,655.66,-24.61},{429,-8.04,952.61,-24.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14400,kind="npc",names={enUS="Arcane Feedback"},flags=0,spawns={{429,10.23,689.31,-24.59},{429,15.55,687.39,-24.58},{429,-157.66,781.35,-24.58},{429,-163.29,781.83,-24.58},{429,-163.78,776.19,-24.58},{429,-158.14,775.71,-24.58},{429,-100.21,700.71,-24.59},{429,-102.02,696.81,-24.58},{429,-103.34,656.72,-24.59},{429,-104.44,696.95,-24.58},{429,2.28,679.49,-24.59},{429,-2.89,681.78,-24.6},{429,-5.19,676.61,-24.6},{429,-0.02,674.32,-24.6},{429,8.06,684.71,-24.59},{429,12.91,681.81,-24.58},{429,43.29,926.42,-24.58},{429,37.95,928.29,-24.58},{429,36.07,922.96,-24.58},{429,41.41,921.08,-24.58},{429,-51.22,684.73,-24.61},{429,-53.58,679.58,-24.62},{429,-48.43,677.23,-24.62},{429,-46.08,682.37,-24.62},{429,80.14,833.86,-24.58},{429,84.44,837.54,-24.58},{429,80.75,841.83,-24.58},{429,76.46,838.15,-24.58},{429,-169.05,802.1,-24.58},{429,-163.65,806.44,-24.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14401,kind="npc",names={enUS="Master Elemental Shaper Krixix"},flags=0,spawns={{469,-7398.46,-967.08,465.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14402,kind="npc",names={enUS="Seeker Cromwell"},flags=2,spawns={{0,1583.51,256.23,-62.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14403,kind="npc",names={enUS="Seeker Nahr"},flags=2,spawns={{0,1609.25,223.46,-61.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14404,kind="npc",names={enUS="Seeker Thompson"},flags=2,spawns={{0,1617.09,218.69,-59.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14423,kind="npc",names={enUS="Officer Jaxon"},flags=0,spawns={{0,-8835.85,543.12,97.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14424,kind="npc",names={enUS="Mirelow"},flags=0,spawns={{0,-2752.94,-1311.99,6.14}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14425,kind="npc",names={enUS="Gnawbone"},flags=0,spawns={{0,-2995.24,-1633.39,10.49},{0,-2965.36,-1693.82,9.43},{0,-3055.29,-1688.94,9.51},{0,-2902.11,-1844.95,9.44},{0,-2967.25,-1954.45,9.3},{0,-3088.73,-1998.04,9.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14426,kind="npc",names={enUS="Harb Foulmountain"},flags=0,spawns={{1,-4929.02,-2066.48,85.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14427,kind="npc",names={enUS="Gibblesnik"},flags=0,spawns={{1,-5446.46,-2880.48,-51.38}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14428,kind="npc",names={enUS="Uruson"},flags=0,spawns={{1,9907.52,393.76,1309.78}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14429,kind="npc",names={enUS="Grimmaw"},flags=0,spawns={{1,9116.54,1771.32,1321.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14430,kind="npc",names={enUS="Duskstalker"},flags=0,spawns={{1,9229.98,853.82,1324.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14431,kind="npc",names={enUS="Fury Shelda"},flags=0,spawns={{1,10652.1,2065.57,1330.61}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14432,kind="npc",names={enUS="Threggil"},flags=0,spawns={{1,10115.9,1167.52,1314.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14433,kind="npc",names={enUS="Sludginn"},flags=0,spawns={{0,-4008.25,-911.65,9.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14436,kind="npc",names={enUS="Mor'zul Bloodbringer"},flags=3,spawns={{0,-7648.9,-638.27,200.98}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14437,kind="npc",names={enUS="Gorzeeki Wildeyes"},flags=7,spawns={{0,-7648.77,-630.92,200.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14438,kind="npc",names={enUS="Officer Pomeroy"},flags=0,spawns={{0,-8826.6,681.38,97.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14439,kind="npc",names={enUS="Officer Brady"},flags=0,spawns={{0,-8601.64,523.65,106.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14440,kind="npc",names={enUS="Hunter Sagewind"},flags=2,spawns={{1,-1342.24,-127.79,159.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14441,kind="npc",names={enUS="Hunter Ragetotem"},flags=2,spawns={{1,-1259.3,25.19,128.19}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14442,kind="npc",names={enUS="Hunter Thunderhorn"},flags=2,spawns={{1,-1201.45,12.35,164.71}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14444,kind="npc",names={enUS="오크 고아"},flags=0,spawns={{1,2034.41,-4673.65,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14445,kind="npc",names={enUS="Lord Captain Wyrmak"},flags=0,spawns={{0,-10215.8,-3803.49,22.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14446,kind="npc",names={enUS="Fingat"},flags=0,spawns={{0,-10901.0,-3632.0,16.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14447,kind="npc",names={enUS="Gilmorian"},flags=0,spawns={{0,-10605.4,-4421.91,-11.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14448,kind="npc",names={enUS="Molt Thorn"},flags=0,spawns={{0,-10372.76,-2757.68,17.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14449,kind="npc",names={enUS="Blackwing Orb Trigger"},flags=0,spawns={{469,-7615.51,-1025.59,413.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14450,kind="npc",names={enUS="Orphan Matron Nightingale"},flags=7,spawns={{0,-8621.17,744.42,96.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14451,kind="npc",names={enUS="Orphan Matron Battlewail"},flags=3,spawns={{1,2038.21,-4672.55,25.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14454,kind="npc",names={enUS="The Windreaver"},flags=0,spawns={{1,-6582.0,1539.14,2.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14455,kind="npc",names={enUS="Whirling Invader"},flags=0,spawns={{1,-6582.85,1548.14,1.25},{1,-6590.99,1545.18,3.15},{1,-6573.75,1544.65,-0.82}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14456,kind="npc",names={enUS="Blackwing Guardsman"},flags=0,spawns={{469,-7619.66,-1025.14,413.46},{469,-7615.01,-1021.55,413.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14457,kind="npc",names={enUS="Princess Tempestria"},flags=0,spawns={{1,6565.35,-4219.0,658.38}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14458,kind="npc",names={enUS="Watery Invader"},flags=0,spawns={{1,6575.15,-4225.95,658.28},{1,6576.6,-4216.88,658.28},{1,6568.44,-4230.69,658.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14459,kind="npc",names={enUS="Nefarian's Troops"},flags=0,spawns={{469,-7644.53,-1081.53,408.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14460,kind="npc",names={enUS="Blazing Invader"},flags=0,spawns={{1,-7148.78,-1094.69,-269.9},{1,-7145.11,-1080.19,-272.1},{1,-7143.03,-1088.31,-271.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14461,kind="npc",names={enUS="Baron Charr"},flags=0,spawns={{1,-7153.77,-1085.68,-272.05}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14462,kind="npc",names={enUS="Thundering Invader"},flags=0,spawns={{1,4475.64,-7327.93,91.16},{1,4490.45,-7329.19,90.85},{1,4471.36,-7316.08,93.76}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14463,kind="npc",names={enUS="Daio the Decrepit"},flags=3,spawns={{0,-11686.4,-2384.94,-0.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14464,kind="npc",names={enUS="Avalanchion"},flags=0,spawns={{1,4487.17,-7316.0,93.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14467,kind="npc",names={enUS="Kroshius"},flags=0,spawns={{1,5780.34,-964.84,412.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14469,kind="npc",names={enUS="Niby the Almighty"},flags=3,spawns={{1,5405.92,-747.87,348.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14470,kind="npc",names={enUS="Impsy"},flags=2,spawns={{1,5408.42,-747.09,348.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14471,kind="npc",names={enUS="Setis"},flags=0,spawns={{1,-7808.68,1782.68,-0.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14472,kind="npc",names={enUS="Gretheer"},flags=0,spawns={{1,-7245.73,1167.55,2.49}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14473,kind="npc",names={enUS="Lapress"},flags=0,spawns={{1,-8137.9,343.77,-38.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14474,kind="npc",names={enUS="Zora"},flags=0,spawns={{1,-7378.24,1714.31,-91.73}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14475,kind="npc",names={enUS="Rex Ashil"},flags=0,spawns={{1,-6630.28,945.43,-52.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14476,kind="npc",names={enUS="Krellack"},flags=0,spawns={{1,-6346.24,335.6,8.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14477,kind="npc",names={enUS="Grubthor"},flags=0,spawns={{1,-7810.5,997.57,1.19},{1,-7851.31,1592.94,3.6},{1,-7638.15,1314.82,2.19},{1,-7523.97,844.59,-2.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14478,kind="npc",names={enUS="Huricanian"},flags=0,spawns={{1,-6518.56,1786.4,8.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14479,kind="npc",names={enUS="Twilight Lord Everun"},flags=0,spawns={{1,-7952.43,1900.06,1.45},{1,-7023.3,1197.83,6.64},{1,-6745.74,1592.29,6.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14480,kind="npc",names={enUS="Alowicious Czervik"},flags=6,spawns={{1,1660.02,-4391.0,23.27}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14481,kind="npc",names={enUS="Emmithue Smails"},flags=6,spawns={{0,-8864.46,658.47,96.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14487,kind="npc",names={enUS="Gluggle"},flags=0,spawns={{0,-12134.8,-4.0,-4.47},{0,-12100.4,5.62,-0.88},{0,-12178.1,-45.82,-10.86},{0,-12131.4,56.1,-4.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14488,kind="npc",names={enUS="Roloch"},flags=0,spawns={{0,-12496.9,-163.63,12.27}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14490,kind="npc",names={enUS="Rippa"},flags=0,spawns={{0,-13599.32,482.8,-33.83}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14491,kind="npc",names={enUS="Kurmokk"},flags=0,spawns={{0,-13769.5,-210.81,28.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14492,kind="npc",names={enUS="Verifonix"},flags=0,spawns={{0,-13596.0,-109.7,41.31},{0,-13458.5,-138.62,50.87},{0,-13485.4,-70.4,47.14},{0,-13551.9,-5.44,53.29},{0,-13548.4,-102.88,44.43},{0,-13671.8,-64.95,37.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14494,kind="npc",names={enUS="Eris Havenfire"},flags=2,spawns={{0,3325.02,-2996.8,164.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14496,kind="npc",names={enUS="Stormwind Orphan"},flags=0,spawns={{0,-8605.17,727.19,101.95},{0,-8605.17,727.19,101.95},{0,-8617.75,730.55,101.9},{0,-8605.17,727.19,101.95},{0,-8603.15,743.22,101.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14497,kind="npc",names={enUS="Shellene"},flags=0,spawns={{0,-8603.79,732.19,101.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14498,kind="npc",names={enUS="Tosamina"},flags=0,spawns={{1,2052.27,-4670.94,25.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14499,kind="npc",names={enUS="Horde Orphan"},flags=0,spawns={{1,2061.85,-4668.64,25.47},{1,2055.98,-4678.32,25.47},{1,2064.18,-4673.23,25.47},{1,2028.51,-4660.47,26.51},{1,2063.66,-4677.23,25.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14507,kind="npc",names={enUS="High Priest Venoxis"},flags=0,spawns={{309,-12029.8,-1707.93,39.41}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14508,kind="npc",names={enUS="Short John Mithril"},flags=3,spawns={{0,-13184.5,332.67,40.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14509,kind="npc",names={enUS="High Priest Thekal"},flags=0,spawns={{309,-11700.8,-1998.94,62.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14510,kind="npc",names={enUS="High Priestess Mar'li"},flags=0,spawns={{309,-12326.5,-1577.11,133.59}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14517,kind="npc",names={enUS="High Priestess Jeklik"},flags=0,spawns={{309,-12291.9,-1380.08,144.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14522,kind="npc",names={enUS="Ur'dan"},flags=5,spawns={{1,5429.15,-438.72,273.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14523,kind="npc",names={enUS="Ulathek"},flags=1,spawns={{1,5277.13,-701.94,268.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14527,kind="npc",names={enUS="Simone the Inconspicuous"},flags=1,spawns={{1,-7624.85,-907.31,-268.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14529,kind="npc",names={enUS="Franklin the Friendly"},flags=1,spawns={{0,-8379.35,-987.76,187.36}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14531,kind="npc",names={enUS="Artorius the Amiable"},flags=1,spawns={{1,7815.9,-4443.4,667.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14532,kind="npc",names={enUS="Razzashi Venombrood"},flags=0,spawns={{309,-12351.8,-1607.17,131.1},{309,-12362.8,-1627.17,130.38},{309,-12386.2,-1619.2,131.94},{309,-12375.9,-1612.16,131.44},{309,-12365.4,-1598.13,133.41},{309,-12346.8,-1603.02,132.26},{309,-12353.5,-1618.14,130.35},{309,-12338.3,-1593.98,133.09},{309,-12355.0,-1668.35,130.94},{309,-12364.9,-1673.16,132.59},{309,-12349.7,-1685.52,133.62},{309,-12372.1,-1657.33,130.94},{309,-12370.2,-1682.7,132.99},{309,-12365.6,-1661.6,130.41},{309,-12379.9,-1661.66,131.82},{309,-12374.9,-1672.46,131.37},{309,-12283.2,-1627.24,133.5},{309,-12295.6,-1628.43,131.6},{309,-12276.0,-1638.02,136.95},{309,-12291.1,-1618.24,130.8},{309,-12293.9,-1642.43,131.59},{309,-12273.6,-1649.47,134.94},{309,-12286.9,-1636.15,134.77},{309,-12266.3,-1646.13,133.79},{309,-12288.7,-1687.73,133.1},{309,-12301.3,-1692.08,131.71},{309,-12311.0,-1684.61,131.06},{309,-12283.0,-1689.28,131.9},{309,-12298.9,-1679.9,131.81},{309,-11654.5,-1459.82,60.71}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14536,kind="npc",names={enUS="Nelson the Nice"},flags=1,spawns={{1,-7950.18,1662.99,-2.98}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14539,kind="npc",names={enUS="Swift Timber Wolf"},flags=0,spawns={{1,2153.65,-4657.14,50.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14540,kind="npc",names={enUS="Swift Brown Wolf"},flags=0,spawns={{1,2161.67,-4648.08,50.36}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14541,kind="npc",names={enUS="Swift Gray Wolf"},flags=0,spawns={{1,2155.59,-4649.18,50.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14542,kind="npc",names={enUS="Great White Kodo"},flags=0,spawns={{1,-2285.41,-389.98,-9.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14543,kind="npc",names={enUS="Swift Olive Raptor"},flags=0,spawns={{1,-846.07,-4884.12,21.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14544,kind="npc",names={enUS="Swift Orange Raptor"},flags=0,spawns={{1,-855.63,-4884.4,22.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14545,kind="npc",names={enUS="Swift Blue Raptor"},flags=0,spawns={{1,-849.76,-4885.79,21.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14546,kind="npc",names={enUS="Swift Brown Ram"},flags=0,spawns={{0,-5529.51,-1376.1,398.79},{0,-5508.02,-1334.34,397.52}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14547,kind="npc",names={enUS="Swift White Ram"},flags=0,spawns={{0,-5536.3,-1335.36,398.77},{0,-5497.96,-1332.61,397.52}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14548,kind="npc",names={enUS="Swift Gray Ram"},flags=0,spawns={{0,-5532.46,-1358.99,398.69},{0,-5502.12,-1335.15,397.52}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14549,kind="npc",names={enUS="Great Brown Kodo"},flags=0,spawns={{1,-2283.82,-394.64,-9.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14550,kind="npc",names={enUS="Great Gray Kodo"},flags=0,spawns={{1,-2279.3,-388.41,-9.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14551,kind="npc",names={enUS="Swift Yellow Mechanostrider"},flags=0,spawns={{0,-5447.83,-617.37,394.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14552,kind="npc",names={enUS="Swift White Mechanostrider"},flags=0,spawns={{0,-5452.32,-613.09,394.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14553,kind="npc",names={enUS="Swift Green Mechanostrider"},flags=0,spawns={{0,-5449.28,-614.76,394.54}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14555,kind="npc",names={enUS="Swift Mistsaber"},flags=0,spawns={{1,10126.5,2527.85,1323.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14556,kind="npc",names={enUS="Swift Frostsaber"},flags=0,spawns={{1,10130.5,2532.53,1323.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14558,kind="npc",names={enUS="Purple Skeletal Warhorse"},flags=0,spawns={{0,2248.66,331.21,35.27}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14559,kind="npc",names={enUS="Swift Palamino"},flags=0,spawns={{0,-777.08,-608.09,15.23},{1,-3841.59,-4395.53,10.53},{0,-9456.64,-1386.59,47.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14560,kind="npc",names={enUS="Swift White Steed"},flags=0,spawns={{1,-3848.56,-4402.28,10.36},{0,-774.89,-606.13,15.23},{0,-9438.08,-1411.84,47.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14561,kind="npc",names={enUS="Swift Brown Steed"},flags=0,spawns={{0,-781.82,-611.99,15.23},{1,-3848.26,-4393.54,10.22},{0,-9444.04,-1412.16,46.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14564,kind="npc",names={enUS="테러데일 영혼"},flags=0,spawns={{0,2780.07,-2961.79,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14566,kind="npc",names={enUS="고대 준마의 영혼"},flags=0,spawns={{0,-8575.0,878.49,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14567,kind="npc",names={enUS="Derotain Mudsipper"},flags=2,spawns={{1,-7193.62,-3763.79,8.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14581,kind="npc",names={enUS="Sergeant Thunderhorn"},flags=16388,spawns={{450,244.06,103.59,25.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14601,kind="npc",names={enUS="Ebonroc"},flags=0,spawns={{469,-7358.19,-994.32,477.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14602,kind="npc",names={enUS="Swift Stormsaber"},flags=0,spawns={{1,10132.9,2527.95,1325.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14621,kind="npc",names={enUS="Overseer Maltorius"},flags=0,spawns={{0,-6633.88,-1232.66,209.84}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14622,kind="npc",names={enUS="Thorium Brotherhood Lookout"},flags=0,spawns={{0,-6494.71,-1158.48,309.37},{0,-6478.29,-1100.69,301.88},{0,-6531.8,-1179.24,312.19},{0,-6510.46,-1181.04,326.93},{0,-6488.87,-1165.86,324.62},{0,-6500.42,-1131.48,307.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14624,kind="npc",names={enUS="Master Smith Burninate"},flags=4103,spawns={{0,-6524.04,-1188.72,309.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14625,kind="npc",names={enUS="Overseer Oilfist"},flags=3,spawns={{0,-6501.13,-1173.36,325.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14626,kind="npc",names={enUS="Taskmaster Scrange"},flags=3,spawns={{0,-6509.16,-1192.52,309.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14627,kind="npc",names={enUS="Hansel Heavyhands"},flags=3,spawns={{0,-6513.62,-1183.78,309.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14628,kind="npc",names={enUS="Evonice Sootsmoker"},flags=3,spawns={{0,-6512.7,-1178.62,309.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14634,kind="npc",names={enUS="Lookout Captain Lolo Longstriker"},flags=3,spawns={{0,-6495.11,-1164.92,309.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14637,kind="npc",names={enUS="Zorbin Fandazzle"},flags=7,spawns={{1,-4378.62,2327.33,1.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14646,kind="npc",names={enUS="Stratholme Trigger"},flags=0,spawns={{329,3492.34,-3065.4,135.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14661,kind="npc",names={enUS="Stinglasher"},flags=0,spawns={{1,-5219.04,90.91,31.61}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14682,kind="npc",names={enUS="Sever"},flags=0,spawns={{33,-225.13,2302.95,94.76}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14684,kind="npc",names={enUS="Balzaphon"},flags=0,spawns={{329,3733.27,-3480.11,131.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14686,kind="npc",names={enUS="Lady Falther'ess"},flags=0,spawns={{129,2583.18,695.86,56.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14690,kind="npc",names={enUS="Revanchion"},flags=0,spawns={{429,-106.3,551.28,-4.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14695,kind="npc",names={enUS="Lord Blackwood"},flags=0,spawns={{289,200.2,150.84,109.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14697,kind="npc",names={enUS="Lumbering Horror"},flags=0,spawns={{0,-11317.07,-3090.87,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14715,kind="npc",names={enUS="Silverwing Elite"},flags=0,spawns={{1,1520.83,-1885.94,105.79},{1,1521.45,-1877.83,105.42},{1,1453.86,-1838.88,126.22},{1,1455.01,-1844.57,126.18},{1,1451.65,-1854.38,127.48},{1,1450.79,-1862.09,127.36},{1,1489.2,-1902.67,111.43},{1,1486.67,-1899.03,111.32},{1,1481.9,-1893.67,111.32},{1,1486.4,-1889.08,111.2},{1,1438.05,-1851.7,133.55},{1,1431.37,-1859.44,133.73},{1,1432.08,-1853.66,133.74},{1,1436.81,-1862.29,133.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14717,kind="npc",names={enUS="Horde Elite"},flags=2,spawns={{1,1030.89,-2095.89,123.95},{1,1037.71,-2096.09,123.69},{1,1031.97,-2092.39,124.97},{1,1036.42,-2092.04,125.02},{1,1062.25,-2155.6,123.92},{1,1060.0,-2161.91,123.7},{1,1055.4,-2165.34,122.72},{1,1048.67,-2164.75,123.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14718,kind="npc",names={enUS="Horde Laborer"},flags=0,spawns={{1,1028.75,-2105.72,122.95},{1,1029.83,-2154.75,123.05},{1,1010.26,-2134.29,126.94},{1,1019.54,-2142.49,124.77},{1,1015.51,-2138.34,125.82},{1,1048.24,-2107.62,123.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14720,kind="npc",names={enUS="High Overlord Saurfang"},flags=3,spawns={{1,1565.79,-4395.27,6.99},{1,-6983.31,961.76,9.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14721,kind="npc",names={enUS="Field Marshal Afrasiabi"},flags=3,spawns={{0,-8927.76,481.33,93.94}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14722,kind="npc",names={enUS="Clavicus Knavingham"},flags=3,spawns={{0,-8942.03,785.8,97.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14723,kind="npc",names={enUS="Mistina Steelshield"},flags=3,spawns={{0,-4735.8,-1055.28,502.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14724,kind="npc",names={enUS="Bubulo Acerbus"},flags=3,spawns={{0,-4823.65,-1299.36,501.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14725,kind="npc",names={enUS="Raedon Duskstriker"},flags=3,spawns={{1,10076.0,2260.77,1333.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14726,kind="npc",names={enUS="Rashona Straglash"},flags=3,spawns={{1,1794.68,-4572.71,22.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14727,kind="npc",names={enUS="Vehena"},flags=3,spawns={{1,1451.64,-4209.35,43.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14728,kind="npc",names={enUS="Rumstag Proudstrider"},flags=3,spawns={{1,-1147.28,67.34,145.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14729,kind="npc",names={enUS="Ralston Farnsley"},flags=3,spawns={{0,1690.83,185.74,-62.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14730,kind="npc",names={enUS="Revantusk Watcher"},flags=0,spawns={{0,-608.34,-4569.29,12.41},{0,-569.23,-4659.8,10.14},{0,-576.37,-4523.69,21.43},{0,-513.55,-4547.22,11.37},{0,-517.66,-4524.58,11.27},{0,-573.96,-4589.06,10.53},{0,-582.85,-4587.14,10.79},{0,-634.0,-4693.88,5.13},{0,-643.4,-4533.99,10.94},{0,-640.62,-4556.09,10.18},{0,-623.71,-4524.41,11.7},{0,-560.48,-4602.34,9.73},{0,-644.36,-4719.91,5.33},{0,-617.63,-4643.52,5.48},{0,-603.77,-4650.45,6.02},{0,-634.61,-4596.83,12.4},{0,-562.67,-4512.68,28.65},{0,-593.14,-4605.77,10.03},{0,-597.57,-4609.94,9.75},{0,-520.15,-4611.92,14.79},{0,-572.79,-4646.52,28.41},{0,-634.0,-4693.88,5.13},{0,-560.48,-4602.34,9.73}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14731,kind="npc",names={enUS="Lard"},flags=135,spawns={{0,-622.03,-4583.4,11.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14733,kind="npc",names={enUS="Sentinel Farsong"},flags=3,spawns={{1,1447.91,-1866.85,127.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14734,kind="npc",names={enUS="Revantusk Drummer"},flags=0,spawns={{0,-562.74,-4633.94,30.48},{0,-561.0,-4632.43,30.43},{0,-559.67,-4633.37,30.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14736,kind="npc",names={enUS="Primal Torntusk"},flags=3,spawns={{0,-616.89,-4585.67,27.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14737,kind="npc",names={enUS="Smith Slagtree"},flags=16391,spawns={{0,-589.95,-4548.46,9.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14738,kind="npc",names={enUS="Otho Moji'ko"},flags=7,spawns={{0,-563.16,-4631.15,13.31}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14739,kind="npc",names={enUS="Mystic Yayo'jin"},flags=7,spawns={{0,-541.71,-4608.89,13.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14740,kind="npc",names={enUS="Katoom the Angler"},flags=23,spawns={{0,-626.07,-4667.71,6.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14741,kind="npc",names={enUS="Huntsman Markhor"},flags=8195,spawns={{0,-574.57,-4622.76,9.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14742,kind="npc",names={enUS="Zap Farflinger"},flags=1,spawns={{1,6753.64,-4660.54,724.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14743,kind="npc",names={enUS="Jhordy Lapforge"},flags=1,spawns={{1,-7112.04,-3827.17,9.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14748,kind="npc",names={enUS="썩은가지부족 약탈자"},flags=0,spawns={{0,409.2,-4832.1,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14750,kind="npc",names={enUS="Gurubashi Bat Rider"},flags=0,spawns={{309,-12216.8,-1478.67,130.85},{309,-12211.3,-1480.76,131.35},{309,-12055.0,-1443.46,130.01},{309,-12055.9,-1440.37,130.26},{309,-12152.5,-1484.64,130.72},{309,-12152.1,-1486.58,130.85},{309,-12170.5,-1467.25,130.72},{309,-11980.3,-1478.21,80.28},{309,-12239.4,-1414.4,130.69},{309,-12209.1,-1423.89,130.68},{309,-12301.9,-1467.19,131.1},{309,-12288.9,-1472.46,130.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14753,kind="npc",names={enUS="Illiyana Moonblaze"},flags=7,spawns={{1,1449.63,-1845.65,126.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14754,kind="npc",names={enUS="Kelm Hargunth"},flags=7,spawns={{1,1046.54,-2104.31,123.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14757,kind="npc",names={enUS="Elder Torntusk"},flags=3,spawns={{0,-531.29,-3873.08,232.59}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14758,kind="npc",names={enUS="Zul'Gurub Trigger"},flags=0,spawns={{309,-12296.0,-1374.69,145.13},{309,-12364.2,-1633.44,131.01},{309,-12171.3,-1985.58,134.76},{309,-11568.9,-1630.06,41.38},{309,-11789.5,-1620.9,73.89},{309,-11505.8,-1553.69,52.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14762,kind="npc",names={enUS="Dun Baldar North Marshal"},flags=0,spawns={{30,723.06,-14.15,50.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14763,kind="npc",names={enUS="Dun Baldar South Marshal"},flags=0,spawns={{30,721.1,-7.64,50.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14764,kind="npc",names={enUS="Icewing Marshal"},flags=0,spawns={{30,715.69,-4.72,50.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14765,kind="npc",names={enUS="Stonehearth Marshal"},flags=0,spawns={{30,720.05,-19.94,50.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14772,kind="npc",names={enUS="East Frostwolf Warmaster"},flags=0,spawns={{30,-1378.37,-228.61,99.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14773,kind="npc",names={enUS="Iceblood Warmaster"},flags=0,spawns={{30,-1363.99,-221.99,98.41}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14776,kind="npc",names={enUS="Tower Point Warmaster"},flags=2,spawns={{30,-1370.96,-223.53,98.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14777,kind="npc",names={enUS="West Frostwolf Warmaster"},flags=0,spawns={{30,-1358.02,-229.0,98.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14781,kind="npc",names={enUS="Captain Shatterskull"},flags=3,spawns={{1,1044.28,-2098.72,123.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14821,kind="npc",names={enUS="Razzashi Raptor"},flags=0,spawns={{309,-12191.9,-1898.71,134.86},{309,-12180.4,-1897.75,132.88},{309,-12185.6,-1904.19,133.01},{309,-12362.7,-1873.9,130.34},{309,-12160.1,-1952.02,134.91},{309,-12154.2,-1948.8,134.68},{309,-12156.7,-1960.58,132.61},{309,-12172.2,-1899.2,132.14},{309,-12179.5,-1905.82,131.45},{309,-12185.2,-1894.29,133.57},{309,-12394.3,-1909.13,130.38},{309,-12383.3,-1898.94,131.26},{309,-12369.8,-1831.55,131.0},{309,-12363.3,-1817.14,131.02},{309,-12248.8,-1909.26,130.93},{309,-12250.2,-1900.48,131.79},{309,-12243.5,-1912.09,130.69},{309,-12368.6,-1932.08,133.38},{309,-12358.3,-1937.95,132.37},{309,-12350.1,-1929.23,133.23},{309,-12245.9,-1903.01,131.05},{309,-12238.6,-1901.74,131.19},{309,-12241.4,-1896.13,133.2},{309,-12391.0,-1837.95,132.3},{309,-12401.5,-1839.05,134.55},{309,-12402.3,-1830.9,132.91},{309,-12299.2,-1850.66,131.41},{309,-12147.3,-1941.83,134.18},{309,-12154.6,-1967.22,132.78},{309,-12156.3,-1943.35,134.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14822,kind="npc",names={enUS="Sayge"},flags=3,spawns={{1,-1586.9,151.37,-7.49},{0,-9536.62,73.24,58.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14823,kind="npc",names={enUS="Silas Darkmoon"},flags=3,spawns={{1,-1575.64,134.25,-7.91},{0,-9554.4,81.78,59.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14825,kind="npc",names={enUS="Withered Mistress"},flags=0,spawns={{309,-11569.5,-1314.49,79.36},{309,-11571.4,-1317.26,79.07},{309,-11569.1,-1311.52,79.5},{309,-11570.3,-1310.0,79.36},{309,-11617.8,-1281.32,79.58},{309,-11616.5,-1274.6,79.85},{309,-11615.4,-1279.94,79.75},{309,-11614.0,-1277.09,79.84},{309,-11547.0,-1250.59,78.4},{309,-11552.0,-1248.28,78.43},{309,-11549.8,-1243.92,78.35},{309,-11604.9,-1230.15,79.45},{309,-11599.2,-1225.23,79.12},{309,-11602.5,-1230.36,79.14},{309,-11601.1,-1228.4,79.11},{309,-11626.6,-1338.78,79.28},{309,-11627.7,-1335.33,79.56},{309,-11522.8,-1271.63,79.64},{309,-11522.8,-1280.45,79.67},{309,-11528.5,-1270.31,79.42},{309,-11528.7,-1281.83,79.42},{309,-11537.2,-1234.25,80.87},{309,-11537.4,-1232.47,81.15},{309,-11539.4,-1230.74,81.13},{309,-11541.3,-1230.94,80.85},{309,-11580.6,-1268.93,77.58},{309,-11580.5,-1271.14,77.58},{309,-11580.4,-1273.16,77.58},{309,-11580.3,-1274.96,77.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14826,kind="npc",names={enUS="Sacrificed Troll"},flags=0,spawns={{309,-11584.2,-1252.21,77.63},{309,-11582.5,-1250.32,77.63},{309,-11581.5,-1252.54,77.63},{309,-11583.2,-1254.83,77.63},{309,-11586.4,-1253.92,77.63},{309,-11586.6,-1250.72,77.63},{309,-11585.1,-1248.76,77.63},{309,-11582.3,-1247.86,77.63},{309,-11580.2,-1250.6,77.63},{309,-11580.6,-1254.79,77.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14827,kind="npc",names={enUS="Burth"},flags=3,spawns={{1,-1574.78,137.53,-7.71},{0,-9558.14,78.54,59.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14828,kind="npc",names={enUS="Gelvas Grimegate"},flags=3,spawns={{1,-1565.04,131.11,-7.65},{0,-9533.65,95.17,58.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14829,kind="npc",names={enUS="Yebb Neblegear"},flags=3,spawns={{0,-9548.9,141.16,58.96},{1,-1630.16,119.18,-17.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14832,kind="npc",names={enUS="Kerri Hicks"},flags=3,spawns={{1,-1637.21,102.25,-17.86},{0,-9558.18,130.18,58.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14833,kind="npc",names={enUS="Chronos"},flags=3,spawns={{0,-9579.25,21.79,60.75},{1,-1477.94,190.36,-7.71}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14834,kind="npc",names={enUS="Hakkar"},flags=0,spawns={{309,-11787.4,-1649.34,54.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14841,kind="npc",names={enUS="Rinling"},flags=3,spawns={{1,-1550.86,141.07,-7.69},{0,-9576.4,87.72,58.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14842,kind="npc",names={enUS="Melnan Darkstone"},flags=3,spawns={{0,-4982.69,-963.74,501.66}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14843,kind="npc",names={enUS="Kruban Darkblade"},flags=3,spawns={{1,1713.18,-4373.57,28.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14844,kind="npc",names={enUS="Sylannia"},flags=5,spawns={{1,-1585.4,163.72,-7.32},{0,-9561.12,69.97,59.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14845,kind="npc",names={enUS="Stamp Thunderhorn"},flags=5,spawns={{1,-1584.82,167.72,-7.37},{0,-9564.5,72.28,59.19}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14846,kind="npc",names={enUS="Lhara"},flags=5,spawns={{1,-1575.47,177.93,-7.71},{0,-9557.49,105.46,58.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14847,kind="npc",names={enUS="Professor Thaddeus Paleo"},flags=7,spawns={{1,-1579.04,176.15,-7.71},{0,-9560.98,103.64,58.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14848,kind="npc",names={enUS="Herald"},flags=0,spawns={{529,693.26,673.2,42.24},{529,1307.51,1321.86,48.75}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14849,kind="npc",names={enUS="Darkmoon Faire Carnie"},flags=1,spawns={{0,-9546.6,124.03,59.34},{0,-9532.41,67.93,58.96},{0,-9544.49,128.48,58.97},{0,-9537.16,70.27,59.01},{0,-9547.84,73.67,58.97},{0,-9551.95,134.24,58.96},{0,-9581.36,59.28,61.52},{0,-9530.22,96.33,58.96},{0,-9528.68,92.47,58.96},{1,-1537.95,171.91,-7.73},{1,-1589.66,112.05,-11.56},{1,-1630.28,92.67,-17.95},{1,-1565.23,153.98,-7.79},{1,-1585.37,169.37,-7.49},{1,-1627.04,129.64,-17.95},{1,-1636.98,116.53,-17.95},{1,-1559.52,184.07,-7.79},{1,-1565.79,125.55,-7.52},{1,-1578.06,145.53,-7.52},{0,-9571.82,90.37,59.01},{0,-9544.69,73.62,59.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14850,kind="npc",names={enUS="Gruk"},flags=0,spawns={{1,-537.49,-2986.61,92.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14857,kind="npc",names={enUS="Erk"},flags=0,spawns={{1,-29.11,-2617.33,97.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14859,kind="npc",names={enUS="Guard Taruc"},flags=0,spawns={{1,-532.14,-2988.94,93.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14860,kind="npc",names={enUS="Flik"},flags=5,spawns={{1,-1543.12,170.7,-7.73},{0,-9515.7,85.89,59.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14861,kind="npc",names={enUS="Blood Steward of Kirtonos"},flags=0,spawns={{289,164.89,-1.13,115.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14862,kind="npc",names={enUS="밀사 로만칸"},flags=0,spawns={{1,-7317.24,848.08,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14864,kind="npc",names={enUS="Khaz Modan Ram"},flags=0,spawns={{1,-1637.12,111.06,-17.82},{1,-1623.32,87.25,-17.82},{0,-9542.36,114.76,59.13},{0,-9545.21,130.87,59.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14865,kind="npc",names={enUS="Felinni"},flags=0,spawns={{1,-1623.63,103.79,-17.86},{0,-9555.53,115.84,58.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14866,kind="npc",names={enUS="Flik's Frog"},flags=1,spawns={{1,-1545.23,172.03,-7.73},{0,-9502.26,77.92,57.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14867,kind="npc",names={enUS="Jubjub"},flags=0,spawns={{1,-1553.7,110.22,-5.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14868,kind="npc",names={enUS="Hornsley"},flags=0,spawns={{0,-9538.58,133.23,58.96},{1,-1633.75,92.39,-17.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14869,kind="npc",names={enUS="Pygmy Cockatrice"},flags=0,spawns={{0,-9549.82,113.0,59.01},{0,-9554.05,125.14,59.01},{1,-1624.39,86.73,-17.82},{0,-9540.22,123.26,59.01},{0,-9547.29,137.25,58.91},{1,-1624.86,93.97,-17.82},{1,-1625.72,108.1,-17.82},{1,-1636.61,109.9,-17.82}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14871,kind="npc",names={enUS="Morja"},flags=3,spawns={{0,-9566.38,31.17,61.44},{1,-1479.99,205.21,-7.71}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14872,kind="npc",names={enUS="Trok"},flags=0,spawns={{1,209.69,-2881.05,92.19}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14873,kind="npc",names={enUS="Okla"},flags=0,spawns={{1,210.99,-3156.73,90.82}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14874,kind="npc",names={enUS="Karu"},flags=0,spawns={{1,240.79,-2901.43,98.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14875,kind="npc",names={enUS="Molthor"},flags=3,spawns={{0,-11812.3,1260.91,6.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14876,kind="npc",names={enUS="Zandalar Headshrinker"},flags=0,spawns={{0,-11899.4,1248.5,3.39},{0,-11747.5,1263.67,6.13},{0,-11751.1,1309.63,2.66},{0,-11870.5,1214.86,7.81},{0,-11787.0,1255.19,1.22},{0,-11774.6,1267.37,3.07},{0,-11774.6,1267.37,3.07}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14878,kind="npc",names={enUS="Jubling"},flags=0,spawns={{1,-1181.37,269.82,0.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14880,kind="npc",names={enUS="Razzashi Skitterer"},flags=0,spawns={{309,-12289.1,-1645.61,132.13},{309,-12286.4,-1669.35,130.33},{309,-12181.9,-1689.92,105.75},{309,-12180.6,-1682.85,103.75},{309,-12120.4,-1755.58,80.23},{309,-12119.2,-1762.42,80.22},{309,-12359.1,-1664.31,130.49},{309,-12335.7,-1645.88,130.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14881,kind="npc",names={enUS="Spider"},flags=0,spawns={{309,-12312.2,-1620.22,130.89},{309,-12312.3,-1653.33,130.38},{309,-12346.2,-1656.72,130.45},{309,-12322.5,-1590.89,132.51},{309,-12290.1,-1656.85,130.76},{309,-12346.6,-1619.19,130.76},{533,3287.81,-3450.87,287.08},{533,3337.11,-3490.32,287.09},{533,3127.2,-3552.16,287.08},{533,3074.22,-3555.82,287.08},{533,3158.75,-3486.43,287.08},{533,3164.67,-3498.03,300.92},{533,3362.31,-3684.58,259.07},{533,3087.85,-3521.07,287.08},{533,2956.81,-3173.99,285.59},{533,3294.54,-3489.41,287.08},{533,3368.19,-3635.1,259.08},{533,3198.91,-3614.88,280.31},{533,3179.61,-3629.73,280.3},{533,2769.76,-3180.84,300.03},{533,3200.08,-3463.78,300.8},{533,3313.28,-3671.11,281.97},{533,3219.68,-3789.26,273.91},{533,3162.43,-3789.12,273.95},{533,2941.87,-3346.26,318.11},{533,3185.17,-3792.45,273.95},{533,2911.67,-3570.2,304.35},{533,3384.41,-3651.55,282.51},{533,3034.9,-3470.6,298.22},{533,3226.91,-3686.06,300.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14882,kind="npc",names={enUS="Atal'ai Mistress"},flags=0,spawns={{309,-11570.9,-1312.87,79.79},{309,-11571.4,-1315.42,79.45},{309,-11571.1,-1308.7,79.17},{309,-11614.3,-1274.23,79.84},{309,-11613.4,-1278.93,79.84},{309,-11615.8,-1282.03,79.66},{309,-11612.9,-1281.33,79.82},{309,-11545.2,-1246.18,78.29},{309,-11607.3,-1230.79,79.77},{309,-11600.2,-1226.37,79.17},{309,-11598.3,-1223.17,79.28},{309,-11608.9,-1233.39,80.08},{309,-11627.2,-1332.83,79.33},{309,-11625.2,-1335.64,79.59},{309,-11532.0,-1270.02,79.11},{309,-11532.0,-1282.05,79.07},{309,-11525.6,-1270.86,79.57},{309,-11525.4,-1281.18,79.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=14883,kind="npc",names={enUS="Voodoo Slave"},flags=0,spawns={{309,-11571.5,-1319.05,78.52},{309,-11572.7,-1311.45,79.83},{309,-11573.0,-1313.94,79.9},{309,-11611.5,-1277.22,79.76},{309,-11614.4,-1283.81,79.68},{309,-11605.9,-1232.2,79.57},{309,-11603.5,-1231.54,79.22},{309,-11534.2,-1269.71,78.65},{309,-11534.8,-1282.44,78.73}}}

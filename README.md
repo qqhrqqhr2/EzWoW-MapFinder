@@ -258,6 +258,13 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 
 ---
 
+## Data credits / 데이터 출처
+
+- Monster, object, vendor and item-drop spots come from **Classic-DB** of the CMaNGOS project ([cmangos/classic-db](https://github.com/cmangos/classic-db), GNU GPL v3). See `LICENSE-DATA.md` and `LICENSE-DATA-NOTICE.md`.
+- 몬스터·물체 출현 위치와 아이템 판매·드롭 위치는 CMaNGOS 프로젝트의 **Classic-DB**([cmangos/classic-db](https://github.com/cmangos/classic-db), GNU GPL v3)에서 가져왔습니다. `LICENSE-DATA.md`, `LICENSE-DATA-NOTICE.md`를 참고하세요.
+
+---
+
 ## Support / 후원
 
 If you find this addon useful, you can support its development.

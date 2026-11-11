@@ -142,3 +142,15 @@ WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 �
 - `/ezmf help` — 도움말
 
 지원 언어: English, 한국어, Deutsch, Français, Español, Русский, 简体中文, 繁體中文.
+
+---
+
+**Support:** If you find this addon useful, you can support its development. [Buy Me a Coffee ☕](https://buymeacoffee.com/qqhrqqhr2)
+
+**후원:** 애드온이 도움이 되셨다면 개발 후원으로 응원해 주세요. [Buy Me a Coffee ☕](https://buymeacoffee.com/qqhrqqhr2)
+
+---
+
+**Data credits:** Monster, object, vendor and item-drop spots come from **Classic-DB** of the CMaNGOS project ([cmangos/classic-db](https://github.com/cmangos/classic-db), GNU GPL v3). Its license ships with the addon (`LICENSE-DATA.md`).
+
+**데이터 출처:** 몬스터·물체 출현 위치와 아이템 판매·드롭 위치는 CMaNGOS 프로젝트의 **Classic-DB**([cmangos/classic-db](https://github.com/cmangos/classic-db), GNU GPL v3)에서 가져왔습니다. 라이선스 파일(`LICENSE-DATA.md`)을 애드온에 함께 넣었습니다.

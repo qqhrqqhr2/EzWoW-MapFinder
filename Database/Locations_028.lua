@@ -1,501 +1,614 @@
 EzWoWMapFinderData = EzWoWMapFinderData or {}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=166863,kind="object",names={enUS="Fresh Threshadon Carcass"},flags=0,spawns={{1,-7365.4,-2009.94,-270.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=166872,kind="object",names={enUS="Supply Crate"},flags=0,spawns={{230,401.91,-52.3,-63.94}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=167284,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-7565.21,-2737.02,135.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=167285,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-7757.2,-2865.29,133.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=167286,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-8079.32,-2958.25,134.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=167287,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-8239.01,-2517.5,141.07}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=167288,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-8234.53,-1938.08,144.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=167289,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-8229.83,-1176.2,142.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=167290,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-7982.36,-1317.97,133.36}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=167291,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-7952.89,-893.74,131.1}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169216,kind="object",names={enUS="Preserved Threshadon Carcass"},flags=0,spawns={{1,-7198.09,-2425.0,-216.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169217,kind="object",names={enUS="Un'Goro Flat Rock"},flags=0,spawns={{1,-7197.65,-2423.59,-220.46}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169243,kind="object",names={enUS="Chest of The Seven"},flags=0,spawns={{230,1265.85,-285.1,-78.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169264,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3744.39,-4435.12,40.98},{0,-9550.62,-710.09,75.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169265,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3775.66,-4445.73,65.15},{0,-9582.4,-719.05,99.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169266,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3775.58,-4443.88,65.15},{0,-9582.23,-717.21,99.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169267,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3731.66,-4445.46,65.15},{0,-9538.46,-721.07,99.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169268,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3731.59,-4443.6,65.15},{0,-9538.29,-719.23,99.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169269,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3752.84,-4422.71,65.15},{0,-9558.41,-697.25,99.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169270,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3754.69,-4422.64,65.15},{0,-9560.26,-697.08,99.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169271,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3754.41,-4466.63,65.15},{0,-9562.28,-741.03,99.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169272,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3752.56,-4466.7,65.15},{0,-9560.43,-741.2,99.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169273,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3767.92,-4433.23,65.1},{0,-9574.03,-706.96,99.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169274,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3741.29,-4458.39,65.11},{0,-9548.75,-733.49,99.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169275,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3739.91,-4457.16,65.11},{0,-9547.31,-732.33,99.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169276,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3767.9,-4456.58,65.14},{0,-9575.22,-730.29,99.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169277,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3746.88,-4447.23,65.0},{0,-9553.75,-722.05,99.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169278,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3751.61,-4449.81,64.99},{0,-9558.61,-724.38,99.16}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169279,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3769.57,-4439.52,56.28},{0,-9576.0,-713.16,90.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169280,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3770.08,-4447.37,56.28},{0,-9576.93,-720.98,90.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169281,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3740.07,-4454.4,56.28},{0,-9547.32,-729.56,90.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169282,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3737.16,-4441.97,56.28},{0,-9543.76,-717.3,90.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169283,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3761.26,-4429.75,56.28},{0,-9567.19,-703.84,90.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169284,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3746.37,-4447.24,30.61},{0,-9553.23,-722.09,64.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169285,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3757.18,-4442.73,30.61},{0,-9563.79,-717.01,64.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169287,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3765.22,-4459.15,65.14},{0,-9572.68,-732.99,99.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169288,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3745.55,-4442.19,65.03},{0,-9552.15,-717.08,99.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169289,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3757.49,-4452.96,65.03},{0,-9564.64,-727.22,99.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169290,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3768.54,-4452.31,56.28},{0,-9575.64,-725.98,90.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169291,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3743.89,-4431.12,56.28},{0,-9549.92,-706.12,90.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169292,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3741.8,-4438.33,30.61},{0,-9548.21,-713.43,64.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169293,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3747.05,-4433.02,30.61},{0,-9553.18,-707.85,64.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169294,kind="object",names={enUS="Tablet of the Seven"},flags=0,spawns={{0,-7826.9,-1851.92,130.94}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169966,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,-14381.7,374.04,23.91}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169967,kind="object",names={enUS="Booty Bay Blacksmith"},flags=0,spawns={{0,-14373.2,375.78,28.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169968,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,-925.45,-3690.82,8.13}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169969,kind="object",names={enUS="Forge"},flags=0,spawns={{1,-923.12,-3686.86,8.16}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169996,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,18.48,784.41,64.94},{0,-332.31,1565.63,25.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169997,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,18.48,786.79,64.94},{0,-329.93,1565.65,25.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169998,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,19.73,788.15,64.94},{0,-328.56,1564.41,25.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=169999,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,21.9,788.15,64.94},{0,-328.55,1562.24,25.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170000,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,23.97,788.15,64.94},{0,-328.53,1560.18,25.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170001,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10321.8,373.95,65.27},{0,-10528.7,-1221.58,32.88},{0,-418.78,1575.43,24.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170002,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-406.98,1599.41,18.12},{0,-336.15,1528.59,18.0},{0,-329.61,1467.9,31.79}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170035,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-122.39,779.06,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170036,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-124.55,778.81,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170037,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-126.57,778.58,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170038,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-109.71,780.5,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170039,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-107.69,780.73,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170040,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-105.54,780.98,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170041,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-123.88,791.8,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170042,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-125.9,791.57,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170043,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-128.06,791.33,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170044,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-127.01,796.43,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170045,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-121.6,797.05,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170046,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-99.15,787.87,66.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170055,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10563.5,-1104.14,30.19},{0,2316.24,273.45,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170056,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10561.3,-1103.84,30.19},{0,2315.7,271.35,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170057,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10559.3,-1103.56,30.19},{0,2315.19,269.38,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170058,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10576.1,-1105.92,30.19},{0,2319.44,285.8,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170059,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10578.1,-1106.2,30.19},{0,2319.95,287.77,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170060,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10580.3,-1106.5,30.19},{0,2320.49,289.87,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170061,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10561.7,-1116.84,30.19},{0,2303.81,276.62,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170062,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10559.7,-1116.56,30.19},{0,2303.3,274.65,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170063,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10557.5,-1116.26,30.19},{0,2302.75,272.55,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170064,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10558.4,-1121.39,30.19},{0,2298.37,275.36,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170065,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10563.8,-1122.14,30.19},{0,2299.73,280.63,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170066,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10586.5,-1113.56,30.19},{0,2316.35,298.31,37.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170073,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-3676.61,-732.94,10.96},{0,-9268.23,352.68,76.71},{0,-9176.61,-1.05,80.41},{0,-9879.74,324.18,37.76},{0,-9480.28,-1356.42,46.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170347,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9391.43,-66.64,64.42},{0,-9537.38,-1425.97,57.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170348,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9390.25,-64.57,64.42},{0,-9537.38,-1428.35,57.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170349,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9388.5,-64.01,64.42},{0,-9538.63,-1429.71,57.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170350,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9386.61,-65.07,64.42},{0,-9540.79,-1429.71,57.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170351,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9384.81,-66.09,64.42},{0,-9542.86,-1429.71,57.51}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170353,kind="object",names={enUS="Doodad_G_HologramDwarf01"},flags=0,spawns={{70,150.5,305.93,-52.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170354,kind="object",names={enUS="War Quarter"},flags=0,spawns={{0,1598.8,381.96,-58.46}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170355,kind="object",names={enUS="Trade Quarter"},flags=0,spawns={{0,1537.4,241.81,-59.1}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170439,kind="object",names={enUS="Bench"},flags=0,spawns={{230,387.75,-158.4,-64.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170440,kind="object",names={enUS="Chair"},flags=0,spawns={{230,328.05,-145.9,-64.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170441,kind="object",names={enUS="Chair"},flags=0,spawns={{230,781.01,-35.28,-53.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170442,kind="object",names={enUS="Chair"},flags=0,spawns={{230,571.72,-87.81,-45.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170443,kind="object",names={enUS="Chair"},flags=0,spawns={{230,568.48,-103.18,-45.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170444,kind="object",names={enUS="Chair"},flags=0,spawns={{230,714.77,54.99,-45.03}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170445,kind="object",names={enUS="Chair"},flags=0,spawns={{230,711.53,39.62,-45.03}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170446,kind="object",names={enUS="Chair"},flags=0,spawns={{230,814.66,-174.76,-49.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170447,kind="object",names={enUS="Chair"},flags=0,spawns={{230,841.27,-191.12,-49.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170448,kind="object",names={enUS="Chair"},flags=0,spawns={{230,864.76,-138.7,-49.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170449,kind="object",names={enUS="Chair"},flags=0,spawns={{230,875.88,-170.52,-49.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170450,kind="object",names={enUS="Chair"},flags=0,spawns={{230,846.84,-148.81,-49.74}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170451,kind="object",names={enUS="Chair"},flags=0,spawns={{230,857.4,-203.16,-43.72}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170452,kind="object",names={enUS="Chair"},flags=0,spawns={{230,905.26,-198.32,-43.72}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170453,kind="object",names={enUS="Chair"},flags=0,spawns={{230,864.72,-197.9,-43.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170454,kind="object",names={enUS="Chair"},flags=0,spawns={{230,861.91,-198.12,-43.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170455,kind="object",names={enUS="Chair"},flags=0,spawns={{230,877.22,-203.72,-43.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170456,kind="object",names={enUS="Bench"},flags=0,spawns={{230,976.34,-323.2,-70.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170457,kind="object",names={enUS="Bench"},flags=0,spawns={{230,991.85,-356.76,-65.39}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170458,kind="object",names={enUS="Bench"},flags=0,spawns={{230,988.14,-380.08,-66.29}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170459,kind="object",names={enUS="Bench"},flags=0,spawns={{230,975.16,-397.2,-61.19}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170460,kind="object",names={enUS="Bench"},flags=0,spawns={{230,972.81,-408.59,-60.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170461,kind="object",names={enUS="Bench"},flags=0,spawns={{230,953.67,-429.44,-54.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170462,kind="object",names={enUS="Bench"},flags=0,spawns={{230,959.95,-436.88,-55.37}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170463,kind="object",names={enUS="Bench"},flags=0,spawns={{230,925.64,-436.31,-56.03}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170464,kind="object",names={enUS="Bench"},flags=0,spawns={{230,916.33,-435.01,-55.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170465,kind="object",names={enUS="Bench"},flags=0,spawns={{230,908.45,-407.6,-49.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170466,kind="object",names={enUS="Bench"},flags=0,spawns={{230,899.68,-408.18,-49.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170467,kind="object",names={enUS="Bench"},flags=0,spawns={{230,892.74,-407.47,-49.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170468,kind="object",names={enUS="Bench"},flags=0,spawns={{230,897.0,-414.01,-49.47}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170469,kind="object",names={enUS="Chair"},flags=0,spawns={{230,798.55,-212.56,-43.29}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170470,kind="object",names={enUS="Chair"},flags=0,spawns={{230,797.14,-214.99,-43.29}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170471,kind="object",names={enUS="Chair"},flags=0,spawns={{230,809.89,-218.72,-43.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170472,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1346.45,-763.97,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170473,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1346.59,-769.58,-85.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170474,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1346.45,-766.74,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170475,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1346.45,-781.05,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170476,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1346.45,-778.28,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170477,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.43,-781.05,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170478,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.43,-778.28,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170479,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.43,-766.74,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170480,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.43,-763.97,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170481,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1350.63,-781.05,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170482,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1350.63,-778.28,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170483,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1350.63,-766.74,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170484,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1350.63,-763.97,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170485,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1346.59,-774.92,-85.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170486,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1346.59,-772.35,-85.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170487,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-778.14,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170488,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1414.79,-769.96,-85.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170489,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1414.79,-775.3,-85.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170490,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1414.93,-778.14,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170491,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1414.79,-772.52,-85.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170492,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1414.93,-766.59,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170493,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-766.59,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170494,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-763.83,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170495,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1414.93,-763.83,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170496,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-780.91,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170497,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1410.75,-763.83,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170498,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1410.75,-766.59,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170499,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1410.75,-778.14,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170500,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1410.75,-780.91,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170501,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1414.93,-780.91,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170502,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-792.11,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170503,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-786.49,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170504,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-789.34,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170505,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-760.86,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170506,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-758.09,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170507,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-755.24,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170508,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1412.95,-752.47,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170509,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.44,-761.11,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170510,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.44,-758.34,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170511,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.44,-755.48,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170512,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.44,-752.72,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170513,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.44,-783.97,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170514,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.44,-789.59,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170515,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1348.44,-792.36,-85.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170516,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1293.62,-399.63,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170517,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1290.85,-399.63,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170518,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1293.64,-404.21,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170519,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1290.87,-404.21,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170520,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1293.64,-451.67,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170521,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1290.87,-451.67,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170522,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1290.85,-447.09,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170523,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1470.93,-451.67,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170524,kind="object",names={enUS="Bench]"},flags=0,spawns={{230,1468.17,-451.67,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170525,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1470.91,-447.09,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170526,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1468.14,-447.09,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170527,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1470.93,-404.21,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170528,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1470.91,-399.63,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170529,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1468.14,-399.63,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170530,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1468.17,-404.21,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170531,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1382.29,-385.03,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170532,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1379.53,-385.03,-92.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170533,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1382.29,-398.31,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170534,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1378.98,-398.31,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170535,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1368.48,-406.05,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170536,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1368.48,-402.74,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170537,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1368.48,-414.95,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170538,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1368.48,-411.64,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170539,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1368.48,-445.8,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170540,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1368.48,-442.49,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170541,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1368.48,-435.96,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170542,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1368.48,-432.65,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170543,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1392.44,-435.96,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170544,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1392.44,-432.65,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170545,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1392.44,-442.49,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170546,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1392.44,-445.8,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170547,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1392.44,-414.95,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170548,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1392.44,-411.64,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170549,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1392.44,-406.05,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170550,kind="object",names={enUS="Bench"},flags=0,spawns={{230,1392.44,-402.74,-94.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170551,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1376.16,-828.83,-91.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170552,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1384.54,-828.83,-91.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170553,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1381.39,-827.56,-91.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170554,kind="object",names={enUS="Chair"},flags=0,spawns={{230,1379.13,-827.56,-91.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170555,kind="object",names={enUS="Doodad_BurningGiantWheel01"},flags=0,spawns={{230,436.75,-343.55,0.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170556,kind="object",names={enUS="Doodad_BlackRockDoors01"},flags=0,spawns={{230,496.21,121.04,0.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170557,kind="object",names={enUS="Doodad_BlackRockDoorSingle01"},flags=0,spawns={{230,488.85,87.22,0.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170558,kind="object",names={enUS="The Lyceum"},flags=0,spawns={{230,1311.48,-343.07,-92.01}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170559,kind="object",names={enUS="Shadowforge Gate"},flags=0,spawns={{230,496.4,16.01,-70.26}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170560,kind="object",names={enUS="Shadowforge Gate"},flags=0,spawns={{230,569.59,-9.36,-70.26}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170561,kind="object",names={enUS="Supply Room Door"},flags=0,spawns={{230,404.64,-60.52,-63.82}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170562,kind="object",names={enUS="Cell Door"},flags=0,spawns={{230,284.6,-85.76,-76.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170563,kind="object",names={enUS="Cell Door"},flags=0,spawns={{230,319.47,-216.32,-77.76}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170564,kind="object",names={enUS="Cell Door"},flags=0,spawns={{230,375.6,-189.42,-70.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170565,kind="object",names={enUS="Cell Door"},flags=0,spawns={{230,412.17,-202.4,-65.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170566,kind="object",names={enUS="Cell Door"},flags=0,spawns={{230,550.31,-277.69,-75.26}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170567,kind="object",names={enUS="Cell Door"},flags=0,spawns={{230,556.92,-243.2,-70.25}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170568,kind="object",names={enUS="Cell Door"},flags=0,spawns={{230,589.74,-141.63,-68.42}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170569,kind="object",names={enUS="Cell Door"},flags=0,spawns={{230,630.37,-160.27,-71.03}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170570,kind="object",names={enUS="East Garrison Door"},flags=0,spawns={{230,560.53,-51.82,-60.09}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170571,kind="object",names={enUS="Bar Door"},flags=0,spawns={{230,870.69,-228.94,-43.75}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170572,kind="object",names={enUS="Doodad_BlackRockIronDoor02"},flags=0,spawns={{230,1449.13,-342.32,-92.01}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170573,kind="object",names={enUS="Golem Room North"},flags=0,spawns={{230,1389.55,-555.85,-92.01}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170574,kind="object",names={enUS="Golem Room South"},flags=0,spawns={{230,1370.65,-555.85,-92.01}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170575,kind="object",names={enUS="Thone Room Doors"},flags=0,spawns={{230,1380.12,-710.48,-92.01}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170576,kind="object",names={enUS="Doodad_BlackRockDoors02"},flags=0,spawns={{230,1230.33,-205.21,-85.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170577,kind="object",names={enUS="Doodad_BlackRockDoors03"},flags=0,spawns={{230,1262.85,-293.8,-78.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170578,kind="object",names={enUS="Doodad_DarkIronDwarfRune_A01"},flags=0,spawns={{230,1029.22,-257.99,-61.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170579,kind="object",names={enUS="Doodad_DarkIronDwarfRune_B01"},flags=0,spawns={{230,1046.23,-241.01,-61.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170580,kind="object",names={enUS="Doodad_DarkIronDwarfRune_C01"},flags=0,spawns={{230,1012.28,-274.91,-61.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170581,kind="object",names={enUS="Doodad_DarkIronDwarfRune_D01"},flags=0,spawns={{230,1029.29,-224.06,-61.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170582,kind="object",names={enUS="Doodad_DarkIronDwarfRune_E01"},flags=0,spawns={{230,995.26,-257.97,-61.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170583,kind="object",names={enUS="Doodad_DarkIronDwarfRune_F01"},flags=0,spawns={{230,1012.31,-207.09,-61.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170584,kind="object",names={enUS="Doodad_DarkIronDwarfRune_G01"},flags=0,spawns={{230,978.34,-240.97,-61.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170592,kind="object",names={enUS="Imperial Throne"},flags=0,spawns={{230,1380.52,-834.3,-86.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=170607,kind="object",names={enUS="Dark Iron Keg Shotgun"},flags=0,spawns={{230,848.27,-197.16,-43.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171524,kind="object",names={enUS="Tinker Town"},flags=0,spawns={{0,-4982.6,-974.08,503.97}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171525,kind="object",names={enUS="The Great Forge"},flags=0,spawns={{0,-4979.23,-1197.92,503.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171526,kind="object",names={enUS="Ironforge Main Gate"},flags=0,spawns={{0,-4980.52,-1197.82,504.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171527,kind="object",names={enUS="Tinker Town"},flags=0,spawns={{0,-4979.33,-1199.22,504.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171528,kind="object",names={enUS="Tinker Town"},flags=0,spawns={{0,-4709.26,-1213.95,504.16}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171529,kind="object",names={enUS="The Great Forge"},flags=0,spawns={{0,-4709.14,-1212.74,504.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171530,kind="object",names={enUS="The Forlorn Cavern"},flags=0,spawns={{0,-4707.88,-1212.86,504.1}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171531,kind="object",names={enUS="The Library"},flags=0,spawns={{0,-4707.97,-1214.16,504.1}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171532,kind="object",names={enUS="Hall of Explorers"},flags=0,spawns={{0,-4751.98,-1142.97,504.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171533,kind="object",names={enUS="The Military Ward"},flags=0,spawns={{0,-4753.31,-1142.94,504.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171534,kind="object",names={enUS="The Mystic Ward"},flags=0,spawns={{0,-4751.91,-1141.76,504.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171535,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4988.84,-1108.41,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171536,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5022.02,-1116.98,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171537,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5011.37,-1054.44,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171538,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4989.85,-1056.28,497.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171539,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4989.99,-1080.22,497.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171540,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5025.33,-1083.12,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171541,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4756.94,-917.03,501.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171542,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4743.02,-885.34,501.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171543,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4764.52,-880.7,501.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171544,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4808.22,-870.31,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171545,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4808.47,-911.88,497.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171546,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4781.68,-874.99,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171547,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4784.52,-913.6,497.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171548,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4626.56,-1222.81,503.39}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171549,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4618.1,-1211.71,503.39}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171550,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4714.76,-1295.98,503.39}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171551,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4727.5,-1301.81,503.39}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171552,kind="object",names={enUS="Hot Coals"},flags=0,spawns={{0,-4970.59,-1209.67,501.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171553,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4911.82,-1227.7,501.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171554,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4931.68,-1279.03,501.68}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171555,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4960.58,-1274.09,501.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171556,kind="object",names={enUS="Mailbox"},flags=0,spawns={{0,-4949.82,-1277.37,501.58}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171557,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4973.9,-1159.04,501.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171558,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5035.62,-1158.8,501.62}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171559,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5023.6,-1206.5,501.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171560,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4654.32,-1239.36,501.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171561,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4664.09,-1232.73,501.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171562,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4676.99,-1231.75,501.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171563,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4689.1,-1236.89,501.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171564,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4696.58,-1248.01,501.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171565,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4697.92,-1260.76,501.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171566,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4693.13,-1271.5,501.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171569,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4838.78,-867.56,501.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171570,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4839.02,-865.45,501.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171571,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4835.33,-867.29,501.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171572,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4835.57,-865.18,501.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171573,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4845.32,-864.48,501.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171574,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4847.42,-863.05,501.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171575,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4849.17,-864.95,501.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171576,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4847.09,-866.29,501.92}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171577,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4848.01,-865.87,510.25}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171578,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4849.86,-864.62,510.25}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171579,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4851.67,-866.41,510.25}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171580,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4962.61,-1022.17,503.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171581,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4960.31,-1021.42,503.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171582,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4960.93,-1023.36,503.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171583,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4962.63,-1020.54,503.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171584,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4955.28,-1013.97,503.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171585,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4957.44,-1012.4,503.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171586,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4955.04,-1016.11,503.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171587,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4961.01,-1015.29,503.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171588,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4959.62,-1012.45,503.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171589,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4665.03,-1161.72,503.85}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171590,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4663.27,-1159.31,503.85}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171591,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4662.45,-1161.73,503.85}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171592,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4665.54,-1159.51,503.85}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171593,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4673.17,-869.06,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171594,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4673.33,-866.65,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171595,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4671.61,-867.72,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171596,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4674.75,-868.69,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171597,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4681.96,-858.8,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171598,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4684.0,-860.51,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171599,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4679.82,-859.08,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171600,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4682.06,-864.67,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171601,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4684.48,-862.64,503.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171602,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4598.81,-959.1,502.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171603,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4595.86,-957.8,502.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171604,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4804.58,-1186.27,512.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171605,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4803.19,-1188.24,512.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171606,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4804.75,-1189.88,512.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171607,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4806.2,-1187.97,512.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171608,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5015.06,-991.25,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171609,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5018.6,-993.23,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171610,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5017.16,-990.12,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171611,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5015.82,-994.4,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171612,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5023.07,-1001.75,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171613,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5020.95,-1003.37,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171614,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5023.25,-999.6,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171615,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-5017.31,-1000.57,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171616,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-5018.77,-1003.38,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171617,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-5011.57,-1006.97,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171618,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-5010.82,-1005.3,503.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171623,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4610.69,-1123.34,501.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171624,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4634.48,-1113.25,501.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171625,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4628.21,-1134.49,501.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171626,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4632.59,-1169.81,501.25}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171627,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4624.23,-1150.43,501.31}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171628,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4623.18,-1055.84,500.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171629,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4606.99,-1114.95,511.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171630,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4608.79,-1113.57,511.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171631,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4607.04,-1111.92,511.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171632,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4605.18,-1113.36,511.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171633,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4896.83,-1012.27,504.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171634,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4904.64,-1000.83,504.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171635,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4879.56,-980.15,504.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171636,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4870.01,-990.16,504.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171638,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5031.0,-1252.47,505.3}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171639,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5023.4,-1261.69,505.3}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171640,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5048.86,-1280.78,501.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171641,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5026.75,-1289.01,507.71}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171642,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5054.79,-1273.57,501.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171643,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5058.56,-1250.43,507.71}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171644,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5071.54,-1288.02,512.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171645,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-5065.9,-1294.86,512.28}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171646,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4735.55,-1012.83,503.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171647,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4735.35,-1009.61,503.66}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171648,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4827.55,-919.39,502.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171649,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4827.11,-922.52,502.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171650,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5022.18,-1127.52,511.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171651,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5025.38,-1127.88,511.99}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171652,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-5037.57,-1104.63,501.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171653,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-5037.43,-1107.79,501.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171654,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5037.39,-1108.51,508.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171655,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5039.2,-1112.08,508.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171656,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5037.01,-1112.12,508.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171657,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5039.72,-1108.76,508.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171658,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5058.27,-1165.86,503.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171659,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5055.12,-1165.15,503.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171660,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4775.48,-927.57,503.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171661,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4774.29,-924.57,503.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171664,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4969.41,-1278.77,501.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171665,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4971.16,-1277.57,501.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171666,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4966.4,-1285.25,501.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171667,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4965.73,-1287.7,501.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171668,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4963.39,-1287.29,501.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171669,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4963.88,-1285.02,501.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171670,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4976.34,-1283.11,510.32}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171671,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4973.88,-1282.49,510.32}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171672,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4976.54,-1280.59,510.32}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171673,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4974.25,-1280.15,510.32}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171678,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4758.79,-1216.12,510.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171679,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4757.44,-1218.91,510.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171680,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4712.93,-873.65,501.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171681,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4714.41,-876.43,501.96}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171682,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4714.32,-877.41,508.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171683,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4718.2,-879.13,508.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171684,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4715.5,-880.49,508.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171685,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4716.78,-876.26,508.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171686,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4650.05,-1123.46,501.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171687,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4650.19,-1120.79,501.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171688,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4651.12,-1131.64,508.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171689,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4651.06,-1128.31,508.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171690,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4653.37,-1129.94,508.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171691,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4649.2,-1129.97,508.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171692,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4826.51,-876.09,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171693,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4857.2,-879.59,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171694,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4830.09,-909.81,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171695,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4858.64,-916.32,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171696,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4941.36,-918.3,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171697,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4899.76,-968.25,501.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171698,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4912.94,-979.08,501.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171699,kind="object",names={enUS="Mailbox"},flags=0,spawns={{0,-4910.38,-976.21,501.41}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171700,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4891.32,-883.55,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171701,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4916.48,-895.25,501.67}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171702,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4881.91,-955.41,501.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171703,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4857.61,-947.22,501.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171704,kind="object",names={enUS="Ironforge Armory"},flags=0,spawns={{0,-4887.03,-954.82,510.13}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171705,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4747.62,-1048.82,502.19}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171706,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4821.71,-1177.98,502.19}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171707,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4882.58,-1091.71,502.19}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171708,kind="object",names={enUS="The Military Ward"},flags=0,spawns={{0,-4866.08,-1108.47,504.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171709,kind="object",names={enUS="The High Seat"},flags=0,spawns={{0,-4865.38,-1107.33,504.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171710,kind="object",names={enUS="Hall of Explorers"},flags=0,spawns={{0,-4865.06,-1109.14,504.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171711,kind="object",names={enUS="The High Seat"},flags=0,spawns={{0,-4782.01,-1039.75,504.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171712,kind="object",names={enUS="Hall of Explorers"},flags=0,spawns={{0,-4780.26,-1040.27,504.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171713,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,-4789.21,-1128.66,498.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171714,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,-4792.54,-1127.9,498.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171715,kind="object",names={enUS="The Great Anvil"},flags=0,spawns={{0,-4799.36,-1107.18,498.82}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171716,kind="object",names={enUS="Forge"},flags=0,spawns={{0,-4762.97,-1117.11,499.33}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171717,kind="object",names={enUS="Forge"},flags=0,spawns={{0,-4807.86,-1130.18,499.5}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171722,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4809.95,-1003.43,510.82}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171723,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4810.09,-1006.53,510.81}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171724,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4705.47,-1107.0,504.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171725,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4707.96,-1106.05,504.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171726,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4704.68,-1109.01,504.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171727,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4710.65,-1109.76,504.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171728,kind="object",names={enUS="Dwarven High Back Chair"},flags=0,spawns={{0,-4710.05,-1106.66,504.45}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171729,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4723.9,-1055.38,504.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171730,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4831.98,-1184.63,502.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171731,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4834.0,-1183.99,502.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171732,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4823.24,-1187.74,502.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171733,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4825.41,-1189.06,502.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171734,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4824.4,-1191.44,502.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171735,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4822.32,-1190.1,502.49}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171736,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4838.07,-1187.07,509.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171737,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4839.2,-1185.15,509.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171738,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4841.6,-1185.98,509.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171739,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4826.54,-1190.02,509.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171740,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4828.48,-1191.12,509.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171741,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4827.69,-1193.53,509.14}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171742,kind="object",names={enUS="Potbelly Stove"},flags=0,spawns={{0,-4773.95,-1190.97,509.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171743,kind="object",names={enUS="Potbelly Stove"},flags=0,spawns={{0,-4772.97,-1193.28,509.43}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171744,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4597.54,-1014.79,511.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171745,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4596.31,-1018.27,511.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171746,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4863.04,-1172.48,504.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171747,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4860.68,-1170.29,504.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171748,kind="object",names={enUS="Berryfizz's Potions and Mixed Drinks"},flags=0,spawns={{0,-4845.31,-1247.75,506.02}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171749,kind="object",names={enUS="Things That Go Boom!"},flags=0,spawns={{0,-4844.61,-1282.68,505.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171750,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4839.75,-1286.23,501.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171751,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4828.33,-1287.59,501.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171752,kind="object",names={enUS="Mailbox"},flags=0,spawns={{0,-4828.28,-1285.05,501.81}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171753,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4858.43,-1300.34,501.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171754,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4847.71,-1302.0,501.87}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171755,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4790.85,-1249.23,502.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171756,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4796.79,-1240.82,502.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171757,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4849.57,-1006.95,453.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171758,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4856.98,-997.96,453.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171759,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4811.94,-1030.88,438.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171760,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4820.3,-986.57,464.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171761,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4831.21,-973.33,464.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171762,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4820.14,-964.21,464.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171763,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4809.23,-977.44,464.64}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171764,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4883.28,-1055.7,502.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171765,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4643.84,-1021.33,501.61}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171766,kind="object",names={enUS="The Great Forge"},flags=0,spawns={{0,-4676.62,-940.11,504.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171767,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4695.73,-874.0,501.62}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171768,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4707.69,-898.56,501.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171769,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4733.11,-941.82,501.62}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171770,kind="object",names={enUS="Longberry's Reagents"},flags=0,spawns={{0,-4710.98,-941.69,504.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171771,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4687.63,-1007.01,502.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171772,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4690.03,-1008.18,502.22}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171773,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4679.67,-1004.79,508.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171774,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4682.76,-1006.04,508.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171775,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4680.37,-1007.54,508.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171776,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4681.97,-1003.68,508.88}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171938,kind="object",names={enUS="Cactus Apple"},flags=0,spawns={{1,-696.94,-4355.8,54.18},{1,-364.98,-4333.73,55.19},{1,-413.36,-4058.05,52.31},{1,-523.08,-4182.39,76.94},{1,-260.52,-4211.04,58.73},{1,-475.43,-4323.95,44.02},{1,-255.69,-4160.31,55.86},{1,-261.12,-4159.08,54.93},{1,-183.5,-4181.8,80.82},{1,-482.64,-4083.92,65.42},{1,-298.44,-4332.24,56.6},{1,-330.87,-4393.1,58.53},{1,-489.84,-4464.14,51.98},{1,-182.64,-4183.35,81.11},{1,-489.68,-4089.52,64.56},{1,-317.6,-4105.12,54.33},{1,-408.21,-4395.52,42.77},{1,-322.21,-4438.69,56.77},{1,-601.58,-4075.62,75.86},{1,-427.71,-4185.25,50.45},{1,-674.29,-4300.25,44.95},{1,-317.47,-4438.41,57.44},{1,-407.97,-4061.42,51.86},{1,-413.09,-4398.37,43.59},{1,-469.63,-4378.43,48.38},{1,-422.69,-4187.55,51.65},{1,-746.49,-4276.66,43.77},{1,-516.89,-4187.04,77.14},{1,-423.57,-4175.42,50.84},{1,-406.41,-4460.83,51.98}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171939,kind="object",names={enUS="Corrupted Songflower"},flags=0,spawns={{1,3866.65,-1000.02,244.2}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171940,kind="object",names={enUS="Cleansed Songflower"},flags=0,spawns={{1,3866.73,-999.98,244.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171941,kind="object",names={enUS="Keg Trap"},flags=0,spawns={{230,848.11,-194.88,-43.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171942,kind="object",names={enUS="Corrupted Songflower"},flags=0,spawns={{1,4233.32,-1133.32,322.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=171943,kind="object",names={enUS="Cleansed Songflower"},flags=0,spawns={{1,4233.32,-1133.32,322.63}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172619,kind="object",names={enUS="Un'Goro Flat Rock"},flags=0,spawns={{1,-7197.65,-2423.59,-220.46}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172911,kind="object",names={enUS="The Black Anvil"},flags=0,spawns={{230,895.11,-273.56,-71.89}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172941,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1766.3,-4497.01,44.48}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172942,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1798.63,-4496.64,45.69}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172944,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1952.68,-4429.13,24.73}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172945,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1736.65,-4476.9,32.04}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172946,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1826.98,-4508.03,21.38}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172947,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1901.55,-4439.03,49.27}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172948,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1855.11,-4474.31,47.5}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172949,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1919.03,-4453.21,23.05}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172950,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1954.33,-4372.81,22.3}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172951,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1915.35,-4417.57,21.83}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172952,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1746.71,-4415.49,36.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172953,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1733.02,-4424.7,36.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172954,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1800.97,-4513.69,21.56}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172955,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1871.62,-4521.0,26.8}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172956,kind="object",names={enUS="Mighty Blaze"},flags=0,spawns={{1,1900.65,-4386.07,48.08}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172957,kind="object",names={enUS="Valley of Wisdom"},flags=0,spawns={{1,1494.56,-4423.78,26.78}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172958,kind="object",names={enUS="Valley of Honor"},flags=0,spawns={{1,1494.56,-4423.78,25.7}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172959,kind="object",names={enUS="The Drag"},flags=0,spawns={{1,1494.66,-4423.75,24.59}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172960,kind="object",names={enUS="Cleft of Shadow"},flags=0,spawns={{1,1500.39,-4423.78,26.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172961,kind="object",names={enUS="Valley of Spirits"},flags=0,spawns={{1,1500.39,-4423.78,25.07}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=172962,kind="object",names={enUS="Valley of Wisdom"},flags=0,spawns={{1,1724.03,-4375.56,34.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69423,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2145.54,1405.98,73.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69424,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2136.87,1476.97,72.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69425,kind="object",names={enUS="Bonfire"},flags=0,spawns={{47,1885.3,1644.9,80.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69426,kind="object",names={enUS="Bonfire"},flags=0,spawns={{47,2202.16,1646.28,85.54}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69427,kind="object",names={enUS="Bonfire"},flags=0,spawns={{47,2067.08,2010.08,63.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69428,kind="object",names={enUS="Bonfire"},flags=0,spawns={{47,2147.91,1917.96,66.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69429,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2157.04,1552.62,72.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69430,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2132.16,1410.02,73.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69431,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,1896.43,1626.5,73.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69432,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2107.36,1453.43,73.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69433,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2192.71,1487.73,82.83}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69434,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2083.81,1431.2,85.49}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69435,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2112.14,1413.64,85.71}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69436,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2146.93,1541.29,72.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69437,kind="object",names={enUS="Campfire"},flags=0,spawns={{47,2155.07,1405.45,84.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=69438,kind="object",names={enUS="Bonfire"},flags=0,spawns={{47,2191.35,1788.04,65.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=70517,kind="object",names={enUS="Lamppost"},flags=0,spawns={{1,-5551.12,-3264.92,-43.54}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=73940,kind="object",names={enUS="Ooze Covered Silver Vein"},flags=0,spawns={{1,-6502.48,-3233.94,-113.68},{1,-5362.42,297.73,22.08},{1,-5353.75,397.5,17.01},{1,-5254.65,330.45,17.56},{1,-5335.88,330.34,19.52},{1,-5457.48,113.78,28.82},{1,-5412.78,67.7,37.78},{1,-6443.21,-3289.05,-105.04},{1,-5286.74,-14.02,21.24},{1,-5221.93,98.68,31.71},{1,-5276.19,75.26,27.29},{1,-5391.48,36.05,27.38},{1,-5297.62,51.88,28.94},{1,-6512.62,-3470.86,-69.16},{1,-6395.6,-3482.74,-70.13},{1,-6458.28,-3487.44,-69.09},{1,-5279.87,101.92,24.46},{1,-6500.99,-3348.64,-89.91},{1,-5275.56,-42.49,8.32},{1,-6482.59,-3318.97,-96.63},{1,-6518.18,-3307.59,-93.47},{1,-5397.78,-61.58,30.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=73941,kind="object",names={enUS="Ooze Covered Gold Vein"},flags=0,spawns={{1,-6502.48,-3233.94,-113.68},{1,-5362.42,297.73,22.08},{1,-5353.75,397.5,17.01},{1,-5254.65,330.45,17.56},{1,-5335.88,330.34,19.52},{1,-5457.48,113.78,28.82},{1,-5412.78,67.7,37.78},{1,-6443.21,-3289.05,-105.04},{1,-5286.74,-14.02,21.24},{1,-5221.93,98.68,31.71},{1,-5276.19,75.26,27.29},{1,-5391.48,36.05,27.38},{1,-5297.62,51.88,28.94},{1,-6512.62,-3470.86,-69.16},{1,-6395.6,-3482.74,-70.13},{1,-6458.28,-3487.44,-69.09},{1,-5279.87,101.92,24.46},{1,-6500.99,-3348.64,-89.91},{1,-5275.56,-42.49,8.32},{1,-6482.59,-3318.97,-96.63},{1,-6518.18,-3307.59,-93.47},{1,-5397.78,-61.58,30.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74075,kind="object",names={enUS="Cauldron"},flags=0,spawns={{47,2158.47,1413.67,74.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74076,kind="object",names={enUS="Cauldron"},flags=0,spawns={{47,2137.15,1923.77,66.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74078,kind="object",names={enUS="Cauldron"},flags=0,spawns={{47,2110.67,1543.94,81.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74091,kind="object",names={enUS="The Salty Sailor Tavern"},flags=0,spawns={{0,-14459.8,481.6,16.07}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74135,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-10670.1,-2526.78,26.78}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74138,kind="object",names={enUS="Brazier"},flags=0,spawns={{1,-2152.59,2678.26,61.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74146,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-1596.13,850.38,117.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74439,kind="object",names={enUS="Brazier"},flags=0,spawns={{1,-2176.38,-410.31,-4.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74440,kind="object",names={enUS="Brazier"},flags=0,spawns={{1,-2254.61,-304.68,-9.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74441,kind="object",names={enUS="Brazier"},flags=0,spawns={{1,-2264.61,-318.31,-9.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74442,kind="object",names={enUS="Brazier"},flags=0,spawns={{1,-2267.86,-295.33,-9.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74443,kind="object",names={enUS="Smoked Meat Rack"},flags=0,spawns={{1,-2270.34,-281.73,-9.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74444,kind="object",names={enUS="Brazier"},flags=0,spawns={{1,-2277.64,-309.08,-9.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74445,kind="object",names={enUS="Smoked Meat Rack"},flags=0,spawns={{1,-2401.79,-397.7,-2.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74446,kind="object",names={enUS="Smoked Meat Rack"},flags=0,spawns={{1,-2897.13,-274.72,53.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74447,kind="object",names={enUS="Large Iron Bound Chest"},flags=0,spawns={{47,2134.21,1710.1,80.67},{47,2111.45,1613.83,81.19},{47,2202.04,1807.37,64.31},{47,2090.24,1465.26,73.87},{47,2193.35,1985.04,56.35},{47,2199.22,1654.65,86.15},{47,2127.73,1607.64,81.48},{90,-440.18,81.82,-151.48},{90,-622.58,123.07,-199.65},{90,-630.56,66.5,-183.28},{90,-622.66,51.51,-199.65},{90,-830.87,278.73,-272.6},{90,-754.34,364.0,-272.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74448,kind="object",names={enUS="Large Solid Chest"},flags=0,spawns={{47,2134.21,1710.1,80.67},{47,2111.45,1613.83,81.19},{47,2202.04,1807.37,64.31},{47,2090.24,1465.26,73.87},{47,2193.35,1985.04,56.35},{47,2199.22,1654.65,86.15},{47,2127.73,1607.64,81.48},{90,-440.18,81.82,-151.48},{90,-622.58,123.07,-199.65},{90,-630.56,66.5,-183.28},{90,-622.66,51.51,-199.65},{90,-830.87,278.73,-272.6},{90,-754.34,364.0,-272.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74727,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-1053.65,-288.59,159.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74728,kind="object",names={enUS="Smoked Meat Rack"},flags=0,spawns={{1,-1052.08,-310.7,159.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74729,kind="object",names={enUS="Brazier"},flags=0,spawns={{1,-1043.45,-308.71,159.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=74730,kind="object",names={enUS="Brazier"},flags=0,spawns={{1,-1071.19,-276.39,159.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=75293,kind="object",names={enUS="Large Battered Chest"},flags=0,spawns={{43,1.16,-44.94,-65.51},{43,-313.26,-235.07,-62.83},{43,-95.07,-311.13,-61.8},{43,-10.47,-272.44,-66.16},{43,46.71,-166.27,-82.15},{43,-79.46,-32.6,-59.11},{43,29.62,531.78,-57.0},{43,-49.93,370.57,-59.69},{36,-155.3,-913.9,10.28},{36,-63.09,-797.01,39.01},{36,-77.74,-788.6,26.11},{36,-121.3,-810.21,16.96},{36,-209.21,-602.72,19.31},{36,-300.89,-532.54,49.42},{36,-312.05,-477.5,49.6},{33,-214.32,2151.88,81.11},{33,-191.65,2161.52,79.75},{33,-190.98,2225.68,79.76},{33,-178.81,2252.85,86.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=75295,kind="object",names={enUS="Large Iron Bound Chest"},flags=0,spawns={{33,-214.32,2151.88,81.11},{33,-191.65,2161.52,79.75},{33,-190.98,2225.68,79.76},{33,-178.81,2252.85,86.6},{33,-247.78,2186.88,93.92},{33,-255.2,2166.04,93.94},{33,-189.57,2122.88,97.39},{33,-236.73,2299.61,94.68},{33,-133.99,2183.01,113.13},{33,-106.54,2164.01,101.52},{34,104.45,77.26,-34.86},{34,165.32,57.67,-34.86},{34,188.6,81.58,-33.94},{34,173.19,146.96,-33.94},{34,92.3,-56.18,-34.86},{34,151.69,-65.13,-34.86},{34,90.59,-145.88,-33.94},{48,-517.17,34.44,-46.32},{48,-450.61,-38.07,-31.78},{48,-466.74,-87.6,-39.13},{48,-694.42,-47.27,-30.03},{48,-743.06,-111.07,-30.05}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=75296,kind="object",names={enUS="Large Iron Bound Chest"},flags=0,spawns={{189,1762.11,1153.56,7.49},{189,1748.22,1252.28,18.16},{189,1847.77,1276.34,18.16},{189,1788.14,1394.66,-0.46},{189,223.9,-292.73,19.2},{189,277.4,-365.67,20.4},{189,278.51,-401.43,20.4},{189,175.54,-418.85,18.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=75297,kind="object",names={enUS="Large Iron Bound Chest"},flags=0,spawns={{129,2502.75,944.87,49.18},{129,2455.52,956.49,35.5},{129,2358.62,966.72,40.29},{129,2435.01,995.96,49.3},{129,2482.92,774.27,46.1},{189,1684.86,-345.41,18.02},{189,1743.48,-407.25,8.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=75298,kind="object",names={enUS="Large Solid Chest"},flags=0,spawns={{33,-247.78,2186.88,93.92},{33,-255.2,2166.04,93.94},{33,-189.57,2122.88,97.39},{33,-236.73,2299.61,94.68},{33,-133.99,2183.01,113.13},{33,-106.54,2164.01,101.52},{34,104.45,77.26,-34.86},{34,165.32,57.67,-34.86},{34,188.6,81.58,-33.94},{34,173.19,146.96,-33.94},{34,92.3,-56.18,-34.86},{34,151.69,-65.13,-34.86},{34,90.59,-145.88,-33.94},{48,-517.17,34.44,-46.32},{48,-450.61,-38.07,-31.78},{48,-466.74,-87.6,-39.13},{48,-694.42,-47.27,-30.03},{48,-743.06,-111.07,-30.05}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=75299,kind="object",names={enUS="Large Solid Chest"},flags=0,spawns={{189,1762.11,1153.56,7.49},{189,1748.22,1252.28,18.16},{189,1847.77,1276.34,18.16},{189,1788.14,1394.66,-0.46},{189,223.9,-292.73,19.2},{189,277.4,-365.67,20.4},{189,278.51,-401.43,20.4},{189,175.54,-418.85,18.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=75300,kind="object",names={enUS="Large Solid Chest"},flags=0,spawns={{129,2502.75,944.87,49.18},{129,2455.52,956.49,35.5},{129,2358.62,966.72,40.29},{129,2435.01,995.96,49.3},{129,2482.92,774.27,46.1},{189,1684.86,-345.41,18.02},{189,1743.48,-407.25,8.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=77813,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,1681.83,286.67,-62.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=80022,kind="object",names={enUS="Plunger"},flags=0,spawns={{0,-5164.47,648.44,362.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=80023,kind="object",names={enUS="Vator"},flags=0,spawns={{0,-5164.24,650.35,349.52}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=82136,kind="object",names={enUS="Lamppost"},flags=0,spawns={{1,-5478.1,-2392.13,57.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=82137,kind="object",names={enUS="Lamppost"},flags=0,spawns={{1,-5518.15,-2464.61,31.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=82138,kind="object",names={enUS="Lamppost"},flags=0,spawns={{1,-5610.58,-2495.13,29.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=82139,kind="object",names={enUS="Lamppost"},flags=0,spawns={{1,-5654.16,-2372.83,1.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=82140,kind="object",names={enUS="Lamppost"},flags=0,spawns={{1,-5657.36,-2473.02,3.31}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=83763,kind="object",names={enUS="Stolen Books"},flags=0,spawns={{0,-8957.04,-432.75,64.72}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=85556,kind="object",names={enUS="Vator2"},flags=0,spawns={{90,-806.89,323.96,-271.66}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=85562,kind="object",names={enUS="Ironband's Strongbox"},flags=0,spawns={{0,-5918.12,-2037.57,400.75}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=85563,kind="object",names={enUS="Dead-tooth's Strongbox"},flags=0,spawns={{0,-9765.27,-1565.24,41.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=86492,kind="object",names={enUS="Crate of Elunite"},flags=0,spawns={{1,6326.5,862.9,-14.43},{1,6316.11,754.74,-12.93},{1,6311.02,771.54,-13.78},{1,6309.78,845.92,-13.57},{1,6307.67,825.72,-13.57},{1,6305.36,801.79,-13.88},{1,6294.3,783.34,-13.92},{1,6342.36,737.47,-12.63},{1,6354.31,756.53,-8.83},{1,6356.49,722.52,-13.64},{1,6375.59,871.36,-36.67},{1,6384.79,906.78,-36.98},{1,6392.69,725.45,-17.91},{1,6393.78,831.68,-20.7},{1,6399.64,877.64,-35.28},{1,6402.14,742.22,-18.89},{1,6405.96,857.13,-33.17},{1,6415.27,889.66,-39.79},{1,6416.75,764.31,-20.64},{1,6419.64,732.4,-19.07},{1,6426.58,790.67,-18.49},{1,6428.81,855.25,-36.73},{1,6435.49,815.09,-19.6},{1,6441.63,884.0,-54.41},{1,6462.69,830.46,-36.99},{1,6463.99,863.94,-40.6},{1,6468.53,811.57,-36.86},{1,6483.66,824.7,-36.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=88497,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,4135.58,-5086.95,143.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=88498,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,3801.38,-4906.36,145.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=89634,kind="object",names={enUS="Iron Coral"},flags=0,spawns={{0,-4125.74,-765.27,-11.76},{0,-4108.05,-749.04,-13.11},{0,-4082.19,-758.46,-15.55},{0,-3905.32,-913.32,-12.17},{0,-3964.98,-836.68,-14.34},{0,-4086.62,-731.04,-12.25},{0,-3939.73,-875.15,-14.18},{0,-4031.29,-774.47,-13.8},{0,-4135.63,-681.79,-12.22},{0,-4156.07,-662.69,-13.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=89635,kind="object",names={enUS="Sunscorched Shell"},flags=0,spawns={{1,-4974.25,-881.13,-5.95},{1,-5053.43,-1026.14,-2.05},{1,-5109.49,-1044.19,-5.68},{1,-5054.83,-952.19,-4.99},{1,-5187.87,-1205.77,47.05},{1,-5156.67,-908.67,-5.32},{1,-4985.95,-810.8,-1.76},{1,-4930.05,-907.38,-6.23},{1,-5045.05,-935.27,-5.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=89931,kind="object",names={enUS="Bath'rah's Cauldron"},flags=0,spawns={{0,253.02,-1437.67,49.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=90566,kind="object",names={enUS="Workshop Door"},flags=0,spawns={{0,-4861.05,740.45,249.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=90567,kind="object",names={enUS="Lever"},flags=0,spawns={{0,-4855.03,742.43,249.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=90858,kind="object",names={enUS="Workshop Door"},flags=0,spawns={{90,-758.54,260.39,-273.05}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=91138,kind="object",names={enUS="Jordan's Hammer"},flags=0,spawns={{33,-218.46,2237.2,80.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=91672,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,10066.2,2354.02,1332.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=91673,kind="object",names={enUS="Stove"},flags=0,spawns={{1,10090.9,2425.22,1321.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=91692,kind="object",names={enUS="Boomstick Imports East"},flags=0,spawns={{0,-14373.2,404.3,11.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=91706,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-2249.66,-2368.53,91.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=91737,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,6679.07,-66.95,22.72}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=91738,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,5775.21,119.46,34.78}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92011,kind="object",names={enUS="Grimand's Anvil"},flags=0,spawns={{0,-8387.84,684.43,95.27}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92013,kind="object",names={enUS="Tome of the Cabal"},flags=0,spawns={{0,-1152.77,177.59,0.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92015,kind="object",names={enUS="Summoning Circle"},flags=0,spawns={{0,-8973.05,1043.72,52.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92065,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-11493.4,-2682.39,6.61}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92066,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-11758.3,-2830.26,6.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92067,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-11763.6,-2838.62,6.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92098,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-6838.29,-2819.75,241.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92099,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,-9975.23,-3654.42,21.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92140,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-10144.8,1647.71,37.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92141,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-10828.3,1762.66,36.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92142,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-11212.6,881.81,52.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92143,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-11204.5,796.07,39.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92252,kind="object",names={enUS="Strahad's Summoning Circle"},flags=0,spawns={{1,-768.66,-3721.86,42.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92388,kind="object",names={enUS="Summoning Circle"},flags=0,spawns={{1,-768.69,-3721.9,42.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92419,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,-10331.6,381.96,59.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92420,kind="object",names={enUS="Bailor's Ore"},flags=0,spawns={{0,-4885.06,-3968.84,297.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92423,kind="object",names={enUS="Damaged Chest"},flags=0,spawns={{1,-4925.59,-2344.58,-49.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92424,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,731.63,344.52,64.41}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92426,kind="object",names={enUS="Pickled Sludge"},flags=0,spawns={{1,-274.28,-396.21,17.22},{209,1810.09,673.18,14.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92427,kind="object",names={enUS="Smoked Meat Rack"},flags=0,spawns={{1,-191.9,-349.68,8.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92458,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-9599.33,-3499.25,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92489,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,6546.06,438.62,7.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92490,kind="object",names={enUS="Forge"},flags=0,spawns={{1,6542.94,434.29,7.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92524,kind="object",names={enUS="Guild"},flags=0,spawns={{1,10064.0,2203.44,1353.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92525,kind="object",names={enUS="Argent Dawn"},flags=0,spawns={{1,10082.9,2373.48,1325.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92526,kind="object",names={enUS="Alchemy"},flags=0,spawns={{1,10083.5,2372.12,1319.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92527,kind="object",names={enUS="Bags"},flags=0,spawns={{1,9868.65,2265.52,1337.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92528,kind="object",names={enUS="General Goods"},flags=0,spawns={{1,9869.1,2266.21,1331.78}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92529,kind="object",names={enUS="Enchanting"},flags=0,spawns={{1,10115.9,2330.27,1332.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92530,kind="object",names={enUS="Enchanting"},flags=0,spawns={{1,10161.6,2299.91,1332.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92531,kind="object",names={enUS="Robe"},flags=0,spawns={{1,9611.41,2358.19,1330.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92532,kind="object",names={enUS="Staff"},flags=0,spawns={{1,9618.83,2344.52,1330.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92533,kind="object",names={enUS="Leatherworking"},flags=0,spawns={{1,10069.7,2284.09,1339.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92534,kind="object",names={enUS="Tailoring"},flags=0,spawns={{1,10069.6,2284.99,1333.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92535,kind="object",names={enUS="General Trade"},flags=0,spawns={{1,10100.2,2296.36,1332.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92536,kind="object",names={enUS="General Trade"},flags=0,spawns={{1,10121.3,2271.02,1331.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92537,kind="object",names={enUS="First Aid"},flags=0,spawns={{1,10136.4,2384.61,1322.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92538,kind="object",names={enUS="Cooking"},flags=0,spawns={{1,10095.9,2409.81,1319.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92539,kind="object",names={enUS="Weapons"},flags=0,spawns={{1,9836.77,2276.82,1331.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92540,kind="object",names={enUS="Weapons"},flags=0,spawns={{1,9836.27,2275.65,1337.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92541,kind="object",names={enUS="Weapons"},flags=0,spawns={{1,9813.07,2227.17,1338.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92542,kind="object",names={enUS="Weapons"},flags=0,spawns={{1,9812.34,2226.13,1332.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92543,kind="object",names={enUS="Thrown Weapons"},flags=0,spawns={{1,9756.98,2263.91,1337.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92544,kind="object",names={enUS="Fletcher"},flags=0,spawns={{1,9773.75,2292.04,1331.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92545,kind="object",names={enUS="Mail Armor"},flags=0,spawns={{1,9675.29,2335.09,1331.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92546,kind="object",names={enUS="Shields"},flags=0,spawns={{1,9676.28,2335.45,1337.59}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92547,kind="object",names={enUS="Shields"},flags=0,spawns={{1,9703.56,2352.39,1337.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92548,kind="object",names={enUS="Mail Armor"},flags=0,spawns={{1,9704.57,2352.65,1331.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92549,kind="object",names={enUS="Cloth Armor"},flags=0,spawns={{1,9739.85,2330.08,1332.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92550,kind="object",names={enUS="Leather Armor"},flags=0,spawns={{1,9700.54,2375.63,1332.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92551,kind="object",names={enUS="Two Handed Weapons"},flags=0,spawns={{1,9738.89,2329.4,1338.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92552,kind="object",names={enUS="Two Handed Weapons"},flags=0,spawns={{1,9716.33,2278.2,1338.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92693,kind="object",names={enUS="General Goods"},flags=0,spawns={{1,9863.03,2229.16,1331.83}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92694,kind="object",names={enUS="Bags"},flags=0,spawns={{1,9863.43,2230.25,1337.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92695,kind="object",names={enUS="Fletcher"},flags=0,spawns={{1,9755.96,2263.14,1331.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92696,kind="object",names={enUS="Thrown Weapons"},flags=0,spawns={{1,9772.81,2291.17,1337.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92699,kind="object",names={enUS="Leatherworking"},flags=0,spawns={{1,10087.5,2233.9,1339.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92700,kind="object",names={enUS="Tailoring"},flags=0,spawns={{1,10087.8,2232.85,1333.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=92703,kind="object",names={enUS="Bench"},flags=0,spawns={{0,-9248.72,-2174.7,64.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=93192,kind="object",names={enUS="Heartswood"},flags=0,spawns={{1,3461.31,-118.27,3.71}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94183,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-11557.2,592.21,50.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94184,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-11579.6,686.25,58.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94185,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-11990.8,318.31,1.05}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94186,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-12379.4,180.62,2.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94187,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-12826.4,-742.36,75.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94188,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-13006.7,-626.58,53.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94189,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-13463.6,663.2,9.36}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94190,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-13371.5,-4.11,21.84}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=94191,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-13664.0,-302.03,8.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=95449,kind="object",names={enUS="Cloth Armor"},flags=0,spawns={{1,9715.39,2277.49,1332.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=97700,kind="object",names={enUS="Secret Door"},flags=0,spawns={{189,1167.79,1347.26,31.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=97701,kind="object",names={enUS="Torch"},flags=0,spawns={{189,1169.03,1345.63,33.05}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=97801,kind="object",names={enUS="Fine Chair"},flags=0,spawns={{189,1951.79,-436.72,6.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=97802,kind="object",names={enUS="Fine Chair"},flags=0,spawns={{189,1972.01,-437.26,6.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=97803,kind="object",names={enUS="Fine Chair"},flags=0,spawns={{189,1951.83,-426.4,6.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=98343,kind="object",names={enUS="War Quarter"},flags=0,spawns={{0,1652.15,293.64,-58.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=98347,kind="object",names={enUS="Trade Quarter"},flags=0,spawns={{0,1595.21,299.21,-59.02}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=98348,kind="object",names={enUS="Trade Quarter"},flags=0,spawns={{0,1537.42,239.51,-59.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=98349,kind="object",names={enUS="War Quarter"},flags=0,spawns={{0,1650.65,295.11,-59.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=98350,kind="object",names={enUS="Trade Quarter"},flags=0,spawns={{0,1597.47,299.31,-59.41}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=98351,kind="object",names={enUS="Magic Quarter"},flags=0,spawns={{0,1595.26,180.82,-59.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=98354,kind="object",names={enUS="Trade Quarter"},flags=0,spawns={{0,1541.84,292.22,-58.49}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=100028,kind="object",names={enUS="Shaman Shrine"},flags=0,spawns={{1,-3020.22,-718.96,45.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=100035,kind="object",names={enUS="Shaman Shrine"},flags=0,spawns={{0,425.19,1864.41,10.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101748,kind="object",names={enUS="Shaman Shrine"},flags=0,spawns={{1,-253.35,-3976.94,166.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101749,kind="object",names={enUS="Shaman Shrine"},flags=0,spawns={{1,-883.6,-4295.66,70.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101750,kind="object",names={enUS="Shaman Shrine"},flags=0,spawns={{0,425.11,1864.08,9.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101751,kind="object",names={enUS="Shaman Shrine"},flags=0,spawns={{1,-5438.07,-3097.36,96.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101766,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16242.1,16304.9,20.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101767,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16229.6,16285.7,31.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101768,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16243.4,16302.7,20.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101769,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16231.7,16290.3,31.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101770,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16244.0,16291.3,22.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101771,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16224.1,16287.3,31.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101772,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16223.1,16290.8,31.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101773,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16245.4,16302.4,20.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101774,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16247.4,16304.0,20.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101775,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16243.9,16306.8,20.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101776,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16245.8,16306.6,20.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101777,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16236.6,16291.9,22.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101778,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16231.1,16287.2,31.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101779,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,16226.9,16285.2,31.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101811,kind="object",names={enUS="Lever"},flags=0,spawns={{33,-245.6,2132.32,82.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101812,kind="object",names={enUS="Lever"},flags=0,spawns={{33,-236.25,2164.04,91.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101831,kind="object",names={enUS="Door Lever"},flags=0,spawns={{36,-188.14,-460.31,54.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101832,kind="object",names={enUS="Door Lever"},flags=0,spawns={{36,-287.28,-539.88,49.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101833,kind="object",names={enUS="Door Lever"},flags=0,spawns={{36,-96.93,-670.6,7.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101834,kind="object",names={enUS="Door Lever"},flags=0,spawns={{36,-165.4,-576.92,19.31}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101835,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-4.05,-1600.34,195.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101836,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,4.19,-1600.65,195.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101837,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-0.5,-1591.36,195.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101838,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,22.36,-1624.78,197.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101839,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,24.2,-1628.65,197.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101840,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,22.23,-1626.82,197.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101841,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,24.3,-1619.77,203.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101842,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,25.9,-1624.74,197.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101844,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,25.99,-1626.81,197.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101845,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,24.26,-1623.12,197.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101846,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,23.65,-1631.35,203.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101847,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,27.39,-1629.49,203.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101848,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,27.06,-1621.39,203.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101849,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,28.19,-1626.52,203.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101850,kind="object",names={enUS="Cathedral Door"},flags=0,spawns={{0,2908.18,-818.2,160.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101851,kind="object",names={enUS="Armory Door"},flags=0,spawns={{0,2886.31,-827.26,160.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101852,kind="object",names={enUS="Lever"},flags=0,spawns={{0,2889.18,-827.8,160.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101853,kind="object",names={enUS="Lever"},flags=0,spawns={{0,2910.81,-818.84,160.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101854,kind="object",names={enUS="Herod's Door"},flags=0,spawns={{189,1933.69,-431.65,18.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=101855,kind="object",names={enUS="Lever"},flags=0,spawns={{189,1939.48,-428.0,17.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102413,kind="object",names={enUS="Verigan's Fist"},flags=0,spawns={{0,-5095.61,-785.42,496.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102984,kind="object",names={enUS="Bink's Toolbox"},flags=0,spawns={{0,-5073.02,436.79,410.83}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102985,kind="object",names={enUS="Balnir Snapdragons"},flags=0,spawns={{0,1976.88,-472.26,35.65},{0,1969.59,-472.86,35.76},{0,1969.43,-471.34,35.61},{0,1969.55,-464.1,36.15},{0,1977.11,-473.43,35.46},{0,1976.87,-463.9,35.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102986,kind="object",names={enUS="Ju-Ju Heap"},flags=0,spawns={{1,-1286.73,-5506.67,8.47},{1,-1158.97,-5586.11,12.37},{1,-1238.04,-5510.49,9.53},{1,-1099.82,-5525.24,11.77},{1,-1130.52,-5546.65,10.6},{1,-1093.61,-5581.69,11.18},{1,-1128.37,-5580.3,9.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102988,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6615.48,-3826.98,270.82}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102989,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6638.03,-3724.21,267.36}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102990,kind="object",names={enUS="Dwarven Campfire"},flags=0,spawns={{0,-6634.99,-3764.36,265.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102991,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6586.03,-3828.14,264.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102992,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6584.17,-3829.73,264.54}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102993,kind="object",names={enUS="Dwarven Campfire"},flags=0,spawns={{0,-6617.82,-3822.16,270.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102994,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6584.39,-3831.73,264.26}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102995,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6592.2,-3810.22,268.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102996,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6635.02,-3767.29,265.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102997,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6591.58,-3807.5,268.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102998,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6590.0,-3806.91,268.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=102999,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6613.02,-3759.54,265.71}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103000,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6612.58,-3761.45,266.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103001,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6613.77,-3719.65,268.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103002,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6635.12,-3726.27,266.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103003,kind="object",names={enUS="Dwarven Campfire"},flags=0,spawns={{0,-6586.58,-3830.09,264.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103004,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{0,-6638.4,-3722.88,267.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103005,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{70,-115.06,345.33,-44.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103006,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{70,-82.1,332.99,-48.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103007,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{70,-217.17,384.86,-39.04}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103009,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{70,-85.77,314.43,-51.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103010,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{70,-242.73,7.14,-47.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103011,kind="object",names={enUS="Dwarven Campfire"},flags=0,spawns={{70,-358.0,120.86,-44.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103012,kind="object",names={enUS="Short Wooden Seat"},flags=0,spawns={{70,-82.02,334.94,-48.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103015,kind="object",names={enUS="Shrine of Gelihast"},flags=0,spawns={{48,-413.32,43.65,-47.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103016,kind="object",names={enUS="Altar of the Deeps"},flags=0,spawns={{48,-839.62,-477.9,-33.73}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103600,kind="object",names={enUS="Andron's Bookshelf"},flags=0,spawns={{0,1385.33,341.71,-66.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103628,kind="object",names={enUS="Ur's Treatise on Shadow Magic"},flags=0,spawns={{0,-9264.42,-3282.77,150.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103660,kind="object",names={enUS="Stone of Outer Binding Spell Focus"},flags=0,spawns={{0,-1351.0,-2740.0,59.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103663,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,253.04,-1437.64,49.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103664,kind="object",names={enUS="Rituals of Power"},flags=0,spawns={{189,277.59,-429.49,21.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103680,kind="object",names={enUS="Mana Rift"},flags=0,spawns={{1,-4013.3,-3385.15,38.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103687,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,6513.71,484.54,6.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103694,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-1546.52,-2134.93,16.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103695,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-1566.42,-2146.91,16.82}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103708,kind="object",names={enUS="Mana Rift Disturbance"},flags=0,spawns={{0,1409.09,353.52,-66.02},{0,-9102.49,833.97,97.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103711,kind="object",names={enUS="Tin Vein"},flags=0,spawns={{1,-4076.08,-2193.39,53.09},{1,-4093.85,-2122.36,55.94},{1,-4146.65,-2297.34,105.49},{0,-689.15,168.67,18.1},{0,-845.0,86.35,3.22},{0,-837.59,81.84,3.43},{0,-736.82,43.76,12.0},{0,-701.81,50.61,14.22},{0,-731.5,92.59,14.93},{0,-835.03,202.4,7.71},{0,-819.41,157.64,17.94},{0,-816.85,164.26,4.15},{1,-4154.6,-2156.53,52.78},{1,-4330.23,-2315.79,106.21},{1,-4126.87,-2243.22,51.54},{1,-4115.0,-2231.68,52.29},{1,-4133.86,-2145.77,51.8},{1,-4060.03,-2183.86,54.39},{1,-4064.47,-2151.67,50.94},{1,-4203.78,-2233.75,55.38},{1,-4189.49,-2169.27,56.6},{1,-4193.71,-2187.79,52.51},{1,-4207.56,-2290.02,57.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103713,kind="object",names={enUS="Copper Vein"},flags=0,spawns={{1,-4076.08,-2193.39,53.09},{1,-4093.85,-2122.36,55.94},{1,-4146.65,-2297.34,105.49},{1,-4154.6,-2156.53,52.78},{1,-4330.23,-2315.79,106.21},{1,-4126.87,-2243.22,51.54},{1,-4115.0,-2231.68,52.29},{1,-4133.86,-2145.77,51.8},{1,-4060.03,-2183.86,54.39},{1,-4064.47,-2151.67,50.94},{1,-4203.78,-2233.75,55.38},{1,-4189.49,-2169.27,56.6},{1,-4193.71,-2187.79,52.51},{1,-4207.56,-2290.02,57.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103727,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-10002.7,660.44,36.07}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103728,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-9948.2,618.36,37.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103729,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-9933.88,576.67,37.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103748,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-1271.95,-2526.37,21.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103749,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-1751.79,-3141.63,30.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103750,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-1890.6,-3198.18,56.58}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103751,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-1916.12,-2781.93,71.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103770,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-2066.88,-2089.93,9.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103771,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-2128.71,-2010.07,6.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103772,kind="object",names={enUS="Cauldron"},flags=0,spawns={{0,-2076.96,-2135.19,21.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103793,kind="object",names={enUS="Mage Quarter"},flags=0,spawns={{0,-8841.02,730.86,96.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103794,kind="object",names={enUS="Cathedral Square"},flags=0,spawns={{0,-8825.4,957.33,99.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103795,kind="object",names={enUS="Griffon Roost"},flags=0,spawns={{0,-8800.81,578.75,96.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103796,kind="object",names={enUS="Old Town"},flags=0,spawns={{0,-8508.7,658.08,100.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103798,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8858.27,1066.15,102.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103800,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8844.58,1085.61,95.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103801,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8846.61,1084.97,95.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103802,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8601.58,392.35,102.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103811,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8998.0,874.96,148.72}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103812,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8996.6,871.9,148.72}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103815,kind="object",names={enUS="Ambermill Strongbox"},flags=0,spawns={{0,-160.15,774.07,69.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103819,kind="object",names={enUS="Stone of Shy-Rotam"},flags=0,spawns={{1,8071.34,-3843.02,690.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103820,kind="object",names={enUS="Red Rocket"},flags=0,spawns={{189,1906.05,-416.48,19.3},{189,1897.99,-416.52,19.2},{189,1899.35,-415.71,19.21},{189,1905.72,-414.57,19.09},{189,1895.6,-416.36,19.26},{90,-511.9,-139.36,-152.48},{90,-510.68,-139.44,-152.62},{90,-511.33,-139.96,-152.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=103821,kind="object",names={enUS="Doan's Strongbox"},flags=0,spawns={{189,131.83,-432.62,18.52}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104555,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,-812.91,-4940.97,20.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104564,kind="object",names={enUS="Bingles's Toolbucket"},flags=0,spawns={{0,-5041.03,-3337.81,299.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104569,kind="object",names={enUS="Bingles's Toolbucket"},flags=0,spawns={{0,-4864.81,-3328.1,304.77}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104574,kind="object",names={enUS="Bingles's Toolbucket"},flags=0,spawns={{0,-4930.64,-3422.01,304.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104575,kind="object",names={enUS="Bingles's Blastencapper"},flags=0,spawns={{0,-4976.83,-3489.17,305.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104589,kind="object",names={enUS="Lever"},flags=0,spawns={{189,1073.91,1405.92,30.27}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104591,kind="object",names={enUS="Chapel Door"},flags=0,spawns={{189,1069.95,1399.14,30.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104593,kind="object",names={enUS="Mausoleum Trigger"},flags=0,spawns={{0,2376.07,360.0,37.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=104600,kind="object",names={enUS="High Inquisitor's Door"},flags=0,spawns={{189,1173.01,1398.91,31.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105169,kind="object",names={enUS="Agamand Weapon Rack"},flags=0,spawns={{0,3058.62,653.59,58.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105170,kind="object",names={enUS="Agamand Weapon Rack"},flags=0,spawns={{0,3063.67,697.92,66.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105171,kind="object",names={enUS="Agamand Weapon Rack"},flags=0,spawns={{0,3019.9,688.8,66.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105172,kind="object",names={enUS="Agamand Weapon Rack"},flags=0,spawns={{0,3023.03,653.81,75.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105174,kind="object",names={enUS="Chest of Containment Coffers"},flags=0,spawns={{0,-8986.0,863.66,30.64},{0,-8987.37,862.75,30.63},{0,-8986.73,862.93,30.65},{0,-8987.15,861.84,30.66},{0,1814.54,51.31,-46.32},{0,1813.73,52.65,-46.32},{0,1814.59,53.17,-46.32},{0,1814.28,52.14,-46.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105175,kind="object",names={enUS="Cantation of Manifestation"},flags=0,spawns={{0,1813.25,51.01,-46.32},{0,-8984.55,861.03,30.67},{0,-8985.31,860.86,30.7},{0,-8985.57,860.34,30.71},{0,1813.6,50.23,-46.32},{0,1813.25,51.01,-46.32},{0,1812.77,51.53,-46.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105176,kind="object",names={enUS="Venture Co. Strongbox"},flags=0,spawns={{1,1350.99,-3641.14,111.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105188,kind="object",names={enUS="Trias' Cheese"},flags=0,spawns={{0,-8859.88,584.69,97.78}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105568,kind="object",names={enUS="Peasent Woodpile"},flags=0,spawns={{0,-10647.8,1116.43,35.61}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105569,kind="object",names={enUS="Silver Vein"},flags=0,spawns={{1,-4076.08,-2193.39,53.09},{1,-4093.85,-2122.36,55.94},{1,-4146.65,-2297.34,105.49},{0,-689.15,168.67,18.1},{0,-845.0,86.35,3.22},{0,-837.59,81.84,3.43},{0,-736.82,43.76,12.0},{0,-701.81,50.61,14.22},{0,-731.5,92.59,14.93},{0,-835.03,202.4,7.71},{0,-819.41,157.64,17.94},{0,-816.85,164.26,4.15},{1,-4154.6,-2156.53,52.78},{1,-4330.23,-2315.79,106.21},{1,-4126.87,-2243.22,51.54},{1,-4115.0,-2231.68,52.29},{1,-4133.86,-2145.77,51.8},{1,-4060.03,-2183.86,54.39},{1,-4064.47,-2151.67,50.94},{1,-4203.78,-2233.75,55.38},{1,-4189.49,-2169.27,56.6},{1,-4193.71,-2187.79,52.51},{1,-4207.56,-2290.02,57.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105570,kind="object",names={enUS="Alliance Strongbox"},flags=0,spawns={{0,121.88,454.22,44.1},{0,389.56,178.22,41.94},{0,443.82,288.77,42.48},{0,58.72,276.34,41.91},{0,96.93,367.76,43.92},{0,335.95,185.8,42.93},{0,424.83,221.75,42.89},{0,17.35,435.15,43.76}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105576,kind="object",names={enUS="Summoning Circle"},flags=0,spawns={{1,1805.83,-4373.97,-16.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105578,kind="object",names={enUS="Horde Chest"},flags=0,spawns={{0,-1475.17,-3030.71,12.4},{0,-1542.43,-3033.22,12.98},{0,-1487.69,-3124.46,13.36},{0,-1466.3,-3081.7,13.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105579,kind="object",names={enUS="Alliance Chest"},flags=0,spawns={{0,-1086.51,-2931.57,42.87},{0,121.88,454.22,44.1},{0,389.56,178.22,41.94},{0,-1047.59,-2811.98,42.2},{0,-1106.34,-2921.2,42.2},{0,424.83,221.75,42.89},{0,335.95,185.8,42.93},{0,96.93,367.76,43.92},{0,58.72,276.34,41.91},{0,-1007.02,-2896.23,62.81},{0,443.82,288.77,42.48},{0,17.35,435.15,43.76}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=105581,kind="object",names={enUS="Alliance Chest"},flags=0,spawns={{0,-1660.19,-1681.47,69.22},{0,-1544.81,-1751.48,68.17},{0,-1601.2,-1644.99,68.11},{0,-1509.78,-1689.98,68.82}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106318,kind="object",names={enUS="Battered Chest"},flags=0,spawns={{0,-5070.62,484.58,401.49},{0,-5556.28,520.59,382.43},{0,-5599.9,647.11,384.56},{0,-5407.39,-127.37,368.26},{0,-5815.59,-1697.7,359.55},{0,-5513.28,-1749.2,336.94},{0,-5732.88,-1878.95,399.78},{0,-5800.54,-2105.3,402.52},{1,716.52,-4468.95,15.69},{1,95.24,-4554.32,55.17},{1,-910.26,-4487.81,29.71},{1,734.21,-4121.82,-9.9},{1,-88.37,-4047.04,64.71},{1,-194.72,-5306.0,-6.55},{1,931.16,-4766.0,23.7},{1,1476.12,-4745.69,12.19},{1,421.9,-4252.33,26.8},{1,861.81,-4777.55,38.29},{1,1141.59,-4667.73,17.88},{1,-262.43,-5019.61,22.12},{1,-1246.56,-5511.22,5.82},{1,-715.58,163.06,43.65},{1,-779.69,-866.59,25.98},{1,-2742.5,-445.18,-3.45},{1,-1568.31,-1081.01,103.87},{1,-1896.46,340.19,105.61},{1,-2352.91,457.48,57.61},{1,-2413.07,221.97,48.83},{1,-2777.56,-691.96,7.01},{1,-798.08,-9.67,-13.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106319,kind="object",names={enUS="Battered Chest"},flags=0,spawns={{0,-6162.26,-2950.6,409.21},{0,-5035.68,-3346.79,299.37},{0,-6019.41,-2760.03,410.53},{0,-6007.12,-2957.26,399.52},{0,-5302.15,-2723.45,343.12},{0,-4920.42,-2993.18,332.42},{1,398.09,-2228.92,184.6},{1,-1173.46,-3163.7,91.67},{1,830.27,-2692.9,91.67},{1,-939.64,-2053.58,68.06},{1,-1327.42,-3139.15,91.67},{1,181.44,-1802.15,93.0},{1,-34.64,-3368.58,91.69},{1,-1741.15,-3736.25,13.25},{0,-4988.38,-2944.47,315.88},{0,-401.63,1467.65,26.13},{0,1324.06,729.21,32.36},{0,778.23,1620.16,30.34},{0,969.38,1225.46,48.11},{0,1093.89,1575.27,28.11},{0,895.42,1089.89,32.2},{0,-10479.1,1932.18,7.63},{0,-11072.2,1512.31,42.94},{0,-9946.81,1477.11,39.84},{0,-10144.1,1745.59,31.67},{0,-10758.8,896.88,35.96},{0,-11027.1,1661.24,42.68},{0,-9992.27,1452.8,41.48},{0,-9584.66,1508.62,-2.26},{0,-10311.4,1228.23,37.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106325,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,334.0,-4675.06,16.59},{1,-403.86,-2632.92,96.36},{1,2354.86,-2564.68,102.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106326,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,355.42,-4687.84,16.59},{1,-397.75,-2657.1,96.36},{1,2335.38,-2580.27,102.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106327,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,343.75,-4669.05,16.59},{1,-392.72,-2635.56,96.36},{1,2357.07,-2575.92,102.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106335,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,345.09,-4698.87,16.59},{1,-412.85,-2657.59,96.36},{1,2328.68,-2566.73,102.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106336,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{1,352.59,-4674.57,16.59},{1,-390.37,-2645.71,96.36},{1,2348.81,-2582.26,102.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106528,kind="object",names={enUS="Water Manifestation Effect"},flags=0,spawns={{0,417.17,1822.22,12.55},{1,-1344.85,-4072.3,-0.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106529,kind="object",names={enUS="Water Manifestation Aura"},flags=0,spawns={{0,417.05,1822.39,13.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106638,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-1056.4,-3662.02,23.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=106641,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-1042.89,-3664.26,23.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=107037,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-1050.39,-3668.92,23.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=107039,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-1051.51,-3667.2,23.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=107040,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-1060.68,-3666.78,23.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=107041,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-1043.9,-3669.13,23.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=107042,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-1058.38,-3666.63,23.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=107045,kind="object",names={enUS="Spring Well"},flags=0,spawns={{0,-43.44,-923.2,55.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=107046,kind="object",names={enUS="Quilboar Watering Hole"},flags=0,spawns={{1,-3573.24,-1864.45,82.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=107047,kind="object",names={enUS="Ruins of Stardust Fountain"},flags=0,spawns={{1,2079.39,-234.62,98.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=110230,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-4164.71,816.66,145.19}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=110231,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-4184.9,607.57,70.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=110232,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-4221.11,667.14,70.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=110233,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-4097.92,438.37,51.07}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=110234,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-4963.98,472.6,17.19}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=110235,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-4975.32,355.28,23.78}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=110236,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-4995.5,363.45,23.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111094,kind="object",names={enUS="Gallina Winery"},flags=0,spawns={{0,-8892.59,697.52,101.54}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111095,kind="object",names={enUS="Alliance Chest"},flags=0,spawns={{1,-2147.73,-3579.5,91.8},{0,22.98,792.83,64.09},{0,-225.79,807.35,75.42},{0,-135.09,779.21,67.38},{0,73.66,767.88,63.64},{0,62.71,789.35,64.04},{0,-470.03,826.42,96.82},{1,-2009.53,-3600.92,21.76},{1,-2101.53,-3646.35,61.72},{1,-2214.52,-3689.79,93.45},{0,-105.88,810.49,63.71},{0,-83.42,802.14,63.78},{0,-71.46,808.97,64.89},{0,38.34,792.11,64.95},{0,-151.1,799.07,63.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111149,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-14595.6,-235.47,24.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111202,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5608.52,-525.32,400.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111203,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5589.49,-544.68,399.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111204,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5604.54,-528.39,392.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111205,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5626.33,-546.74,389.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111206,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5578.22,-535.89,389.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111207,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5589.38,-543.18,399.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111212,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5594.28,-540.09,398.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111215,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5585.59,-543.38,403.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111216,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5581.27,-542.47,403.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111217,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5604.55,-546.09,399.11}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111220,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5594.41,-530.92,399.66}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111221,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5591.95,-531.08,399.66}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111222,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5588.41,-534.3,403.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111223,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5585.28,-534.3,403.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111224,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5588.51,-541.95,403.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111225,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5607.0,-543.44,392.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111226,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5588.39,-539.43,403.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111227,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5583.18,-543.72,403.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111254,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5386.68,-2948.39,322.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111255,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5412.37,-2937.62,312.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111256,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5388.45,-2953.1,315.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111257,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5399.63,-2972.25,321.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111258,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5398.16,-2971.92,321.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111259,kind="object",names={enUS="Dwarven Fire"},flags=0,spawns={{0,-5387.93,-2980.45,312.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111260,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5405.46,-2955.67,314.84}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111261,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5404.87,-2957.6,321.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111262,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5386.46,-2955.72,322.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111265,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5383.83,-2954.73,322.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111266,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5382.05,-2963.25,322.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111268,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5387.75,-2964.45,322.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111269,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5395.58,-2977.06,325.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111271,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-5392.41,-2975.81,325.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111942,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-518.49,119.71,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111943,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-517.48,120.62,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111945,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-508.51,118.09,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111946,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-507.71,119.49,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111948,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-507.9,116.61,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111949,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-516.76,119.66,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111950,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-516.93,116.58,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111969,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-486.93,117.06,60.5}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111973,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-517.9,115.92,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111974,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-518.65,116.8,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=111979,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-507.19,117.96,59.06}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112012,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-134.8,783.74,67.47}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112042,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10581.7,-1110.14,30.07},{0,2317.68,292.59,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112043,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10573.4,-1111.75,30.07},{0,2313.01,285.51,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112044,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10572.0,-1109.25,30.07},{0,2314.76,283.21,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112045,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10571.4,-1113.73,30.07},{0,2310.39,284.38,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112048,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10579.9,-1111.51,30.07},{0,2315.7,291.39,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112049,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10583.1,-1112.0,30.07},{0,2316.48,294.57,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112050,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10579.8,-1114.61,30.07},{0,2312.8,292.47,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112051,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-413.72,1490.12,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112052,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-415.75,1490.1,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112053,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-398.79,1490.25,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112054,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-396.76,1490.27,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112055,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-394.59,1490.29,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112058,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-411.71,1502.97,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112059,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-413.74,1502.95,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112060,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-415.91,1502.93,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112061,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10551.0,-1108.49,31.51},{0,2307.43,263.54,38.75}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112062,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-414.33,1507.9,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112065,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-401.73,1508.25,18.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112066,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-400.76,1507.3,18.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112070,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-411.55,1490.14,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112071,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-408.88,1507.95,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112072,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-387.51,1496.47,19.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112073,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10581.1,-1116.22,30.07},{0,2311.8,294.3,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112074,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10582.8,-1114.9,30.07},{0,2313.68,295.37,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112079,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-10569.7,-1111.28,30.07},{0,2312.01,281.89,37.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112192,kind="object",names={enUS="Chair"},flags=0,spawns={{30,-155.41,-440.24,33.29},{30,-150.79,-459.83,26.42},{30,-153.75,-438.64,33.29},{30,-149.06,-461.09,26.42},{30,-168.34,-458.4,33.29},{30,-142.97,-444.08,26.42},{30,-145.34,-444.85,26.42},{0,2821.34,-1408.38,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112194,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2830.33,-1404.39,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112195,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2820.93,-1409.68,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112196,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2830.36,-1406.01,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112197,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2831.62,-1406.97,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112198,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2822.45,-1408.84,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112199,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2823.86,-1411.58,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112200,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9229.09,-2201.35,65.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112201,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9223.9,-2215.57,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112202,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2849.47,-1395.94,148.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112204,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9228.85,-2213.95,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112205,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9228.85,-2208.5,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112215,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9228.13,-2200.39,65.28}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112216,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2823.36,-1412.64,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112217,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2822.26,-1412.26,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112223,kind="object",names={enUS="Chair"},flags=0,spawns={{0,2831.56,-1405.45,147.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112231,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9223.9,-2213.4,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112232,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9223.9,-2211.37,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112234,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9211.06,-2211.33,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112235,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9211.06,-2213.5,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112236,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9211.06,-2215.53,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112237,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9211.06,-2198.57,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112238,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9211.06,-2196.54,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112239,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9217.19,-2187.24,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112241,kind="object",names={enUS="Chair"},flags=0,spawns={{0,-9211.06,-2194.37,66.3}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112301,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-861.43,-469.91,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112302,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-859.26,-469.89,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112303,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-857.23,-469.87,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112305,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-874.19,-470.02,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112308,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-876.22,-470.04,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112309,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-878.39,-470.06,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112310,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-861.28,-482.74,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112311,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-859.25,-482.73,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112312,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-857.07,-482.71,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112316,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-871.26,-488.02,12.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112317,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-872.23,-487.07,12.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112318,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-849.54,-481.09,14.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112319,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-858.65,-487.67,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112321,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-864.1,-487.72,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112322,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-885.47,-476.24,13.48}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112881,kind="object",names={enUS="Cooking Fire"},flags=0,spawns={{0,1171.46,2061.27,5.49}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112888,kind="object",names={enUS="Dusty Shelf"},flags=0,spawns={{0,971.94,704.89,85.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112898,kind="object",names={enUS="The Gilded Rose"},flags=0,spawns={{0,-8855.54,661.93,100.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112899,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8846.09,1077.48,95.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112901,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8693.8,307.52,101.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112902,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8694.1,311.8,101.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112903,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8692.94,309.37,101.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112904,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8696.43,310.74,101.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112905,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8697.11,308.78,101.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112906,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8696.18,306.67,101.03}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112907,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{0,-8708.01,313.56,103.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=112948,kind="object",names={enUS="Intrepid's Locked Strongbox"},flags=0,spawns={{0,-2810.56,-984.15,-13.33}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113528,kind="object",names={enUS="Spiritual Healing"},flags=0,spawns={{1,-992.87,211.09,135.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113529,kind="object",names={enUS="Arathi Cannon Fire"},flags=0,spawns={{0,-2071.66,-2020.84,13.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113531,kind="object",names={enUS="Cannon"},flags=0,spawns={{0,-2071.27,-2021.62,12.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113540,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-645.01,1180.23,78.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113568,kind="object",names={enUS="Rogues' Quarter"},flags=0,spawns={{0,1456.08,238.96,-57.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113569,kind="object",names={enUS="Rogues' Quarter"},flags=0,spawns={{0,1593.69,100.52,-59.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113570,kind="object",names={enUS="The Apothecarium"},flags=0,spawns={{0,1575.17,253.84,-56.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113571,kind="object",names={enUS="The Apothecarium"},flags=0,spawns={{0,1456.07,241.95,-59.08}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113572,kind="object",names={enUS="War Quarter"},flags=0,spawns={{0,1609.18,260.42,-56.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113574,kind="object",names={enUS="War Quarter"},flags=0,spawns={{0,1735.62,240.52,-57.32}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113575,kind="object",names={enUS="Rogues' Quarter"},flags=0,spawns={{0,1536.38,240.58,-58.31}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113576,kind="object",names={enUS="Magic Quarter"},flags=0,spawns={{0,1615.76,226.41,-56.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113577,kind="object",names={enUS="Rogues' Quarter"},flags=0,spawns={{0,1595.32,181.14,-58.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113752,kind="object",names={enUS="Inn"},flags=0,spawns={{0,1630.96,225.04,-33.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113753,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,1693.92,281.95,-62.55}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113754,kind="object",names={enUS="Forge"},flags=0,spawns={{0,1694.13,293.99,-62.18}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113755,kind="object",names={enUS="Rogues' Quarter"},flags=0,spawns={{0,1539.44,185.91,-58.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113756,kind="object",names={enUS="Rogues' Quarter"},flags=0,spawns={{0,1540.93,184.44,-59.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113757,kind="object",names={enUS="Shadowforge Cache"},flags=0,spawns={{70,21.19,413.87,-45.01}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113768,kind="object",names={enUS="Brightly Colored Egg"},flags=0,spawns={{0,-9664.85,143.49,46.75},{1,1117.09,-4696.3,18.09},{1,10878.7,2076.37,1327.77},{1,-3500.59,-815.69,99.32},{0,-4845.11,-192.29,403.0},{1,-583.8,35.59,10.75},{1,-1191.63,-5612.28,6.21},{1,9520.07,649.9,1276.32},{0,-5474.86,-1943.32,405.55},{0,-6393.19,771.44,386.21},{0,-9496.65,-1526.38,62.5},{1,-1925.37,-1052.76,44.26},{1,-511.37,-4182.72,77.04},{1,-1886.07,374.87,114.92},{1,10700.2,665.44,1335.8},{1,9714.31,1797.37,1297.46},{0,-8673.14,-174.3,91.15},{0,-5612.11,-958.28,397.34},{1,-2754.81,-193.42,15.92},{1,-933.23,-852.98,3.8},{1,-192.49,-4977.71,21.15},{0,-5676.06,365.65,389.33},{0,-9674.5,-651.84,50.16},{1,-1595.77,-320.44,-28.29},{1,387.95,-4579.38,54.72},{1,10607.6,1451.54,1321.18},{1,-861.03,-4734.46,28.49},{1,9351.25,1275.33,1252.91},{1,-1048.43,464.92,23.88},{0,-5633.34,-242.51,385.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113769,kind="object",names={enUS="Brightly Colored Egg"},flags=0,spawns={{0,-9664.85,143.49,46.75},{1,1117.09,-4696.3,18.09},{1,10878.7,2076.37,1327.77},{1,-3500.59,-815.69,99.32},{0,-4845.11,-192.29,403.0},{1,-583.8,35.59,10.75},{1,-1191.63,-5612.28,6.21},{1,9520.07,649.9,1276.32},{0,-5474.86,-1943.32,405.55},{0,-6393.19,771.44,386.21},{0,-9496.65,-1526.38,62.5},{1,-1925.37,-1052.76,44.26},{1,-511.37,-4182.72,77.04},{1,-1886.07,374.87,114.92},{1,10700.2,665.44,1335.8},{1,9714.31,1797.37,1297.46},{0,-8673.14,-174.3,91.15},{0,-5612.11,-958.28,397.34},{1,-2754.81,-193.42,15.92},{1,-933.23,-852.98,3.8},{1,-192.49,-4977.71,21.15},{0,-5676.06,365.65,389.33},{0,-9674.5,-651.84,50.16},{1,-1595.77,-320.44,-28.29},{1,387.95,-4579.38,54.72},{1,10607.6,1451.54,1321.18},{1,-861.03,-4734.46,28.49},{1,9351.25,1275.33,1252.91},{1,-1048.43,464.92,23.88},{0,-5633.34,-242.51,385.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113770,kind="object",names={enUS="Brightly Colored Egg"},flags=0,spawns={{0,-9664.85,143.49,46.75},{1,1117.09,-4696.3,18.09},{1,10878.7,2076.37,1327.77},{1,-3500.59,-815.69,99.32},{0,-4845.11,-192.29,403.0},{1,-583.8,35.59,10.75},{1,-1191.63,-5612.28,6.21},{1,9520.07,649.9,1276.32},{0,-5474.86,-1943.32,405.55},{0,-6393.19,771.44,386.21},{0,-9496.65,-1526.38,62.5},{1,-1925.37,-1052.76,44.26},{1,-511.37,-4182.72,77.04},{1,-1886.07,374.87,114.92},{1,10700.2,665.44,1335.8},{1,9714.31,1797.37,1297.46},{0,-8673.14,-174.3,91.15},{0,-5612.11,-958.28,397.34},{1,-2754.81,-193.42,15.92},{1,-933.23,-852.98,3.8},{1,-192.49,-4977.71,21.15},{0,-5676.06,365.65,389.33},{0,-9674.5,-651.84,50.16},{1,-1595.77,-320.44,-28.29},{1,387.95,-4579.38,54.72},{1,10607.6,1451.54,1321.18},{1,-861.03,-4734.46,28.49},{1,9351.25,1275.33,1252.91},{1,-1048.43,464.92,23.88},{0,-5633.34,-242.51,385.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113771,kind="object",names={enUS="Brightly Colored Egg"},flags=0,spawns={{0,-9664.85,143.49,46.75},{1,1117.09,-4696.3,18.09},{1,10878.7,2076.37,1327.77},{1,-3500.59,-815.69,99.32},{0,-4845.11,-192.29,403.0},{1,-583.8,35.59,10.75},{1,-1191.63,-5612.28,6.21},{1,9520.07,649.9,1276.32},{0,-5474.86,-1943.32,405.55},{0,-6393.19,771.44,386.21},{0,-9496.65,-1526.38,62.5},{1,-1925.37,-1052.76,44.26},{1,-511.37,-4182.72,77.04},{1,-1886.07,374.87,114.92},{1,10700.2,665.44,1335.8},{1,9714.31,1797.37,1297.46},{0,-8673.14,-174.3,91.15},{0,-5612.11,-958.28,397.34},{1,-2754.81,-193.42,15.92},{1,-933.23,-852.98,3.8},{1,-192.49,-4977.71,21.15},{0,-5676.06,365.65,389.33},{0,-9674.5,-651.84,50.16},{1,-1595.77,-320.44,-28.29},{1,387.95,-4579.38,54.72},{1,10607.6,1451.54,1321.18},{1,-861.03,-4734.46,28.49},{1,9351.25,1275.33,1252.91},{1,-1048.43,464.92,23.88},{0,-5633.34,-242.51,385.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113772,kind="object",names={enUS="Brightly Colored Egg"},flags=0,spawns={{0,2290.35,292.88,35.18},{0,2309.1,255.46,35.04},{0,2208.54,304.43,34.37},{0,2320.28,266.16,35.18},{0,2316.82,257.05,35.14},{0,2326.6,290.61,35.18},{0,2251.51,257.68,34.23},{0,2269.77,326.81,39.53},{0,2243.0,332.99,35.19},{0,2287.56,253.05,34.22},{0,2224.66,251.93,38.63},{0,2270.68,254.03,34.1},{0,2265.18,351.48,37.35},{0,2294.58,247.73,34.14},{0,2319.87,260.25,35.18},{0,2270.7,345.18,35.19},{0,2254.08,363.0,36.07},{0,2230.17,280.45,34.96},{0,2297.69,300.58,35.18},{0,2245.9,337.24,35.19},{0,2290.1,334.65,34.71},{0,2234.99,325.45,35.19},{0,2252.76,227.38,34.07},{0,2259.43,330.98,36.32},{0,2221.68,321.81,35.19},{0,2220.47,305.17,35.19},{0,2273.9,236.95,34.12},{0,2301.0,305.17,35.18},{0,2254.79,265.95,34.96},{0,2268.4,254.78,34.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=113791,kind="object",names={enUS="Brazier of Everfount"},flags=0,spawns={{0,419.04,1843.15,11.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=120584,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-6222.18,687.17,384.92}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=121264,kind="object",names={enUS="Lucius's Lockbox"},flags=0,spawns={{0,-9222.03,-2700.6,89.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123207,kind="object",names={enUS="Goblin Smelting Pot"},flags=0,spawns={{36,-205.66,-574.58,21.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123208,kind="object",names={enUS="Goblin Smelting Pot"},flags=0,spawns={{36,-210.43,-579.2,21.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123209,kind="object",names={enUS="Goblin Smelting Pot"},flags=0,spawns={{36,-201.04,-579.37,21.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123210,kind="object",names={enUS="Goblin Smelting Pot"},flags=0,spawns={{36,-205.81,-583.96,21.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123211,kind="object",names={enUS="Foundry Anvil"},flags=0,spawns={{36,-205.97,-613.26,19.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123212,kind="object",names={enUS="Foundry Anvil"},flags=0,spawns={{36,-196.42,-610.98,19.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123213,kind="object",names={enUS="Foundry Anvil"},flags=0,spawns={{36,-196.49,-605.38,19.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123214,kind="object",names={enUS="Duskwood Chest"},flags=0,spawns={{0,-11125.0,552.15,70.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123215,kind="object",names={enUS="This Way"},flags=0,spawns={{0,-4020.33,-1407.01,155.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123216,kind="object",names={enUS="The Other Way"},flags=0,spawns={{0,-4020.05,-1407.16,155.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123217,kind="object",names={enUS="That Way"},flags=0,spawns={{0,-4020.05,-1407.01,155.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123244,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,-3788.06,-4365.35,16.79},{0,-3792.28,-859.01,11.6},{0,-565.53,41.49,49.88},{0,-9454.9,90.05,58.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123309,kind="object",names={enUS="Ooze Covered Truesilver Deposit"},flags=0,spawns={{1,-7970.74,-1310.69,-312.59},{1,-5320.53,451.73,9.52},{1,-6709.79,952.58,9.76},{1,-6199.75,943.46,-42.79},{1,-6335.74,1185.27,-20.91},{1,-6487.64,859.26,17.68},{1,-7963.21,-1072.9,-326.9},{1,-6591.9,1132.68,-46.92},{1,-5394.11,263.01,21.02},{1,-5229.71,287.21,9.8},{1,-8118.19,-1238.8,-339.22},{1,-6600.76,759.01,-51.7},{1,-6371.28,1041.26,-48.78},{1,-6576.24,1012.65,9.46},{1,-6613.57,880.51,1.43},{1,-8008.19,-1194.46,-322.1},{1,-6235.04,1046.85,-33.94},{1,-6325.71,956.07,5.64},{1,-6658.89,1069.41,-28.05},{1,-6279.66,1120.12,-26.53},{1,-6636.41,945.35,-52.66},{1,-6256.68,980.72,-39.87},{1,-6525.9,803.9,-42.73},{1,-8026.95,-1132.66,-318.22},{1,-6471.21,920.87,-41.4},{1,-7981.69,-1252.05,-323.31},{1,-6257.54,1173.84,-16.47},{1,-8062.87,-1248.52,-331.33},{1,-6334.26,1130.7,-20.07},{1,-6586.51,1060.81,-39.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123310,kind="object",names={enUS="Ooze Covered Mithril Deposit"},flags=0,spawns={{1,-6502.48,-3233.94,-113.68},{1,-5362.42,297.73,22.08},{1,-5353.75,397.5,17.01},{1,-5254.65,330.45,17.56},{1,-5335.88,330.34,19.52},{1,-5457.48,113.78,28.82},{1,-5412.78,67.7,37.78},{1,-6443.21,-3289.05,-105.04},{1,-5286.74,-14.02,21.24},{1,-5221.93,98.68,31.71},{1,-5276.19,75.26,27.29},{1,-5391.48,36.05,27.38},{1,-5297.62,51.88,28.94},{1,-6512.62,-3470.86,-69.16},{1,-6395.6,-3482.74,-70.13},{1,-6458.28,-3487.44,-69.09},{1,-5279.87,101.92,24.46},{1,-6500.99,-3348.64,-89.91},{1,-5275.56,-42.49,8.32},{1,-6482.59,-3318.97,-96.63},{1,-6518.18,-3307.59,-93.47},{1,-5397.78,-61.58,30.35}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123328,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-396.9,-2709.93,97.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123329,kind="object",names={enUS="Baelog's Chest"},flags=0,spawns={{70,-356.0,112.83,-43.2}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123330,kind="object",names={enUS="Buccaneer's Strongbox"},flags=0,spawns={{1,-1456.44,-3971.63,7.56},{1,-1461.56,-3970.03,7.56},{1,-1452.1,-3966.4,7.56},{1,-1453.02,-3969.75,7.56},{1,-1462.45,-3966.9,7.56},{1,-1458.06,-3972.06,8.26}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123331,kind="object",names={enUS="Buccaneer's Strongbox"},flags=0,spawns={{1,-1463.0,-3968.46,7.56},{1,-1458.06,-3972.06,8.26}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123333,kind="object",names={enUS="Buccaneer's Strongbox"},flags=0,spawns={{1,-1454.38,-3971.26,7.56}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123462,kind="object",names={enUS="The Jewel of the Southsea"},flags=0,spawns={{1,-1457.65,-3958.54,0.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123463,kind="object",names={enUS="Baelog's Journal"},flags=0,spawns={{70,-355.02,114.85,-43.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123848,kind="object",names={enUS="Ooze Covered Thorium Vein"},flags=0,spawns={{1,-7970.74,-1310.69,-312.59},{1,-5394.11,263.01,21.02},{1,-5320.53,451.73,9.52},{1,-8062.87,-1248.52,-331.33},{1,-8014.1,-1299.92,-320.59},{1,-5229.71,287.21,9.8},{1,-7981.69,-1252.05,-323.31},{1,-7945.01,-1286.78,-278.14},{1,-8008.19,-1194.46,-322.1},{1,-8026.95,-1132.66,-318.22},{1,-7963.21,-1072.9,-326.9},{1,-8054.04,-1181.91,-331.59},{1,-8118.19,-1238.8,-339.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124367,kind="object",names={enUS="Temple Door"},flags=0,spawns={{70,137.66,288.14,-26.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124368,kind="object",names={enUS="Temple Door"},flags=0,spawns={{70,50.04,247.25,-26.52}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124369,kind="object",names={enUS="The Ancient Vault"},flags=0,spawns={{70,137.65,288.12,-52.13}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124370,kind="object",names={enUS="Echomok Door"},flags=0,spawns={{70,-185.39,389.6,-36.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124371,kind="object",names={enUS="Keystone"},flags=0,spawns={{70,-234.69,239.62,-50.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124372,kind="object",names={enUS="Seal of Khaz'Mul"},flags=0,spawns={{70,-234.57,294.81,-47.6}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124374,kind="object",names={enUS="Horatio Montgomery, M.D."},flags=0,spawns={{0,-8805.35,339.8,95.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124388,kind="object",names={enUS="Garrett Family Chest"},flags=0,spawns={{0,-6198.54,-2929.79,214.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124389,kind="object",names={enUS="Krom Stoutarm's Chest"},flags=0,spawns={{0,-6279.4,-2963.6,223.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=125475,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-11621.1,-3403.74,7.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=125477,kind="object",names={enUS="Conspicuous Urn"},flags=0,spawns={{70,-350.81,82.63,-51.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126046,kind="object",names={enUS="Dwarven District"},flags=0,spawns={{0,-8546.43,516.73,111.29}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126049,kind="object",names={enUS="Magenta Cap Clusters"},flags=0,spawns={{0,-6118.81,-2911.51,210.97},{0,-6171.99,-3029.98,222.44},{0,-6294.55,-2925.82,232.21},{0,-6064.14,-3091.2,250.61},{0,-6096.92,-2979.69,207.4},{0,-6138.42,-3099.2,223.78},{0,-6142.52,-3013.78,220.45},{0,-6061.82,-3019.5,230.49},{0,-6061.82,-3019.5,230.49},{0,-6142.52,-3013.78,220.45},{0,-6171.99,-3029.98,222.44},{70,-203.68,214.63,-46.44},{70,57.26,322.76,-41.9},{70,1.6,236.36,-32.38},{70,-95.14,337.39,-47.09},{70,-112.4,230.63,-52.15},{70,-129.11,384.45,-39.99},{70,-358.6,100.76,-53.19},{70,-164.64,301.68,-53.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126050,kind="object",names={enUS="Bench"},flags=0,spawns={{1,1285.26,-4195.66,26.81},{1,1024.25,-2220.48,93.2},{1,242.13,-2910.09,98.09},{1,2352.0,-2509.57,103.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126051,kind="object",names={enUS="Bench"},flags=0,spawns={{1,1285.44,-4192.19,26.81},{1,1020.8,-2220.81,93.2},{1,243.57,-2906.94,98.09},{1,2349.61,-2507.05,103.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126052,kind="object",names={enUS="Bench"},flags=0,spawns={{1,1236.04,-4487.41,22.73},{1,-22.44,-3590.52,29.36},{1,-36.63,-2611.57,97.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126053,kind="object",names={enUS="Bench"},flags=0,spawns={{1,1235.95,-4484.5,22.79},{1,-25.31,-3591.04,29.43},{1,-39.38,-2612.53,97.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126158,kind="object",names={enUS="Tallonkai's Dresser"},flags=0,spawns={{1,9806.74,351.42,1308.46}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126260,kind="object",names={enUS="Ancient Chest"},flags=0,spawns={{0,-6201.66,-3057.53,212.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126312,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-7588.21,-1286.63,244.81}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126313,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-7543.08,-1272.85,273.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126314,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-7543.86,-1274.22,250.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126335,kind="object",names={enUS="Bonfire"},flags=0,spawns={{0,-7576.99,-1296.62,245.52}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=128293,kind="object",names={enUS="Magenta Cap Clusters"},flags=0,spawns={{0,-6118.81,-2911.51,210.97},{0,-6171.99,-3029.98,222.44},{0,-6294.55,-2925.82,232.21},{0,-6064.14,-3091.2,250.61},{0,-6096.92,-2979.69,207.4},{0,-6138.42,-3099.2,223.78},{0,-6142.52,-3013.78,220.45},{0,-6061.82,-3019.5,230.49},{0,-6061.82,-3019.5,230.49},{0,-6142.52,-3013.78,220.45},{0,-6171.99,-3029.98,222.44},{70,-203.68,214.63,-46.44},{70,57.26,322.76,-41.9},{70,1.6,236.36,-32.38},{70,-95.14,337.39,-47.09},{70,-112.4,230.63,-52.15},{70,-129.11,384.45,-39.99},{70,-358.6,100.76,-53.19},{70,-164.64,301.68,-53.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=128308,kind="object",names={enUS="Shallow Grave"},flags=0,spawns={{209,1876.14,976.48,9.05},{209,1858.7,1053.75,8.88},{209,1891.6,1023.06,9.37},{209,1839.42,1023.49,9.56},{209,1866.24,1008.4,8.88},{209,1897.98,985.28,8.9},{209,1881.46,1041.43,8.88},{209,1841.08,1045.54,9.22},{209,1892.57,1006.37,9.07},{209,1871.86,994.26,8.88},{209,1890.27,970.86,9.01},{209,1867.74,1041.84,8.88},{209,1852.41,1024.78,8.88},{209,1869.28,1020.08,8.88},{209,1832.72,1032.39,9.45},{209,1890.12,989.76,8.88},{209,1888.36,1037.0,8.92},{209,1861.12,1019.39,8.88},{209,1866.33,1049.64,9.01},{209,1839.18,1036.88,9.35},{209,1882.7,971.83,8.88},{209,1894.39,977.01,8.93},{209,1887.94,1029.08,9.15},{209,1881.99,1034.68,8.88},{209,1875.85,1044.26,9.08},{209,1845.54,1024.12,9.08},{209,1888.64,977.75,8.88},{209,1871.08,1046.76,9.03},{209,1863.41,1044.78,8.88},{209,1845.96,1047.25,8.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=128403,kind="object",names={enUS="Shallow Grave"},flags=0,spawns={{209,1876.14,976.48,9.05},{209,1858.7,1053.75,8.88},{209,1891.6,1023.06,9.37},{209,1839.42,1023.49,9.56},{209,1866.24,1008.4,8.88},{209,1897.98,985.28,8.9},{209,1881.46,1041.43,8.88},{209,1841.08,1045.54,9.22},{209,1892.57,1006.37,9.07},{209,1871.86,994.26,8.88},{209,1890.27,970.86,9.01},{209,1867.74,1041.84,8.88},{209,1852.41,1024.78,8.88},{209,1869.28,1020.08,8.88},{209,1832.72,1032.39,9.45},{209,1890.12,989.76,8.88},{209,1888.36,1037.0,8.92},{209,1861.12,1019.39,8.88},{209,1866.33,1049.64,9.01},{209,1839.18,1036.88,9.35},{209,1882.7,971.83,8.88},{209,1894.39,977.01,8.93},{209,1887.94,1029.08,9.15},{209,1881.99,1034.68,8.88},{209,1875.85,1044.26,9.08},{209,1845.54,1024.12,9.08},{209,1888.64,977.75,8.88},{209,1871.08,1046.76,9.03},{209,1863.41,1044.78,8.88},{209,1845.96,1047.25,8.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=129127,kind="object",names={enUS="Gallywix's Lockbox"},flags=0,spawns={{1,1237.13,-2925.65,141.78}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=129206,kind="object",names={enUS="Campfire"},flags=0,spawns={{0,-11110.6,513.03,31.26}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=130125,kind="object",names={enUS="The Five Deadly Venoms"},flags=0,spawns={{0,-8670.68,447.15,101.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=130511,kind="object",names={enUS="Altar of The Keepers"},flags=0,spawns={{70,104.84,272.45,-26.53}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=130666,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,-10267.1,1393.97,39.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=130667,kind="object",names={enUS="Anvil"},flags=0,spawns={{0,-10650.1,1104.9,33.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=130668,kind="object",names={enUS="Forge"},flags=0,spawns={{0,-10651.6,1106.91,33.61}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=131474,kind="object",names={enUS="The Discs of Norgannon"},flags=0,spawns={{70,161.83,298.28,-51.37}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=131978,kind="object",names={enUS="Large Mithril Bound Chest"},flags=0,spawns={{70,-73.51,265.31,-47.63},{70,-150.17,201.76,-49.91}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=133234,kind="object",names={enUS="Altar of Archaedas"},flags=0,spawns={{70,96.48,269.05,-52.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=133466,kind="object",names={enUS="Bench"},flags=0,spawns={{1,-7164.13,-3845.34,8.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=133467,kind="object",names={enUS="Bench"},flags=0,spawns={{1,-7165.2,-3849.55,8.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=133468,kind="object",names={enUS="Bench"},flags=0,spawns={{1,-7160.83,-3850.54,8.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=133469,kind="object",names={enUS="Bench"},flags=0,spawns={{1,-7159.86,-3846.32,8.7}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136101,kind="object",names={enUS="Tailor"},flags=0,spawns={{0,1693.92,192.59,-56.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136922,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,88.22,-415.1,110.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136923,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,87.45,-468.45,116.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136925,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{229,40.72,-586.71,30.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136926,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{229,43.31,-572.48,30.68}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136927,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{229,4.76,-567.07,29.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136928,kind="object",names={enUS="Blazing Fire"},flags=0,spawns={{229,8.39,-583.68,29.22}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136929,kind="object",names={enUS="Chair"},flags=0,spawns={{229,152.59,-396.41,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136930,kind="object",names={enUS="Chair"},flags=0,spawns={{229,147.16,-389.95,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136931,kind="object",names={enUS="Bench"},flags=0,spawns={{229,149.68,-386.15,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136932,kind="object",names={enUS="Chair"},flags=0,spawns={{229,157.78,-389.95,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136933,kind="object",names={enUS="Chair"},flags=0,spawns={{229,150.61,-396.41,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136934,kind="object",names={enUS="Chair"},flags=0,spawns={{229,155.82,-390.04,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136935,kind="object",names={enUS="Chair"},flags=0,spawns={{229,145.18,-390.04,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136936,kind="object",names={enUS="Bench"},flags=0,spawns={{229,153.36,-386.17,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136937,kind="object",names={enUS="Bench"},flags=0,spawns={{229,149.57,-454.69,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136938,kind="object",names={enUS="Bench"},flags=0,spawns={{229,153.25,-454.71,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136939,kind="object",names={enUS="Chair"},flags=0,spawns={{229,157.75,-450.16,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136940,kind="object",names={enUS="Chair"},flags=0,spawns={{229,155.77,-450.24,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136941,kind="object",names={enUS="Chair"},flags=0,spawns={{229,152.32,-444.31,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136942,kind="object",names={enUS="Chair"},flags=0,spawns={{229,150.34,-444.31,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136943,kind="object",names={enUS="Chair"},flags=0,spawns={{229,147.11,-450.16,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136944,kind="object",names={enUS="Chair"},flags=0,spawns={{229,145.15,-450.24,121.96}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136945,kind="object",names={enUS="Bench"},flags=0,spawns={{229,-174.13,-342.77,64.39}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136946,kind="object",names={enUS="Bench"},flags=0,spawns={{229,-172.35,-462.84,87.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136947,kind="object",names={enUS="Fire"},flags=0,spawns={{229,16.99,-253.82,65.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136948,kind="object",names={enUS="Fire"},flags=0,spawns={{229,8.17,-268.98,65.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136949,kind="object",names={enUS="Fire"},flags=0,spawns={{229,51.25,-274.13,65.45}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136950,kind="object",names={enUS="Fire"},flags=0,spawns={{229,72.84,-265.63,60.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136951,kind="object",names={enUS="Fire"},flags=0,spawns={{229,68.88,-283.79,60.74}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136952,kind="object",names={enUS="Fire"},flags=0,spawns={{229,69.97,-329.87,55.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136954,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,16.17,-280.87,9.62}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136955,kind="object",names={enUS="Fire"},flags=0,spawns={{229,56.36,-306.16,54.02}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136957,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,117.45,-254.29,91.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136959,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,125.66,-280.81,91.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136961,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,46.47,-309.65,91.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136962,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,106.18,-265.95,91.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136963,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,107.69,-253.09,91.57}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136964,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,82.59,-364.59,116.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136965,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,215.77,-341.66,76.86}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136966,kind="object",names={enUS="Bonfire"},flags=0,spawns={{229,229.03,-307.81,76.97}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=137167,kind="object",names={enUS="Nether Rift"},flags=0,spawns={{0,-11365.9,-2979.07,0.41}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=137644,kind="object",names={enUS="The Forlorn Cavern"},flags=0,spawns={{0,-4890.83,-898.6,503.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=137646,kind="object",names={enUS="The Military Ward"},flags=0,spawns={{0,-4982.57,-974.01,504.85}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=137647,kind="object",names={enUS="Dwarven Brazier"},flags=0,spawns={{0,-4802.87,-1175.06,502.19}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138316,kind="object",names={enUS="Anvil"},flags=0,spawns={{1,-2287.63,-1934.92,95.79}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138317,kind="object",names={enUS="Forge"},flags=0,spawns={{1,-2287.18,-1943.8,95.75}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138318,kind="object",names={enUS="Bonfire"},flags=0,spawns={{1,-2374.62,-1903.08,95.84}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138492,kind="object",names={enUS="Shards of Myzrael"},flags=0,spawns={{0,-942.84,-3116.75,48.42}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138496,kind="object",names={enUS="HornCover"},flags=0,spawns={{1,-1149.77,2891.14,200.76}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138497,kind="object",names={enUS="Mouthpiece Mount"},flags=0,spawns={{1,-1152.54,2895.45,202.4}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138498,kind="object",names={enUS="Temple of the Moon Fountain"},flags=0,spawns={{1,9634.3,2523.75,1333.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138614,kind="object",names={enUS="Wooden Chair"},flags=0,spawns={{1,-3989.97,-4593.37,7.09},{1,-4079.2,-4524.38,6.35},{0,-3786.07,-666.2,5.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=139852,kind="object",names={enUS="Memorial to Sully Balloo"},flags=0,spawns={{0,-5027.84,-1020.48,502.21}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140105,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,2602.69,-3598.53,109.9}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140109,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,2434.8,-3418.61,99.12}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140110,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,2455.71,-3450.13,95.31}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140111,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,2466.4,-3458.41,94.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140112,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,2388.25,-3407.94,110.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140113,kind="object",names={enUS="Fierce Blaze"},flags=0,spawns={{1,2260.67,-3451.34,104.87}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140211,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-1069.32,-1915.95,91.64}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140212,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-1189.31,-2011.94,91.67}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140213,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-1209.38,-2172.98,91.54}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140214,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,-1049.06,-2311.18,91.89}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140357,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,3602.19,-4400.14,116.09}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140358,kind="object",names={enUS="Smoldering Coals"},flags=0,spawns={{1,3183.91,-4248.23,97.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140359,kind="object",names={enUS="Smoldering Coals"},flags=0,spawns={{1,3182.39,-4265.43,98.16}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140360,kind="object",names={enUS="Campfire"},flags=0,spawns={{1,3442.93,-5794.46,2.93}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140372,kind="object",names={enUS="Bench"},flags=0,spawns={{230,650.82,-176.0,-37.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140373,kind="object",names={enUS="Bench"},flags=0,spawns={{230,649.3,-172.33,-37.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140374,kind="object",names={enUS="Bench"},flags=0,spawns={{230,637.17,-151.81,-37.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140375,kind="object",names={enUS="Bench"},flags=0,spawns={{230,640.01,-154.6,-37.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140376,kind="object",names={enUS="Bench"},flags=0,spawns={{230,631.6,-146.06,-37.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140378,kind="object",names={enUS="Bench"},flags=0,spawns={{230,634.43,-148.84,-37.0}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140379,kind="object",names={enUS="Bench"},flags=0,spawns={{230,631.6,-140.11,-35.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140380,kind="object",names={enUS="Bench"},flags=0,spawns={{230,634.43,-142.9,-35.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140381,kind="object",names={enUS="Bench"},flags=0,spawns={{230,637.17,-145.87,-35.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140382,kind="object",names={enUS="Bench"},flags=0,spawns={{230,640.01,-148.66,-35.63}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140383,kind="object",names={enUS="Bench"},flags=0,spawns={{230,637.07,-136.97,-34.14}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140384,kind="object",names={enUS="Bench"},flags=0,spawns={{230,639.91,-142.9,-34.14}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140385,kind="object",names={enUS="Bench"},flags=0,spawns={{230,642.65,-145.87,-34.14}}}

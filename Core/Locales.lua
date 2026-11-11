@@ -671,6 +671,8 @@ function ns.SynchronizeActiveLocale()
         ns.activeLocale = LOCALES[clientLoc] and clientLoc or "enUS"
     end
     ns.L_ACTIVE = LOCALES[ns.activeLocale] or L_EN
+    -- names of this language from EzWoW - Data, when its built-in table was dropped (Core/SharedData.lua)
+    if ns.SharedData and ns.SharedData.UseLocale then pcall(ns.SharedData.UseLocale, ns.activeLocale) end
 end
 
 ns.SynchronizeActiveLocale()
