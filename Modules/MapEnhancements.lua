@@ -311,8 +311,8 @@ function WorldMapCanvasEnhancer.formatZoneLevel(minL, maxL)
     else
         color = "|cff99aabb"
     end
-    if minL == maxL then return string.format("%s(%d)|r", color, minL) end
-    return string.format("%s(%d-%d)|r", color, minL, maxL)
+    if minL == maxL then return string.format("%sLv.%d|r", color, minL) end
+    return string.format("%sLv.%d-%d|r", color, minL, maxL)
 end
 
 function WorldMapCanvasEnhancer.refreshZoneLevelLabel()
@@ -336,14 +336,14 @@ function WorldMapCanvasEnhancer.refreshZoneLevelLabel()
     if type(desc) == "string" and desc ~= "" and not (issecretvalue and issecretvalue(desc)) then anchor = descFS end
     zoneLevelText:ClearAllPoints()
     zoneLevelText:SetPoint("TOP", anchor, "BOTTOM", 0, -4)
-    zoneLevelText:SetText(WorldMapCanvasEnhancer.formatZoneLevel(zInfo[1], zInfo[2]))
-    zoneLevelText:Show()
-
+    -- one line: "Lv.30-40" and, where it matters, the fishing icon and skill
+    local text = WorldMapCanvasEnhancer.formatZoneLevel(zInfo[1], zInfo[2])
     local fishReq = zInfo[3]
     if fishReq and fishReq > 0 then
-        zoneFishText:SetText(string.format("|cff7ecbe0%s %d|r", L.fishingSkill or "Fishing", fishReq))
-        zoneFishText:Show()
+        text = text .. string.format("   |TInterface\\Icons\\Trade_Fishing:0:0:0:0:64:64:5:59:5:59|t |cff7ecbe0%d|r", fishReq)
     end
+    zoneLevelText:SetText(text)
+    zoneLevelText:Show()
 end
 
 function WorldMapCanvasEnhancer.installZoneLevelHeaderHook()
