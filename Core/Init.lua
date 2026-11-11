@@ -204,6 +204,14 @@ end
 -- with this). Every call looks the helper up when it runs, so load order
 -- inside this addon does not matter.
 -----------------------------------------------------------------------------
+-- names the waypoint just set for the on-screen arrow (Libs/EzWoWWaypointArrow)
+function ns.SetWaypointArrowLabel(text, source)
+    local arrow = _G.EzWoW_WaypointArrow
+    if type(arrow) == "table" and type(arrow.SetLabel) == "function" then
+        pcall(arrow.SetLabel, text, source or "EzWoW - Map Finder")
+    end
+end
+
 _G.EzWoWMapFinderAPI = {
     version = 1,
     -- (spawn, mapID) -> mapID, x, y on that map (nil when the spawn is not on it)
@@ -212,9 +220,10 @@ _G.EzWoWMapFinderAPI = {
         if type(fn) == "function" then return fn(spawn, mapID) end
         return nil
     end,
-    ApplyWaypoint = function(spawn)
+    -- labelText / source: what the on-screen arrow shows (optional)
+    ApplyWaypoint = function(spawn, labelText, source)
         local fn = ns.ApplyWaypointForSpawn
-        if type(fn) == "function" then fn(spawn) end
+        if type(fn) == "function" then fn(spawn, labelText, source) end
     end,
     -- (entry, spawn index) -> true when the moving arrow pin and waypoint were set
     PointAtSpawn = function(entry, spawnIdx)

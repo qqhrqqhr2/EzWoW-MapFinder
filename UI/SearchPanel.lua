@@ -68,7 +68,8 @@ local animTime = 0
 local renderActiveEntityMapPins
 local refreshRows
 
-function EntityExplorerPanel.setMapWaypointForSpawn(sp)
+-- labelText: what the on-screen arrow names (default: the selected search result)
+function EntityExplorerPanel.setMapWaypointForSpawn(sp, labelText, source)
     if not ns.DB or ns.DB.autoWaypoint == false or not sp then return end
     local mapID2, mxVal, myVal = projectWorldSpawnToMap(sp, nil)
     if mapID2 and mxVal and myVal and C_Map and C_Map.SetUserWaypoint and UiMapPoint and UiMapPoint.CreateFromCoordinates then
@@ -79,6 +80,15 @@ function EntityExplorerPanel.setMapWaypointForSpawn(sp)
                 C_Map.SetUserWaypoint(anchorPoint)
                 if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
                     C_SuperTrack.SetSuperTrackedUserWaypoint(true)
+                end
+                if ns.SetWaypointArrowLabel then
+                    local text = labelText
+                    local entity = ns.selectedEntity
+                    if not text and entity then
+                        local okName, name = pcall(ns.GetLocalizedEntityName, entity)
+                        if okName then text = name end
+                    end
+                    ns.SetWaypointArrowLabel(text, source)
                 end
             end
         end)
@@ -656,6 +666,10 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
             C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(wpMap, mx, my))
             if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
                 C_SuperTrack.SetSuperTrackedUserWaypoint(true)
+            end
+            if ns.SetWaypointArrowLabel then
+                local okName, name = pcall(ns.GetLocalizedEntityName, entry)
+                ns.SetWaypointArrowLabel(okName and name or nil)
             end
         end)
     end

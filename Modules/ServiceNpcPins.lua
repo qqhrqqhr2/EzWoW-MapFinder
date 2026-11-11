@@ -481,7 +481,15 @@ local function obtainPin(index)
     pin:HookScript("OnLeave", lowerPin)
     pin:SetScript("OnClick", function(self)
         local sp = self.group and self.group.spawn
-        if sp and ns.ApplyWaypointForSpawn then ns.ApplyWaypointForSpawn(sp) end
+        if sp and ns.ApplyWaypointForSpawn then
+            local list = self.group.list
+            local text = typeLabel(self.group.typeKey)
+            if list and #list == 1 and ns.GetLocalizedEntityName then
+                local okName, name = pcall(ns.GetLocalizedEntityName, list[1].entry)
+                if okName and type(name) == "string" and name ~= "" then text = name end
+            end
+            ns.ApplyWaypointForSpawn(sp, text or "")
+        end
     end)
     if ns.PassMapRightClicks then ns.PassMapRightClicks(pin) end
     pins[index] = pin

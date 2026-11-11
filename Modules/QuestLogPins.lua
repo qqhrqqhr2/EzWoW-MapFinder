@@ -352,7 +352,8 @@ function QuestLogPins.obtainPin(index)
     pin:SetScript("OnClick", function(self)
         local sp = self.group and self.group.spawn
         if not sp then return end
-        if ns.ApplyWaypointForSpawn then ns.ApplyWaypointForSpawn(sp) end
+        local q = self.group.quests and self.group.quests[1]
+        if ns.ApplyWaypointForSpawn then ns.ApplyWaypointForSpawn(sp, self.group.npcName or (q and q.title) or "") end
     end)
     if ns.PassMapRightClicks then ns.PassMapRightClicks(pin) end
     pins[index] = pin
