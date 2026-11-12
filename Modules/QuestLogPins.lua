@@ -149,6 +149,13 @@ function QuestLogPins.turnInSpawns(entry)
     local cached = turnInCache[entry]
     if cached then return cached end
     local spawns = entry.spawns
+    -- flags 1 on a quest: nobody hands it out (it starts from an item), so
+    -- every spot is where it is turned in
+    if entry.kind == "quest" and type(entry.flags) == "number" and entry.flags % 2 == 1 then
+        cached = { spawns = spawns, sure = true }
+        turnInCache[entry] = cached
+        return cached
+    end
     local n = #spawns
     local result = spawns
     if n >= 2 and n % 2 == 0 then

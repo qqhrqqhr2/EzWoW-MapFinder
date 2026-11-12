@@ -122,7 +122,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=188174,kind="object",names={enUS="
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=300016,kind="object",names={enUS="TEMP Witherbark Village"},flags=0,spawns={{0,-21.77,-2802.7,121.85},{0,450.2,-3341.62,119.65},{0,100.38,-4382.3,121.6},{0,-24.03,-2472.91,122.34}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=300065,kind="object",names={enUS="TEMP Blackrock Depths Arena"},flags=0,spawns={{230,596.82,-188.77,-54.15}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=300142,kind="object",names={enUS="TEMP Shrine of Remulos"},flags=0,spawns={{1,7853.95,-2212.3,472.4}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=2,kind="quest",names={enUS="Sharptalon's Claw"},flags=0,spawns={{1,2310.52,-2554.7,101.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=2,kind="quest",names={enUS="Sharptalon's Claw"},flags=1,spawns={{1,2310.52,-2554.7,101.95}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=5,kind="quest",names={enUS="Jitters' Growling Gut"},flags=0,spawns={{0,-10731.3,337.1,38.52},{0,-10499.3,-1157.98,28.09}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=6,kind="quest",names={enUS="Bounty on Garrick Padfoot"},flags=0,spawns={{0,-8933.54,-136.52,83.45},{0,-8933.54,-136.52,83.45}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=7,kind="quest",names={enUS="Kobold Camp Cleanup"},flags=0,spawns={{0,-8902.59,-162.61,82.02},{0,-8902.59,-162.61,82.02}}}
@@ -141,8 +141,8 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=19,kind="quest",names={enUS="Thari
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=20,kind="quest",names={enUS="Blackrock Menace"},flags=0,spawns={{0,-9284.03,-2298.16,67.58},{0,-9284.03,-2298.16,67.58}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=21,kind="quest",names={enUS="Skirmish at Echo Ridge"},flags=0,spawns={{0,-8902.59,-162.61,82.02},{0,-8902.59,-162.61,82.02}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=22,kind="quest",names={enUS="Goretusk Liver Pie"},flags=0,spawns={{0,-10112.1,1042.1,37.55},{0,-10112.1,1042.1,37.55}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=23,kind="quest",names={enUS="Ursangous's Paw"},flags=0,spawns={{1,2310.52,-2554.7,101.95}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=24,kind="quest",names={enUS="Shadumbra's Head"},flags=0,spawns={{1,2310.52,-2554.7,101.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=23,kind="quest",names={enUS="Ursangous's Paw"},flags=1,spawns={{1,2310.52,-2554.7,101.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=24,kind="quest",names={enUS="Shadumbra's Head"},flags=1,spawns={{1,2310.52,-2554.7,101.95}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=25,kind="quest",names={enUS="Stonetalon Standstill"},flags=0,spawns={{1,2366.48,-2548.22,103.27},{1,2366.48,-2548.22,103.27}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=26,kind="quest",names={enUS="A Lesson to Learn"},flags=0,spawns={{1,10179.0,2563.98,1340.13},{1,8020.0,-2678.74,524.53}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=27,kind="quest",names={enUS="A Lesson to Learn"},flags=0,spawns={{1,-1039.41,-281.56,159.11},{1,8020.0,-2678.74,524.53}}}
@@ -235,7 +235,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=119,kind="quest",names={enUS="Retu
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=120,kind="quest",names={enUS="Messenger to Stormwind"},flags=0,spawns={{0,-9218.61,-2221.8,67.62},{0,-8953.95,521.02,96.54}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=121,kind="quest",names={enUS="Messenger to Stormwind"},flags=0,spawns={{0,-8953.95,521.02,96.54},{0,-9218.61,-2221.8,67.62}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=122,kind="quest",names={enUS="Underbelly Scales"},flags=0,spawns={{0,-9259.44,-2243.22,64.06},{0,-9259.44,-2243.22,64.06}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123,kind="quest",names={enUS="The Collector"},flags=0,spawns={{0,-9465.52,74.01,56.78}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=123,kind="quest",names={enUS="The Collector"},flags=1,spawns={{0,-9465.52,74.01,56.78}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=124,kind="quest",names={enUS="A Baying of Gnolls"},flags=0,spawns={{0,-9259.44,-2243.22,64.06},{0,-9259.44,-2243.22,64.06}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=125,kind="quest",names={enUS="The Lost Tools"},flags=0,spawns={{0,-9279.22,-2268.53,67.63},{0,-9279.22,-2268.53,67.63}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=126,kind="quest",names={enUS="Howling in the Hills"},flags=0,spawns={{0,-9259.44,-2243.22,64.06},{0,-9259.44,-2243.22,64.06}}}
@@ -248,7 +248,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=132,kind="quest",names={enUS="The 
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=133,kind="quest",names={enUS="Ghoulish Effigy"},flags=0,spawns={{0,-10283.0,74.4,38.93},{0,-10283.0,74.4,38.93}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=134,kind="quest",names={enUS="Ogre Thieves"},flags=0,spawns={{0,-10283.0,74.4,38.93},{0,-10283.0,74.4,38.93}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=135,kind="quest",names={enUS="The Defias Brotherhood"},flags=0,spawns={{0,-10508.8,1045.23,60.7},{0,-8815.27,362.3,109.6}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136,kind="quest",names={enUS="Captain Sander's Hidden Treasure"},flags=0,spawns={{0,-10514.2,2109.99,2.69}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=136,kind="quest",names={enUS="Captain Sander's Hidden Treasure"},flags=1,spawns={{0,-10514.2,2109.99,2.69}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=138,kind="quest",names={enUS="Captain Sander's Hidden Treasure"},flags=0,spawns={{0,-10514.2,2109.99,2.69},{0,-10515.2,1598.61,44.03}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=139,kind="quest",names={enUS="Captain Sander's Hidden Treasure"},flags=0,spawns={{0,-10515.2,1598.61,44.03},{0,-9797.29,1594.66,39.7}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=140,kind="quest",names={enUS="Captain Sander's Hidden Treasure"},flags=0,spawns={{0,-9797.29,1594.66,39.7},{0,-9794.49,2107.64,12.3}}}
@@ -289,13 +289,13 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=174,kind="quest",names={enUS="Look
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=175,kind="quest",names={enUS="Look To The Stars"},flags=0,spawns={{0,-10581.1,-1321.31,50.39},{0,-10780.2,-1380.28,39.72}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=176,kind="quest",names={enUS="Wanted:  \"Hogger\""},flags=0,spawns={{0,-9465.52,74.01,56.78},{0,-9668.23,683.39,36.33},{0,-9750.33,682.77,27.07}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=177,kind="quest",names={enUS="Look To The Stars"},flags=0,spawns={{0,-10780.2,-1380.28,39.72},{0,-10581.1,-1321.31,50.39}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=178,kind="quest",names={enUS="Theocritus' Retrieval"},flags=0,spawns={{0,-9553.08,-728.15,99.25}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=178,kind="quest",names={enUS="Theocritus' Retrieval"},flags=1,spawns={{0,-9553.08,-728.15,99.25}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=179,kind="quest",names={enUS="Dwarven Outfitters"},flags=0,spawns={{0,-6214.85,328.18,383.67},{0,-6214.85,328.18,383.67}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=180,kind="quest",names={enUS="Wanted: Lieutenant Fangore"},flags=0,spawns={{0,-9218.61,-2221.8,67.62},{0,-9247.36,-2151.6,63.93}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=181,kind="quest",names={enUS="Look To The Stars"},flags=0,spawns={{0,-10581.1,-1321.31,50.39},{0,-10581.1,-1321.31,50.39}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=182,kind="quest",names={enUS="The Troll Cave"},flags=0,spawns={{0,-6363.0,567.09,385.85},{0,-6363.0,567.09,385.85}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=183,kind="quest",names={enUS="The Boar Hunter"},flags=0,spawns={{0,-6222.47,688.97,385.0},{0,-6222.47,688.97,385.0}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=184,kind="quest",names={enUS="Furlbrow's Deed"},flags=0,spawns={{0,-9851.68,918.3,30.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=184,kind="quest",names={enUS="Furlbrow's Deed"},flags=1,spawns={{0,-9851.68,918.3,30.51}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=185,kind="quest",names={enUS="Tiger Mastery"},flags=0,spawns={{0,-11620.5,-51.9,11.23},{0,-11620.5,-51.9,11.23}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=186,kind="quest",names={enUS="Tiger Mastery"},flags=0,spawns={{0,-11620.5,-51.9,11.23},{0,-11620.5,-51.9,11.23}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=187,kind="quest",names={enUS="Tiger Mastery"},flags=0,spawns={{0,-11620.5,-51.9,11.23},{0,-11620.5,-51.9,11.23}}}
@@ -318,7 +318,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=203,kind="quest",names={enUS="The 
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=204,kind="quest",names={enUS="Bad Medicine"},flags=0,spawns={{0,-11310.4,-205.12,75.36},{0,-11310.4,-205.12,75.36}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=205,kind="quest",names={enUS="Troll Witchery"},flags=0,spawns={{0,-11320.2,-193.34,76.23},{0,-11320.2,-193.34,76.23}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=206,kind="quest",names={enUS="Mai'Zoth"},flags=0,spawns={{0,-11320.2,-193.34,76.23},{0,-11320.2,-193.34,76.23}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=207,kind="quest",names={enUS="Kurzen's Mystery"},flags=0,spawns={{0,-11320.2,-193.34,76.23},{0,-11320.2,-193.34,76.23}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=207,kind="quest",names={enUS="Kurzen's Mystery"},flags=2,spawns={{0,-11320.2,-193.34,76.23},{0,-11320.2,-193.34,76.23}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=208,kind="quest",names={enUS="Big Game Hunter"},flags=0,spawns={{0,-11628.6,-54.56,11.02},{0,-11628.6,-54.56,11.02}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=209,kind="quest",names={enUS="Skullsplitter Tusks"},flags=0,spawns={{0,-14449.8,497.93,26.37},{0,-14449.8,497.93,26.37}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=210,kind="quest",names={enUS="Krazek's Cookery"},flags=0,spawns={{0,-11309.1,-187.43,75.65},{0,-14453.3,501.46,26.36}}}
@@ -326,7 +326,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=211,kind="quest",names={enUS="Alas
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=212,kind="quest",names={enUS="A Meal Served Cold"},flags=0,spawns={{0,-9080.48,823.15,108.42},{0,-9080.48,823.15,108.42}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=213,kind="quest",names={enUS="Hostile Takeover"},flags=0,spawns={{0,-14449.8,497.93,26.37},{0,-14449.8,497.93,26.37}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=214,kind="quest",names={enUS="Red Silk Bandanas"},flags=0,spawns={{0,-10504.8,1033.25,95.8},{0,-10504.8,1033.25,95.8}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=215,kind="quest",names={enUS="Jungle Secrets"},flags=0,spawns={{0,-11313.9,-202.77,75.58},{0,-11296.9,-206.69,75.88}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=215,kind="quest",names={enUS="Jungle Secrets"},flags=2,spawns={{0,-11313.9,-202.77,75.58},{0,-11296.9,-206.69,75.88}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=216,kind="quest",names={enUS="Between a Rock and a Thistlefur"},flags=0,spawns={{1,3345.46,1013.93,3.4},{1,3345.46,1013.93,3.4}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=217,kind="quest",names={enUS="In Defense of the King's Lands"},flags=0,spawns={{0,-5842.82,-2634.58,323.05},{0,-5842.82,-2634.58,323.05}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=218,kind="quest",names={enUS="The Stolen Journal"},flags=0,spawns={{0,-6363.0,567.09,385.85},{0,-6363.0,567.09,385.85}}}
@@ -413,7 +413,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=304,kind="quest",names={enUS="A Gr
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=305,kind="quest",names={enUS="In Search of The Excavation Team"},flags=0,spawns={{0,-3585.97,-865.16,12.93},{0,-3590.51,-1998.6,117.02}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=306,kind="quest",names={enUS="In Search of The Excavation Team"},flags=0,spawns={{0,-3590.51,-1998.6,117.02},{0,-3585.97,-865.16,12.93}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=307,kind="quest",names={enUS="Filthy Paws"},flags=0,spawns={{0,-4825.92,-2676.82,341.21},{0,-4825.92,-2676.82,341.21}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=308,kind="quest",names={enUS="Distracting Jarven"},flags=0,spawns={{0,-5605.96,-544.45,392.43},{0,-5605.96,-544.45,392.43}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=308,kind="quest",names={enUS="Distracting Jarven"},flags=2,spawns={{0,-5605.96,-544.45,392.43},{0,-5605.96,-544.45,392.43}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=309,kind="quest",names={enUS="Protecting the Shipment"},flags=0,spawns={{0,-5764.81,-3433.93,305.89},{0,-5694.65,-3812.45,321.7}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=310,kind="quest",names={enUS="Bitter Rivals"},flags=0,spawns={{0,-5372.03,315.43,394.44},{0,-5607.24,-547.93,392.99}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=311,kind="quest",names={enUS="Return to Marleth"},flags=0,spawns={{0,-5372.03,315.43,394.44},{0,-5607.24,-547.93,392.99}}}
@@ -439,7 +439,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=333,kind="quest",names={enUS="Harl
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=334,kind="quest",names={enUS="Package for Thurman"},flags=0,spawns={{0,-8777.6,713.5,99.62},{0,-8961.84,809.21,109.63}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=335,kind="quest",names={enUS="A Noble Brew"},flags=0,spawns={{0,-8984.0,1025.49,101.59},{0,-8984.0,1025.49,101.59}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=336,kind="quest",names={enUS="A Noble Brew"},flags=0,spawns={{0,-8984.0,1025.49,101.59},{0,-8562.78,369.69,108.57}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=337,kind="quest",names={enUS="An Old History Book"},flags=0,spawns={{0,-8345.72,383.77,122.36}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=337,kind="quest",names={enUS="An Old History Book"},flags=1,spawns={{0,-8345.72,383.77,122.36}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=338,kind="quest",names={enUS="The Green Hills of Stranglethorn"},flags=0,spawns={{0,-11616.7,-54.83,11.14},{0,-11616.7,-54.83,11.14}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=339,kind="quest",names={enUS="Chapter I"},flags=0,spawns={{0,-11616.7,-54.83,11.14},{0,-11616.7,-54.83,11.14}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=340,kind="quest",names={enUS="Chapter II"},flags=0,spawns={{0,-11616.7,-54.83,11.14},{0,-11616.7,-54.83,11.14}}}
@@ -453,7 +453,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=347,kind="quest",names={enUS="Reth
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=348,kind="quest",names={enUS="Stranglethorn Fever"},flags=0,spawns={{0,-14433.2,458.99,15.53},{0,-14433.2,458.99,15.53}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=349,kind="quest",names={enUS="Stranglethorn Fever"},flags=0,spawns={{0,-13738.46,-29.74,44.64},{0,-13738.46,-29.74,44.64}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=350,kind="quest",names={enUS="Look to an Old Friend"},flags=0,spawns={{0,-8815.27,362.3,109.6},{0,-8854.12,575.65,101.15}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=351,kind="quest",names={enUS="Find OOX-17/TN!"},flags=0,spawns={{1,-8851.94,-4374.93,44.65}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=351,kind="quest",names={enUS="Find OOX-17/TN!"},flags=1,spawns={{1,-8851.94,-4374.93,44.65}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=353,kind="quest",names={enUS="Stormpike's Delivery"},flags=0,spawns={{0,-8387.14,685.2,95.36},{0,-4825.92,-2676.82,341.21}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=354,kind="quest",names={enUS="Deaths in the Family"},flags=0,spawns={{0,2262.26,244.26,33.72},{0,2262.26,244.26,33.72}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=355,kind="quest",names={enUS="Speak with Sevren"},flags=0,spawns={{0,2262.26,244.26,33.72},{0,2305.91,265.16,38.75}}}
@@ -462,7 +462,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=357,kind="quest",names={enUS="The 
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=358,kind="quest",names={enUS="Graverobbers"},flags=0,spawns={{0,2305.91,265.16,38.75},{0,2305.91,265.16,38.75}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=359,kind="quest",names={enUS="Forsaken Duties"},flags=0,spawns={{0,2305.91,265.16,38.75},{0,2022.33,74.05,36.53}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=360,kind="quest",names={enUS="Return to the Magistrate"},flags=0,spawns={{0,2022.33,74.05,36.53},{0,2305.91,265.16,38.75}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=361,kind="quest",names={enUS="A Letter Undelivered"},flags=0,spawns={{0,2252.83,250.67,34.34}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=361,kind="quest",names={enUS="A Letter Undelivered"},flags=1,spawns={{0,2252.83,250.67,34.34}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=362,kind="quest",names={enUS="The Haunted Mills"},flags=0,spawns={{0,2262.26,244.26,33.72},{0,2262.26,244.26,33.72}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=363,kind="quest",names={enUS="Rude Awakening"},flags=0,spawns={{0,1678.99,1667.86,135.85},{0,1843.32,1639.9,97.81}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=364,kind="quest",names={enUS="The Mindless Ones"},flags=0,spawns={{0,1843.32,1639.9,97.81},{0,1843.32,1639.9,97.81}}}
@@ -474,7 +474,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=369,kind="quest",names={enUS="A Ne
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=370,kind="quest",names={enUS="At War With The Scarlet Crusade"},flags=0,spawns={{0,2278.08,295.59,36.82},{0,2278.08,295.59,36.82}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=371,kind="quest",names={enUS="At War With The Scarlet Crusade"},flags=0,spawns={{0,2278.08,295.59,36.82},{0,2278.08,295.59,36.82}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=372,kind="quest",names={enUS="At War With The Scarlet Crusade"},flags=0,spawns={{0,2278.08,295.59,36.82},{0,2278.08,295.59,36.82}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=373,kind="quest",names={enUS="The Unsent Letter"},flags=0,spawns={{0,-8550.24,719.66,101.8}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=373,kind="quest",names={enUS="The Unsent Letter"},flags=1,spawns={{0,-8550.24,719.66,101.8}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=374,kind="quest",names={enUS="Proof of Demise"},flags=0,spawns={{0,2270.7,280.0,36.72},{0,2270.7,280.0,36.72}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=375,kind="quest",names={enUS="The Chill of Death"},flags=0,spawns={{0,2249.06,236.78,41.3},{0,2249.06,236.78,41.3}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=376,kind="quest",names={enUS="The Damned"},flags=0,spawns={{0,1847.73,1638.65,97.02},{0,1847.73,1638.65,97.02}}}
@@ -501,8 +501,8 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=397,kind="quest",names={enUS="You 
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=398,kind="quest",names={enUS="Wanted: Maggot Eye"},flags=0,spawns={{0,2278.08,295.59,36.82},{0,2285.97,288.69,35.18}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=399,kind="quest",names={enUS="Humble Beginnings"},flags=0,spawns={{0,-8550.24,719.66,101.8},{0,-8550.24,719.66,101.8}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=400,kind="quest",names={enUS="Tools for Steelgrill"},flags=0,spawns={{0,-5573.78,-464.45,402.14},{0,-5488.99,-682.33,394.44}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=401,kind="quest",names={enUS="Wait for Sirra to Finish"},flags=0,spawns={{0,-10573.9,-1127.32,29.17},{0,-10573.9,-1127.32,29.17}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=403,kind="quest",names={enUS="Guarded Thunderbrew Barrel"},flags=0,spawns={{0,-5607.24,-547.93,392.99},{0,-5607.24,-547.93,392.99}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=401,kind="quest",names={enUS="Wait for Sirra to Finish"},flags=2,spawns={{0,-10573.9,-1127.32,29.17},{0,-10573.9,-1127.32,29.17}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=403,kind="quest",names={enUS="Guarded Thunderbrew Barrel"},flags=2,spawns={{0,-5607.24,-547.93,392.99},{0,-5607.24,-547.93,392.99}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=404,kind="quest",names={enUS="A Putrid Task"},flags=0,spawns={{0,2287.66,403.37,34.0},{0,2287.66,403.37,34.0}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=405,kind="quest",names={enUS="The Prodigal Lich"},flags=0,spawns={{0,2305.91,265.16,38.75},{0,1766.27,66.63,-46.24}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=407,kind="quest",names={enUS="Fields of Grief"},flags=0,spawns={{0,2259.04,347.05,36.1},{0,2292.45,233.12,27.27}}}
@@ -510,7 +510,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=408,kind="quest",names={enUS="The 
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=409,kind="quest",names={enUS="Proving Allegiance"},flags=0,spawns={{0,2574.63,-48.26,33.8},{0,2574.63,-48.26,33.8}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=410,kind="quest",names={enUS="The Dormant Shade"},flags=0,spawns={{0,2485.43,22.14,26.88},{0,2485.43,22.14,26.88}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=411,kind="quest",names={enUS="The Prodigal Lich Returns"},flags=0,spawns={{0,2574.63,-48.26,33.8},{0,1766.27,66.63,-46.24}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=412,kind="quest",names={enUS="Operation Recombobulation"},flags=0,spawns={{0,-5497.94,-455.83,395.44},{0,-5497.94,-455.83,395.44}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=412,kind="quest",names={enUS="Operation Recombobulation"},flags=2,spawns={{0,-5497.94,-455.83,395.44},{0,-5497.94,-455.83,395.44}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=413,kind="quest",names={enUS="Shimmer Stout"},flags=0,spawns={{0,-5378.4,315.29,394.29},{0,-5479.75,-2447.09,400.68}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=414,kind="quest",names={enUS="Stout to Kadrell"},flags=0,spawns={{0,-5479.75,-2447.09,400.68},{0,-5367.58,-2936.21,327.64}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=415,kind="quest",names={enUS="Rejold's New Brew"},flags=0,spawns={{0,-5573.78,-464.45,402.14},{0,-5378.4,315.29,394.29}}}
@@ -527,12 +527,12 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=425,kind="quest",names={enUS="Ivar
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=426,kind="quest",names={enUS="The Mills Overrun"},flags=0,spawns={{0,2287.66,403.37,34.0},{0,2287.66,403.37,34.0}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=427,kind="quest",names={enUS="At War With The Scarlet Crusade"},flags=0,spawns={{0,2278.08,295.59,36.82},{0,2278.08,295.59,36.82}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=428,kind="quest",names={enUS="Lost Deathstalkers"},flags=0,spawns={{0,522.45,1626.15,105.0},{0,1290.69,1204.7,52.8}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=429,kind="quest",names={enUS="Wild Hearts"},flags=0,spawns={{0,1290.69,1204.7,52.8},{0,522.45,1652.3,125.84}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=429,kind="quest",names={enUS="Wild Hearts"},flags=2,spawns={{0,1290.69,1204.7,52.8},{0,522.45,1652.3,125.84}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=430,kind="quest",names={enUS="Return to Quinn"},flags=0,spawns={{0,522.45,1652.3,125.84},{0,1314.01,1205.91,58.6}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=431,kind="quest",names={enUS="Candles of Beckoning"},flags=0,spawns={{0,2571.7,-46.74,33.43},{0,2571.7,-46.74,33.43}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=432,kind="quest",names={enUS="Those Blasted Troggs!"},flags=0,spawns={{0,-5726.58,-1600.29,386.08},{0,-5726.58,-1600.29,386.08}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=433,kind="quest",names={enUS="The Public Servant"},flags=0,spawns={{0,-5714.72,-1580.0,383.29},{0,-5714.72,-1580.0,383.29}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=434,kind="quest",names={enUS="The Attack!"},flags=0,spawns={{0,-8407.93,450.66,123.84},{0,-8854.12,575.65,101.15}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=434,kind="quest",names={enUS="The Attack!"},flags=2,spawns={{0,-8407.93,450.66,123.84},{0,-8854.12,575.65,101.15}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=435,kind="quest",names={enUS="Escorting Erland"},flags=0,spawns={{0,1409.68,1090.26,53.77},{0,1290.69,1204.7,52.8}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=436,kind="quest",names={enUS="Ironband's Excavation"},flags=0,spawns={{0,-5359.14,-3020.87,319.56},{0,-5713.75,-3783.78,323.02}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=437,kind="quest",names={enUS="The Dead Fields"},flags=0,spawns={{0,522.45,1626.15,105.0},{0,522.45,1626.15,105.0}}}
@@ -542,7 +542,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=440,kind="quest",names={enUS="The 
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=441,kind="quest",names={enUS="Raleigh and the Undercity"},flags=0,spawns={{0,2305.91,265.16,38.75},{0,1604.32,278.27,-55.26}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=442,kind="quest",names={enUS="Assault on Fenris Isle"},flags=0,spawns={{0,522.45,1626.15,105.0},{0,522.45,1626.15,105.0}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=443,kind="quest",names={enUS="Rot Hide Ichor"},flags=0,spawns={{0,522.45,1626.15,105.0},{0,522.45,1652.3,125.84}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=444,kind="quest",names={enUS="Rot Hide Origins"},flags=0,spawns={{0,522.45,1652.3,125.84},{0,1766.27,66.63,-46.24}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=444,kind="quest",names={enUS="Rot Hide Origins"},flags=2,spawns={{0,522.45,1652.3,125.84},{0,1766.27,66.63,-46.24}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=445,kind="quest",names={enUS="Delivery to Silverpine Forest"},flags=0,spawns={{0,2259.04,347.05,36.1},{0,522.45,1652.3,125.84}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=446,kind="quest",names={enUS="Thule Ravenclaw"},flags=0,spawns={{0,1766.27,66.63,-46.24},{0,522.45,1652.3,125.84}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=447,kind="quest",names={enUS="A Recipe For Death"},flags=0,spawns={{0,522.45,1652.3,125.84},{0,1434.48,404.85,-85.18}}}
@@ -558,7 +558,7 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=456,kind="quest",names={enUS="The 
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=457,kind="quest",names={enUS="The Balance of Nature"},flags=0,spawns={{1,10328.9,826.05,1326.46},{1,10328.9,826.05,1326.46}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=458,kind="quest",names={enUS="The Woodland Protector"},flags=0,spawns={{1,10389.8,763.48,1320.33},{1,10296.9,870.23,1335.91}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=459,kind="quest",names={enUS="The Woodland Protector"},flags=0,spawns={{1,10296.9,870.23,1335.91},{1,10296.9,870.23,1335.91}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=460,kind="quest",names={enUS="Resting in Pieces"},flags=0,spawns={{0,970.84,599.32,53.95}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=460,kind="quest",names={enUS="Resting in Pieces"},flags=1,spawns={{0,970.84,599.32,53.95}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=461,kind="quest",names={enUS="The Hidden Niche"},flags=0,spawns={{0,970.84,599.32,53.95},{0,971.94,704.89,85.0}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=463,kind="quest",names={enUS="The Greenwarden"},flags=0,spawns={{0,-3791.88,-840.34,9.97},{0,-3261.47,-2720.74,9.54}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=464,kind="quest",names={enUS="War Banners"},flags=0,spawns={{0,-3732.46,-797.35,26.78},{0,-3732.46,-797.35,26.78}}}
@@ -581,8 +581,8 @@ EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=480,kind="quest",names={enUS="The 
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=481,kind="quest",names={enUS="Dalar's Analysis"},flags=0,spawns={{0,520.62,1602.92,126.53},{0,552.07,1593.59,130.11}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=482,kind="quest",names={enUS="Dalaran's Intentions"},flags=0,spawns={{0,552.07,1593.59,130.11},{0,520.62,1602.92,126.53}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=483,kind="quest",names={enUS="The Relics of Wakening"},flags=0,spawns={{1,9887.53,965.54,1313.9},{1,9887.53,965.54,1313.9}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=484,kind="quest",names={enUS="Young Crocolisk Skins"},flags=0,spawns={{0,-3684.2,-743.03,10.1},{0,-3684.2,-743.03,10.1}}}
-EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=485,kind="quest",names={enUS="Find OOX-09/HL!"},flags=0,spawns={{0,500.16,-3475.07,116.51}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=484,kind="quest",names={enUS="Young Crocolisk Skins"},flags=2,spawns={{0,-3684.2,-743.03,10.1},{0,-3684.2,-743.03,10.1}}}
+EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=485,kind="quest",names={enUS="Find OOX-09/HL!"},flags=1,spawns={{0,500.16,-3475.07,116.51}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=486,kind="quest",names={enUS="Ursal the Mauler"},flags=0,spawns={{1,9887.53,965.54,1313.9},{1,9887.53,965.54,1313.9}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=487,kind="quest",names={enUS="The Road to Darnassus"},flags=0,spawns={{1,9847.16,1033.06,1304.84},{1,9847.16,1033.06,1304.84}}}
 EzWoWMapFinderData[#EzWoWMapFinderData+1]={id=488,kind="quest",names={enUS="Zenn's Bidding"},flags=0,spawns={{1,9920.41,735.95,1313.98},{1,9920.41,735.95,1313.98}}}

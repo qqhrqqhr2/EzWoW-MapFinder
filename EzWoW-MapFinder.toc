@@ -94,6 +94,7 @@ Database\RareMonsters.lua
 Database\HunterPets.lua
 Database\MapRevealData.lua
 Database\QuestData.lua
+Database\QuestRequirements.lua
 Database\SharedQuests.lua
 Data\ZoneAndGatherData.lua
 Modules\SearchEngine.lua

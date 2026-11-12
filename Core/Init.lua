@@ -271,6 +271,8 @@ _G.EzWoWMapFinderAPI = {
     GetData = function() return _G.EzWoWMapFinderData end,
     GetTranslations = function() return _G.EzWoWMapFinderTranslations end,
     GetQuestData = function() return _G.EzWoWMapFinderQuestData end,
+    -- [questID] = { races, classes, skill, skill rank } (Database/QuestRequirements.lua)
+    GetQuestRequirements = function() return _G.EzWoWMapFinderQuestRequirements end,
 }
 
 -----------------------------------------------------------------------------
