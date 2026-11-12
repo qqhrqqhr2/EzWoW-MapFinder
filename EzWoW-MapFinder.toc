@@ -24,7 +24,7 @@
 ## X-License: GPL-3.0
 ## OptionalDeps: EzWoW-Data
 ## Author: qqhrqqhr2
-## Version: 2.0.19
+## Version: 2.0.20
 ## Category: EzWoW
 ## SavedVariables: EzWoW_MapFinderDB, EzWoW_SharedData
 ## IconTexture: Interface\AddOns\EzWoW-MapFinder\Media\Icon

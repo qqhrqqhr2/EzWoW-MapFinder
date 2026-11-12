@@ -1,7 +1,7 @@
-# v2.0.19
+# v2.0.20
 
 ### 한국어
-- 퀘스트 정보를 갱신했습니다(아이템으로 시작하는 퀘스트, 종족·직업·전문기술·앞 단계 퀘스트 조건).
+- 다른 EzWoW 사용자와 기록을 주고받을 때, 귓속말이 닿지 않는 사람에게 같은 기록을 반복해서 보내지 않습니다. 그 사람이 다시 접속하면 바로 다시 주고받습니다.
 
 ### English
-- Updated quest data (quests started from an item, race, class, profession and earlier-quest requirements).
+- Record sharing with other EzWoW users no longer keeps whispering players it cannot reach; it picks them up again as soon as they come back online.
