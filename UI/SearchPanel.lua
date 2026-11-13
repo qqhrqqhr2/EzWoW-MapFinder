@@ -129,8 +129,9 @@ local function notePointedWaypoint()
 end
 
 -- labelText: what the on-screen arrow names (default: the selected search result)
-function EntityExplorerPanel.setMapWaypointForSpawn(sp, labelText, source)
-    if not ns.DB or ns.DB.autoWaypoint == false or not sp then return end
+-- force: set by a button the player pressed for this (the auto-waypoint option is for search results)
+function EntityExplorerPanel.setMapWaypointForSpawn(sp, labelText, source, force)
+    if not ns.DB or (ns.DB.autoWaypoint == false and not force) or not sp then return end
     local mapID2, mxVal, myVal = projectWorldSpawnToMap(sp, nil)
     if mapID2 and mxVal and myVal and C_Map and C_Map.SetUserWaypoint and UiMapPoint and UiMapPoint.CreateFromCoordinates then
         pcall(function()

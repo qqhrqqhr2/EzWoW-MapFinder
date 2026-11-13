@@ -337,8 +337,20 @@ function RareAlertNotifier.buildSecureButtons()
     b:SetScript("OnEnter", function(self)
         self:SetBackdropColor(0.18, 0.28, 0.35, 1)
         self:SetBackdropBorderColor(unpack(Theme.accent))
+        if GameTooltip then
+            GameTooltip:SetOwner(self, "ANCHOR_TOP")
+            GameTooltip:AddLine(L.rareTarget or "Target", 1, 1, 1)
+            GameTooltip:AddLine(L.rareTargetTip or "", 0.85, 0.86, 0.90, true)
+            GameTooltip:AddDoubleLine(" ", "EzWoW - Map Finder", 0, 0, 0, 0.5, 0.5, 0.5)
+            GameTooltip:Show()
+        end
     end)
-    b:SetScript("OnLeave", normalLook)
+    b:SetScript("OnLeave", function()
+        normalLook()
+        if GameTooltip then GameTooltip:Hide() end
+    end)
+    -- after the target click (insecure code, also in combat): the tracking pin
+    b:HookScript("PostClick", function() pcall(RareAlertNotifier.pinCardMonster) end)
     targetBtn = b
 
     -- the eight raid marks (1 star ... 8 skull), as in the game's mark menu
@@ -353,6 +365,7 @@ function RareAlertNotifier.buildSecureButtons()
         hl:SetAllPoints()
         hl:SetColorTexture(1, 1, 1, 0.25)
         m.index = index
+        m:HookScript("PostClick", function() pcall(RareAlertNotifier.pinCardMonster) end)
         markBtns[index] = m
     end
 end
@@ -437,6 +450,24 @@ combatWatcher:SetScript("OnEvent", function()
     if secureUpdatePending then pcall(RareAlertNotifier.updateTargetButton) end
 end)
 
+-- Target (or mark) on the card: a tracking pin with the on-screen arrow at the
+-- monster's spot, without opening the map. The button fires on press and on
+-- release, so a second call right after is skipped.
+local lastPinAt = 0
+function RareAlertNotifier.pinCardMonster()
+    local card = alertCard
+    if not (card and card:IsShown() and card.pinSpot) then return end
+    local now = GetTime()
+    if now - lastPinAt < 0.5 then return end
+    lastPinAt = now
+    if card.entity then
+        ns.selectedEntity = card.entity
+        ns.selectedSpawnIdx = card.spawnIdx or 1
+    end
+    if ns.ApplyWaypointForSpawn then ns.ApplyWaypointForSpawn(card.pinSpot, card.pinName, nil, true) end
+    if ns.RefreshMapPins and not (InCombatLockdown and InCombatLockdown()) then pcall(ns.RefreshMapPins) end
+end
+
 function RareAlertNotifier.openEntityOnMap(entity, spawnIdx)
     -- with the gamepad on, only the waypoint and pins are set: see ns.IsGamePadUI
     -- not opened in combat either: the map's pins would be blocked then
@@ -465,6 +496,11 @@ function RareAlertNotifier.presentAlertCard(unitName, entity, spawnIdx, mapName,
     local readable = type(unitName) == "string" and not (issecretvalue and issecretvalue(unitName))
         and unitName ~= "" and unitName ~= "?"
     card.targetName = readable and unitName or nil
+    -- where the target button points the tracking pin: the nearest known spawn
+    -- (a sighting shared by another player sets its own spot after this)
+    card.pinSpot = entity and spawnIdx and entity.spawns and entity.spawns[spawnIdx] or nil
+    card.pinName = card.targetName
+        or (entity and ns.GetLocalizedEntityName and ns.GetLocalizedEntityName(entity)) or L.rareTitle
     card.heading:SetText(L.rareTitle)
     card.nameText:SetText(unitName)
     if entity then
@@ -519,6 +555,10 @@ function RareAlertNotifier.onSharedRecords(kinds)
             RareAlertNotifier.presentAlertCard(name, entity, spawnIdx, mapName, rec.x, rec.y)
             local card = RareAlertNotifier.buildAlertCard()
             card.heading:SetText(L.rareSharedTitle .. " · " .. share.Ago(rec.t))
+            -- the spot where it was seen is closer to it than the nearest spawn
+            if type(rec.x) == "number" and type(rec.y) == "number" and mapID then
+                card.pinSpot = { -1, mapID, rec.x, rec.y }
+            end
             if db.rareAlertSound ~= false and PlaySound and SOUNDKIT and SOUNDKIT.RAID_WARNING then
                 pcall(PlaySound, SOUNDKIT.RAID_WARNING)
             end
