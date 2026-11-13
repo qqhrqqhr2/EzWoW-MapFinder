@@ -34,7 +34,7 @@ An offline location search for the World Map of WoW Forever: monsters, rare elit
 - Boats, zeppelins, the Deeprun Tram and portals in faction colours; click one to open the destination map.
 
 ### Rare alert
-- A card and a sound when a rare monster is nearby (nameplate, mouseover or target). "Show on map" marks it. Once per 5 minutes per monster, not in dungeons or raids.
+- A card and a sound when a rare monster is nearby (nameplate, mouseover or target). "Show on map" marks it, and "Target" (or a raid mark) on the card sets a tracking pin and arrow at its spot. Once per 5 minutes per monster, not in dungeons or raids.
 
 ### Quest marks
 - Turn-in spots of finished quests (a yellow `?` in a gold rim; grey `?` for quests in progress, optional).
@@ -105,7 +105,7 @@ WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 �
 - 배 · 비행선 · 깊은굴 지하철 · 차원문을 진영 색 아이콘으로 표시하고, 누르면 도착지 지도를 엽니다.
 
 ### 레어 알림
-- 근처에 레어 몬스터가 보이면(이름표 · 마우스오버 · 대상) 카드와 소리로 알려 주고, “지도에서 보기”로 위치를 찍습니다. 같은 몬스터는 5분에 한 번, 던전 · 공격대에서는 알리지 않습니다.
+- 근처에 레어 몬스터가 보이면(이름표 · 마우스오버 · 대상) 카드와 소리로 알려 주고, “지도에서 보기”로 위치를 찍습니다. 카드의 “대상 지정”(또는 징표)을 누르면 그 자리에 추적 핀과 화살표도 찍습니다. 같은 몬스터는 5분에 한 번, 던전 · 공격대에서는 알리지 않습니다.
 
 ### 퀘스트 표시
 - 목표를 다 채운 퀘스트의 보고 위치(금색 테두리 안의 노란 `?`, 옵션을 켜면 진행 중인 퀘스트는 회색 `?`).
