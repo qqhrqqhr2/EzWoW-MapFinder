@@ -95,6 +95,7 @@ Database\HunterPets.lua
 Database\MapRevealData.lua
 Database\QuestData.lua
 Database\QuestRequirements.lua
+Database\ShareSeed.lua
 Database\SharedQuests.lua
 Data\ZoneAndGatherData.lua
 Modules\SearchEngine.lua
@@ -106,3 +107,4 @@ Modules\QuestLogPins.lua
 Modules\ServiceNpcPins.lua
 Modules\QuestObjectivePins.lua
 Modules\RareAlert.lua
+Modules\NpcSpots.lua

@@ -313,6 +313,82 @@ function QuestLogPins.canvas()
         or WorldMapFrame
 end
 
+-- A second click on the same mark takes its waypoint away again, with the
+-- arrow pins the quest's details started (a quest list click guides there)
+local lastPinSpawn
+local function hasUserWaypoint()
+    if not (C_Map and C_Map.HasUserWaypoint) then return false end
+    local ok, has = pcall(C_Map.HasUserWaypoint)
+    return ok and has == true
+end
+
+-- true when this click removed what the same mark had set
+-- (sp: the spawn, or any key that stands for the spot)
+local function clearPinWaypoint(sp)
+    if not (sp and lastPinSpawn == sp) then return false end
+    lastPinSpawn = nil
+    local api = _G.EzWoWMapFinderAPI
+    local guided = api and type(api.HasPoint) == "function" and api.HasPoint() == true
+    if not (guided or hasUserWaypoint()) then return false end
+    if api and type(api.ClearPoint) == "function" then pcall(api.ClearPoint) end
+    if C_Map and C_Map.ClearUserWaypoint then pcall(C_Map.ClearUserWaypoint) end
+    return true
+end
+
+local function rememberPinWaypoint(sp)
+    lastPinSpawn = sp
+end
+
+-- Every arrow points at the clicked mark: what pointed elsewhere goes, the
+-- moving arrow pin and the waypoint go to this spot
+local function pointAtPin(sp, label)
+    local api = _G.EzWoWMapFinderAPI
+    if api and type(api.ClearPoint) == "function" then pcall(api.ClearPoint) end
+    if api and type(api.PointAtSpawn) == "function" then
+        local text = label or ""
+        local shown = {
+            kind = "npc",
+            names = setmetatable({}, { __index = function() return text end }),
+            spawns = { sp },
+        }
+        pcall(api.PointAtSpawn, shown, 1)
+    end
+    if ns.ApplyWaypointForSpawn then ns.ApplyWaypointForSpawn(sp, label or "") end
+end
+
+-- The quest's details in the map's quest list, as a click on the quest there
+-- (a quest ready to turn in first)
+local function showQuestDetails(group)
+    local quests = group and group.quests
+    if not quests or #quests == 0 then return end
+    local quest = quests[1]
+    for _, q in ipairs(quests) do
+        if q.complete then quest = q break end
+    end
+    local questID = quest and quest.id
+    if not questID or (ns.IsGamePadUI and ns.IsGamePadUI()) then return end
+    -- a click in the quest list also guides to the quest's nearest spot: not
+    -- here, the arrows stay on the clicked mark
+    local guide = ns.QuestObjectivePins
+    if guide then guide.lastGuideID, guide.lastGuideAt = questID, (GetTime and GetTime()) or 0 end
+    local list = _G.QuestMapFrame
+    if WorldMapFrame and WorldMapFrame:IsShown() and list and list:IsShown()
+        and type(QuestMapFrame_ShowQuestDetails) == "function" then
+        if pcall(QuestMapFrame_ShowQuestDetails, questID) then return end
+    end
+    if type(QuestMapFrame_OpenToQuestDetails) == "function" then
+        pcall(QuestMapFrame_OpenToQuestDetails, questID)
+    end
+end
+
+-- the same click on the quest objective marks
+ns.MarkClick = {
+    point = pointAtPin,
+    clear = clearPinWaypoint,
+    remember = rememberPinWaypoint,
+    showDetails = showQuestDetails,
+}
+
 function QuestLogPins.obtainPin(index)
     local pin = pins[index]
     if pin then return pin end
@@ -357,10 +433,16 @@ function QuestLogPins.obtainPin(index)
     pin:HookScript("OnEnter", raisePin)
     pin:HookScript("OnLeave", lowerPin)
     pin:SetScript("OnClick", function(self)
-        local sp = self.group and self.group.spawn
-        if not sp then return end
-        local q = self.group.quests and self.group.quests[1]
-        if ns.ApplyWaypointForSpawn then ns.ApplyWaypointForSpawn(sp, self.group.npcName or (q and q.title) or "") end
+        local group = self.group
+        if not group then return end
+        local sp = group.spawn
+        if clearPinWaypoint(sp) then return end
+        if sp then
+            local q = group.quests and group.quests[1]
+            pointAtPin(sp, group.npcName or (q and q.title) or "")
+            rememberPinWaypoint(sp)
+        end
+        showQuestDetails(group)
     end)
     if ns.PassMapRightClicks then ns.PassMapRightClicks(pin) end
     pins[index] = pin

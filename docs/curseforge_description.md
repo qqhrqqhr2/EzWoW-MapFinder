@@ -13,7 +13,7 @@ An offline location search for the World Map of WoW Forever: monsters, rare elit
 
 ![Settings window](https://raw.githubusercontent.com/qqhrqqhr2/EzWoW-MapFinder/master/docs/images/settings_en.png)
 
-*Mock-ups rebuilt from the window sizes, coordinates, colours and strings in the addon code and the bundled data. The map is a simplified drawing; quests and NPC names are made up.*
+*In-game screenshots (WoW Forever, Korean client). Character and player names and chat text are blurred.*
 
 ## Features
 
@@ -41,7 +41,7 @@ An offline location search for the World Map of WoW Forever: monsters, rare elit
 - Objective spots of quests in progress, one dot colour per quest, on the World Map and the minimap.
 
 ### Town NPCs
-- Small icons for innkeepers, bankers, auctioneers, flight and stable masters, class and profession trainers (class crests and profession icons), repair, general goods, food, reagent and trade supply vendors (bag icon), guild and battle masters, spirit healers and mailboxes on city maps. Hover for name and title, click for a waypoint. Pick the kinds in the settings; regular zone maps are optional.
+- Small icons for innkeepers, bankers, auctioneers, flight and stable masters, class and profession trainers (class crests and profession icons), repair, general goods, food, reagent and trade supply vendors (bag icon), guild and battle masters, spirit healers and mailboxes on city maps. Hover for name and title, click for a waypoint (click again to remove). Pick the kinds in the settings; regular zone maps are optional.
 
 ### Gathering helpers (Herbalism / Mining)
 - Herb and ore spots on zone maps and the minimap (nearby): green rim for herbs, orange rim for ore, dimmed when your skill is too low. Hover for the name and the skill needed. A spot is where a node can grow, not always one that is there now.
@@ -63,6 +63,7 @@ An offline location search for the World Map of WoW Forever: monsters, rare elit
 ## Record sharing
 - Shared by all EzWoW addons and **on by default**: quest NPCs, rare monster sightings, item drops and gathering spots you have seen yourself are shared with other EzWoW users.
 - `/ezshare on` / `off`, `/ezshare channel on` / `off`, `/ezshare status`
+- Map Finder also adds NPC and monster spots others have reported (NPCs missing from the data or moved) and gathering and object spots to the search results and the map.
 
 ## Commands
 - `/ezmf keyword` — open the search panel and search (`P wolf` and other prefixes work)
@@ -83,7 +84,7 @@ WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 �
 
 ![설정창](https://raw.githubusercontent.com/qqhrqqhr2/EzWoW-MapFinder/master/docs/images/settings_ko.png)
 
-*애드온 코드의 창 크기·좌표·색상·문구와 내장 데이터로 재현한 예시 화면입니다. 지도는 단순화한 그림이고, 퀘스트·NPC 이름은 지어낸 예시입니다.*
+*실제 게임 화면입니다(WoW Forever, 한국어 클라이언트). 캐릭터 · 다른 플레이어 이름과 채팅 내용은 가렸습니다.*
 
 ## 기능
 
@@ -111,7 +112,7 @@ WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 �
 - 진행 중인 퀘스트의 목표 위치를 퀘스트마다 다른 색 점으로 월드맵과 미니맵에 표시.
 
 ### 마을 NPC 표시
-- 도시 지도에 여관주인·은행원·경매인·비행 조련사·야수 관리인·직업/전문기술 교관(직업 문장·전문기술 아이콘)·수리·잡화·음식·마법 재료·직업용품 상인(가방 아이콘)·길드·전장 관리인·영혼의 치유사·우체통을 작은 아이콘으로 표시합니다. 가리키면 이름과 칭호, 누르면 웨이포인트. 설정에서 종류를 고르고, 일반 지역 지도 표시는 선택입니다.
+- 도시 지도에 여관주인·은행원·경매인·비행 조련사·야수 관리인·직업/전문기술 교관(직업 문장·전문기술 아이콘)·수리·잡화·음식·마법 재료·직업용품 상인(가방 아이콘)·길드·전장 관리인·영혼의 치유사·우체통을 작은 아이콘으로 표시합니다. 가리키면 이름과 칭호, 누르면 웨이포인트(한 번 더 누르면 해제). 설정에서 종류를 고르고, 일반 지역 지도 표시는 선택입니다.
 
 ### 채집 도우미 (약초채집 · 채광)
 - 약초 · 광맥이 자랄 수 있는 자리를 지역 지도와 미니맵(가까운 곳)에 표시합니다. 약초는 초록, 광맥은 주황 테두리이고 숙련도가 모자라면 흐리게 나옵니다. 가리키면 이름과 필요 숙련도. 자랄 수 있는 자리일 뿐 항상 있지는 않습니다.
@@ -133,6 +134,7 @@ WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 �
 ## 기록 공유
 - 모든 EzWoW 애드온이 함께 쓰며 **기본으로 켜져 있습니다**. 직접 확인한 퀘스트 NPC, 희귀 몬스터 목격, 아이템 드롭, 채집 위치를 다른 EzWoW 사용자와 나눕니다.
 - `/ezshare on` / `off` (또는 `/공유`), `/ezshare channel on` / `off`, `/ezshare status`
+- 이 애드온은 다른 사용자가 알려 준 NPC·몬스터 위치(데이터에 없거나 자리가 바뀐 NPC)와 채집·오브젝트 위치도 검색 결과와 지도에 더합니다.
 
 ## 명령어
 - `/ezmf 검색어` — 검색창을 열고 바로 검색 (`P 늑대`처럼 접두어 사용 가능)

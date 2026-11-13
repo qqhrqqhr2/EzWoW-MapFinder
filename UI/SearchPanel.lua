@@ -68,6 +68,36 @@ local animTime = 0
 local renderActiveEntityMapPins
 local refreshRows
 
+-- The arrow pins on the World Map and the waypoint (with the on-screen
+-- arrow) go together: the waypoint the pins set is kept here, and when it is
+-- taken away or moved elsewhere the pins go as well.
+local pointedWaypoint   -- { map, x, y } as the game keeps it
+local settingWaypoint = false   -- our own change is under way
+local function readUserWaypoint()
+    if not (C_Map and C_Map.HasUserWaypoint and C_Map.GetUserWaypoint) then return nil end
+    local okHas, has = pcall(C_Map.HasUserWaypoint)
+    if not okHas or has ~= true then return nil end
+    local ok, point = pcall(C_Map.GetUserWaypoint)
+    if not ok or type(point) ~= "table" then return nil end
+    local pos, x, y = point.position, nil, nil
+    if type(pos) == "table" then
+        if type(pos.GetXY) == "function" then
+            local okXY, a, b = pcall(pos.GetXY, pos)
+            if okXY then x, y = a, b end
+        end
+        if x == nil or y == nil then x, y = pos.x, pos.y end
+    end
+    local secret = _G.issecretvalue
+    if secret and (secret(point.uiMapID) or secret(x) or secret(y)) then return nil end
+    if type(point.uiMapID) ~= "number" or type(x) ~= "number" or type(y) ~= "number" then return nil end
+    return point.uiMapID, x, y
+end
+
+local function notePointedWaypoint()
+    local mapID, x, y = readUserWaypoint()
+    pointedWaypoint = mapID and { map = mapID, x = x, y = y } or nil
+end
+
 -- labelText: what the on-screen arrow names (default: the selected search result)
 function EntityExplorerPanel.setMapWaypointForSpawn(sp, labelText, source)
     if not ns.DB or ns.DB.autoWaypoint == false or not sp then return end
@@ -77,7 +107,10 @@ function EntityExplorerPanel.setMapWaypointForSpawn(sp, labelText, source)
             if C_Map.CanSetUserWaypointOnMap and not C_Map.CanSetUserWaypointOnMap(mapID2) then return end
             local anchorPoint = UiMapPoint.CreateFromCoordinates(mapID2, mxVal, myVal)
             if anchorPoint then
-                C_Map.SetUserWaypoint(anchorPoint)
+                settingWaypoint = true
+                pcall(C_Map.SetUserWaypoint, anchorPoint)
+                settingWaypoint = false
+                notePointedWaypoint()
                 if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
                     C_SuperTrack.SetSuperTrackedUserWaypoint(true)
                 end
@@ -99,6 +132,22 @@ function EntityExplorerPanel.removeActiveUserWaypoint()
     if C_Map and C_Map.ClearUserWaypoint then
         pcall(C_Map.ClearUserWaypoint)
     end
+end
+
+-- Takes away the arrow pins and the waypoint a search result or a quest
+-- guide set (as the clear button)
+function EntityExplorerPanel.clearPointedSpawn()
+    pointedWaypoint = nil
+    EntityExplorerPanel.pendingWaypoint = nil
+    ns.selectedEntity = nil
+    EntityExplorerPanel.hideAllWorldMapPins()
+    EntityExplorerPanel.removeActiveUserWaypoint()
+    if renderActiveEntityMapPins then pcall(renderActiveEntityMapPins) end
+    if refreshRows then pcall(refreshRows) end
+end
+
+function EntityExplorerPanel.hasPointedSpawn()
+    return ns.selectedEntity ~= nil or EntityExplorerPanel.pendingWaypoint ~= nil
 end
 
 function EntityExplorerPanel.hideAllWorldMapPins()
@@ -239,6 +288,16 @@ function EntityExplorerPanel.acquireBouncingPinButton(idx)
     end)
     pinFrame:SetScript("OnClick", function(self)
         if self.spawnIndex and ns.selectedEntity then
+            -- the spot pointed at now, clicked again: everything goes away
+            local last = EntityExplorerPanel.lastPinClick
+            if last and last.entity == ns.selectedEntity and last.idx == self.spawnIndex
+                and ns.selectedSpawnIdx == self.spawnIndex
+                and EntityExplorerPanel.hasPointedSpawn() then
+                EntityExplorerPanel.lastPinClick = nil
+                EntityExplorerPanel.clearPointedSpawn()
+                return
+            end
+            EntityExplorerPanel.lastPinClick = { entity = ns.selectedEntity, idx = self.spawnIndex }
             ns.selectedSpawnIdx = self.spawnIndex
             if ns.selectedEntity.spawns and ns.selectedEntity.spawns[ns.selectedSpawnIdx] then
                 EntityExplorerPanel.setMapWaypointForSpawn(ns.selectedEntity.spawns[ns.selectedSpawnIdx])
@@ -659,12 +718,15 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
     pcall(refreshRows)
     local uiMapID, mx, my = projectWorldSpawnToMap(sp, nil)
     local wpMap = uiMapID
-    local function setWaypoint()
+    local function setWaypoint(noSuperTrack)
         if not (wpMap and mx and my and C_Map and C_Map.SetUserWaypoint and UiMapPoint) then return end
         pcall(function()
             if C_Map.CanSetUserWaypointOnMap and not C_Map.CanSetUserWaypointOnMap(wpMap) then return end
-            C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(wpMap, mx, my))
-            if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
+            settingWaypoint = true
+            pcall(C_Map.SetUserWaypoint, UiMapPoint.CreateFromCoordinates(wpMap, mx, my))
+            settingWaypoint = false
+            notePointedWaypoint()
+            if not noSuperTrack and C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
                 C_SuperTrack.SetSuperTrackedUserWaypoint(true)
             end
             if ns.SetWaypointArrowLabel then
@@ -675,11 +737,13 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
     end
     -- a quest's details open in the map's quest list go back to the list when
     -- the map moves or the game's arrow leaves that quest: while they are open
-    -- only the pins are shown, and the waypoint follows once the map closes
+    -- the waypoint (and the on-screen arrow) is set without the game's arrow,
+    -- which follows once the map closes
     -- (opening another quest's details closes them for a moment as well)
     local details = _G.QuestMapFrame and _G.QuestMapFrame.DetailsFrame
     local keepMap = details and details.IsShown and details:IsShown() and WorldMapFrame and WorldMapFrame:IsShown()
     if keepMap then
+        setWaypoint(true)
         EntityExplorerPanel.pendingWaypoint = setWaypoint
         if not EntityExplorerPanel.detailsHooked then
             EntityExplorerPanel.detailsHooked = true
@@ -1338,6 +1402,67 @@ function EntityExplorerPanel.init()
     end
 end
 
+-- A waypoint set some other way (the map's own pin, another addon): the arrow
+-- pins go to that spot, so every arrow points at one place
+local function followMapPin(mapID, x, y)
+    if not (C_Map and C_Map.GetWorldPosFromMapPos and CreateVector2D) then return false end
+    local ok, continent, pos = pcall(C_Map.GetWorldPosFromMapPos, mapID, CreateVector2D(x, y))
+    if not ok or type(continent) ~= "number" or type(pos) ~= "table" then return false end
+    local wx, wy
+    if type(pos.GetXY) == "function" then
+        local okXY, a, b = pcall(pos.GetXY, pos)
+        if okXY then wx, wy = a, b end
+    end
+    if wx == nil or wy == nil then wx, wy = pos.x, pos.y end
+    local secret = _G.issecretvalue
+    if type(wx) ~= "number" or type(wy) ~= "number" or (secret and (secret(wx) or secret(wy))) then return false end
+    local label = (type(_G.MAP_PIN) == "string" and _G.MAP_PIN) or "Map pin"
+    ns.selectedEntity = {
+        kind = "npc",
+        names = setmetatable({}, { __index = function() return label end }),
+        spawns = { { continent, wx, wy } },
+    }
+    ns.selectedSpawnIdx = 1
+    pointedWaypoint = { map = mapID, x = x, y = y }
+    EntityExplorerPanel.pendingWaypoint = nil
+    EntityExplorerPanel.hideAllWorldMapPins()
+    if renderActiveEntityMapPins then pcall(renderActiveEntityMapPins) end
+    if refreshRows then pcall(refreshRows) end
+    return true
+end
+
+local function onWaypointChanged()
+    if settingWaypoint then return end
+    local was = pointedWaypoint
+    local mapID, x, y = readUserWaypoint()
+    if was and mapID == was.map and math.abs(x - was.x) < 0.0001 and math.abs(y - was.y) < 0.0001 then return end
+    if mapID then
+        if followMapPin(mapID, x, y) then return end
+    end
+    -- removed (the on-screen arrow's X, the map's pin): the arrow pins go too
+    if not (was and ns.selectedEntity) then return end
+    pointedWaypoint = nil
+    EntityExplorerPanel.pendingWaypoint = nil
+    ns.selectedEntity = nil
+    EntityExplorerPanel.hideAllWorldMapPins()
+    if renderActiveEntityMapPins then pcall(renderActiveEntityMapPins) end
+    if refreshRows then pcall(refreshRows) end
+end
+
+local waypointWatch = CreateFrame("Frame")
+pcall(waypointWatch.RegisterEvent, waypointWatch, "USER_WAYPOINT_UPDATED")
+pcall(waypointWatch.RegisterEvent, waypointWatch, "PLAYER_ENTERING_WORLD")
+waypointWatch:SetScript("OnEvent", function(_, event)
+    if event == "PLAYER_ENTERING_WORLD" then
+        -- a waypoint kept from before: the arrow pins as well (once the map is ready)
+        if C_Timer and C_Timer.After then
+            C_Timer.After(2, function() if not ns.selectedEntity then pcall(onWaypointChanged) end end)
+        end
+        return
+    end
+    pcall(onWaypointChanged)
+end)
+
 local parentFrame = CreateFrame("Frame")
 parentFrame:RegisterEvent("PLAYER_LOGIN")
 parentFrame:SetScript("OnEvent", function(self, event, addonName)
@@ -1382,3 +1507,5 @@ ns.RefreshUITexts = EntityExplorerPanel.syncUITexts
 ns.RunSearch = EntityExplorerPanel.restartAsyncEntitySearch
 ns.SelectEntityOnMap = EntityExplorerPanel.handleSearchResultSelection
 ns.PointAtSpawn = EntityExplorerPanel.pointAtSpawn
+ns.ClearPointedSpawn = EntityExplorerPanel.clearPointedSpawn
+ns.HasPointedSpawn = EntityExplorerPanel.hasPointedSpawn

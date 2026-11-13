@@ -479,15 +479,22 @@ local function obtainPin(index)
     pin:SetScript("OnLeave", function() GameTooltip:Hide() end)
     pin:HookScript("OnEnter", raisePin)
     pin:HookScript("OnLeave", lowerPin)
+    -- click: every arrow to this spot; a second click takes it away again
     pin:SetScript("OnClick", function(self)
         local sp = self.group and self.group.spawn
-        if sp and ns.ApplyWaypointForSpawn then
-            local list = self.group.list
-            local text = typeLabel(self.group.typeKey)
-            if list and #list == 1 and ns.GetLocalizedEntityName then
-                local okName, name = pcall(ns.GetLocalizedEntityName, list[1].entry)
-                if okName and type(name) == "string" and name ~= "" then text = name end
-            end
+        if not sp then return end
+        local mark = ns.MarkClick
+        if mark and mark.clear(sp) then return end
+        local list = self.group.list
+        local text = typeLabel(self.group.typeKey)
+        if list and #list == 1 and ns.GetLocalizedEntityName then
+            local okName, name = pcall(ns.GetLocalizedEntityName, list[1].entry)
+            if okName and type(name) == "string" and name ~= "" then text = name end
+        end
+        if mark then
+            mark.point(sp, text or "")
+            mark.remember(sp)
+        elseif ns.ApplyWaypointForSpawn then
             ns.ApplyWaypointForSpawn(sp, text or "")
         end
     end)
@@ -742,6 +749,37 @@ local function buildSpots()
     local share = ns.Share
     local gather = share and share.Data and share.Data().gather
     if type(gather) ~= "table" then return end
+    -- places shipped with the addon (Database/ShareSeed.lua) that this
+    -- player has not received
+    local shipped = share.Seed and share.Seed("gather")
+    if type(shipped) == "table" then
+        local merged = {}
+        for objectID, spots in pairs(gather) do merged[objectID] = spots end
+        for objectID, spots in pairs(shipped) do
+            if type(spots) == "table" and type(objectID) == "number" then
+                local mine = merged[objectID]
+                if type(mine) ~= "table" then
+                    merged[objectID] = spots
+                else
+                    local list = {}
+                    for _, sp in ipairs(mine) do list[#list + 1] = sp end
+                    for _, sp in ipairs(spots) do
+                        local near = false
+                        for _, m in ipairs(mine) do
+                            if m[1] == sp[1] and type(m[2]) == "number" and type(sp[2]) == "number"
+                                and math.abs(m[2] - sp[2]) < 3 and math.abs(m[3] - sp[3]) < 3 then
+                                near = true
+                                break
+                            end
+                        end
+                        if not near then list[#list + 1] = sp end
+                    end
+                    merged[objectID] = list
+                end
+            end
+        end
+        gather = merged
+    end
     for objectID, spots in pairs(gather) do
         local kind, need
         if herbs[objectID] then kind, need = "herb", herbs[objectID]
@@ -797,6 +835,9 @@ local function showGatherTooltip(self)
     if first.shared then
         GameTooltip:AddLine(L.gatherShared or "Gathered here by an EzWoW user", 0.6, 0.8, 1)
     end
+    if self:GetParent() ~= Minimap then
+        GameTooltip:AddLine(L.serviceNpcHint or "Click: set waypoint", unpack(Theme.muted))
+    end
     GameTooltip:AddDoubleLine(" ", "EzWoW - Map Finder", 0, 0, 0, 0.5, 0.5, 0.5)
     GameTooltip:Show()
     if _G.EzWoWTooltipTagSizer and _G.EzWoWTooltipTagSizer.Refit then pcall(_G.EzWoWTooltipTagSizer.Refit, GameTooltip) end
@@ -829,7 +870,27 @@ local function newGatherPin(parent)
         pin.icon:AddMaskTexture(mask)
     end
     pin:EnableMouse(true)
-    setPropagateClicks(pin, true)
+    if parent == Minimap then
+        setPropagateClicks(pin, true)
+    else
+        -- World Map: click = every arrow to this spot, again = away
+        setPropagateClicks(pin, false)
+        pin:SetScript("OnMouseUp", function(self, button)
+            if button ~= "LeftButton" then return end
+            local first = self.spots and self.spots[1]
+            local sp = first and first.spawn
+            if not sp then return end
+            local mark = ns.MarkClick
+            if mark and mark.clear(sp) then return end
+            local name = spotName(first)
+            if mark then
+                mark.point(sp, name)
+                mark.remember(sp)
+            elseif ns.ApplyWaypointForSpawn then
+                ns.ApplyWaypointForSpawn(sp, name)
+            end
+        end)
+    end
     pin:SetScript("OnEnter", showGatherTooltip)
     pin:SetScript("OnLeave", function() GameTooltip:Hide() end)
     pin:HookScript("OnEnter", raisePin)

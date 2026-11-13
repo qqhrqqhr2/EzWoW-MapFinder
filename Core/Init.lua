@@ -231,6 +231,15 @@ _G.EzWoWMapFinderAPI = {
         if type(fn) == "function" then return fn(entry, spawnIdx) == true end
         return false
     end,
+    -- the arrow pins and waypoint PointAtSpawn (or a search result) set
+    ClearPoint = function()
+        local fn = ns.ClearPointedSpawn
+        if type(fn) == "function" then fn() end
+    end,
+    HasPoint = function()
+        local fn = ns.HasPointedSpawn
+        return type(fn) == "function" and fn() == true
+    end,
     PassMapRightClicks = function(frame)
         ns.PassMapRightClicks(frame)
     end,
