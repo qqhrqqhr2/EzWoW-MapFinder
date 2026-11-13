@@ -1699,9 +1699,7 @@ local function guideText(key)
 end
 
 local function guideSay(text)
-    if DEFAULT_CHAT_FRAME and text then
-        DEFAULT_CHAT_FRAME:AddMessage("|cff4bc8e8EzWoW - Quest|r: " .. text)
-    end
+    if text and ns.ChatPrint then ns.ChatPrint(text) end
 end
 
 function QuestObjectivePins.guideTo(questID)

@@ -212,6 +212,35 @@ function ns.SetWaypointArrowLabel(text, source)
     end
 end
 
+-- Chat lines added in combat taint the chat history: held until combat ends
+local CHAT_PREFIX = "|cff4bc8e8EzWoW - Map Finder|r: "
+local MAX_HELD_LINES = 10
+local heldLines, heldFrame = {}, nil
+local function flushHeldLines()
+    if InCombatLockdown and InCombatLockdown() then return end
+    local list = heldLines
+    heldLines = {}
+    for _, line in ipairs(list) do
+        if DEFAULT_CHAT_FRAME then DEFAULT_CHAT_FRAME:AddMessage(line) end
+    end
+end
+function ns.ChatPrint(text)
+    if text == nil or (issecretvalue and issecretvalue(text)) then return end
+    local line = CHAT_PREFIX .. tostring(text)
+    if InCombatLockdown and InCombatLockdown() then
+        if heldLines[#heldLines] ~= line and #heldLines < MAX_HELD_LINES then
+            heldLines[#heldLines + 1] = line
+        end
+        if not heldFrame then
+            heldFrame = CreateFrame("Frame")
+            pcall(heldFrame.RegisterEvent, heldFrame, "PLAYER_REGEN_ENABLED")
+            heldFrame:SetScript("OnEvent", flushHeldLines)
+        end
+        return
+    end
+    if DEFAULT_CHAT_FRAME then DEFAULT_CHAT_FRAME:AddMessage(line) end
+end
+
 _G.EzWoWMapFinderAPI = {
     version = 1,
     -- (spawn, mapID) -> mapID, x, y on that map (nil when the spawn is not on it)

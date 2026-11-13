@@ -121,22 +121,27 @@ function ns.QuestLevelPrefix(questID)
     return "[" .. level .. suffix .. "] "
 end
 
+-- One walk over every spawn of the data: not in combat, where the client stops a
+-- script that runs too long. Built in locals first, so a walk stopped half way
+-- leaves no partial index behind.
 function QuestLogPins.buildIndexes()
     if questIndex then return end
-    questIndex, npcBySpot, entryByKey = {}, {}, {}
+    if InCombatLockdown and InCombatLockdown() then return end
+    local quests, bySpot, byKey = {}, {}, {}
     for _, e in ipairs(_G.EzWoWMapFinderData or {}) do
         if (e.kind == "npc" or e.kind == "object") and e.id and e.spawns then
-            entryByKey[e.kind .. ":" .. e.id] = entryByKey[e.kind .. ":" .. e.id] or e
+            byKey[e.kind .. ":" .. e.id] = byKey[e.kind .. ":" .. e.id] or e
         end
         if e.kind == "quest" and e.id then
-            questIndex[e.id] = e
+            quests[e.id] = e
         elseif e.kind == "npc" and e.spawns then
             for _, sp in ipairs(e.spawns) do
                 local key = spotKey(sp)
-                if key and not npcBySpot[key] then npcBySpot[key] = e end
+                if key and not bySpot[key] then bySpot[key] = e end
             end
         end
     end
+    questIndex, npcBySpot, entryByKey = quests, bySpot, byKey
 end
 
 -- Quest spots are stored as NPC spots first, then object spots; within each
@@ -367,6 +372,9 @@ local function showQuestDetails(group)
     end
     local questID = quest and quest.id
     if not questID or (ns.IsGamePadUI and ns.IsGamePadUI()) then return end
+    -- not in combat: a map opened or moved by addon code then blocks the
+    -- map's pins (the clicked mark already set the waypoint)
+    if InCombatLockdown and InCombatLockdown() then return end
     -- a click in the quest list also guides to the quest's nearest spot: not
     -- here, the arrows stay on the clicked mark
     local guide = ns.QuestObjectivePins
@@ -470,6 +478,7 @@ function QuestLogPins.refresh()
     if not cScale or cScale <= 0 then cScale = 1 end
 
     QuestLogPins.buildIndexes()
+    if not questIndex then return end   -- (in combat before the index exists)
     local showAll = ns.DB.questLogPinsAll == true
     local groups = {}
     for _, quest in ipairs(QuestLogPins.collectQuests()) do

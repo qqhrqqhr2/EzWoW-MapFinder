@@ -492,6 +492,7 @@ if s and type(s.RegisterKind) == "function" then
             found.by = type(found.by) == "table" and found.by or {}
             local h = tostring(hash or "?")
             if found.by[h] or (found.n or 0) >= MAX_VOTERS then return false end
+            local wasOk = found.ok
             found.by[h] = true
             found.n = (found.n or 0) + 1
             if not found.ok and found.n >= (tonumber(needed) or 2) then
@@ -503,7 +504,9 @@ if s and type(s.RegisterKind) == "function" then
                     learnLatest(npcID, found, row.flags)
                 end
             end
-            return true
+            -- "wait": kept until enough players sent that spot; false: in use already
+            if not found.ok then return "wait" end
+            return not wasOk
         end,
     })
 end

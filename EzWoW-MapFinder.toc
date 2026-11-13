@@ -26,7 +26,7 @@
 ## Author: qqhrqqhr2
 ## Version: 2.0.21
 ## Category: EzWoW
-## SavedVariables: EzWoW_MapFinderDB, EzWoW_SharedData
+## SavedVariables: EzWoW_MapFinderDB, EzWoW_SharedData, EzWoW_ShareStore_MapFinder
 ## IconTexture: Interface\AddOns\EzWoW-MapFinder\Media\Icon
 
 Libs\EzWoWGamePad\GamePad.lua

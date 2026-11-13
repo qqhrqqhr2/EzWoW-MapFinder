@@ -35,7 +35,8 @@ end
 
 function RareAlertNotifier.extractCreatureId(unit)
     local guid = UnitGUID and UnitGUID(unit)
-    if not guid then return nil end
+    -- the GUID can be a secret value (combat, some places): no string work on it then
+    if type(guid) ~= "string" or (issecretvalue and issecretvalue(guid)) then return nil end
     local unitType, _, _, _, _, npcId = strsplit("-", guid)
     if unitType ~= "Creature" and unitType ~= "Vehicle" then return nil end
     return tonumber(npcId)
@@ -202,7 +203,10 @@ function RareAlertNotifier.buildAlertCard()
         ns.DB.rareCardPos = { point = point, relPoint = relPoint, x = x, y = y }
         RareAlertNotifier.updateTargetButton()
     end)
-    card:HookScript("OnHide", function() RareAlertNotifier.updateTargetButton() end)
+    card:HookScript("OnHide", function(self)
+        self.closeAfterCombat = nil
+        RareAlertNotifier.updateTargetButton()
+    end)
     local pos = ns.DB and ns.DB.rareCardPos
     if type(pos) == "table" and pos.point then
         card:SetPoint(pos.point, UIParent, pos.relPoint or pos.point, pos.x or 0, pos.y or 0)
@@ -254,7 +258,7 @@ function RareAlertNotifier.buildAlertCard()
     card.mapBtn.label:SetFontObject("GameFontHighlightSmall")
     card.mapBtn.label:SetTextColor(unpack(Theme.accent))
 
-    card.closeBtn = ns.CreateStyledButton(card, 18, 18, false, function() card:Hide() end)
+    card.closeBtn = ns.CreateStyledButton(card, 18, 18, false, function() RareAlertNotifier.closeCard() end)
     card.closeBtn:SetPoint("TOPRIGHT", -6, -6)
     card.closeBtn:SetText("x")
 
@@ -281,6 +285,18 @@ function RareAlertNotifier.buildAlertCard()
     card:Hide()
     alertCard = card
     return card
+end
+
+-- Closes the card. While its secure buttons are up in combat they can't be
+-- hidden (an invisible button still takes clicks), so it closes when combat ends.
+function RareAlertNotifier.closeCard()
+    local card = alertCard
+    if not card then return end
+    if InCombatLockdown() and RareAlertNotifier.secureButtonsShown() then
+        card.closeAfterCombat = true
+        return
+    end
+    card:Hide()
 end
 
 -----------------------------------------------------------------------------
@@ -414,12 +430,19 @@ end
 local combatWatcher = CreateFrame("Frame")
 combatWatcher:RegisterEvent("PLAYER_REGEN_ENABLED")
 combatWatcher:SetScript("OnEvent", function()
+    if alertCard and alertCard.closeAfterCombat then
+        alertCard.closeAfterCombat = nil
+        alertCard:Hide() -- OnHide then hides the secure buttons (out of combat now)
+    end
     if secureUpdatePending then pcall(RareAlertNotifier.updateTargetButton) end
 end)
 
 function RareAlertNotifier.openEntityOnMap(entity, spawnIdx)
     -- with the gamepad on, only the waypoint and pins are set: see ns.IsGamePadUI
-    if WorldMapFrame and not WorldMapFrame:IsShown() and not ns.IsGamePadUI() then
+    -- not opened in combat either: the map's pins would be blocked then
+    -- (the waypoint and pins are still set, the map moves after combat)
+    if WorldMapFrame and not WorldMapFrame:IsShown() and not ns.IsGamePadUI()
+        and not (InCombatLockdown and InCombatLockdown()) then
         if ToggleWorldMap then pcall(ToggleWorldMap) else pcall(ShowUIPanel, WorldMapFrame) end
     end
     if ns.SelectEntityOnMap then
@@ -431,7 +454,7 @@ function RareAlertNotifier.focusCardEntityOnMap()
     local card = alertCard
     if not card or not card.entity then return end
     RareAlertNotifier.openEntityOnMap(card.entity, card.spawnIdx)
-    card:Hide()
+    RareAlertNotifier.closeCard()
 end
 
 function RareAlertNotifier.presentAlertCard(unitName, entity, spawnIdx, mapName, px, py)
@@ -461,6 +484,7 @@ function RareAlertNotifier.presentAlertCard(unitName, entity, spawnIdx, mapName,
     card.placeText:SetWidth(card.nameText:GetWidth())
     card:SetAlpha(1)
     card.shownAt = GetTime()
+    card.closeAfterCombat = nil
     card:Show()
     pcall(RareAlertNotifier.playCardEffects, card)
     RareAlertNotifier.updateTargetButton()
@@ -541,9 +565,15 @@ function RareAlertNotifier.inspectUnit(unit)
             if ok and willPlay then break end
         end
     end
-    local place = (px and py) and string.format(" · %s %.1f, %.1f", mapName or "", px * 100, py * 100) or ""
-    print(string.format("|cff4bc8e8[Map Finder]|r %s%s|r — %s%s",
-        ns.KIND_COLORS.rare, L.rareTitle, unitName, place))
+    -- a name the client hides can't go into a chat line (it may be held until combat ends)
+    local shownName = unitName
+    if issecretvalue and issecretvalue(shownName) then
+        shownName = entity and ns.GetLocalizedEntityName and ns.GetLocalizedEntityName(entity) or nil
+    end
+    if shownName and ns.ChatPrint then
+        local place = (px and py) and string.format(" · %s %.1f, %.1f", mapName or "", px * 100, py * 100) or ""
+        ns.ChatPrint(string.format("%s%s|r — %s%s", ns.KIND_COLORS.rare, L.rareTitle, shownName, place))
+    end
 end
 
 local watcher = CreateFrame("Frame")

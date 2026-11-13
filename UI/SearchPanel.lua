@@ -26,8 +26,38 @@ local LANG_ALIASES = ns.LANG_ALIASES
 -- Shows another map in the World Map. Not with the gamepad on: a map changed
 -- by addon code taints the gamepad navigation (see ns.IsGamePadUI); the pins
 -- and the waypoint still point at the spot.
+-- Not in combat either: the game's pins made in a map change started by addon
+-- code are then blocked (SetPassThroughButtons). The map moves after combat
+-- if it is still open on the same selection.
+local pendingMapID, pendingMapEntry, combatMapWatcher
+local function inCombat() return InCombatLockdown and InCombatLockdown() and true or false end
+local function combatNote()
+    -- not to chat: lines added in combat taint the chat history
+    if UIErrorsFrame and UIErrorsFrame.AddMessage and L.combatNote then
+        pcall(UIErrorsFrame.AddMessage, UIErrorsFrame, L.combatNote, 1, 0.82, 0)
+    end
+end
 local function moveWorldMap(uiMapID)
     if not (uiMapID and WorldMapFrame and WorldMapFrame.SetMapID) or ns.IsGamePadUI() then return false end
+    if inCombat() then
+        local repeated = pendingMapID == uiMapID and pendingMapEntry == ns.selectedEntity
+        pendingMapID, pendingMapEntry = uiMapID, ns.selectedEntity
+        if not combatMapWatcher then
+            combatMapWatcher = CreateFrame("Frame")
+            pcall(combatMapWatcher.RegisterEvent, combatMapWatcher, "PLAYER_REGEN_ENABLED")
+            combatMapWatcher:SetScript("OnEvent", function()
+                local id, entry = pendingMapID, pendingMapEntry
+                pendingMapID, pendingMapEntry = nil, nil
+                if not id or inCombat() or ns.selectedEntity ~= entry then return end
+                if not (WorldMapFrame and WorldMapFrame:IsShown()) or ns.IsGamePadUI() then return end
+                pcall(WorldMapFrame.SetMapID, WorldMapFrame, id)
+                if ns.RefreshMapPins then pcall(ns.RefreshMapPins) end
+            end)
+        end
+        if not repeated then combatNote() end
+        return false
+    end
+    pendingMapID, pendingMapEntry = nil, nil
     return pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
 end
 local BADGE_PREFIX_POOLS = ns.BADGE_PREFIX_POOLS
@@ -110,6 +140,8 @@ function EntityExplorerPanel.setMapWaypointForSpawn(sp, labelText, source)
                 settingWaypoint = true
                 pcall(C_Map.SetUserWaypoint, anchorPoint)
                 settingWaypoint = false
+                -- a quest-list waypoint held for the map's close must not come back over this one
+                EntityExplorerPanel.pendingWaypoint = nil
                 notePointedWaypoint()
                 if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
                     C_SuperTrack.SetSuperTrackedUserWaypoint(true)
@@ -129,6 +161,7 @@ function EntityExplorerPanel.setMapWaypointForSpawn(sp, labelText, source)
 end
 
 function EntityExplorerPanel.removeActiveUserWaypoint()
+    EntityExplorerPanel.pendingWaypoint = nil
     if C_Map and C_Map.ClearUserWaypoint then
         pcall(C_Map.ClearUserWaypoint)
     end
@@ -760,13 +793,11 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
         setWaypoint()
     end
     if WorldMapFrame then
-        if not WorldMapFrame:IsShown() and ShowUIPanel and not ns.IsGamePadUI() then pcall(ShowUIPanel, WorldMapFrame) end
+        if not WorldMapFrame:IsShown() and ShowUIPanel and not ns.IsGamePadUI() and not inCombat() then pcall(ShowUIPanel, WorldMapFrame) end
         moveWorldMap(uiMapID)
     end
     local okRender, err = pcall(renderActiveEntityMapPins)
-    if not okRender and DEFAULT_CHAT_FRAME then
-        DEFAULT_CHAT_FRAME:AddMessage("|cff4bc8e8EzWoW - Map Finder|r: " .. tostring(err))
-    end
+    if not okRender and ns.ChatPrint then ns.ChatPrint(tostring(err)) end
     -- the game may move the map back to the quest's own zone right after a
     -- quest list click: go to the spot's map once more when that happened
     if uiMapID and C_Timer and C_Timer.After then
@@ -1101,11 +1132,7 @@ function EntityExplorerPanel.init()
     edit:SetScript("OnEnterPressed", function(self) self:ClearFocus() end)
 
     local resetPinsBtn = createMapFinderButton(uiPanel, 74, 22, false, function()
-        ns.selectedEntity = nil
-        EntityExplorerPanel.hideAllWorldMapPins()
-        EntityExplorerPanel.removeActiveUserWaypoint()
-        renderActiveEntityMapPins()
-        refreshRows()
+        EntityExplorerPanel.clearPointedSpawn()
     end)
     resetPinsBtn:SetPoint("LEFT", edit, "RIGHT", 6, 0)
     uiPanel.clearBtn = resetPinsBtn
@@ -1314,11 +1341,7 @@ function EntityExplorerPanel.init()
             if sp:IsShown() then sp:Raise() end
             return
         elseif cmd == "clear" then
-            ns.selectedEntity = nil
-            EntityExplorerPanel.hideAllWorldMapPins()
-            EntityExplorerPanel.removeActiveUserWaypoint()
-            renderActiveEntityMapPins()
-            refreshRows()
+            EntityExplorerPanel.clearPointedSpawn()
             return
         elseif cmd == "lang" then
             local targetKey = LANG_ALIASES[lower(rest or "")]
@@ -1334,6 +1357,10 @@ function EntityExplorerPanel.init()
             return
         end
         if WorldMapFrame and not WorldMapFrame:IsShown() then
+            if inCombat() then
+                combatNote()
+                return
+            end
             if ns.IsGamePadUI() then
                 print("|cff4bc8e8EzWoW - Map Finder|r: " .. L.padOpenMap)
                 return
@@ -1481,6 +1508,10 @@ parentFrame:SetScript("OnEvent", function(self, event, addonName)
         local function pendingSlashHandler(msg)
             if not uiPanel and ns.IsGamePadUI() then
                 print("|cff4bc8e8EzWoW - Map Finder|r: " .. L.padOpenMap)
+                return
+            end
+            if not uiPanel and inCombat() then
+                combatNote()
                 return
             end
             if not uiPanel and ToggleWorldMap then
