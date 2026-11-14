@@ -1,7 +1,9 @@
-# v2.0.23
+# v2.0.24
 
 ### 한국어
-- 레어 몬스터 알림 창에서 '대상 지정'(또는 징표)을 누르면 그 몬스터 위치에 추적 핀과 화살표를 찍습니다. 다른 사용자가 본 레어는 본 자리에 찍습니다.
+- 지도의 퀘스트 표시를 누르거나 검색·희귀 몬스터 알림에서 지도로 위치를 볼 때, 그 뒤 전투에서 "애드온 동작 차단(SetPassThroughButtons)" 오류가 나던 문제를 고쳤습니다. 이제 지도는 게임이 직접 열고 옮깁니다.
+- 지도의 퀘스트 표시를 누르면 웨이포인트와 화살표를 찍습니다.
 
 ### English
-- Pressing Target (or a raid mark) on the rare alert now sets a tracking pin and arrow at the monster's spot. For rares seen by other players, the pin goes where they saw it.
+- Fixed an "action blocked (SetPassThroughButtons)" error in combat after clicking a quest mark or showing a search or rare alert result on the map. The game itself now opens and moves the map.
+- Clicking a quest mark on the map sets the waypoint and arrow.
