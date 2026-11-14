@@ -38,18 +38,20 @@ local localizeZoneIdentifier = ns.FormatLocalizedZoneName
 
 local SEARCH_POOLS = nil
 
-function EntitySearchEngine.resolveLocalizedEntityName(e)
+-- locale: another language than the chosen one (shared records' names)
+function EntitySearchEngine.resolveLocalizedEntityName(e, locale)
     if not e then return "" end
+    local loc = (type(locale) == "string" and locale ~= "") and locale or ns.activeLocale
     local translationMap = EzWoWMapFinderTranslations
-    if translationMap and e.id and translationMap[ns.activeLocale] and translationMap[ns.activeLocale][e.kind] and translationMap[ns.activeLocale][e.kind][e.id] then
-        return translationMap[ns.activeLocale][e.kind][e.id]
+    if translationMap and e.id and translationMap[loc] and translationMap[loc][e.kind] and translationMap[loc][e.kind][e.id] then
+        return translationMap[loc][e.kind][e.id]
     end
-    if e.names and e.names[ns.activeLocale] and e.names[ns.activeLocale] ~= "" then
-        return e.names[ns.activeLocale]
+    if e.names and e.names[loc] and e.names[loc] ~= "" then
+        return e.names[loc]
     end
     local clientLoc = (GetLocale and GetLocale()) or "enUS"
     if clientLoc == "esMX" then clientLoc = "esES" elseif clientLoc == "enGB" then clientLoc = "enUS" end
-    if ns.activeLocale == clientLoc and e.id then
+    if loc == clientLoc and e.id then
         if e.kind == "item" and C_Item and C_Item.GetItemNameByID then
             local nodeEntry = C_Item.GetItemNameByID(e.id)
             if nodeEntry and nodeEntry ~= "" then return nodeEntry end
@@ -72,7 +74,7 @@ function EntitySearchEngine.resolveLocalizedEntityName(e)
     end
     if e.names then
         if e.names[clientLoc] and e.names[clientLoc] ~= "" then return e.names[clientLoc] end
-        if e.names.koKR and ns.activeLocale == "koKR" and e.names.koKR ~= "" then return e.names.koKR end
+        if e.names.koKR and loc == "koKR" and e.names.koKR ~= "" then return e.names.koKR end
         if e.names.enUS and e.names.enUS ~= "" then return e.names.enUS end
     end
     if e.kind == "item" and e.id and C_Item and C_Item.GetItemNameByID then

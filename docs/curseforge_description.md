@@ -24,13 +24,13 @@ An offline location search for the World Map of WoW Forever: monsters, rare elit
 - Tameable beasts show family, level, attack speed and skills; the tooltip adds diet and stat modifiers.
 - Gathering nodes show the skill they need.
 - Click a result to open its zone with a bouncing arrow and a waypoint. Results are sorted current zone → nearest → the rest; each click moves to the next spawn.
-- Works in combat too: the panel, `/ezmf keyword` and the rare alert's "Show on map" open the World Map and move to the zone. A transport icon clicked in combat opens its destination after combat.
+- In combat, the panel, `/ezmf keyword` and the rare alert's "Show on map" set the tracking pin and arrow; an open World Map moves to the zone after combat. A transport icon clicked in combat opens its destination after combat.
 
 ### World Map conveniences
 - Reveal unexplored areas, with an optional light-blue tint (battlefield map too).
 - Player and cursor coordinates below the map.
 - Level range (coloured against your level) and the fishing skill needed under the zone name.
-- No map fade while moving, map backdrop darkness slider (0–100%, or the game's default), extended maximum zoom (up to 3.2×, off by default).
+- No map fade while moving, map backdrop darkness slider (0–100%, or the game's default).
 - Boats, zeppelins, the Deeprun Tram and portals in faction colours; click one to open the destination map.
 
 ### Rare alert
@@ -95,13 +95,13 @@ WoW Forever 월드맵에서 몬스터 · 희귀 몹 · 사냥꾼이 길들일 �
 - 사냥꾼 야수는 야수 과 · 레벨 · 공격 속도 · 기술을, 툴팁에서 먹이와 배율까지 보여 줍니다.
 - 채집물은 필요한 숙련도를 함께 표시합니다.
 - 결과를 누르면 그 지역 지도로 이동해 튀는 화살표와 웨이포인트를 찍습니다. 지금 있는 지역 → 가까운 순 → 나머지 순서로 정렬되고, 누를 때마다 다음 출현 위치로 넘어갑니다.
-- 전투 중에도 됩니다: 검색창 · `/ezmf 검색어` · 레어 알림의 “지도에서 보기”가 월드맵을 열고 그 지역으로 이동합니다. 이동 수단 아이콘은 전투 중에 누르면 전투가 끝난 뒤 도착지 지도를 엽니다.
+- 전투 중에는 검색창 · `/ezmf 검색어` · 레어 알림의 “지도에서 보기”가 추적 핀과 화살표만 찍고, 지도를 열어 두었으면 전투가 끝난 뒤 그 지역으로 옮깁니다. 이동 수단 아이콘은 전투 중에 누르면 전투가 끝난 뒤 도착지 지도를 엽니다.
 
 ### 월드맵 편의 기능
 - 미탐험 지역 안개 제거와 푸른빛 구분(전장 지도 포함).
 - 지도 아래 플레이어 · 마우스 좌표.
 - 지역 이름 아래에 적정 레벨(내 레벨 대비 색)과 필요한 낚시 숙련도.
-- 이동 중 지도 흐려짐 끄기, 지도 뒤 배경 어둡기 막대(0~100% 또는 게임 기본), 최대 확대 배율 늘리기(최대 3.2배, 처음엔 꺼짐).
+- 이동 중 지도 흐려짐 끄기, 지도 뒤 배경 어둡기 막대(0~100% 또는 게임 기본).
 - 배 · 비행선 · 깊은굴 지하철 · 차원문을 진영 색 아이콘으로 표시하고, 누르면 도착지 지도를 엽니다.
 
 ### 레어 알림

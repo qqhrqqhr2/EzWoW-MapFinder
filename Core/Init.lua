@@ -64,7 +64,9 @@ function ns.InitializeDatabase()
     if CONST_DB.noMapFade == nil then CONST_DB.noMapFade = true end
     -- map backdrop darkness: nil = leave the game's own look alone (0-1 otherwise)
     if type(CONST_DB.mapBackdropAlpha) ~= "number" then CONST_DB.mapBackdropAlpha = nil end
-    if CONST_DB.enableMapZoom == nil then CONST_DB.enableMapZoom = false end
+    -- the extra zoom levels option is gone (levels written by an addon taint the
+    -- map, and its pins are then blocked in combat): its old setting is dropped
+    CONST_DB.enableMapZoom = nil
     if CONST_DB.showTransit == nil then CONST_DB.showTransit = true end
     if CONST_DB.rareAlert == nil then CONST_DB.rareAlert = true end
     if CONST_DB.rareAlertSound == nil then CONST_DB.rareAlertSound = true end
@@ -277,9 +279,12 @@ _G.EzWoWMapFinderAPI = {
         if type(fn) == "function" then return fn(entry) end
         return nil
     end,
-    -- ("npc" | "object", ID) -> name in the chosen language (shared records'
-    -- tooltips use it); the lookup table is made on the first call
-    NameByID = function(kind, id)
+    -- ("npc" | "object", ID[, locale]) -> name in that language, or in the
+    -- chosen language when none is given (shared records' tooltips use it);
+    -- the lookup table is made on the first call
+    NameByIDTakesLocale = true,
+    NameByID = function(kind, id, locale)
+        if type(locale) ~= "string" or locale == "" then locale = nil end
         if not ns.entityByKindID then
             local index = {}
             local data = _G.EzWoWMapFinderData
@@ -296,12 +301,12 @@ _G.EzWoWMapFinderAPI = {
         local e = ns.entityByKindID[tostring(kind) .. ":" .. tostring(id)]
         local fn = ns.GetLocalizedEntityName
         if e and type(fn) == "function" then
-            local ok, name = pcall(fn, e)
+            local ok, name = pcall(fn, e, locale)
             if ok and type(name) == "string" and name ~= "" then return name end
         end
         local names = e and e.names
         if type(names) ~= "table" then return nil end
-        return names[(GetLocale and GetLocale()) or "enUS"] or names.enUS
+        return names[locale or (GetLocale and GetLocale()) or "enUS"] or names.enUS
     end,
     IsAutoWaypoint = function()
         return not (ns.DB and ns.DB.autoWaypoint == false)

@@ -15,7 +15,7 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ### 개요
 
-월드맵에서 **몬스터 · 희귀 몬스터 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템** 위치를 바로 찾아 주는 오프라인 검색 애드온입니다. 내장 데이터는 **20,930개 항목**(NPC 7,421 · 오브젝트 7,656 · 퀘스트 4,140 · 아이템 1,713)이며 8개 언어 이름으로 검색할 수 있습니다. 미탐험 지역 안개 제거, 좌표, 지역 적정 레벨·낚시 숙련도, 지도 뒤 배경 어둡기, 확대 배율, 배·비행선·지하철·차원문 표시 같은 월드맵 편의 기능과, 근처에 레어 몬스터가 나타나면 알려 주고 바로 지도에 위치를 찍어 주는 기능, 퀘스트 보고 위치·목표 위치 표시, 도시 지도의 주요 NPC 아이콘, 약초채집·채광 캐릭터를 위한 채집 도우미(약초·광맥 자리 표시, 상호작용 아이콘, 약초 찾기·광물 찾기 자동 켜기)도 들어 있습니다. 검색과 지도 이동은 전투 중에도 됩니다.
+월드맵에서 **몬스터 · 희귀 몬스터 · 사냥꾼이 길들일 수 있는 야수 · NPC · 채집물/오브젝트 · 퀘스트 · 아이템** 위치를 바로 찾아 주는 오프라인 검색 애드온입니다. 내장 데이터는 **20,930개 항목**(NPC 7,421 · 오브젝트 7,656 · 퀘스트 4,140 · 아이템 1,713)이며 8개 언어 이름으로 검색할 수 있습니다. 미탐험 지역 안개 제거, 좌표, 지역 적정 레벨·낚시 숙련도, 지도 뒤 배경 어둡기, 배·비행선·지하철·차원문 표시 같은 월드맵 편의 기능과, 근처에 레어 몬스터가 나타나면 알려 주고 바로 지도에 위치를 찍어 주는 기능, 퀘스트 보고 위치·목표 위치 표시, 도시 지도의 주요 NPC 아이콘, 약초채집·채광 캐릭터를 위한 채집 도우미(약초·광맥 자리 표시, 상호작용 아이콘, 약초 찾기·광물 찾기 자동 켜기)도 들어 있습니다. 검색은 전투 중에도 되고, 지도는 전투가 끝난 뒤 옮깁니다.
 
 > **EzWoW - Quest**가 함께 켜져 있으면 퀘스트 보고 위치(`?`)와 목표 위치 표시는 EzWoW - Quest가 맡습니다. 자세한 내용은 [EzWoW - Quest와 함께 쓰기](#ezwow---quest와-함께-쓰기)를 보세요.
 
@@ -79,7 +79,6 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 | ④ | 월드맵 지역 적정 레벨 · 낚시 숙련도 표시 | 켬 |
 | ⑤ | 캐릭터 이동 중 월드맵 반투명화 해제 | 켬 |
 | ⑤ | 지도 뒤 배경 어둡기: 전체 화면 월드맵 뒤 화면을 0~100%(5% 단위)로 어둡게. **기본** 버튼을 누르면 게임 기본 모습으로 | 기본 |
-| ⑤ | 월드맵 최대 확대 배율 늘리기 (최대 3.2배, 휠 확대·드래그는 게임 기본 기능) | 끔 |
 | ⑤ | 월드맵 배 · 비행선 · 지하철 · 차원문 표시 | 켬 |
 | ⑥ | 근처에 레어 몬스터가 나타나면 알림 (이름표 · 마우스오버 · 대상, 같은 몬스터는 5분에 한 번, 던전 · 공격대 제외) | 켬 |
 | ⑥ | 레어 알림 소리 재생 | 켬 |
@@ -125,7 +124,7 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ### 알아두면 좋은 점
 
-- 검색창 · `/ezmf 검색어` · 레어 알림의 **지도에서 보기**는 전투 중에도 월드맵을 열고 그 지역으로 이동합니다. 이동 수단 아이콘은 전투 중에 누르면 전투가 끝난 뒤 도착지 지도를 엽니다.
+- 검색창 · `/ezmf 검색어` · 레어 알림의 **지도에서 보기**는 전투 중에는 추적 핀과 화살표만 찍고, 지도를 열어 두었으면 전투가 끝난 뒤 그 지역으로 옮깁니다. 이동 수단 아이콘은 전투 중에 누르면 전투가 끝난 뒤 도착지 지도를 엽니다.
 - "캐릭터 이동 중 월드맵 반투명화 해제"를 끄면 원래 쓰던 게임 설정으로 되돌립니다.
 - 검색은 프레임이 끊기지 않도록 나눠서 진행되며, 진행 중에는 `[검색중...] (%)`이 보입니다.
 
@@ -147,7 +146,7 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 
 ### Overview
 
-Map Finder is an offline location search for the World Map: **monsters, rare elites, tameable beasts, NPCs, gathering nodes/objects, quests and items**. The built-in data has **20,930 entries** (7,421 NPCs · 7,656 objects · 4,140 quests · 1,713 items) searchable by name in 8 languages. It also adds World Map conveniences: reveal unexplored areas, coordinates, zone level ranges and fishing skill, map backdrop darkness, extended zoom and boat/zeppelin/tram/portal icons, plus an alert when a rare monster is nearby that can put its location straight on the map, quest turn-in and objective spots, service NPC icons on city maps and gathering helpers for herbalists and miners (herb and ore spots, interact icons, Find Herbs / Find Minerals switched on for you). Search and map jumps work in combat too.
+Map Finder is an offline location search for the World Map: **monsters, rare elites, tameable beasts, NPCs, gathering nodes/objects, quests and items**. The built-in data has **20,930 entries** (7,421 NPCs · 7,656 objects · 4,140 quests · 1,713 items) searchable by name in 8 languages. It also adds World Map conveniences: reveal unexplored areas, coordinates, zone level ranges and fishing skill, map backdrop darkness and boat/zeppelin/tram/portal icons, plus an alert when a rare monster is nearby that can put its location straight on the map, quest turn-in and objective spots, service NPC icons on city maps and gathering helpers for herbalists and miners (herb and ore spots, interact icons, Find Herbs / Find Minerals switched on for you). Search works in combat too; the map moves after combat.
 
 > When **EzWoW - Quest** is enabled, the quest turn-in (`?`) and objective marks are handled by EzWoW - Quest. See [Working with EzWoW - Quest](#working-with-ezwow---quest).
 
@@ -211,7 +210,6 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ④ | Show zone level & fishing skill on World Map | On |
 | ⑤ | Disable map fade while character is moving | On |
 | ⑤ | Map backdrop darkness: how dark the screen behind the full-screen World Map gets, 0–100% in 5% steps. The **Default** button keeps the game's own look | Default |
-| ⑤ | Extend World Map maximum zoom (up to 3.2×; wheel zoom and drag are built into the game) | Off |
 | ⑤ | Show boats, zeppelins, trams & portals on World Map | On |
 | ⑥ | Alert when a rare monster is nearby (nameplate · mouseover · target, once per 5 minutes per monster, not in dungeons or raids) | On |
 | ⑥ | Play a sound with rare alerts | On |
@@ -257,7 +255,7 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 
 ### Tips
 
-- The search panel, `/ezmf keyword` and **Show on map** on the rare alert open the World Map and move to the zone in combat too. A transport icon clicked in combat opens its destination map after combat.
+- In combat, the search panel, `/ezmf keyword` and **Show on map** on the rare alert only set the tracking pin and arrow; an open World Map moves to the zone after combat. A transport icon clicked in combat opens its destination map after combat.
 - Turning off "Disable map fade while character is moving" puts your previous game setting back.
 - Searches run in small steps to avoid frame drops; `[Searching...] (%)` is shown meanwhile.
 

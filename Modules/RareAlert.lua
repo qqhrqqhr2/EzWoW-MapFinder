@@ -376,10 +376,37 @@ local function setSecureAlpha(alpha)
     for _, m in ipairs(markBtns) do m:SetAlpha(alpha) end
 end
 
+-- Buttons that no longer belong to the card (a new alert or a closed card in
+-- combat) can't be changed or hidden until combat ends, and an invisible
+-- button still takes clicks: plain frames over them catch the clicks.
+-- placedRects: where the buttons were last put ({ left, bottom, width, height }).
+local placedRects, clickBlockers = {}, {}
+local function blockSecureClicks(on)
+    for i, rect in ipairs(on and placedRects or {}) do
+        local f = clickBlockers[i]
+        if not f then
+            f = CreateFrame("Frame", nil, UIParent)
+            f:SetFrameStrata("HIGH")
+            f:EnableMouse(true)
+            clickBlockers[i] = f
+        end
+        f:SetFrameLevel(rect.level + 5)
+        f:ClearAllPoints()
+        f:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", rect[1], rect[2])
+        f:SetSize(rect[3], rect[4])
+        f:Show()
+    end
+    if not on then
+        for _, f in ipairs(clickBlockers) do f:Hide() end
+    end
+end
+
 local function hideSecureButtons()
+    blockSecureClicks(false)
     if not targetBtn then return end
     targetBtn:Hide()
     for _, m in ipairs(markBtns) do m:Hide() end
+    targetBtn.forName = nil
     setSecureAlpha(1)
 end
 
@@ -391,12 +418,19 @@ end
 function RareAlertNotifier.updateTargetButton()
     if InCombatLockdown() then
         secureUpdatePending = true
-        -- a card closed in combat: its buttons can't be hidden until combat
-        -- ends, so they are made invisible for now
-        if not (alertCard and alertCard:IsShown()) then setSecureAlpha(0) end
+        -- a card closed in combat, or showing another monster: its buttons can't
+        -- be changed until combat ends, so they are made invisible and their
+        -- clicks caught for now
+        if targetBtn and targetBtn:IsShown() then
+            local shown = alertCard and alertCard:IsShown() and alertCard.targetName
+            local stale = not shown or shown ~= targetBtn.forName
+            setSecureAlpha(stale and 0 or 1)
+            blockSecureClicks(stale)
+        end
         return
     end
     secureUpdatePending = false
+    blockSecureClicks(false)
     local card = alertCard
     local name = card and card:IsShown() and card.targetName
     if not name then
@@ -423,6 +457,7 @@ function RareAlertNotifier.updateTargetButton()
         return
     end
     targetBtn:SetAttribute("macrotext", "/targetexact " .. name)
+    targetBtn.forName = name
     targetBtn.label:SetText(L.rareTarget or "Target")
     targetBtn:SetFrameLevel(level)
     targetBtn:ClearAllPoints()
@@ -438,6 +473,9 @@ function RareAlertNotifier.updateTargetButton()
         m:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", left + (index - 1) * (MARK_SIZE + MARK_GAP), bottom + 7)
         m:Show()
     end
+    local tw, th = targetBtn:GetSize()
+    placedRects[1] = { right - tw, middle - th / 2, tw, th, level = level }
+    placedRects[2] = { left, bottom + 7, #markBtns * (MARK_SIZE + MARK_GAP) - MARK_GAP, MARK_SIZE, level = level }
 end
 
 local combatWatcher = CreateFrame("Frame")
@@ -551,7 +589,7 @@ function RareAlertNotifier.onSharedRecords(kinds)
             lastAlertAt[npcId] = GetTime()
             local entity = (rareEntityById or RareAlertNotifier.buildRareEntityIndex())[npcId]
             local name = (entity and ns.GetLocalizedEntityName and ns.GetLocalizedEntityName(entity))
-                or share.SourceName("n" .. npcId) or "?"
+                or share.SourceName("n" .. npcId, ns.activeLocale) or "?"
             local spawnIdx = entity and RareAlertNotifier.findNearestSpawnIndex(entity, mapID, rec.x, rec.y)
             RareAlertNotifier.presentAlertCard(name, entity, spawnIdx, mapName, rec.x, rec.y)
             local card = RareAlertNotifier.buildAlertCard()

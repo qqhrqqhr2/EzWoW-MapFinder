@@ -84,7 +84,6 @@ local acquireCategoryEntityPool = ns.GetSearchPool
 local installMapFogRevealHooks = ns.SetupMapReveal
 local initializeMapCoordOverlay = ns.SetupMapCoords
 local installZoneLevelHeaderHook = ns.SetupZoneLevels
-local installMapWheelZoomHooks = ns.SetupMapZoom
 local commitMapFade = ns.ApplyMapFade
 local installMapBackdropHooks = ns.SetupMapBackdrop
 local renderWorldTransitMarkers = ns.RefreshTransitPins
@@ -1327,7 +1326,6 @@ function EntityExplorerPanel.init()
     installMapFogRevealHooks()
     initializeMapCoordOverlay()
     installZoneLevelHeaderHook()
-    installMapWheelZoomHooks()
     commitMapFade()
     installMapBackdropHooks()
     renderWorldTransitMarkers()

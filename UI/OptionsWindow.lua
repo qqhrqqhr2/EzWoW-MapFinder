@@ -20,7 +20,6 @@ local syncMapExplorations = ns.RefreshMapExplorations
 local refreshMapCoordsVisibility = ns.UpdateMapCoordsVisibility
 local commitMapFade = ns.ApplyMapFade
 local commitMapBackdrop = ns.ApplyMapBackdrop
-local commitMapZoom = ns.ApplyMapZoom
 local renderWorldTransitMarkers = ns.RefreshTransitPins
 
 local donateFrame
@@ -371,48 +370,44 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         windowFrame.backdropDefaultBtn = defaultBtn
     end
 
-    windowFrame.zoomCheck = createCheckOptionRow(-422, "enableMapZoom", function(enabled)
-        commitMapZoom(not enabled)
-    end)
-
-    windowFrame.transitCheck = createCheckOptionRow(-448, "showTransit", function()
+    windowFrame.transitCheck = createCheckOptionRow(-422, "showTransit", function()
         renderWorldTransitMarkers()
     end)
 
-    windowFrame.rareAlertCheck = createCheckOptionRow(-474, "rareAlert", nil)
+    windowFrame.rareAlertCheck = createCheckOptionRow(-448, "rareAlert", nil)
 
-    windowFrame.rareSoundCheck = createCheckOptionRow(-500, "rareAlertSound", nil)
+    windowFrame.rareSoundCheck = createCheckOptionRow(-474, "rareAlertSound", nil)
 
-    windowFrame.questPinsCheck = createCheckOptionRow(-526, "questLogPins", function()
+    windowFrame.questPinsCheck = createCheckOptionRow(-500, "questLogPins", function()
         if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
     end)
 
-    windowFrame.questPinsAllCheck = createCheckOptionRow(-552, "questLogPinsAll", function()
+    windowFrame.questPinsAllCheck = createCheckOptionRow(-526, "questLogPinsAll", function()
         if ns.RefreshQuestLogPins then ns.RefreshQuestLogPins() end
     end)
 
-    windowFrame.questObjCheck = createCheckOptionRow(-578, "questObjectivePins", function()
+    windowFrame.questObjCheck = createCheckOptionRow(-552, "questObjectivePins", function()
         if ns.RefreshQuestObjectivePins then ns.RefreshQuestObjectivePins() end
     end)
 
     -- service NPC icons on town maps; the rows move up when the quest rows are hidden
-    local SERVICE_ROW_Y = -604
-    windowFrame.serviceCheck = createCheckOptionRow(-604, "serviceNpcPins", function()
+    local SERVICE_ROW_Y = -578
+    windowFrame.serviceCheck = createCheckOptionRow(-578, "serviceNpcPins", function()
         if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
     end)
-    windowFrame.serviceZonesCheck = createCheckOptionRow(-630, "serviceNpcPinsZones", function()
+    windowFrame.serviceZonesCheck = createCheckOptionRow(-604, "serviceNpcPinsZones", function()
         if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
     end)
 
     -- gathering helpers (herb / ore spots, interact icons, auto tracking)
-    windowFrame.gatherCheck = createCheckOptionRow(-656, "gatherPins", function()
+    windowFrame.gatherCheck = createCheckOptionRow(-630, "gatherPins", function()
         if ns.RefreshServiceNpcPins then ns.RefreshServiceNpcPins() end
         if ns.GatherPins and ns.GatherPins.updateMinimap then pcall(ns.GatherPins.updateMinimap) end
     end)
-    windowFrame.gatherIconsCheck = createCheckOptionRow(-682, "gatherInteractIcons", function()
+    windowFrame.gatherIconsCheck = createCheckOptionRow(-656, "gatherInteractIcons", function()
         if ns.GatherPins and ns.GatherPins.applyInteractIcons then pcall(ns.GatherPins.applyInteractIcons) end
     end)
-    windowFrame.gatherTrackCheck = createCheckOptionRow(-708, "gatherAutoTrack", function(enabled)
+    windowFrame.gatherTrackCheck = createCheckOptionRow(-682, "gatherAutoTrack", function(enabled)
         if enabled and ns.GatherPins and ns.GatherPins.autoTrack then pcall(ns.GatherPins.autoTrack) end
     end)
 
@@ -527,7 +522,7 @@ function SettingsDialog.buildMapFinderSettingsFrame()
 
     -- shown instead of the three quest rows while EzWoW - Quest is loaded
     local questManagedNote = windowFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    questManagedNote:SetPoint("TOPLEFT", 22, -526 + LANG_ROWS_SAVED - 4)
+    questManagedNote:SetPoint("TOPLEFT", 22, -500 + LANG_ROWS_SAVED - 4)
     questManagedNote:SetWidth(396)
     questManagedNote:SetJustifyH("LEFT")
     if questManagedNote.SetWordWrap then questManagedNote:SetWordWrap(false) end
@@ -584,9 +579,6 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         ns.UIKit:FitFontString(self.backdropLabel, 300, 1)
         self.backdropDefaultBtn:SetText(L.mapBackdropDefault)
         self:RefreshBackdropControls()
-        self.zoomCheck.label:SetText(L.enableMapZoom)
-        ns.UIKit:FitFontString(self.zoomCheck.label, 380, 1)
-        self.zoomCheck:SetChecked(ns.DB.enableMapZoom ~= false)
         self.transitCheck.label:SetText(L.showTransit)
         ns.UIKit:FitFontString(self.transitCheck.label, 380, 1)
         self.transitCheck:SetChecked(ns.DB.showTransit ~= false)
@@ -630,7 +622,7 @@ function SettingsDialog.buildMapFinderSettingsFrame()
         self.serviceTypesBtn:SetText((L.serviceNpcTypes or "Types") .. " ▼")
         self.PlaceServiceRows(questElsewhere and 52 or 0)
         self.RefreshServiceTypesPopup()
-        self:SetHeight(questElsewhere and 710 or 762)
+        self:SetHeight(questElsewhere and 684 or 736)
         self.resetBtn:SetText(L.resetPos)
         self.donateBtn:SetText(L.donate)
         local getMeta = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata

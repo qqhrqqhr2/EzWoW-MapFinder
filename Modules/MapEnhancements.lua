@@ -489,50 +489,6 @@ function WorldMapCanvasEnhancer.installMapBackdropHooks()
     apply()
 end
 
-function WorldMapCanvasEnhancer.expandCanvasZoomRange(scVal)
-    if not (ns.DB and ns.DB.enableMapZoom ~= false) then return end
-    -- the zoom table belongs to the game's map; leave it alone during combat
-    if InCombatLockdown and InCombatLockdown() then return end
-    if not (scVal and scVal.zoomLevels and #scVal.zoomLevels > 0) then return end
-    local base = scVal.zoomLevels[1]
-    local top = scVal.zoomLevels[#scVal.zoomLevels]
-    if not (base and top and base.scale and top.width and top.height) then return end
-    local mults = { 1.35, 1.75, 2.20, 2.70, 3.20 }
-    for index = 1, #mults do
-        local nextScale = base.scale * mults[index]
-        if nextScale > (scVal.zoomLevels[#scVal.zoomLevels].scale + 0.05) then
-            scVal.zoomLevels[#scVal.zoomLevels + 1] = {
-                scale = nextScale,
-                width = top.width,
-                height = top.height,
-            }
-        end
-    end
-end
-
-function WorldMapCanvasEnhancer.commitMapZoom(resetZoom)
-    if not (WorldMapFrame and WorldMapFrame.ScrollContainer) then return end
-    if InCombatLockdown and InCombatLockdown() then return end
-    local scVal = WorldMapFrame.ScrollContainer
-    if scVal.CreateZoomLevels then
-        pcall(scVal.CreateZoomLevels, scVal)
-    end
-    if resetZoom and scVal.ResetZoom then
-        pcall(scVal.ResetZoom, scVal)
-    end
-end
-
-local zoomLevelsHooked = false
-function WorldMapCanvasEnhancer.installMapWheelZoomHooks()
-    if not (WorldMapFrame and WorldMapFrame.ScrollContainer) then return end
-    local scVal = WorldMapFrame.ScrollContainer
-    if not zoomLevelsHooked and scVal.CreateZoomLevels then
-        zoomLevelsHooked = true
-        hooksecurefunc(scVal, "CreateZoomLevels", WorldMapCanvasEnhancer.expandCanvasZoomRange)
-        WorldMapCanvasEnhancer.expandCanvasZoomRange(scVal)
-    end
-end
-
 local transitPins = {}
 local activeTransitCount = 0
 local TRANSIT_ICONS = {
@@ -796,9 +752,6 @@ ns.ApplyMapFade = WorldMapCanvasEnhancer.commitMapFade
 ns.ApplyMapBackdrop = WorldMapCanvasEnhancer.commitMapBackdrop
 ns.SetupMapBackdrop = WorldMapCanvasEnhancer.installMapBackdropHooks
 ns.GetMapBackdropTexture = WorldMapCanvasEnhancer.getMapBackdropTexture
-ns.ExtendMapZoomLevels = WorldMapCanvasEnhancer.expandCanvasZoomRange
-ns.ApplyMapZoom = WorldMapCanvasEnhancer.commitMapZoom
-ns.SetupMapZoom = WorldMapCanvasEnhancer.installMapWheelZoomHooks
 ns.AcquireTransitPin = WorldMapCanvasEnhancer.obtainTransitPin
 ns.RefreshTransitPins = WorldMapCanvasEnhancer.renderWorldTransitMarkers
 ns.RescaleTransitPins = WorldMapCanvasEnhancer.rescaleTransitPins
