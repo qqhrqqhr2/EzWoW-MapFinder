@@ -1,7 +1,9 @@
-# v2.0.26
+# v2.0.27
 
 ### 한국어
-- 다른 EzWoW 애드온이 함께 쓰는 공유 기록 기본 데이터에 퀘스트 보상·던전 몬스터·비행 시간을 추가했습니다.
+- 지도 오브젝트의 빠진 한국어 이름을 채웠습니다.
+- 퀘스트 정보와 공유 기록 기본 데이터를 갱신했습니다.
 
 ### English
-- Added quest rewards, dungeon monsters and flight times to the shared records data the other EzWoW addons use.
+- Filled in missing Korean names of map objects.
+- Updated the quest data and the shared records data.
