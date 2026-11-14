@@ -561,7 +561,7 @@ end
 
 function WorldMapCanvasEnhancer.openTransitMap(target)
     target = tonumber(target)
-    if not target or not WorldMapFrame or not WorldMapFrame.SetMapID then return end
+    if not target or not WorldMapFrame or not (C_Map and C_Map.OpenWorldMap) then return end
     -- a map changed by addon code taints the gamepad navigation (see ns.IsGamePadUI)
     if ns.IsGamePadUI() then return end
     if InCombatLockdown and InCombatLockdown() then
@@ -583,7 +583,9 @@ function WorldMapCanvasEnhancer.openTransitMap(target)
             WorldMapCanvasEnhancer.openTransitMap(target)
             return
         end
-        local ok, errorText = pcall(WorldMapFrame.SetMapID, WorldMapFrame, target)
+        -- moved by the game itself: a map moved from addon code keeps values written
+        -- by tainted code, and its own pins are then blocked in combat
+        local ok, errorText = pcall(C_Map.OpenWorldMap, target)
         if ok and WorldMapFrame.GetMapID then
             local readable, current = pcall(WorldMapFrame.GetMapID, WorldMapFrame)
             ok = readable and current == target

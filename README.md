@@ -47,7 +47,7 @@ WoW Forever (`Interface: 16001`) · `/ezmf`
 | ⑧ | 이동 수단 | 배 · 비행선 · 깊은굴 지하철 · 차원문(제프라스 섬 · 강물숲 · 달라란 포함)을 진영 색 아이콘으로 표시하고, 누르면 도착지 지도로 이동합니다. |
 | ⑨ | 미탐험 지역 | 가 보지 않은 지역의 안개를 걷고 푸른빛으로 구분합니다(전장 지도 `Shift+M` 포함). |
 | ⑩ | 레어 알림 | 근처에 레어 몬스터가 보이면(이름표 · 마우스오버 · 대상) 카드와 소리로 알려 주고, **지도에서 보기**로 위치를 찍고, **대상 지정** 버튼과 징표 아이콘(해골 등 8가지)으로 바로 대상을 잡거나 징표를 찍습니다(전투가 끝난 뒤 나타남). 대상 지정이나 징표를 누르면 그 자리에 추적 핀과 화살표도 찍습니다. 같은 몬스터는 5분에 한 번, 던전 · 공격대에서는 알리지 않습니다. |
-| ⑪ | 퀘스트 표시 | 목표를 다 채운 퀘스트의 보고 위치(금색 테두리 안의 노란 `?`)와 진행 중인 퀘스트의 목표 위치(퀘스트마다 다른 색 점, 미니맵에도 표시). 누르면 퀘스트 내용을 열고 웨이포인트를 찍습니다(한 번 더 누르면 해제). **EzWoW - Quest**가 켜져 있으면 EzWoW - Quest가 맡습니다. |
+| ⑪ | 퀘스트 표시 | 목표를 다 채운 퀘스트의 보고 위치(금색 테두리 안의 노란 `?`)와 진행 중인 퀘스트의 목표 위치(퀘스트마다 다른 색 점, 미니맵에도 표시). 누르면 웨이포인트를 찍습니다(한 번 더 누르면 해제). **EzWoW - Quest**가 켜져 있으면 EzWoW - Quest가 맡습니다. |
 | ⑫ | 약초 · 광맥 자리 | 약초채집 · 채광이 있는 캐릭터는 약초(초록 테두리)와 광맥(주황 테두리)이 자랄 수 있는 자리가 지역 지도와 미니맵(가까운 곳)에 나옵니다. 숙련도가 모자란 자리는 흐리게 표시합니다. 가리키면 이름과 필요 숙련도. 자랄 수 있는 자리일 뿐 항상 있지는 않습니다. |
 | - | 마을 NPC 표시 | 도시 지도에 여관주인·은행·비행 조련사·교관·상인·우체통 등을 미니맵 추적 아이콘처럼 표시(직업 교관은 직업 문장, 전문기술 교관은 그 전문기술 아이콘, 직업용품 상인은 가방 아이콘). 가리키면 이름과 칭호, 누르면 웨이포인트(한 번 더 누르면 해제). |
 
@@ -179,7 +179,7 @@ Map Finder is an offline location search for the World Map: **monsters, rare eli
 | ⑧ | Transport | Boats, zeppelins, the Deeprun Tram and portals (incl. Zephras Isle, Riverglades and Dalaran) in faction colours; click to open the destination map. |
 | ⑨ | Unexplored areas | Lifts the fog from areas you have not visited and tints them light blue (battlefield map `Shift+M` too). |
 | ⑩ | Rare alert | A card and a sound when a rare monster is nearby (nameplate · mouseover · target); **Show on map** marks it, and the **Target** button and the eight raid mark icons target or mark it at once (they appear out of combat) and set a tracking pin and arrow at its spot. Once per 5 minutes per monster, not in dungeons or raids. |
-| ⑪ | Quest marks | Turn-in spots of finished quests (a yellow `?` in a gold rim) and objective spots of quests in progress (one dot colour per quest, on the minimap too). Click for the quest details and a waypoint (click again to remove). Handled by **EzWoW - Quest** while it is enabled. |
+| ⑪ | Quest marks | Turn-in spots of finished quests (a yellow `?` in a gold rim) and objective spots of quests in progress (one dot colour per quest, on the minimap too). Click for a waypoint (click again to remove). Handled by **EzWoW - Quest** while it is enabled. |
 | ⑫ | Herb & ore spots | For characters with Herbalism or Mining, the places where herbs (green rim) and ore (orange rim) can grow appear on zone maps and on the minimap (nearby). Spots above your skill are dimmed. Hover for the name and the skill needed. A spot is where a node can grow, not always one that is there now. |
 | - | Town NPCs | Innkeepers, banks, flight masters, trainers, vendors, mailboxes and more on city maps, like the minimap tracking icons (class crests for class trainers, the profession's own icon for profession trainers, a bag for trade supply vendors). Hover for name and title, click for a waypoint (click again to remove). |
 

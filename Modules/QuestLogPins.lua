@@ -361,40 +361,17 @@ local function pointAtPin(sp, label)
     if ns.ApplyWaypointForSpawn then ns.ApplyWaypointForSpawn(sp, label or "") end
 end
 
--- The quest's details in the map's quest list, as a click on the quest there
--- (a quest ready to turn in first)
-local function showQuestDetails(group)
-    local quests = group and group.quests
-    if not quests or #quests == 0 then return end
-    local quest = quests[1]
-    for _, q in ipairs(quests) do
-        if q.complete then quest = q break end
-    end
-    local questID = quest and quest.id
-    if not questID or (ns.IsGamePadUI and ns.IsGamePadUI()) then return end
-    -- not in combat: a map opened or moved by addon code then blocks the
-    -- map's pins (the clicked mark already set the waypoint)
-    if InCombatLockdown and InCombatLockdown() then return end
-    -- a click in the quest list also guides to the quest's nearest spot: not
-    -- here, the arrows stay on the clicked mark
-    local guide = ns.QuestObjectivePins
-    if guide then guide.lastGuideID, guide.lastGuideAt = questID, (GetTime and GetTime()) or 0 end
-    local list = _G.QuestMapFrame
-    if WorldMapFrame and WorldMapFrame:IsShown() and list and list:IsShown()
-        and type(QuestMapFrame_ShowQuestDetails) == "function" then
-        if pcall(QuestMapFrame_ShowQuestDetails, questID) then return end
-    end
-    if type(QuestMapFrame_OpenToQuestDetails) == "function" then
-        pcall(QuestMapFrame_OpenToQuestDetails, questID)
-    end
-end
+-- A click on a mark sets the waypoint and the arrows only. The quest's
+-- details are not opened from here: the quest log keeps a quest opened by
+-- addon code and draws it again on every quest update, moving the map from
+-- tainted code, and the map's own pins are then blocked in combat
+-- (SetPassThroughButtons).
 
 -- the same click on the quest objective marks
 ns.MarkClick = {
     point = pointAtPin,
     clear = clearPinWaypoint,
     remember = rememberPinWaypoint,
-    showDetails = showQuestDetails,
 }
 
 function QuestLogPins.obtainPin(index)
@@ -450,7 +427,6 @@ function QuestLogPins.obtainPin(index)
             pointAtPin(sp, group.npcName or (q and q.title) or "")
             rememberPinWaypoint(sp)
         end
-        showQuestDetails(group)
     end)
     if ns.PassMapRightClicks then ns.PassMapRightClicks(pin) end
     pins[index] = pin

@@ -23,12 +23,13 @@ local lower = ns.ToLowerSafeString
 local KIND_COLORS = ns.KIND_COLORS
 local LANG_ALIASES = ns.LANG_ALIASES
 
--- Shows another map in the World Map. Not with the gamepad on: a map changed
--- by addon code taints the gamepad navigation (see ns.IsGamePadUI); the pins
--- and the waypoint still point at the spot.
--- Not in combat either: the game's pins made in a map change started by addon
--- code are then blocked (SetPassThroughButtons). The map moves after combat
--- if it is still open on the same selection.
+-- Shows another map in the World Map. The game opens and moves it
+-- (C_Map.OpenWorldMap): a map opened or moved from addon code (ShowUIPanel,
+-- SetMapID) keeps values written by tainted code, and its own pins are then
+-- blocked in combat (SetPassThroughButtons).
+-- Not with the gamepad on (see ns.IsGamePadUI) and not in combat: the pins and
+-- the waypoint still point at the spot, and the map moves after combat if it
+-- is still open on the same selection.
 local pendingMapID, pendingMapEntry, combatMapWatcher
 local function inCombat() return InCombatLockdown and InCombatLockdown() and true or false end
 local function combatNote()
@@ -38,7 +39,7 @@ local function combatNote()
     end
 end
 local function moveWorldMap(uiMapID)
-    if not (uiMapID and WorldMapFrame and WorldMapFrame.SetMapID) or ns.IsGamePadUI() then return false end
+    if not (uiMapID and WorldMapFrame and C_Map and C_Map.OpenWorldMap) or ns.IsGamePadUI() then return false end
     if inCombat() then
         local repeated = pendingMapID == uiMapID and pendingMapEntry == ns.selectedEntity
         pendingMapID, pendingMapEntry = uiMapID, ns.selectedEntity
@@ -50,7 +51,7 @@ local function moveWorldMap(uiMapID)
                 pendingMapID, pendingMapEntry = nil, nil
                 if not id or inCombat() or ns.selectedEntity ~= entry then return end
                 if not (WorldMapFrame and WorldMapFrame:IsShown()) or ns.IsGamePadUI() then return end
-                pcall(WorldMapFrame.SetMapID, WorldMapFrame, id)
+                pcall(C_Map.OpenWorldMap, id)
                 if ns.RefreshMapPins then pcall(ns.RefreshMapPins) end
             end)
         end
@@ -58,7 +59,7 @@ local function moveWorldMap(uiMapID)
         return false
     end
     pendingMapID, pendingMapEntry = nil, nil
-    return pcall(WorldMapFrame.SetMapID, WorldMapFrame, uiMapID)
+    return pcall(C_Map.OpenWorldMap, uiMapID)
 end
 local BADGE_PREFIX_POOLS = ns.BADGE_PREFIX_POOLS
 local HERB_SKILL_BY_OBJECT = ns.HERB_SKILL_BY_OBJECT
@@ -794,7 +795,9 @@ function EntityExplorerPanel.pointAtSpawn(entry, spawnIdx)
         setWaypoint()
     end
     if WorldMapFrame then
-        if not WorldMapFrame:IsShown() and ShowUIPanel and not ns.IsGamePadUI() and not inCombat() then pcall(ShowUIPanel, WorldMapFrame) end
+        if not WorldMapFrame:IsShown() and C_Map and C_Map.OpenWorldMap and not ns.IsGamePadUI() and not inCombat() then
+            pcall(C_Map.OpenWorldMap, uiMapID)
+        end
         moveWorldMap(uiMapID)
     end
     local okRender, err = pcall(renderActiveEntityMapPins)
@@ -1366,9 +1369,9 @@ function EntityExplorerPanel.init()
                 print("|cff4bc8e8EzWoW - Map Finder|r: " .. L.padOpenMap)
                 return
             end
-            -- open through the UI panel manager so ESC / other panels close it normally
-            if ShowUIPanel then pcall(ShowUIPanel, WorldMapFrame) end
-            if not WorldMapFrame:IsShown() then WorldMapFrame:Show() end
+            -- opened by the game itself (C_Map.OpenWorldMap), so ESC and other
+            -- panels close it normally and nothing in it is written by addon code
+            if C_Map and C_Map.OpenWorldMap then pcall(C_Map.OpenWorldMap) end
         end
         uiPanel:Show()
         if raw ~= "" then
@@ -1515,8 +1518,8 @@ parentFrame:SetScript("OnEvent", function(self, event, addonName)
                 combatNote()
                 return
             end
-            if not uiPanel and ToggleWorldMap then
-                pcall(ToggleWorldMap)
+            if not uiPanel and C_Map and C_Map.OpenWorldMap then
+                pcall(C_Map.OpenWorldMap)
             end
             local realHandler = SlashCmdList.EZWOWMAPFINDER
             if uiPanel and realHandler and realHandler ~= pendingSlashHandler then

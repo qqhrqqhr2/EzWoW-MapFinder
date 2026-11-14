@@ -474,7 +474,8 @@ function RareAlertNotifier.openEntityOnMap(entity, spawnIdx)
     -- (the waypoint and pins are still set, the map moves after combat)
     if WorldMapFrame and not WorldMapFrame:IsShown() and not ns.IsGamePadUI()
         and not (InCombatLockdown and InCombatLockdown()) then
-        if ToggleWorldMap then pcall(ToggleWorldMap) else pcall(ShowUIPanel, WorldMapFrame) end
+        -- opened by the game itself (C_Map.OpenWorldMap), not from addon code
+        if C_Map and C_Map.OpenWorldMap then pcall(C_Map.OpenWorldMap) end
     end
     if ns.SelectEntityOnMap then
         ns.SelectEntityOnMap(entity, spawnIdx)
